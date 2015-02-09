@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!--modal dialogs-->
+    <include name="modalDialog">
+        <control type="image">
+            <include>FullScreenScaled</include>
+            <texture>colors/black.png</texture>
+            <colordiffuse>eeFFFFFF</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+        <control type="image">
+            <include>FullScreenScaled</include>
+            <texture>backgrounds/vignette.png</texture>
+            <colordiffuse>ffffffff</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+    </include>
+	<include name="BGHomeList">
+		<include>FullScreenScaled</include>
+		<fadetime>1000</fadetime>
+		<animation effect="fade" start="30" end="100" time="400" delay="0">Visible</animation>
+		<animation effect="fade" start="100" end="30" time="400" delay="0">Hidden</animation>
+	</include>
+    <!--Global background-->
+    <include name="globalBackground">
+        <!--Preview window-->
+        <control type="group">
+            <visible>Player.HasVideo</visible>
+            <control type="videowindow">
+                <include>FullScreenScaled</include>
+            </control>
+            <control type="image">
+                <include>FullScreenScaled</include>
+                <texture>colors/black.png</texture>
+                <colordiffuse>77FFFFFF</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+        </control>
+        <control type="group">
+            <visible>!Player.HasVideo</visible>
+            <control type="image">
+                <include>FullScreenScaled</include>
+                <texture>colors/black.png</texture>
+                <colordiffuse>ffFFFFFF</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--default background-->
+            <control type="image">
+                <visible>!Skin.HasSetting(useGlobalFanartBackground) + isempty(skin.string(globalBackground))</visible>
+                <include>FullScreenScaled</include>
+                <texture>backgrounds/background001.jpg</texture>
+                <colordiffuse>6affffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+                <animation effect="fade" start="0" end="100" time="1000" condition="window.previous(home)">windowopen</animation>
+            </control>
+            <!--User setting: global background override-->
+            <control type="image">
+                <visible>!Skin.HasSetting(useGlobalFanartBackground) + !isempty(skin.string(globalBackground))</visible>
+                <include>FullScreenScaled</include>
+                <texture>$INFO[skin.string(globalBackground)]</texture>
+                <colordiffuse>6Affffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+                <animation effect="fade" start="0" end="100" time="1000" condition="window.previous(home)">windowopen</animation>
+            </control>
+            <!--User setting: rolling fanart slides-->
+            <control type="multiimage">
+                <visible>Skin.HasSetting(useGlobalFanartBackground) + !container.content(seasons) + !container.content(songs) + [!container.content(episodes) | Substring(Container.folderpath,plugin)]</visible>
+                <posx>0</posx>
+                <posy>0</posy>
+                <include>FullScreenScaled</include>
+                <imagepath>$VAR[fanartType]</imagepath>
+                <timeperimage>25000</timeperimage>
+                <fadetime>1000</fadetime>
+                <pauseatend>10000</pauseatend>
+                <randomize>true</randomize>
+                <aspectratio>stretch</aspectratio>
+                <colordiffuse>6affffff</colordiffuse>
+                <animation type="windowopen">
+                    <effect type="fade" start="0" end="100" time="500" delay="400"/>
+                </animation>
+                <animation type="windowclose">
+                    <effect type="fade" start="100" end="0" time="300"/>
+                </animation>
+            </control>
+            <!--show media fanart in relevant sections-->
+            <control type="group">
+                <visible>container.content(seasons) | [!window.isactive(musicplaylist) + container.content(songs)] | [container.content(episodes) + !Substring(Container.folderpath,iplayer)]</visible>
+                <animation type="visible" reversible="false">
+                    <effect type="fade" start="0" end="100" time="500" delay="400"/>
+                </animation>
+                <control type="image">
+                    <include>FullScreenScaled</include>
+                    <texture>colors/black.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <include>FullScreenScaled</include>
+                    <texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
+                    <colordiffuse>6affffff</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+            </control>
+			<control type="group">
+				<visible>Skin.String(SectionType,playlists)</visible>
+					<animation type="visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="500" delay="400"/>
+				</animation>
+				<control type="largeimage">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>fullscreenWidth</width>
+					<height>fullscreenHeight</height>
+					<fadetime>400</fadetime>
+					<aspectratio>scale</aspectratio>
+					<texture background="true">$INFO[ListItem.CompositeImage(width=1280;height=720;cols=6;rows=2)]</texture>			
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Skin.String(SectionType,playqueue)</visible>
+					<animation type="visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="500" delay="400"/>
+				</animation>
+				<control type="largeimage">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>fullscreenWidth</width>
+					<height>fullscreenHeight</height>
+					<fadetime>400</fadetime>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true">$INFO[ListItem.Art(thumb)]</texture>			
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+			</control>
+			<!-- Homelists fanart -->
+			<control type="group">
+				<visible>!Player.HasVideo + Skin.String(SectionType,home)</visible>
+				<!-- generic autopopulated fanart slideshow -->
+				<visible>Skin.HasSetting(useGlobalFanartBackground)</visible>
+				<control type="multiimage" id="10101">
+					<visible>!Container(300).hasFocus(560) + !Container(300).hasFocus(561) + !Container(300).hasFocus(562) + !Container(300).hasFocus(563) + !Container(300).hasFocus(564) + !Container(300).hasFocus(565)</visible>
+					<include>FullScreenScaled</include>
+					<timeperimage>8000</timeperimage>
+					<fadetime>1000</fadetime>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+					<animation effect="fade" start="100" end="0" time="400" condition="ControlGroup(5000).HasFocus">Conditional</animation>
+					<animation type="WindowClose">
+						<effect type="fade" start="100" end="0" time="800"/>
+					</animation>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(560)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(561)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(562)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(563)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(564)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(565)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(566)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(567)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">BGHomeList</include>
+					<visible>Container(300).hasFocus(568)</visible>
+					<texture>$VAR[Var_Favourite_Background]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7002).HasFocus</visible>
+					<texture background="true">$INFO[Container(11001).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7001).HasFocus</visible>
+					<texture background="true">$INFO[Container(11000).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<!-- queue & recommendations -->
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7003).HasFocus</visible>
+					<texture background="true">$INFO[Container(11003).ListItem(0).Art(thumb)]</texture>
+				</control>
+				<!-- recently used -->
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7004).HasFocus</visible>
+					<texture background="true">$INFO[Container(11002).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<!-- "default Playlists bg" -->
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<texture background="true">backgrounds/movie.jpg</texture>
+					<visible>isEmpty(Skin.String(HomeBGPlaylists))</visible>
+					<visible>ControlGroup(7005).HasFocus</visible>	
+					<visible>Container(11005).ListItem(0).Type(videoplaylist) | Container(11005).ListItem(0).Type(videoplayqueue)</visible>
+				</control>
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<texture background="true">backgrounds/music.jpg</texture>
+					<visible>isEmpty(Skin.String(HomeBGPlaylists))</visible>
+					<visible>ControlGroup(7005).HasFocus</visible>
+					<visible>Container(11005).ListItem(0).Type(musicplaylist) | Container(11005).ListItem(0).Type(musicplayqueue)</visible>
+				</control>
+				<!-- Custom Playlists BG -->
+				<!-- "Play Queues" -->
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7007).HasFocus + System.PlexPlayQueue(Clip)</visible>
+					<texture background="true">$INFO[Container(11007).ListItem(0).Art(thumb)]</texture>
+				</control>
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7007).HasFocus + System.PlexPlayQueue(Video)</visible>
+					<texture background="true">$INFO[Container(11007).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<include>BGHomeList</include>
+					<visible>ControlGroup(7006).HasFocus + System.PlexPlayQueue(Music)</visible>
+					<texture background="true">$INFO[Container(11006).ListItem(0).Art(fanart)]</texture>
+				</control>
+			</control>
+            <control type="image">
+                <include>FullScreenScaled</include>
+                <texture>backgrounds/vignette.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+        </control>
+    </include>
+    <!--date and time-->
+    <include name="dateTime">
+        <control type="group">
+        <animation type="Conditional" condition="window.isvisible(4998)">
+            <effect type="zoom" end="90" time="200" center="auto" tween="sine" easing="in"/>
+        </animation>
+            <posx>0</posx>
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>24-col</width>
+                <font>pageTitle</font>
+                <label>$INFO[System.Time(hh:mm)]</label>
+                <textcolor>selected</textcolor>
+            </control>
+            <control type="label">
+                <posx>0</posx>
+                <posy>45</posy>
+                <width>24-col</width>
+                <font>regular</font>
+                <label>$INFO[System.Date(mmm d)]</label>
+                <textcolor>selected</textcolor>
+            </control>
+        </control>
+    </include>
+    <!--busy indicator-->
+    <include name="loadingIndicator">
+        <control type="group">
+            <visible>!IntegerGreaterThan(container.numitems,0) | window.isactive(busydialog)</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <!--animations-->
+            <animation type="visible">
+                <effect type="fade" start="0" end="100" time="400"/>
+            </animation>
+            <animation type="hidden">
+                <effect type="fade" start="100" end="0" time="200"/>
+            </animation>
+            <control type="image">
+                <include>FullScreenScaled</include>
+                <texture>colors/black.png</texture>
+                <colordiffuse>77FFFFFF</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <include>FullScreenScaled</include>
+                <texture>backgrounds/vignette.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>13-col</posx>
+                <posy>row-9-begin</posy>
+                <width>50</width>
+                <height>50</height>
+                <aspectratio>keep</aspectratio>
+                <texture border="0">busy.gif</texture>
+                <bordertexture border="0">-</bordertexture>
+                <colordiffuse>99FFFFFF</colordiffuse>
+            </control>
+        </control>
+    </include>
+    <!--footer for media lists-->
+    <include name="mediaListFooter">
+        <control type="group">
+            <posx>0</posx>
+            <posy>11</posy>
+            <width>20-col</width>
+            <height>1-row</height>
+            <control type="label">
+				<visible>!container.content(albums)</visible>
+                <width>auto</width>
+                <font>symbol</font>
+                <textcolor>selected</textcolor>
+                <label>a</label>
+            </control>
+            <control type="label">
+			<visible>!container.content(albums)</visible>
+                <width>auto</width>
+                <font>buttonTitle</font>
+                <textcolor>selected</textcolor>
+                <label>        $INFO[container.currentpage] / $INFO[container.numpages]</label>
+            </control>
+			<control type="group">
+                <animation effect="fade" start="0" end="100" time="1000" condition="Container.PlexContent(Movies)">windowopen</animation>
+                <animation effect="fade" start="100" end="0" time="200" condition="Container.PlexContent(Movies)">windowclose</animation>
+				<control type="label">
+					<visible>!isempty(Listitem.Property(mediaTag-audioCodec)) + [Container.PlexContent(Movies) | Container.PlexContent(Songs)] + !Skin.String(SectionType,playqueue)</visible>
+					<posx>2-col</posx>
+					<font>symbol</font>
+					<width>auto</width>
+					<textcolor>selected</textcolor>
+					<label>Y</label>
+				</control>
+				<control type="label">
+					<visible>!isempty(Listitem.Property(mediaTag-audioCodec)) + [Container.PlexContent(Movies) | Container.PlexContent(Songs)] + !Skin.String(SectionType,playqueue)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>buttonTitle</font>
+					<textcolor>selected</textcolor>
+					<label>        $INFO[Listitem.Property(mediaTag-audioCodec)]</label>
+				</control>
+            </control>
+			<control type="group">
+                <animation effect="slide" start="0" end="120" time="1000" condition="Container.PlexContent(Movies) + !Window.IsActive(plexplayqueue)">windowopen</animation>
+                <animation effect="slide" start="120" end="0" time="1000" condition="Container.PlexContent(Movies) + !Window.IsActive(plexplayqueue)">windowclose</animation>
+				<control type="label">
+					<visible>!isempty(ListItem.Label) + !Skin.String(SectionType,music) + !container.content(songs)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>H</label>
+				</control>
+				<control type="label">
+					<visible>!container.content(albums) + !Skin.String(SectionType,music) + !container.content(songs)</visible>
+					<visible>!isempty(ListItem.Label)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>buttonTitle</font>
+					<textcolor>selected</textcolor>
+					<label>        $INFO[ListItem.Label]</label>
+				</control>
+			</control>
+        </control>
+    </include>
+    <!--footer for media lists-->
+    <include name="keysListFooter">
+        <control type="group">
+			<posx>0</posx>
+			<posy>11</posy>
+			<control type="grouplist">
+				<visible>!Skin.string(showtvinfos,1)</visible>
+				<posx>186</posx>
+				<posy>0</posy>
+				<width>20-col</width>
+				<height>1-row</height>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<width>auto</width>
+					<font>buttonTitleC</font>
+					<textcolor>selected</textcolor>
+					<label>©</label>
+				</control>
+				<control type="label">
+					<width>auto</width>
+					<font>smallMedium</font>
+					<textcolor>selected</textcolor>
+					<label>      Item Options</label>
+				</control>
+			</control>
+			<control type="grouplist">
+				<posx>522</posx>
+				<posy>0</posy>
+				<width>20-col</width>
+				<height>1-row</height>
+				<orientation>horizontal</orientation>
+				<control type="label">
+					<visible>!Skin.string(showinfos,1) + container.content(albums)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W /</label>
+				</control>
+				<control type="label">
+					<visible>!Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W >></label>
+				</control>
+				<control type="label">
+					<visible>Skin.string(showinfos,1) + container.content(albums)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W &#60;/-></label>
+				</control>
+				<control type="label">
+					<visible>Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W &#60;></label>
+				</control>
+		   </control>
+       </control>
+    </include>
+    <!--debugging-->
+    <include name="DialogID">
+        <posx>15</posx>
+        <posy>15</posy>
+        <width>fullscreenwidth</width>
+        <height>1-row</height>
+        <font>smallStrong</font>
+        <textcolor>selected</textcolor>
+        <align>left</align>
+        <visible>Skin.HasSetting(DebugInfo)</visible>
+    </include>
+    <include name="WindowID">
+        <posx>15</posx>
+        <posy>15</posy>
+        <width>fullscreenwidth</width>
+        <height>1-row</height>
+        <font>smallStrong</font>
+        <textcolor>selected</textcolor>
+        <align>left</align>
+        <visible>Skin.HasSetting(DebugInfo)</visible>
+    </include>
+    <include name="DebugGrid">
+        <control type="image">
+            <include>FullScreenScaled</include>
+            <texture>debuggrid1080.png</texture>
+            <colordiffuse>77FFFFFF</colordiffuse>
+            <visible>Skin.HasSetting(DebugGrid)</visible>
+        </control>
+    </include>
+	<!-- Music Now Playing -->
+    <include name="musicOverlay">
+        <control type="group">
+            <visible>player.hasaudio + !Window.IsActive(visualisation) + !Window.IsActive(karaoke) + !isempty(MusicPlayer.Artist)</visible>
+            <posx>col-19-begin</posx>
+            <posy>12</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>-12</posy>
+                <width>8-col</width>
+                <height>102</height>
+                <texture>colors/selected.png</texture>
+                <colordiffuse>eeFFFFFF</colordiffuse>
+                <!--animations-->
+                <animation type="Windowopen">
+                    <effect type="slide" start="1000,0" end="0,0" time="400" tween="sine"/>
+                </animation>
+            </control>
+            <control type="label">
+                <description>Artist</description>
+                <posx>24</posx>
+                <posy>-12</posy>
+                <font>smallMedium</font>
+                <width>468</width>
+                <height>1-row</height>
+                <label>[UPPERCASE][B]$INFO[MusicPlayer.Artist][/B]$INFO[MusicPlayer.Album, &#xB7; ,][/UPPERCASE]</label>
+                <scroll>false</scroll>
+                <textcolor>black</textcolor>
+                <shadowcolor>-</shadowcolor>
+                <!--animations-->
+                <animation type="Windowopen">
+                    <effect type="fade" start="0" end="100" delay="400" time="400" tween="sine"/>
+                </animation>
+            </control>
+            <control type="label">
+                <description>message</description>
+                <posx>24</posx>
+                <posy>26</posy>
+                <font>pageTitle</font>
+                <textcolor>black</textcolor>
+                <width>468</width>
+                <height>1-row</height>
+                <label>$INFO[Musicplayer.TrackNumber,,. ]$INFO[musicplayer.Title]</label>
+                <scroll>true</scroll>
+                <shadowcolor>-</shadowcolor>
+                <!--animations-->
+                <animation type="Windowopen">
+                    <effect type="fade" start="0" end="100" delay="600" time="400" tween="sine"/>
+                </animation>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <posy>0</posy>
+            <include>DialogID</include>
+            <label>MusicOverlay.xml</label>
+        </control>
+    </include>
+</includes>

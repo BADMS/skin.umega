@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="CurrentUserAvatar">
+		<control type="group">
+			<posy>15</posy>
+			<control type="image">
+				<posx>1200</posx>
+				<width>60</width>
+				<height>60</height>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<texture diffuse="round.png" background="true">round.png</texture>
+				<animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<posy>5</posy>
+				<posx>1205</posx>
+				<width>50</width>
+				<height>50</height>
+				<aspectratio scalediffuse="false" align="center">scale</aspectratio>
+				<texture diffuse="round.png" background="true" fallback="default-square-small.png">$INFO[System.CurrentUserThumb]</texture>
+			</control>
+			<control type="label">
+				<posx>1180</posx>
+				<width>600</width>
+				<height>87</height>
+				<label>$INFO[System.CurrentUser]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>Regular-22</font>
+				<textcolor>white</textcolor>
+				<animation effect="fade" end="70" time="0" condition="true">Conditional</animation>
+			</control>
+			<animation effect="fade" start="100" end="0" time="500" delay="15000" condition="true">Conditional</animation>
+		</control>
+	</include>
+	<include name="HomeMenuDefault">
+		<control type="group">
+			<posx>col-1-begin</posx>
+			<posy>row-2-begin</posy>
+			<include>dateTime</include>
+			<control type="group">
+				<control type="list" id="300">
+					<description>Home Main Menu</description>
+					<posx>-14</posx>
+					<posy>180</posy>
+					<width>3-col</width>
+					<height>12-row</height>
+					<orientation>vertical</orientation>
+					<onup>300</onup>
+					<ondown>300</ondown>
+					<onleft condition="Window.IsActive(videolibrary) | Container.PlexContent(Channels) | Skin.String(SectionType,programs) | Skin.String(SectionType,music) | Skin.String(SectionType,playlists) | Skin.String(SectionType,playqueue)">998</onleft>
+					<onleft condition="!Window.IsActive(videolibrary) + !Container.PlexContent(Channels) + !Skin.String(SectionType,programs) + !Skin.String(SectionType,music) + !Skin.String(SectionType,playlists) + !Skin.String(SectionType,playqueue)">Plex.ActivateWindow(4998)</onleft>
+					<onright condition="!Window.IsActive(videolibrary) + !Container.PlexContent(Channels) + !Skin.String(SectionType,programs) + !Skin.String(SectionType,music) + !Skin.String(SectionType,playlists) + !Skin.String(SectionType,playqueue)">5000</onright>
+					<onright condition="Skin.String(SectionType,programs)">777</onright>
+					<onright condition="Skin.String(SectionType,music)">777</onright>
+					<onright condition="Skin.String(SectionType,playqueue)">777</onright>
+					<onright condition="Skin.String(SectionType,playlists)">777</onright>
+					<onright condition="Window.IsActive(videolibrary) | Container.PlexContent(Channels)">777</onright>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="4-col" height="43">
+						<control type="label">
+							<posx>14</posx>
+							<posy>0</posy>
+							<width>3-col-gutter</width>
+							<font>menuTitle</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>unselected</textcolor>
+							<visible>!StringCompare(ListItem.Label,$LOCALIZE[44021])</visible>
+						</control>
+						<control type="label">
+							<posx>14</posx>
+							<posy>0</posy>
+							<width>3-col-gutter</width>
+							<font>menuTitle</font>
+							<label>Queue</label>
+							<textcolor>unselected</textcolor>
+							<visible>StringCompare(ListItem.Label,$LOCALIZE[44021])</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout width="4-col" height="43">
+						<control type="label">
+							<posx>1</posx>
+							<posy>0</posy>
+							<width>3-col-gutter</width>
+							<font>menuTitle</font>
+							<label>[ $INFO[ListItem.Label] ]</label>
+							<textcolor>selected</textcolor>
+							<visible>!StringCompare(ListItem.Label,$LOCALIZE[44021])</visible>
+						</control>
+						<control type="label">
+							<posx>1</posx>
+							<posy>0</posy>
+							<width>3-col-gutter</width>
+							<font>menuTitle</font>
+							<label>[ Queue ]</label>
+							<textcolor>selected</textcolor>
+							<visible>StringCompare(ListItem.Label,$LOCALIZE[44021])</visible>
+						</control>
+						<control type="label">
+							<posx>43</posx>
+							<posy>0</posy>
+							<width>3-col-gutter</width>
+							<font>menuTitle</font>
+							<textcolor>selected</textcolor>
+							<label>[ [LOWERCASE]$INFO[ListItem.Label2][/LOWERCASE] ]</label>
+							<visible>!IsEmpty(ListItem.Property(SectionNameCollision))</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="7">
+							<description>Search</description>
+							<label>$LOCALIZE[137]</label>
+							<onclick>Plex.ActivateWindow(10051)</onclick>
+							<visible>!Skin.HasSetting(HideSearch)</visible>
+						</item>
+						<item id="560">
+							<description>Channel1</description>
+							<label>$INFO[Skin.String(Channel1_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,plexserver://best/video/$INFO[Skin.String(Channel1_Name)]|containerSize=50&amp;containerStart=0,return)</onclick>
+							<thumb>$INFO[Skin.String(Channel1_Name_Art)]</thumb>
+							<visible>!isEmpty(Skin.String(Channel1_Name)) + !System.UserIsRestricted</visible>
+						</item>
+						<item id="561">
+							<description>Channel2</description>
+							<label>$INFO[Skin.String(Channel2_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,plexserver://best/video/$INFO[Skin.String(Channel2_Name)]|containerSize=50&amp;containerStart=0,return)</onclick>
+							<visible>!isEmpty(Skin.String(Channel2_Name)) + !System.UserIsRestricted</visible>
+						</item>
+						<item id="562">
+							<description>Channel3</description>
+							<label>$INFO[Skin.String(Channel3_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,plexserver://best/video/$INFO[Skin.String(Channel3_Name)]|containerSize=50&amp;containerStart=0,return)</onclick>
+							<visible>!isEmpty(Skin.String(Channel3_Name)) + !System.UserIsRestricted</visible>
+						</item>
+						<item id="563">
+							<description>Channel4</description>
+							<label>$INFO[Skin.String(Channel4_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel4_Name)],return)</onclick>
+							<onclick>Skin.SetString(dsp_helper,1)</onclick>
+							<visible>!isEmpty(Skin.String(Channel4_Name)) + !System.UserIsRestricted</visible>
+						</item>
+						<item id="564">
+							<description>Channel5</description>
+							<label>$INFO[Skin.String(Channel5_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel5_Name)],return)</onclick>
+							<onclick>Skin.SetString(dsp_helper,1)</onclick>
+							<visible>!isEmpty(Skin.String(Channel5_Name)) + !System.UserIsRestricted</visible>
+						</item>
+						<item id="565">
+							<description>Channel6</description>
+							<label>$INFO[Skin.String(Channel6_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel6_Name)],return)</onclick>
+							<onclick>Skin.SetString(dsp_helper,1)</onclick>
+							<visible>!isEmpty(Skin.String(Channel6_Name)) + !System.UserIsRestricted</visible>
+						</item>
+						<item id="566">
+							<description>Channel7</description>
+							<label>$INFO[Skin.String(Channel7_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel7_Name)],return)</onclick>
+							<onclick>Skin.SetString(dsp_helper,1)</onclick>
+							<visible>!isEmpty(Skin.String(Channel7_Name))</visible>
+						</item>
+						<item id="567">
+							<description>Channel8</description>
+							<label>$INFO[Skin.String(Channel8_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel8_Name)],return)</onclick>
+							<onclick>Skin.SetString(dsp_helper,1)</onclick>
+							<visible>!isEmpty(Skin.String(Channel8_Name))</visible>
+						</item>
+						<item id="568">
+							<description>Channel9</description>
+							<label>$INFO[Skin.String(Channel9_Name_Menu)]</label>
+							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel9_Name)],return)</onclick>
+							<onclick>Skin.SetString(dsp_helper,1)</onclick>
+							<visible>!isEmpty(Skin.String(Channel9_Name))</visible>
+						</item>
+						<item id="114">
+							<description>Update and Restart</description>
+							<label>Update</label>
+							<!--$LOCALIZE[40018]-->
+							<onclick>Plex.UpdateAndRestart</onclick>
+							<visible>System.UpdateIsAvailable</visible>
+						</item>
+					</content>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

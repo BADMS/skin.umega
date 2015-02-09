@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- lists -->
+	<include name="HomeLists">
+		<!-- lists -->
+		<control type="group" id="5000">
+		<animation type="visible">
+			<include>listSlideIn</include>
+		</animation>
+		<animation type="hidden">
+			<effect type="fade" start="100" end="0" time="300"/>
+		</animation>
+			<visible>[Control.IsVisible(11000) | Control.IsVisible(11001) | Control.IsVisible(11002) | Control.IsVisible(11003) | Control.IsVisible(11004) | Control.IsVisible(11005) | Control.IsVisible(11006) | Control.IsVisible(11007) | Control.IsVisible(12000)]</visible>
+			<posx>col-4-begin</posx>
+			<posy>row-2-begin</posy>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>14-col</width>
+				<font>pageTitle</font>
+				<label>[UPPERCASE]$INFO[Container(300).ListItem(0).Label][/UPPERCASE]</label>
+				<textcolor>selected</textcolor>
+			</control>
+			<!--source subtitle-->
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>Latest Content</label>
+				<textcolor>selected</textcolor>
+				<visible>Control.HasFocus(300)</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>$LOCALIZE[31045]</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7001).HasFocus</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>$LOCALIZE[41011]</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7002).HasFocus</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>$LOCALIZE[41012]</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7003).HasFocus</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>$LOCALIZE[134]</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7006).HasFocus</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>$LOCALIZE[31001]</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7007).HasFocus</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>$LOCALIZE[41013]</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7004).HasFocus</visible>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>45</posy>
+				<width>auto</width>
+				<font>regular</font>
+				<label>31045</label>
+				<textcolor>selected</textcolor>
+				<visible>ControlGroup(7005).HasFocus</visible>
+			</control>
+			<!-- Container for the new lists -->
+			<!-- "On Deck" & "Recently Added" -->
+			<control type="grouplist" id="5100">
+				<posx>0</posx>
+				<posy>158</posy>
+				<visible>true</visible>
+				<ondown>5200</ondown>
+				<onup>310</onup>
+				<onright>350</onright>
+				<onleft>350</onleft>
+				<orientation>vertical</orientation>
+				<!-- Recently Added (11000) -->
+				<control type="group" id="7001">
+					<control type="fixedlist" id="11000">
+						<posy>0</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<orientation>horizontal</orientation>
+						<ondown condition="Control.IsVisible(11001)">7002</ondown>
+						<ondown condition="!Control.IsVisible(11001)">300</ondown>
+						<onup>300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<itemlayout width="387" height="362">
+							<!-- album -->
+							<control type="group">
+								<visible>ListItem.Type(album)</visible>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffffffff</colordiffuse>
+								</control>
+								<control type="group">
+									<posx>0</posx>
+									<posy>272</posy>
+									<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>363</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>colors/black.png</texture>
+										<bordersize>0</bordersize>
+										<colordiffuse>77FFFFFF</colordiffuse>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[ListItem.Artist] &#xB7; $INFO[listitem.title]</label>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[listitem.year]</label>
+									</control>
+								</control>
+							</control>
+							<!-- photos -->
+							<control type="group">
+								<visible>ListItem.Type(photo)</visible>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffffffff</colordiffuse>
+								</control>
+								<control type="group">
+									<posx>0</posx>
+									<posy>272</posy>
+									<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>363</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>colors/black.png</texture>
+										<bordersize>0</bordersize>
+										<colordiffuse>77FFFFFF</colordiffuse>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[ListItem.Label]]</label>
+									</control>
+								</control>
+							</control>
+							<!-- movie & episode when both lists are visible -->
+							<control type="group">
+								<visible>!ListItem.Type(album) + !ListItem.Type(photo)</visible>
+								<control type="image">
+									<visible>ListItem.Type(movie)</visible>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffffffff</colordiffuse>
+								</control>
+								<control type="image">
+									<visible>ListItem.Type(episode) | ListItem.Type(season)</visible>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="group">
+									<posx>0</posx>
+									<posy>272</posy>
+									<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>363</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>colors/black.png</texture>
+										<bordersize>0</bordersize>
+										<colordiffuse>77FFFFFF</colordiffuse>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(movie)</visible>
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[listitem.title]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(episode)</visible>
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[ListItem.TVShowTitle]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(movie)</visible>
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(episode)</visible>
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[listitem.Season,S , &#xB7;] $INFO[listitem.Episode,E , &#xB7;] $INFO[listitem.title,, &#xB7;] $INFO[ListItem.Date]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(season)</visible>
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[listitem.Season,S]</label>
+									</control>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="387" height="362">
+							<!-- album -->
+							<control type="group">
+								<visible>ListItem.Type(album)</visible>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="group">
+									<posx>0</posx>
+									<posy>272</posy>
+									<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>363</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>colors/selected.png</texture>
+										<bordersize>0</bordersize>
+										<colordiffuse>ffFFFFFF</colordiffuse>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[ListItem.Artist] &#xB7; $INFO[listitem.title]</label>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.year]</label>
+									</control>
+								</control>
+							</control>
+							<!-- photos -->
+							<control type="group">
+								<visible>ListItem.Type(photo)</visible>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="group">
+									<posx>0</posx>
+									<posy>272</posy>
+									<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>363</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>colors/black.png</texture>
+										<bordersize>0</bordersize>
+										<colordiffuse>77FFFFFF</colordiffuse>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[ListItem.Label]]</label>
+									</control>
+								</control>
+							</control>
+							<!-- Movies -->
+							<control type="group">
+								<visible>!ListItem.Type(album) + !ListItem.Type(photo)</visible>
+								<control type="image">
+									<visible>ListItem.Type(movie)</visible>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="image">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<aspectratio>scale</aspectratio>
+									<texture fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+									<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="group">
+									<posx>0</posx>
+									<posy>272</posy>
+									<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>363</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>colors/selected.png</texture>
+										<bordersize>0</bordersize>
+										<colordiffuse>ffFFFFFF</colordiffuse>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(movie)</visible>
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.title]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(episode)</visible>
+										<posx>12</posx>
+										<posy>-11</posy>
+										<width>339</width>
+										<font>itemTitleSmallCondensed</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[ListItem.TVShowTitle]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(movie)</visible>
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(episode)</visible>
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.Season,S , &#xB7;] $INFO[listitem.Episode,E , &#xB7;] $INFO[listitem.title,, &#xB7;] $INFO[ListItem.Date]</label>
+									</control>
+									<control type="label">
+										<visible>ListItem.Type(season)</visible>
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>black</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.Season,S]</label>
+									</control>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+				<!-- On Deck (11001) -->
+				<control type="group" id="7002">
+					<control type="fixedlist" id="11001">
+						<posy>200</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<orientation>horizontal</orientation>
+						<ondown>300</ondown>
+						<onup condition="Control.IsVisible(11000)">7001</onup>
+						<onup condition="!Control.IsVisible(11000)">300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<posx>0</posx>
+						<itemlayout width="387" height="362">
+							<!-- movie & episode when both lists are visible -->
+							<control type="image">
+								<visible>isempty(listitem.Episode)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffffffff</colordiffuse>
+							</control>
+							<control type="image">
+								<visible>ListItem.Type(episode)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[ListItem.TVShowTitle]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.Season,S , &#xB7;] $INFO[listitem.Episode,E , &#xB7;] $INFO[listitem.title]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="387" height="362">
+							<control type="image">
+								<visible>ListItem.Type(movie)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<visible>ListItem.Type(episode)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[ListItem.TVShowTitle]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.Season,S , &#xB7;] $INFO[listitem.Episode,E , &#xB7;] $INFO[listitem.title]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+			<!-- "Watch Later" & "Recommendations" -->
+			<control type="grouplist" id="5200">
+				<posx>0</posx>
+				<posy>158</posy>
+				<visible>true</visible>
+				<ondown>5200</ondown>
+				<onup>310</onup>
+				<onright>350</onright>
+				<onleft>350</onleft>
+				<orientation>vertical</orientation>
+				<!-- On Deck (11003) -->
+				<control type="group" id="7003">
+					<control type="fixedlist" id="11003">
+						<posy>0</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<orientation>horizontal</orientation>
+						<ondown condition="Control.IsVisible(11004)">7004</ondown>
+						<ondown condition="!Control.IsVisible(11004)">300</ondown>
+						<onup>300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<posx>0</posx>
+						<posy>129</posy>
+						<width>860</width>
+						<height>330</height>
+						<itemlayout width="387" height="362">
+							<!-- movie & episode when both lists are visible -->
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="387" height="362">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+				<!-- Recommended -->
+				<control type="group" id="7005">
+					<control type="fixedlist" id="11004">
+						<posy>200</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<orientation>horizontal</orientation>
+						<ondown condition="Control.IsVisible(11004)">7003</ondown>
+						<ondown condition="!Control.IsVisible(11004)">300</ondown>
+						<onup>300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<posx>0</posx>
+						<posy>129</posy>
+						<width>860</width>
+						<height>330</height>
+						<itemlayout width="387" height="362">
+							<!-- movie & episode when both lists are visible -->
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="387" height="362">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+			<!-- "Recently Used" -->
+			<control type="grouplist" id="5300">
+				<posx>0</posx>
+				<posy>158</posy>
+				<visible>true</visible>
+				<!-- RecentlyAccessed(11002) -->
+				<control type="group" id="7004">
+					<control type="panel" id="11002">
+						<posy>0</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<ondown>300</ondown>
+						<onup>300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<orientation>vertical</orientation>
+						<itemlayout width="312" height="366">
+							<!-- movie & episode when both lists are visible -->
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<aspectratio>stretch</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>276</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>276</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>252</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>252</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="300" height="366">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<aspectratio>stretch</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>276</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>276</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>252</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>252</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+			<!-- "Playlists" -->
+			<control type="grouplist" id="5400">
+				<posx>0</posx>
+				<posy>158</posy>
+				<visible>true</visible>
+				<!-- All (11005) -->
+				<control type="group" id="7005">
+					<control type="panel" id="11005">
+						<posy>0</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<ondown>300</ondown>
+						<onup>300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<orientation>vertical</orientation>
+						<itemlayout width="312" height="366">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<aspectratio>stretch</aspectratio>
+								<texture fallback="colors/black.png" border="0">$VAR[playlistImageType]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>276</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>276</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>252</width>
+									<font>itemTitleSmall</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[ListItem.Label]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="300" height="366">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<aspectratio>stretch</aspectratio>
+								<texture fallback="colors/black.png" border="0">$VAR[playlistImageType]</texture>
+								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>276</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>276</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>252</width>
+									<font>itemTitleSmall</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[ListItem.Label]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+			<!-- "Play Nows" -->
+			<control type="grouplist" id="5500">
+				<posx>0</posx>
+				<posy>158</posy>
+				<visible>true</visible>
+				<ondown>5200</ondown>
+				<onup>310</onup>
+				<onright>350</onright>
+				<onleft>350</onleft>
+				<orientation>vertical</orientation>
+				<!-- Video (11007) -->
+				<control type="group" id="7007">
+					<control type="fixedlist" id="11007">
+						<posy>0</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<onup>300</onup>
+						<onright>-</onright>
+						<onleft>300</onleft>
+						<orientation>horizontal</orientation>
+						<ondown condition="Control.IsVisible(11006)">7006</ondown>
+						<ondown condition="!Control.IsVisible(11006)">300</ondown>
+						<itemlayout width="387" height="362">
+							<!-- movie & episode when both lists are visible -->
+							<control type="image">
+								<visible>ListItem.Type(movie)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffffffff</colordiffuse>
+							</control>
+							<control type="image">
+								<visible>ListItem.Type(episode)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<visible>!ListItem.Type(episode) + !ListItem.Type(movie)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie) | ![ListItem.Type(episode) | ListItem.Type(season)]</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[ListItem.TVShowTitle]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie) | ![ListItem.Type(episode) | ListItem.Type(season)]</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.year]$INFO[listitem.duration, &#xB7; , mins]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(season)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.season]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.Season,S , &#xB7;] $INFO[listitem.Episode,E , &#xB7;] $INFO[listitem.title]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="387" height="362">
+							<control type="image">
+								<visible>ListItem.Type(movie)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<visible>ListItem.Type(episode)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<visible>!ListItem.Type(episode) + !ListItem.Type(movie)</visible>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie) | !ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[ListItem.TVShowTitle]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(movie) | ![ListItem.Type(episode) | ListItem.Type(season)]</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year]$INFO[listitem.duration, &#xB7; , mins]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(season)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.season]</label>
+								</control>
+								<control type="label">
+									<visible>ListItem.Type(episode)</visible>
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.Season,S , &#xB7;] $INFO[listitem.Episode,E , &#xB7;] $INFO[listitem.title]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+				<!-- Music (11006) -->
+				<control type="group" id="7006">
+					<control type="fixedlist" id="11006">
+						<onleft>300</onleft>
+						<posy>200</posy>
+						<width>22-col</width>
+						<height>768</height>
+						<orientation>horizontal</orientation>
+						<ondown>300</ondown>
+						<onup condition="Control.IsVisible(11007)">7007</onup>
+						<onup condition="!Control.IsVisible(11007)">300</onup>
+						<onright>-</onright>
+						<itemlayout width="387" height="362">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffffffff</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/black.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>77FFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[ListItem.Artist] &#xB7; $INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>selected</textcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="387" height="362">
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<aspectratio>scale</aspectratio>
+								<texture fallback="colors/black.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+								<bordersize>3</bordersize>
+								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>0</posx>
+								<posy>272</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>64</height>
+									<aspectratio>stretch</aspectratio>
+									<texture>colors/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>-11</posy>
+									<width>339</width>
+									<font>itemTitleSmallCondensed</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[ListItem.Artist] &#xB7; $INFO[listitem.title]</label>
+								</control>
+								<control type="label">
+									<posx>12</posx>
+									<posy>18</posy>
+									<width>339</width>
+									<font>smallMedium</font>
+									<textcolor>black</textcolor>
+									<shadowcolor>-</shadowcolor>
+									<label>$INFO[listitem.year,, &#xB7; ]$INFO[listitem.duration,, mins]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+			</control>
+		</control>
+		<!-- Item Full Info -->
+	</include>
+</includes>

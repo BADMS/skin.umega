@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="0">
+	<defaultcontrol always="true">301</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<onload>Skin.SetString(SectionType,home)</onload>
+	<onload>Skin.SetString(AspectRatio,$INFO[Skin.AspectRatio])</onload>
+	<onload>Skin.Reset(dsp_helper)</onload>
+	<onunload>Skin.Reset(SectionType)</onunload>
+	<controls>
+		<!-- PHT NoFocus Bug Workaround -->
+		<control type="button" id="301">
+			<posx>-20</posx>
+			<posy>-20</posy>
+			<width>0</width>
+			<height>0</height>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<onfocus>SetFocus(300)</onfocus>
+		</control>
+		<!--default background-->
+		<include>globalBackground</include>
+		<include>HomeMenuDefault</include>
+		<include>HomeLists</include>
+		<include>CurrentUserAvatar</include>
+		<include>musicOverlay</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>Home.xml</label>
+		</control>
+	</controls>
+</window>

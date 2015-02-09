@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!--default text list 1 row-->
+	<include name="viewMusicList">
+		<control type="group" id="777">
+			<posx>0</posx>
+			<posy>3-row</posy>
+            <!--focussed item detail-->
+            <control type="group">
+                <posx>14-col</posx>
+                <posy>12</posy>
+                <!--content is movies / tvshows / seasons: show larger thumbnail-->
+                <control type="group">
+                    <visible>container.content(channel)</visible>
+                    <animation type="windowopen">
+                        <effect type="fade" start="0" end="100" time="300" delay="700"/>
+                        <effect type="slide" start="3-col" end="0" center="auto" tween="cubic" easing="out" time="400" delay="700"/>
+                    </animation>
+                    <animation type="windowclose">
+                        <effect type="fade" start="100" end="0" time="300" delay="300"/>
+                        <effect type="slide" start="0" end="3-col" tween="cubic" easing="out" time="400" delay="300"/>
+                    </animation>
+                    <animation type="visible">
+                        <include>listSlideIn</include>
+                    </animation>
+                    <control type="group">
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>6-col</width>
+                            <height>576</height>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture background="true" fallback="candy/Space-large-invader.sh-600x600.png" border="0">$INFO[ListItem.thumb]</texture>
+                            <bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+                            <bordersize>3</bordersize>
+                            <fadetime>200</fadetime>
+                        </control>
+                    </control>
+                </control>
+            </control>
+			<control type="panel" id="51">
+				<visible>!control.isvisible(9998) + !container.content(artists) + !container.content(genres) + !container.content(albums) + !container.content(songs) + !container.content(addons)</visible>
+				<posx>0</posx>
+				<posy>4</posy>
+				<width>12-col</width>
+				<height>12-row</height>
+				<onleft>300</onleft>
+				<onright>60</onright>
+				<ondown>51</ondown>
+				<onup>51</onup>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="sine" easing="inout">200</scrolltime>
+				<itemlayout width="12-col" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>12-col</width>
+						<height>53</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="24,0,24,0">UIControls/listitemNF.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>99FFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+					</control>
+					<control type="label">
+						<posx>1-col</posx>
+						<posy>0</posy>
+						<width>7-col-gutter</width>
+						<font>itemTitle</font>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>12-col-gutter</posx>
+						<posy>17</posy>
+						<width>4-col-gutter</width>
+						<font>smallStrong</font>
+						<align>right</align>
+						<height>24</height>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$VAR[itemDetail]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="12-col" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>12-col</width>
+						<height>53</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="24,0,24,0">UIControls/listitemFO.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+					</control>
+					<control type="label">
+						<posx>1-col</posx>
+						<posy>0</posy>
+						<width>7-col-gutter</width>
+						<font>itemTitle</font>
+						<textcolor>black</textcolor>
+						<selectedcolor>black</selectedcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>12-col-gutter</posx>
+						<posy>17</posy>
+						<width>4-col-gutter</width>
+						<font>smallStrong</font>
+						<align>right</align>
+						<height>24</height>
+						<textcolor>black</textcolor>
+						<selectedcolor>black</selectedcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$VAR[itemDetail]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<!--Artist list-->
+	<include name="viewArtistList">
+		<control type="group" id="777">
+			<posx>0</posx>
+			<posy>3-row</posy>
+			<control type="panel" id="53">
+				<visible>container.content(artists) | container.content(genres)</visible>
+				<posx>0</posx>
+				<posy>4</posy>
+				<width>21-col</width>
+				<height>12-row</height>
+				<onleft>300</onleft>
+				<onright>60</onright>
+				<ondown>53</ondown>
+				<onup>53</onup>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="sine" easing="inout">200</scrolltime>
+				<itemlayout width="7-col" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>7-col-gutter</width>
+						<height>53</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="24,0,24,0">UIControls/listitemNF.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>99FFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+					</control>
+					<control type="label">
+						<posx>1-col</posx>
+						<posy>0</posy>
+						<width>5-col</width>
+						<font>itemTitle</font>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="7-col" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>7-col-gutter</width>
+						<height>53</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="24,0,24,0">UIControls/listitemFO.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+					</control>
+					<control type="label">
+						<posx>1-col</posx>
+						<posy>0</posy>
+						<width>5-col</width>
+						<font>itemTitle</font>
+						<textcolor>black</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<!--Grid View-->
+	<include name="viewMusicGrid">
+		<control type="group" id="777">
+			<posx>0</posx>
+			<posy>154</posy>
+			<control type="group">
+				<posy>379</posy>
+				<posx>-12</posx>
+				<control type="image">
+					<width>586</width>
+					<height>324</height>
+					<fadetime>300</fadetime>
+					<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+					<texture fallback="default-thumb-big.png" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+					<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+					<bordersize>3</bordersize>
+				</control>
+				<control type="label">
+					<posx>624</posx>
+					<posy>-13</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>pageTitle</font>
+					<textcolor>selected</textcolor>
+					<label>$INFO[Container.Property(parentTitle)]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<posx>624</posx>
+					<posy>32</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>regular</font>
+					<textcolor>selected</textcolor>
+					<label>$INFO[ListItem.Property(LeafCount)] $LOCALIZE[32106]</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="textbox">
+					<posx>624</posx>
+					<posy>94</posy>
+					<font>textboxExtraLeading</font>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<textcolor>selected</textcolor>
+					<height>238</height>
+					<label>$INFO[ListItem.Property(summary)]</label>
+					<autoscroll delay="10000" time="1000" repeat="10000"/>
+					<shadowcolor>-</shadowcolor>
+					<visible>IntegerGreaterThan(Container.NumItems,1)</visible>
+				</control>
+				<control type="textbox">
+					<posx>624</posx>
+					<posy>94</posy>
+					<font>textboxExtraLeading</font>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<textcolor>selected</textcolor>
+					<height>238</height>
+					<label>$INFO[Container.Property(summary)]</label>
+					<autoscroll delay="10000" time="1000" repeat="10000"/>
+					<shadowcolor>-</shadowcolor>
+					<visible>!IntegerGreaterThan(Container.NumItems,1)</visible>
+				</control>
+				<visible>container.content(albums) | container.content(addons)</visible>
+			</control>
+			<control type="fixedlist" id="55">
+				<visible>container.content(albums) | container.content(addons)</visible>
+				<posx>-12</posx>
+				<posy>4</posy>
+				<width>22-col</width>
+				<height>744</height>
+				<onleft>300</onleft>
+				<onright>60</onright>
+				<ondown condition="Skin.String(showinfos,1)">Skin.Reset(showinfos)</ondown>
+				<ondown condition="!Skin.String(showinfos,1)">Skin.SetString(showinfos,1)</ondown>
+				<onup condition="!Skin.String(showinfos,1)">300</onup>
+				<onup condition="Skin.String(showinfos,1)">Skin.Reset(showinfos)</onup>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="sine" easing="inout">200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout width="312" height="366">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>276</width>
+						<height>273</height>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" fallback="colors/offblack.png" border="0">$INFO[Listitem.thumb]</texture>
+						<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+						<bordersize>3</bordersize>
+						<colordiffuse>ffFFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<posx>0</posx>
+						<posy>276</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>276</width>
+							<height>64</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>colors/black.png</texture>
+							<bordersize>0</bordersize>
+							<colordiffuse>77FFFFFF</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>-11</posy>
+							<width>252</width>
+							<font>itemTitleSmallCondensed</font>
+							<textcolor>selected</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>18</posy>
+							<width>252</width>
+							<font>smallMedium</font>
+							<textcolor>selected</textcolor>
+							<label>$INFO[ListItem.artist] $INFO[ListItem.Year,&#xB7; ,]</label>
+						</control>
+						<control type="label">
+							<visible>container.content(addons)</visible>
+							<posx>12</posx>
+							<posy>18</posy>
+							<width>252</width>
+							<font>smallMedium</font>
+							<textcolor>selected</textcolor>
+							<label>$INFO[ListItem.Property(Addon.summary)]</label>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="312" height="366">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>276</width>
+						<height>273</height>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" fallback="colors/offblack.png" border="0">$INFO[Listitem.thumb]</texture>
+						<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
+						<bordersize>3</bordersize>
+						<colordiffuse>ffFFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<posx>0</posx>
+						<posy>276</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>276</width>
+							<height>64</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>colors/selected.png</texture>
+							<bordersize>0</bordersize>
+							<colordiffuse>ffFFFFFF</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>-11</posy>
+							<width>252</width>
+							<font>itemTitleSmallCondensed</font>
+							<textcolor>black</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>18</posy>
+							<width>252</width>
+							<font>smallMedium</font>
+							<textcolor>black</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.artist] $INFO[ListItem.Year,&#xB7; ,]</label>
+						</control>
+						<control type="label">
+							<visible>container.content(addons)</visible>
+							<posx>12</posx>
+							<posy>18</posy>
+							<width>252</width>
+							<font>smallMedium</font>
+							<textcolor>black</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(Addon.summary)]</label>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="group">
+			<!--fanart / coverart if available-->
+			<visible>skin.string(showinfos,1) + container.content(albums)</visible>
+			<control type="group">
+				<posx>-312</posx>
+				<posy>-95</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<include>FullScreenScaled</include>
+					<texture>colors/black.png</texture>
+					<colordiffuse>ffffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<!--fanart-->
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<include>FullScreenScaled</include>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture fallback="colors/black.png">$INFO[Listitem.art(fanart)]</texture>
+					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
+				</control>
+				<!--coverart-->
+				<control type="image">
+					<visible>!isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1)</visible>
+					<posx>col-3-begin</posx>
+					<posy>2-row</posy>
+					<width>12-col</width>
+					<height>12-col</height>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture fallback="colors/black.png">$INFO[Listitem.thumb]</texture>
+					<animation effect="rotateY" end="-10" center="auto,auto" time="500" condition="true">Visible</animation>
+					<animation effect="rotateY" end="-10" center="auto,auto" time="0" condition="true">Hidden</animation>
+					<animation effect="rotateY" end="-10" center="auto,auto" time="500" condition="true">WindowOpen</animation>
+					<animation effect="rotateY" end="-10" center="auto,auto" time="0" condition="true">WindowClose</animation>
+				</control>
+				<!--vignette-->
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<include>FullScreenScaled</include>
+					<texture>vignette.png</texture>
+					<colordiffuse>ffffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+			</control>
+			<!--content is artist-->
+			<control type="group">
+				<visible>isempty(ListItem.artist) + isempty(ListItem.year) | !IntegerGreaterThan(Container.NumItems,1)</visible>
+				<posx>1047</posx>
+				<posy>0</posy>
+				<animation type="Conditional" condition="Skin.String(showinfos,1)">
+					<effect type="fade" start="0" end="100" time="300" delay="300"/>
+					<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
+				</animation>
+				<animation type="Conditional" condition="Skin.String(showinfos,0)">
+					<effect type="fade" start="100" end="0" time="300" delay="300"/>
+					<effect type="slide" start="0" end="800" tween="cubic" easing="out" time="400" delay="300"/>
+				</animation>
+				<!--overlay-->
+				<control type="image">
+					<posx>-12</posx>
+					<posy>0</posy>
+					<width>573</width>
+					<height>985</height>
+					<texture>colors/black.png</texture>
+					<colordiffuse>ccffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>-12</posx>
+					<posy>-95</posy>
+					<width>573</width>
+					<height>198</height>
+					<texture>colors/selected.png</texture>
+					<colordiffuse>ffffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<!--content description-->
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>pageTitle</font>
+					<textcolor>black</textcolor>
+					<label>$INFO[Container.Property(parentTitle)]</label>
+					<scroll>true</scroll>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>42</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>itemTitleSmall</font>
+					<textcolor>black</textcolor>
+					<label>$INFO[ListItem.genre]</label>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<!--synopsis-->
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>132</posy>
+					<font>textboxExtraLeading</font>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<textcolor>selected</textcolor>
+					<height>528</height>
+					<label>[B]$INFO[Container.Property(summary)][/B]</label>
+					<autoscroll delay="10000" time="1000" repeat="10000"/>
+					<shadowcolor>-</shadowcolor>
+				</control>
+			</control>
+			<!--content is album-->
+			<control type="group">
+				<visible>!isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1)</visible>
+				<posx>1047</posx>
+				<posy>0</posy>
+				<animation type="Windowopen">
+					<effect type="fade" start="0" end="100" time="300" delay="300"/>
+					<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
+				</animation>
+				<!--overlay-->
+				<control type="image">
+					<posx>-12</posx>
+					<posy>0</posy>
+					<width>573</width>
+					<height>985</height>
+					<texture>colors/black.png</texture>
+					<colordiffuse>ccffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>-12</posx>
+					<posy>-95</posy>
+					<width>573</width>
+					<height>198</height>
+					<texture>colors/selected.png</texture>
+					<colordiffuse>ffffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<!--title and synopsis-->
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>8-col-gutter</width>
+						<align>left</align>
+						<font>pageTitle</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.album]</label>
+						<scroll>true</scroll>
+						<shadowcolor>-</shadowcolor>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>42</posy>
+						<width>8-col-gutter</width>
+						<align>left</align>
+						<font>itemTitleSmall</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[listitem.artist]$INFO[Listitem.year, - ,]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+					<!--synopsis-->
+					<control type="textbox">
+						<posx>0</posx>
+						<posy>132</posy>
+						<font>textboxExtraLeading</font>
+						<width>8-col-gutter</width>
+						<align>left</align>
+						<textcolor>selected</textcolor>
+						<height>528</height>
+						<label>[B]$INFO[ListItem.Property(summary)][/B]</label>
+						<autoscroll delay="10000" time="1000" repeat="10000"/>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<posx>col-13-begin</posx>
+			<posy>911</posy>
+			<include>keysListFooter</include>
+		</control>
+	</include>
+	<!--Song List View-->
+	<include name="viewSongList">
+		<control type="group" id="777">
+			<visible>container.content(songs)</visible>
+			<posx>0</posx>
+			<posy>3-row</posy>
+			<animation type="visible">
+				<include>listSlideIn</include>
+			</animation>
+			<animation type="hidden">
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
+			<!--album thumb and info-->
+			<control type="group">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>5-col</width>
+					<height>5-col</height>
+					<aspectratio>stretch</aspectratio>
+					<texture fallback="colors/offblack.png" border="0">$INFO[ListItem.art(thumb)]</texture>
+					<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+					<bordersize>3</bordersize>
+					<fadetime>500</fadetime>
+				</control>
+				<control type="label">
+					<posx>-12</posx>
+					<posy>354</posy>
+					<width>5-col</width>
+					<font>smallStrong</font>
+					<textcolor>selected</textcolor>
+					<shadowcolor>-</shadowcolor>
+					<label fallback="31114">$INFO[ListItem.Genre]</label>
+					<height>54</height>
+					<font>menuTitle</font>
+					<textoffsetx>12</textoffsetx>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>386</posy>
+					<width>5-col</width>
+					<font>regularStrong</font>
+					<textcolor>selected</textcolor>
+					<shadowcolor>-</shadowcolor>
+					<label fallback="31115">$INFO[ListItem.Year]</label>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>container.content(songs)</visible>
+			<posx>0</posx>
+			<posy>3-row</posy>
+			<animation type="visible">
+				<effect type="fade" start="0" end="100" time="300" delay="700"/>
+				<effect type="slide" start="3-col" end="0" center="auto" tween="cubic" easing="out" time="400" delay="700"/>
+			</animation>
+			<animation type="hidden">
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
+			<!--song listing-->
+			<control type="panel" id="56">
+				<visible>container.content(songs)</visible>
+				<posx>6-col</posx>
+				<posy>4</posy>
+				<width>14-col</width>
+				<height>12-row</height>
+				<onleft>300</onleft>
+				<onright>60</onright>
+				<ondown>56</ondown>
+				<onup>56</onup>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="sine" easing="inout">200</scrolltime>
+				<itemlayout width="14-col" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>14-col</width>
+						<height>53</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="24,0,24,0">UIControls/listitemNF.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>99FFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="masks/circle.png" border="0">colors/offblack.png</texture>
+					</control>
+					<control type="label">
+						<visible>ListItem.IsPlaying</visible>
+						<posx>19</posx>
+						<posy>-1</posy>
+						<width>10-col-gutter</width>
+						<font>symbol</font>
+						<textcolor>selected</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>></label>
+				</control>
+				<control type="label">
+					<posx>1-col</posx>
+					<posy>0</posy>
+					<width>9-col</width>
+					<font>itemTitle</font>
+					<textcolor>selected</textcolor>
+					<shadowcolor>-</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<posx>88r</posx>
+					<posy>0</posy>
+					<width>2-col-gutter</width>
+					<align>right</align>
+					<font>itemTitle</font>
+					<textcolor>selected</textcolor>
+					<shadowcolor>-</shadowcolor>
+					<label>$INFO[ListItem.DurationStr]</label>
+				</control>
+				<control type="label">
+					<posx>13-col</posx>
+					<posy>0</posy>
+					<width>7-col-gutter</width>
+					<font>itemTitle</font>
+					<textcolor>selected</textcolor>
+					<shadowcolor>-</shadowcolor>
+					<label fallback="&#xB7;&#xB7;&#xB7;">$INFO[Listitem.Property(hasUserRating)]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="14-col" height="1-row">
+				<control type="image">
+					<posx>0</posx>
+					<posy>2</posy>
+					<width>14-col</width>
+					<height>53</height>
+					<aspectratio>stretch</aspectratio>
+					<texture border="24,0,24,0">UIControls/listitemFO.png</texture>
+					<bordersize>0</bordersize>
+					<colordiffuse>FFFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>4</posx>
+					<posy>4</posy>
+					<width>48</width>
+					<height>48</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="masks/circle.png" border="0">colors/offblack.png</texture>
+				</control>
+				<control type="label">
+					<visible>ListItem.IsPlaying</visible>
+					<posx>19</posx>
+					<posy>-1</posy>
+					<width>10-col-gutter</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>-</shadowcolor>
+					<label>></label>
+			</control>
+			<control type="label">
+				<posx>1-col</posx>
+				<posy>0</posy>
+				<width>9-col</width>
+				<font>itemTitle</font>
+				<textcolor>black</textcolor>
+				<selectedcolor>black</selectedcolor>
+				<shadowcolor>-</shadowcolor>
+				<label>$INFO[ListItem.Title]</label>
+			</control>
+			<control type="label">
+				<posx>88r</posx>
+				<posy>0</posy>
+				<width>2-col-gutter</width>
+				<align>right</align>
+				<font>itemTitle</font>
+				<textcolor>black</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<label>$INFO[ListItem.DurationStr]</label>
+			</control>
+			<control type="label">
+				<posx>13-col</posx>
+				<posy>0</posy>
+				<width>7-col-gutter</width>
+				<font>itemTitle</font>
+				<textcolor>black</textcolor>
+				<selectedcolor>black</selectedcolor>
+				<shadowcolor>-</shadowcolor>
+				<label fallback="&#xB7;&#xB7;&#xB7;">$INFO[Listitem.Property(hasUserRating)]</label>
+			</control>
+		</focusedlayout>
+	</control>
+</control>
+</include>
+</includes>

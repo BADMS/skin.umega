@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.µmega" version="1.0" name="μmega" provider-name="BADAAS">
+	<requires>
+		<import addon="xbmc.gui" version="4.0.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" defaultthemename="textures.xbt" debugging="false">
+	    <res width="1920" height="1080" aspect="16:9" default="true" folder="1080" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">μmega by BADAAS</summary>
+		<description lang="en">"μmega" is the default skin for leather clad nymphettes. AKA Maximinimalism, end of.</description>
+		<disclaimer lang="en">"μmega" is the default skin, removing it may cause a rash.</disclaimer>
+		<platform>all</platform>
+		<website>www.μmega.com</website>
+		<forum>forums.μmega.com</forum>
+		<email>contact@μmega.com</email>
+	</extension>
+</addon>

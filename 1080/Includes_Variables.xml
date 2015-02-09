@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Skin variables-->
+<includes>
+	<variable name="playlistImageType">
+		<value condition="ListItem.Type(musicplaylist) | ListItem.Type(musicplayqueue)">$INFO[ListItem.CompositeImage(width=720;height=720;cols=2;rows=2)]</value>
+		<value condition="ListItem.Type(videoplaylist) | ListItem.Type(videoplayqueue) | Skin.String(SectionType,sharedcontent)">$INFO[ListItem.CompositeImage(width=720;height=720;cols=3;rows=2)]</value>
+	</variable>
+	<variable name="cListItemOverlay">
+		<value condition="!ListItem.Status(Unwatched) + !ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+	</variable>
+	<variable name="vListItemOverlay">
+		<value condition="ListItem.Status(Unwatched) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="!ListItem.Status(Unwatched) + !ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">E</value>
+	</variable>
+    <variable name="seekSpeed">
+        <value condition="Player.Forwarding2x">FF 2x</value>
+        <value condition="Player.Forwarding4x">FF 4x</value>
+        <value condition="Player.Forwarding8x">FF 8x</value>
+        <value condition="Player.Forwarding16x">FF 16x</value>
+        <value condition="Player.Forwarding32x">FF 32x</value>
+        <value condition="Player.Rewinding2x">RW 2x</value>
+        <value condition="Player.Rewinding4x">RW 4x</value>
+        <value condition="Player.Rewinding8x">RW 8x</value>
+        <value condition="Player.Rewinding16x">RW 16x</value>
+        <value condition="Player.Rewinding32x">RW 32x</value>
+    </variable>
+    <!--fanart selection-->
+    <variable name="fanartType">
+        <value condition="Container.Content(empty)">plexserver://best:32400/library/arts</value>
+        <value condition="!IsEmpty(ListItem.Property(Fanart_Image)) + !Skin.SetString(SectionType,home)">$INFO[ListItem.Property(Fanart_Image)]</value>
+        <value condition="Container.PlexContent(Clips)">$INFO[ListItem.Art(thumb)]</value>
+    </variable>
+    <!--folder titles-->
+    <variable name="listTitle">
+		<value condition="Skin.String(SectionType,sharedcontent)">[UPPERCASE]$LOCALIZE[41016][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playlists)">[UPPERCASE]$LOCALIZE[41009][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playqueue) + [Container.PlexContent(Episodes) | Container.PlexContent(Movies) | Container.PlexContent(Clips)]">[UPPERCASE]Video $LOCALIZE[31097][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playqueue) + Container.PlexContent(Movie)">[UPPERCASE]Video $LOCALIZE[31097][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playqueue) + ![Container.PlexContent(Episodes) + Container.PlexContent(Movies) + Container.PlexContent(Clips)]">[UPPERCASE]Song $LOCALIZE[31097][/UPPERCASE]</value>
+		<value condition="Container.PlexContent(TVShows) + StringCompare(Container.Property(PlexFilter),all)">[UPPERCASE]$LOCALIZE[31008][/UPPERCASE] [COLOR accented]ALL[/COLOR]</value>
+		<value condition="Container.PlexContent(Episodes) + StringCompare(Container.Property(PlexFilter),recentlyViewed)">[UPPERCASE]$LOCALIZE[20360][/UPPERCASE] [COLOR accented]RECENTLY VIEWED[/COLOR]</value>
+		<value condition="Container.PlexContent(Episodes) + StringCompare(Container.Property(PlexFilter),newest)">[UPPERCASE]$LOCALIZE[20360][/UPPERCASE] [COLOR accented]RECENTLY AIRED[/COLOR]</value>
+		<value condition="Container.PlexContent(Episodes) + StringCompare(Container.Property(PlexFilter),onDeck)">[UPPERCASE]$LOCALIZE[20360][/UPPERCASE] [COLOR accented]ON DECK[/COLOR]</value>
+		<value condition="Container.PlexContent(Episodes) + StringCompare(Container.Property(PlexFilter),recentlyAdded)">[UPPERCASE]$LOCALIZE[20360][/UPPERCASE] [COLOR accented]RECENTLY ADDED[/COLOR]</value>
+		<value condition="Container.PlexContent(TVShows) + StringCompare(Container.Property(PlexFilter),recentlyViewedShows)">[UPPERCASE]$LOCALIZE[31008][/UPPERCASE] [COLOR accented]RECENTLY VIEWED[/COLOR]</value>
+		<value condition="Container.PlexContent(Seasons)">[UPPERCASE]$LOCALIZE[31021][/UPPERCASE]</value>
+		<value condition="Container.PlexContent(Movies) + StringCompare(Container.Property(PlexFilter),all)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE] [COLOR accented]ALL[/COLOR]</value>
+		<value condition="Container.PlexContent(Movies) + StringCompare(Container.Property(PlexFilter),recentlyViewed)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE] [COLOR accented]RECENTLY VIEWED[/COLOR]</value>
+		<value condition="Container.PlexContent(Movies) + StringCompare(Container.Property(PlexFilter),onDeck)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE] [COLOR accented]ON DECK[/COLOR]</value>
+		<value condition="Container.PlexContent(Albums) + StringCompare(Container.Property(PlexFilter),recentlyAdded)">[UPPERCASE]$LOCALIZE[132][/UPPERCASE] [COLOR accented]RECENTLY ADDED[/COLOR]</value>
+		<value condition="Container.PlexContent(Albums) + StringCompare(Container.Property(PlexFilter),albums)">[UPPERCASE]$LOCALIZE[132][/UPPERCASE] [COLOR accented]ALL[/COLOR]</value>
+		<value condition="Container.PlexContent(Artists) + StringCompare(Container.Property(PlexFilter),all)">[UPPERCASE]$LOCALIZE[133][/UPPERCASE] [COLOR accented]ALL[/COLOR]</value>
+		<value condition="Container.PlexContent(Songs)">[UPPERCASE]$LOCALIZE[134][/UPPERCASE]</value>
+		<value condition="Container.Content(genres)">[UPPERCASE]$LOCALIZE[31131][/UPPERCASE]</value>
+		<value condition="Container.PlexContent(Photos)">[UPPERCASE]$LOCALIZE[1213][/UPPERCASE]</value>
+		<value condition="ListItem.Type(clip)">[UPPERCASE]$LOCALIZE[31113][/UPPERCASE]</value>
+		<value condition="Container.PlexContent(Channels)">[UPPERCASE]$LOCALIZE[31970][/UPPERCASE]</value>
+		<value condition="Container.PlexContent(Channel)">[UPPERCASE]$INFO[Container.FirstTitle][/UPPERCASE]</value>
+		<value condition="Container.PlexContent(Clips)">[UPPERCASE]$LOCALIZE[31113][/UPPERCASE]</value>
+		<value condition="Window.IsActive(1) + !IsEmpty(Container.SecondTitle)">[UPPERCASE]$LOCALIZE[31970][/UPPERCASE]</value>
+    </variable>
+    <variable name="listSubTitle">
+        <value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
+        <value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
+        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31013]</value>
+        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + SubString(skin.string(showRecentMusicItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
+    </variable>
+    <!--list view item detail / subheader-->
+    <variable name="itemDetail">
+        <value condition="Container.PlexContent(Movies) + IntegerGreaterThan(Listitem.Property(mediaTag-videoResolution),1000)">$INFO[Listitem.duration,,mins ] $INFO[Listitem.Property(mediaTag-videoResolution),&#xB7; HD , ]</value>
+        <value condition="Container.PlexContent(Movies) + IntegerGreaterThan(Listitem.Property(mediaTag-videoResolution),700)">$INFO[Listitem.duration,,mins ] $INFO[Listitem.Property(mediaTag-videoResolution),&#xB7; HD , ]</value>
+        <value condition="Container.PlexContent(Movies) + IntegerGreaterThan(Listitem.Property(mediaTag-videoResolution),400)">$INFO[Listitem.duration,,mins ] $INFO[Listitem.Property(mediaTag-videoResolution),&#xB7; SD , ]</value>
+        <value condition="Container.PlexContent(Movies)">$INFO[Listitem.duration,,mins ] $INFO[Listitem.Property(mediaTag-videoResolution),&#xB7; , ]</value>
+        <value condition="Container.PlexContent(TVShows)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+        <value condition="Container.PlexContent(Seasons)">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]] </value>
+        <value condition="Container.PlexContent(Artists)">$INFO[ListItem.Property(Artist_Genre)] </value>
+        <value/>
+    </variable>
+	<variable name="itemScene">
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + !isempty(ListItem.Season)">$INFO[ListItem.Season]x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="!isempty(ListItem.Season)">$INFO[ListItem.Season]x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 1)">1x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 1)">1x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 2)">2x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 2)">2x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 3)">3x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 3)">3x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 4)">4x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 4)">4x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 5)">5x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 5)">5x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 6)">6x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 6)">6x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 7)">7x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 7)">7x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 8)">8x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 8)">8x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 9)">9x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 9)">9x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 10)">10x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 10)">10x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 11)">11x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 11)">11x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 12)">12x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 12)">12x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 13)">13x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 13)">13x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 14)">14x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 14)">14x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 15)">15x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 15)">15x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 16)">16x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 16)">16x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 17)">17x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 17)">17x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 18)">18x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 18)">18x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 19)">19x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 19)">19x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="IntegerGreaterThan(ListItem.episode,9) + stringcompare(Container.SecondTitle,Season 20)">20x$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+        <value condition="stringcompare(Container.SecondTitle,Season 20)">20x0$INFO[ListItem.episode]. $INFO[ListItem.Label]</value>
+    </variable>
+ 	<!-- variables for item count in top bar -->
+	<variable name="TopBarItemCountStrings">
+		<value condition="Container.PlexContent(TVShows)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Seasons)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Episodes)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Movies)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Albums)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Artists)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Songs)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.Content(genres)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Photos)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Skin.String(SectionType,playlists)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Skin.String(SectionType,playqueue)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Skin.String(SectionType,sharedcontent)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Channels)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Channel)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Clips)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Container.PlexContent(Clip)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+		<value condition="Window.IsActive(1) + !IsEmpty(Container.SecondTitle)">$INFO[Container.NumItems] $LOCALIZE[31050]</value>
+	</variable>
+	<variable name="TopBarSelectedItemStrings">
+		<value condition="Window.IsActive(videossettings)">$LOCALIZE[31606] $LOCALIZE[31610]</value>
+		<value condition="Window.IsActive(appearancesettings)">$LOCALIZE[31606] $LOCALIZE[31601]</value>
+		<value condition="Window.IsActive(musicsettings)">$LOCALIZE[31606] $LOCALIZE[31002]</value>
+		<value condition="Window.IsActive(picturessettings)">$LOCALIZE[31606] $LOCALIZE[31003]</value>
+		<value condition="Window.IsActive(systemsettings)">$LOCALIZE[31606] $LOCALIZE[31006]</value>
+		<value condition="Window.IsActive(networksettings)">$LOCALIZE[31606] $LOCALIZE[31602]</value>
+		<value condition="Window.IsActive(skinsettings)">$LOCALIZE[31606] $LOCALIZE[31603]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<!-- variable for default description when no plot available -->
+	<variable name="NoPlotDefaultItem">
+		<value condition="Container.PlexContent(Songs)">$LOCALIZE[31230]</value>
+		<value condition="Container.PlexContent(Albums) + IsEmpty(Container.Property(primaryFilterActivated))">$LOCALIZE[31229]</value>
+		<value condition="Container.PlexContent(Albums) + !IsEmpty(Container.Property(primaryFilterActivated))">$LOCALIZE[31230]</value>
+		<value condition="Container.PlexContent(Photos) + ListItem.Type(photo)">$LOCALIZE[31704]</value>
+		<value condition="Container.PlexContent(Photos) + ListItem.Type(photoAlbum)">$LOCALIZE[31230]</value>
+		<value condition="Container.PlexContent(PhotoAlbums)">$LOCALIZE[31704]</value>
+		<value condition="Container.PlexContent(Movie) | Container.PlexContent(Movies)">$LOCALIZE[31142]</value>
+		<value condition="Container.Content(tvshow)">$LOCALIZE[31143]</value>
+		<value condition="Container.PlexContent(Seasons)">$LOCALIZE[31143]</value>
+		<value condition="Container.PlexContent(Episodes)">$LOCALIZE[31143]</value>
+		<value condition="Container.PlexContent(Episode)">$LOCALIZE[31114]</value>
+		<value condition="Container.PlexContent(Channels)">$LOCALIZE[32107]</value>
+		<value condition="Container.PlexContent(Clip) | Container.PlexContent(Homemovies)">$LOCALIZE[31144]</value>
+		<value condition="Window.IsActive(mysharedcontent)">$LOCALIZE[32108]</value>
+		<value>Item</value>
+	</variable>
+	<variable name="Var_Favourite_Background">
+		<value condition="Container(300).HasFocus(560)">$INFO[Skin.String(Channel1_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(561)">$INFO[Skin.String(Channel2_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(562)">$INFO[Skin.String(Channel3_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(563)">$INFO[Skin.String(Channel4_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(564)">$INFO[Skin.String(Channel5_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(565)">$INFO[Skin.String(Channel6_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(566)">$INFO[Skin.String(Channel7_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(567)">$INFO[Skin.String(Channel8_Name_Art)]</value>
+		<value condition="Container(300).HasFocus(568)">$INFO[Skin.String(Channel9_Name_Art)]</value>
+	</variable>
+   <!--SD / HD value (thanks 'Black!)-->
+    <variable name="itemResolution">
+        <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">HD</value>
+        <value condition="!IsEmpty(ListItem.VideoResolution)">SD</value>
+    </variable>
+    <!--Music player shuffle state-->
+    <variable name="shuffleState">
+        <value condition="Playlist.IsRandom">$LOCALIZE[191]: $LOCALIZE[16041]</value>
+        <value>$LOCALIZE[191]: $LOCALIZE[16039]</value>
+    </variable>
+    <!--Music player repeat state-->
+    <variable name="repeatState">
+        <value condition="Playlist.IsRepeat">$LOCALIZE[597]</value>
+        <value condition="Playlist.IsRepeatOne">$LOCALIZE[596]</value>
+        <value condition="!Playlist.IsRepeat + !Playlist.IsRepeatOne">$LOCALIZE[595]</value>
+    </variable>
+    <!--fullscreeninfo titles-->
+    <variable name="nowPlayingTitle">
+        <value condition="!StringCompare(VideoPlayer.title,VideoPlayer.TVShowTitle)">$INFO[videoplayer.tvshowtitle] $INFO[videoplayer.title]</value>
+        <value condition="StringCompare(VideoPlayer.title,VideoPlayer.TVShowTitle)">$INFO[videoplayer.title]</value>
+    </variable>
+    <!--grid view width (addons / programs)-->
+    <variable name="gridWidth">
+        <value condition="window.isactive(programs)">24-col</value>
+        <value>22-col</value>
+    </variable>
+    <!--custom addon handling-->
+    <!--video-->
+    <variable name="customAddonSourceSlot">
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon1))">video1</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon2))">video2</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon3))">video3</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon4))">video4</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon5))">video5</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon6))">video6</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon7))">video7</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),video) + isempty(Skin.String(customVideoAddon8))">video8</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon1))">audio1</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon2))">audio2</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon3))">audio3</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon4))">audio4</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon5))">audio5</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon6))">audio6</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon7))">audio7</value>
+        <value condition="stringcompare(Skin.String(menuItemTypeFilter),audio) + isempty(Skin.String(customMusicAddon8))">audio8</value>
+    </variable>
+    <variable name="customVideoSourceAction">
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video1) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon1,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video1) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon1,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video2) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon2,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video2) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon2,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video3) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon3,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video3) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon3,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video4) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon4,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video4) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon4,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video5) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon5,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video5) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon5,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video6) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon6,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video6) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon6,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video7) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon7,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video7) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon7,.xsp|.m3u,special://userdata/playlists/video/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video8) + stringcompare(Skin.String(menuItemType),videoAddon)">Skin.SetAddon(customVideoAddon8,xbmc.addon.video)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video8) + stringcompare(Skin.String(menuItemType),videoPlaylist)">Skin.SetFile(customVideoAddon8,.xsp|.m3u,special://userdata/playlists/video/)</value>
+    </variable>
+    <variable name="customVideoSourceSetType">
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video1)">Skin.SetString(customVideoAddon1Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video2)">Skin.SetString(customVideoAddon2Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video3)">Skin.SetString(customVideoAddon3Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video4)">Skin.SetString(customVideoAddon4Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video5)">Skin.SetString(customVideoAddon5Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video6)">Skin.SetString(customVideoAddon6Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video7)">Skin.SetString(customVideoAddon7Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video8)">Skin.SetString(customVideoAddon8Type,$INFO[Skin.String(menuItemType)])</value>
+    </variable>
+    <variable name="customVideoSourceSetName">
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video1)">Skin.SetString(customVideoAddon1Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video2)">Skin.SetString(customVideoAddon2Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video3)">Skin.SetString(customVideoAddon3Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video4)">Skin.SetString(customVideoAddon4Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video5)">Skin.SetString(customVideoAddon5Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video6)">Skin.SetString(customVideoAddon6Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video7)">Skin.SetString(customVideoAddon7Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),video8)">Skin.SetString(customVideoAddon8Name)</value>
+    </variable>
+    <variable name="customVideoAddon1Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon1Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon1))]</value>
+        <value>$INFO[Skin.String(customVideoAddon1Name)]</value>
+    </variable>
+    <variable name="customVideoAddon2Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon2Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon2))]</value>
+        <value>$INFO[Skin.String(customVideoAddon2Name)]</value>
+    </variable>
+    <variable name="customVideoAddon3Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon3Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon3))]</value>
+        <value>$INFO[Skin.String(customVideoAddon3Name)]</value>
+    </variable>
+    <variable name="customVideoAddon4Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon4Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon4))]</value>
+        <value>$INFO[Skin.String(customVideoAddon4Name)]</value>
+    </variable>
+    <variable name="customVideoAddon5Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon5Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon5))]</value>
+        <value>$INFO[Skin.String(customVideoAddon5Name)]</value>
+    </variable>
+    <variable name="customVideoAddon6Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon6Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon6))]</value>
+        <value>$INFO[Skin.String(customVideoAddon6Name)]</value>
+    </variable>
+    <variable name="customVideoAddon7Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon7Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon7))]</value>
+        <value>$INFO[Skin.String(customVideoAddon7Name)]</value>
+    </variable>
+    <variable name="customVideoAddon8Title">
+        <value condition="stringcompare(Skin.String(customVideoAddon8Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon8))]</value>
+        <value>$INFO[Skin.String(customVideoAddon8Name)]</value>
+    </variable>
+    <!--music-->
+    <variable name="customMusicSourceAction">
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio1) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon1,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio1) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon1,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio2) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon2,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio2) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon2,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio3) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon3,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio3) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon3,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio4) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon4,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio4) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon4,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio5) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon5,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio5) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon5,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio6) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon6,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio6) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon6,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio7) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon7,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio7) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon7,.xsp|.m3u,special://userdata/playlists/music/)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio8) + stringcompare(Skin.String(menuItemType),audioAddon)">Skin.SetAddon(customMusicAddon8,xbmc.addon.audio)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio8) + stringcompare(Skin.String(menuItemType),audioPlaylist)">Skin.SetFile(customMusicAddon8,.xsp|.m3u,special://userdata/playlists/music/)</value>
+    </variable>
+    <variable name="customMusicSourceSetType">
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio1)">Skin.SetString(customMusicAddon1Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio2)">Skin.SetString(customMusicAddon2Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio3)">Skin.SetString(customMusicAddon3Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio4)">Skin.SetString(customMusicAddon4Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio5)">Skin.SetString(customMusicAddon5Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio6)">Skin.SetString(customMusicAddon6Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio7)">Skin.SetString(customMusicAddon7Type,$INFO[Skin.String(menuItemType)])</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio8)">Skin.SetString(customMusicAddon8Type,$INFO[Skin.String(menuItemType)])</value>
+    </variable>
+    <variable name="customMusicSourceSetName">
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio1)">Skin.SetString(customMusicAddon1Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio2)">Skin.SetString(customMusicAddon2Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio3)">Skin.SetString(customMusicAddon3Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio4)">Skin.SetString(customMusicAddon4Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio5)">Skin.SetString(customMusicAddon5Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio6)">Skin.SetString(customMusicAddon6Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio7)">Skin.SetString(customMusicAddon7Name)</value>
+        <value condition="stringcompare(Skin.String(currentAddonSourceSlot),audio8)">Skin.SetString(customMusicAddon8Name)</value>
+    </variable>
+    <variable name="customMusicAddon1Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon1Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon1))]</value>
+        <value>$INFO[Skin.String(customMusicAddon1Name)]</value>
+    </variable>
+    <variable name="customMusicAddon2Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon2Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon2))]</value>
+        <value>$INFO[Skin.String(customMusicAddon2Name)]</value>
+    </variable>
+    <variable name="customMusicAddon3Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon3Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon3))]</value>
+        <value>$INFO[Skin.String(customMusicAddon3Name)]</value>
+    </variable>
+    <variable name="customMusicAddon4Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon4Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon4))]</value>
+        <value>$INFO[Skin.String(customMusicAddon4Name)]</value>
+    </variable>
+    <variable name="customMusicAddon5Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon5Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon5))]</value>
+        <value>$INFO[Skin.String(customMusicAddon5Name)]</value>
+    </variable>
+    <variable name="customMusicAddon6Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon6Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon6))]</value>
+        <value>$INFO[Skin.String(customMusicAddon6Name)]</value>
+    </variable>
+    <variable name="customMusicAddon7Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon7Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon7))]</value>
+        <value>$INFO[Skin.String(customMusicAddon7Name)]</value>
+    </variable>
+    <variable name="customMusicAddon8Title">
+        <value condition="stringcompare(Skin.String(customMusicAddon8Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon8))]</value>
+        <value>$INFO[Skin.String(customMusicAddon8Name)]</value>
+    </variable>
+    <!--A bit of feedback for the addon selection dialog-->
+    <variable name="pendingAddonPath">
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video1)">$INFO[Skin.String(customVideoAddon1)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video2)">$INFO[Skin.String(customVideoAddon2)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video3)">$INFO[Skin.String(customVideoAddon3)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video4)">$INFO[Skin.String(customVideoAddon4)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video5)">$INFO[Skin.String(customVideoAddon5)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video6)">$INFO[Skin.String(customVideoAddon6)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video7)">$INFO[Skin.String(customVideoAddon7)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video8)">$INFO[Skin.String(customVideoAddon8)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio1)">$INFO[Skin.String(customMusicAddon1)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio2)">$INFO[Skin.String(customMusicAddon2)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio3)">$INFO[Skin.String(customMusicAddon3)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio4)">$INFO[Skin.String(customMusicAddon4)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio5)">$INFO[Skin.String(customMusicAddon5)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio6)">$INFO[Skin.String(customMusicAddon6)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio7)">$INFO[Skin.String(customMusicAddon7)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio8)">$INFO[Skin.String(customMusicAddon8)]</value>
+    </variable>
+    <variable name="pendingAddonName">
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video1)">$INFO[Skin.String(customVideoAddon1Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video2)">$INFO[Skin.String(customVideoAddon2Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video3)">$INFO[Skin.String(customVideoAddon3Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video4)">$INFO[Skin.String(customVideoAddon4Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video5)">$INFO[Skin.String(customVideoAddon5Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video6)">$INFO[Skin.String(customVideoAddon6Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video7)">$INFO[Skin.String(customVideoAddon7Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),video8)">$INFO[Skin.String(customVideoAddon8Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio1)">$INFO[Skin.String(customMusicAddon1Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio2)">$INFO[Skin.String(customMusicAddon2Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio3)">$INFO[Skin.String(customMusicAddon3Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio4)">$INFO[Skin.String(customMusicAddon4Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio5)">$INFO[Skin.String(customMusicAddon5Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio6)">$INFO[Skin.String(customMusicAddon6Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio7)">$INFO[Skin.String(customMusicAddon7Name)]</value>
+        <value condition="stringcompare(skin.string(currentAddonSourceSlot),audio8)">$INFO[Skin.String(customMusicAddon8Name)]</value>
+    </variable>
+</includes>

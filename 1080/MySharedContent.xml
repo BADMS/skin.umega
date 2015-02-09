@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="false">777</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+	<onload>Skin.SetString(SectionType,sharedcontent)</onload>
+	<onunload>SetFocus(777)</onunload>
+	<onunload>Skin.Reset(SectionType)</onunload>
+    <controls>
+        <include>globalBackground</include>
+        <!--page container group-->
+        <control type="group">
+            <!--window fader-->
+            <animation type="conditional" condition="window.next(0) | window.next(1)">
+                <effect type="fade" start="100" end="0" time="300"/>
+            </animation>
+            <!--shift page for certain modal dialogs-->
+            <include>modalDialogContentShift</include>
+            <!--content provider-->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0</posy>
+                <!--Folder titles-->
+                <control type="group">
+                    <posx>col-4-begin</posx>
+                    <posy>row-2-begin</posy>
+                    <!--source title-->
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>18-col</width>
+                        <font>pageTitle</font>
+                        <label>$VAR[listTitle]</label>
+                        <textcolor>selected</textcolor>
+                    </control>
+                    <!--source subtitle-->
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>45</posy>
+                        <width>24-col</width>
+                        <font>regular</font>
+                        <label>$VAR[TopBarItemCountStrings]</label>
+                        <textcolor>selected</textcolor>
+                    </control>
+                </control>
+                <!--Main content listing-->
+                <control type="group">
+                    <posx>col-4-begin</posx>
+                    <posy>row-2-begin</posy>
+                    <animation type="windowopen">
+                        <include>listSlideIn</include>
+                    </animation>
+                    <animation type="windowclose">
+                        <effect type="fade" start="100" end="0" time="300" delay="300"/>
+                    </animation>
+                    <!--source content-->
+                    <control type="group" id="777">
+                        <include>viewPlayList</include>
+                    </control>
+                </control>
+                <!--page scrollbar-->
+                <control type="group" id="8000">
+                    <visible>Control.IsVisible(60)</visible>
+                    <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+                    <control type="scrollbar" id="60">
+                        <posx>46r</posx>
+                        <posy>276</posy>
+                        <height>672</height>
+                        <onleft>777</onleft>
+						<onright>777</onright>
+                   </control>
+                </control>
+                <!--Sort / misc labels (footer)-->
+                <control type="group">
+                    <posx>col-4-begin</posx>
+                    <posy>row-18-begin</posy>
+                    <include>mediaListFooter</include>
+                </control>
+            </control>
+            <include>HomeMenuDefault</include>
+        </control>
+ 		<include condition="!Skin.HasSetting(SuperKioskMode)">LeftSideMenu</include>
+        <!--loading indicator-->
+		<include>musicOverlay</include>
+        <include>loadingIndicator</include>
+		<include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>MySharedContent.xml</label>
+        </control>
+    </controls>
+</window>

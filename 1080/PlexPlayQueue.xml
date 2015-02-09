@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="6">
+	<defaultcontrol always="false">777</defaultcontrol>
+	<onload>Skin.SetString(SectionType,playqueue)</onload>
+	<onunload>SetFocus(777)</onunload>
+	<onunload>Skin.Reset(SectionType)</onunload>
+	<controls>
+		<include>globalBackground</include>
+		<!--default background-->
+		<control type="group">
+			<!--window fader-->
+			<animation type="conditional" condition="window.next(0) | window.next(1)">
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<!--shift page for certain modal dialogs-->
+			<include>modalDialogContentShift</include>
+			<!--content provider-->
+			<control type="group">
+				<posx>col-4-begin</posx>
+				<posy>row-2-begin</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>14-col</width>
+					<font>pageTitle</font>
+					<label>$VAR[listTitle]</label>
+					<textcolor>selected</textcolor>
+				</control>
+				<!--source subtitle-->
+				<control type="label">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>auto</width>
+					<font>regular</font>
+					<label>$VAR[TopBarItemCountStrings]</label>
+					<textcolor>selected</textcolor>
+				</control>
+			</control>
+			<!--tvshow name and season details (TVShows only)-->
+			<control type="group">
+				<posx>1824</posx>
+				<posy>row-2-begin</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>8-col</width>
+					<font>pageTitle</font>
+					<align>right</align>
+					<label>$INFO[Container.FirstTitle]</label>
+					<textcolor>selected</textcolor>
+				</control>
+				<control type="group">
+					<visible>!stringcompare(Container.FirstTitle,My Queue)</visible>
+					<control type="label">
+						<posx>0</posx>
+						<posy>45</posy>
+						<width>8-col</width>
+						<font>regular</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Artist]</label>
+						<textcolor>selected</textcolor>
+						<visible>Container.PlexContent(Songs)</visible>
+					</control>
+					<control type="label">
+						<visible>ListItem.Type(episode)</visible>
+						<posx>0</posx>
+						<posy>45</posy>
+						<width>8-col</width>
+						<font>regular</font>
+						<align>right</align>
+						<label>$INFO[ListItem.TVShowTitle] / $LOCALIZE[31141] $INFO[ListItem.Season]</label>
+						<textcolor>selected</textcolor>
+						<visible>IsEmpty(Container.Property(mixedParents))</visible>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>45</posy>
+						<width>8-col</width>
+						<font>regular</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Year] / $INFO[ListItem.Genre]</label>
+						<textcolor>selected</textcolor>
+						<visible>ListItem.Type(movie) + !IsEmpty(ListItem.Year)</visible>
+					</control>
+					<control type="label">
+						<visible>Container.PlexContent(Seasons)</visible>
+						<posx>0</posx>
+						<posy>45</posy>
+						<width>8-col</width>
+						<font>regular</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Genre]</label>
+						<textcolor>selected</textcolor>
+					</control>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>10-col</width>
+					<font>regular</font>
+					<align>right</align>
+					<label>$INFO[ListItem.Plot]</label>
+					<scroll>true</scroll>
+					<textcolor>selected</textcolor>
+					<visible>stringcompare(Container.FirstTitle,My Queue)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<posx>col-4-begin</posx>
+				<posy>row-2-begin</posy>
+				<include>viewPlayQueue</include>
+			</control>
+			<!--page scrollbar-->
+			<control type="group" id="8000">
+				<visible>Control.IsVisible(60)</visible>
+				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+				<control type="scrollbar" id="60">
+					<posx>46r</posx>
+					<posy>276</posy>
+					<height>672</height>
+					<onleft>777</onleft>
+					<onright>777</onright>
+				</control>
+			</control>
+			<!--Sort / misc labels (footer)-->
+			<control type="group">
+				<posx>col-4-begin</posx>
+				<posy>row-18-begin</posy>
+				<include>mediaListFooter</include>
+			</control>
+			<include>HomeMenuDefault</include>
+		</control>
+		<!-- top-level ui (LeftSidemenu.xml & IncludesGlobals.xml & Debug.xml) -->
+		<include condition="!Skin.HasSetting(SuperKioskMode)">LeftSideMenu</include>
+		<!--loading indicator-->
+		<include>musicOverlay</include>
+		<include>loadingIndicator</include>
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>PlexPlayQueue.xml </label>
+		</control>
+	</controls>
+</window>
