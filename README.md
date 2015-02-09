@@ -1,5 +1,7 @@
 # skin.umega
-Plex Home Theater skin based on Maximinimalism by theDeadMan
+skin.µmega
+
+Plex Home Theater skin based on Maximinimalism by theDeadman
 skin.maximinimalism
 
 Maximinimalism is a skin for Kodi 14 (Helix) by theDeadman.
