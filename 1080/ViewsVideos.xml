@@ -1310,14 +1310,14 @@
 				</content>
 			</control>
 		</control>
-		<control type="group">
-			<posx>col-4-begin</posx>
-			<posy>row-18-begin</posy>
-			<control type="group">
-				<posx>col-13-begin</posx>
-				<include>keysListFooter</include>
-			</control>
-		</control>
+	</control>
+</control>
+<control type="group">
+	<posx>col-4-begin</posx>
+	<posy>row-18-begin</posy>
+	<control type="group">
+		<posx>col-13-begin</posx>
+		<include>keysListFooter</include>
 	</control>
 </control>
 </include>

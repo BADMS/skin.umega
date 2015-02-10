@@ -68,6 +68,16 @@
 					<visible>!IsEmpty(Container.Property(mixedParents)) | Container.PlexContent(Seasons)</visible>
 				</control>
 				<control type="label">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>8-col</width>
+					<font>regular</font>
+					<align>right</align>
+					<label>$LOCALIZE[31141] $INFO[ListItem.Season]</label>
+					<textcolor>selected</textcolor>
+					<visible>!IsEmpty(Container.Property(primaryFilterActivated))</visible>
+				</control>
+				<control type="label">
 					<visible>ListItem.Type(episode)</visible>
 					<posx>0</posx>
 					<posy>45</posy>
@@ -79,16 +89,6 @@
 					<visible>IsEmpty(Container.Property(mixedParents))</visible>
 				</control>
 				<control type="label">
-					<posx>0</posx>
-					<posy>45</posy>
-					<width>8-col</width>
-					<font>regular</font>
-					<align>right</align>
-					<label>$LOCALIZE[32102]</label>
-					<textcolor>selected</textcolor>
-					<visible>!IsEmpty(Container.Property(mixedParents))</visible>
-				</control>
-				<control type="label">
 					<visible>Container.PlexContent(Seasons)</visible>
 					<posx>0</posx>
 					<posy>45</posy>
@@ -97,6 +97,26 @@
 					<align>right</align>
 					<label>$INFO[ListItem.Genre]</label>
 					<textcolor>selected</textcolor>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>8-col</width>
+					<font>regular</font>
+					<align>right</align>
+					<label>$LOCALIZE[32102]</label>
+					<textcolor>selected</textcolor>
+					<visible>!IsEmpty(Container.Property(mixedParents)) + IsEmpty(Container.Property(primaryFilterActivated))</visible>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>8-col</width>
+					<font>pageTitle</font>
+					<align>right</align>
+					<label>$INFO[ListItem.TVShowTitle]</label>
+					<textcolor>selected</textcolor>
+					<visible>!IsEmpty(Container.Property(primaryFilterActivated))</visible>
 				</control>
 			</control>
 			<!--Main content listing-->

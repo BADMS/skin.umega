@@ -7,16 +7,11 @@
 	<onunload condition="Window.Next(0)">Dialog.Close(all,true)</onunload>
 	<controls>
 		<control type="group">
-			<posx>45</posx>
-			<include>SettingsBG</include>
 			<!-- settings menu (left) -->
 			<include>SettingsMenu</include>		
 			<!-- setting options (right) -->
 			<include>SettingOptions</include>
 		</control>
 		<include>LeftSideMenuSettings</include>
-		<include>debugInfos</include>
-		<include>Grid</include>
-		<include>Non16x9Cache</include>
 	</controls>
 </window>

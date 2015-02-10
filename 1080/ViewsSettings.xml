@@ -1,127 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<!-- bg's -->
-	<include name="SettingsBG">
-		<include>BGSettings</include>
-		<control type="group">
-			<include>FadeDialog</include>
-			<posy>110</posy>
-			<posx>100</posx>
-			<!-- left side -->
-			<control type="group">
-				<control type="image">
-					<posx>-1</posx>
-					<posy>-1</posy>
-					<width>342</width>
-					<height>402</height>
-					<texture>transparent.png</texture>
-					<bordertexture border="10">border-black.png</bordertexture>
-					<bordersize>1</bordersize>
-					<animation effect="fade" start="0" end="40" time="300">WindowOpen</animation>
-					<animation effect="fade" start="40" end="0" time="0">WindowClose</animation>
-				</control>
-				<control type="image">
-					<width>340</width>
-					<height>400</height>
-					<texture border="10">base-rounded.png</texture>
-					<colordiffuse>FF000000</colordiffuse>
-					<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-				</control>
-			</control>
-			<!-- right side -->
-			<control type="group">
-				<posx>380</posx>
-				<control type="image">
-					<posx>-1</posx>
-					<posy>-1</posy>
-					<width>678</width>
-					<height>552</height>
-					<texture>transparent.png</texture>
-					<bordertexture border="10">border-black.png</bordertexture>
-					<bordersize>1</bordersize>
-					<animation effect="fade" start="0" end="40" time="300">WindowOpen</animation>
-					<animation effect="fade" start="40" end="0" time="0">WindowClose</animation>
-				</control>
-				<control type="image">
-					<width>676</width>
-					<height>550</height>
-					<texture border="10">base-rounded.png</texture>
-					<colordiffuse>FF000000</colordiffuse>
-					<animation effect="fade" start="0" end="60" time="0" condition="true">Conditional</animation>
-				</control>
-			</control>
-		</control>
-	</include>
 	<include name="MenuItemNFTextureNF">
 		<texturenofocus aspectratio="stretch">MenuItemNF.png</texturenofocus>
 	</include>
-	<!-- variables for page titles -->
-	<variable name="SettingsPageTitles">
-		<value condition="Window.IsActive(appearancesettings)">$LOCALIZE[480]</value>
-		<value condition="Window.IsActive(videossettings)">$LOCALIZE[31001]</value>
-		<value condition="Window.IsActive(musicsettings)">$LOCALIZE[2]</value>
-		<value condition="Window.IsActive(picturessettings)">$LOCALIZE[1]</value>
-		<value condition="Window.IsActive(systemsettings)">$LOCALIZE[13000]</value>
-		<value condition="Window.IsActive(skinsettings)">Skin</value>
-	</variable>
 	<!-- settings menu (left) -->
 	<include name="SettingsMenu">
-		<control type="group" id="302">
-			<animation effect="fade" start="100" end="50" time="300" condition="Window.IsActive(4997)">Conditional</animation>
-			<include>FadeDialog</include>
-			<control type="grouplist" id="3">
-				<posy>135</posy>
-				<posx>120</posx>
-				<width>350</width>
-				<onleft>Plex.ActivateWindow(4997)</onleft>
-				<onright>301</onright>
-				<onup>3</onup>
-				<ondown>3</ondown>
-				<itemgap>0</itemgap>
-				<orientation>vertical</orientation>
-			</control>
-			<control type="button" id="10">
-				<width>300</width>
-				<font>smallMedium</font>
-				<textoffsetx>20</textoffsetx>
-				<animation effect="fade" time="300" condition="Window.Next(0)">WindowClose</animation>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="image">
+            <include>dimensionsFullscreen</include>
+            <texture>colors/black.png</texture>
+            <aspectratio>stretch</aspectratio>
+            <colordiffuse>99ffffff</colordiffuse>
+        </control>
+        <control type="group">
+            <posx>col-3-begin</posx>
+            <posy>row-2-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <control type="image">
+                <posx>-240</posx>
+                <posy>44</posy>
+                <width>fullscreenWidth</width>
+                <height>1-row</height>
+                <texture>colors/selected.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>-3</posx>
+                <posy>44</posy>
+                <width>3</width>
+                <height>1-row</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="label">
+                <posx>12</posx>
+                <posy>44</posy>
+                <width>8-col</width>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[20077]</label>
+                <textcolor>black</textcolor>
+            </control>
+			<control type="group" id="302">
+				<control type="grouplist" id="3">
+					<posx>0</posx>
+					<posy>118</posy>
+					<width>350</width>
+					<onleft>Plex.ActivateWindow(4997)</onleft>
+					<onright>301</onright>
+					<onup>3</onup>
+					<ondown>3</ondown>
+					<itemgap>3</itemgap>
+					<orientation>vertical</orientation>
+				</control>
+				<control type="button" id="10">
+					<width>276</width>
+					<font>itemTitle</font>
+					<texturefocus>colors/selected.png</texturefocus>
+					<texturenofocus>colors/black.png</texturenofocus>
+					<textcolor>selected</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<height>1-row</height>
+				</control>
 			</control>
 		</control>
 	</include>
 	<!-- setting options (right) -->
 	<include name="SettingOptions">
 		<control type="group" id="301">
-			<animation effect="fade" start="100" end="50" time="300" condition="Window.IsActive(4997)">Conditional</animation>
-			<include>FadeDialog</include>
-			<posx>400</posx>
-			<posy>70</posy>
-			<width>750</width>
-			<animation type="WindowOpen">
-				<effect type="fade" time="200"/>
-			</animation>
-			<animation type="WindowClose" condition="Window.Next(0) + !Window.Next(SettingsCategory.xml) + !Window.Next(1001)">
-				<effect type="fade" time="100"/>
-			</animation>
-			<animation effect="fade" time="100" condition="!Window.Next(0) + !Window.Next(SettingsCategory.xml) + !Window.Next(1001)">WindowClose</animation>
+            <include>modalDialogInOutVertical</include>
+            <posx>col-3-begin</posx>
+            <posy>row-2-begin</posy>
+			<width>1120</width>
 			<control type="grouplist" id="5">
-				<posx>105</posx>
-				<posy>65</posy>
-				<width>625</width>
-				<height>400</height>
+                <posx>4-col</posx>
+                <posy>118</posy>
+                <width>16-col</width>
+                <itemgap>3</itemgap>
+                <height>14-row</height>
 				<onup>5</onup>
 				<ondown>5</ondown>
 				<onleft>302</onleft>
 				<onright>-</onright>
-				<itemgap>0</itemgap>
 				<pagecontrol>61</pagecontrol>
 			</control>
 			<control type="button" id="7">
+				<texturefocus>colors/selected.png</texturefocus>
+                <height>1-row</height>
+				<textcolor>selected</textcolor>
 				<textoffsetx>20</textoffsetx>
 			</control>
 			<control type="radiobutton" id="8">
+                <height>1-row</height>
 				<textoffsetx>20</textoffsetx>
 			</control>
 			<control type="spincontrolex" id="9">
+                <height>1-row</height>
 				<textoffsetx>20</textoffsetx>
 			</control>
 			<control type="scrollbar" id="61">

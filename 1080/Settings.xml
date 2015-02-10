@@ -6,7 +6,7 @@
 		<control type="image">
 			<description>Background</description>
 			<include>Base</include>
-			<include>FullScreenStretched</include>
+			<include>FullScreenScaled</include>
 			<colordiffuse>FF111315</colordiffuse>
 		</control>
 		<control type="image">

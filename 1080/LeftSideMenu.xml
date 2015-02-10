@@ -578,145 +578,161 @@
 	<!-- Settings menu -->
 	<include name="LeftSideMenuSettings">
 		<control type="group">
-			<include>leftMenuInitSlide</include>
-			<include>leftMenuBgSettings</include>
-			<control type="group">
-				<posx>100</posx>
-				<posy>40</posy>
-				<control type="group">
-					<posy>13</posy>
-					<posx>45</posx>
-					<control type="label">
-						<width>1400</width>
-						<height>0</height>
-						<label>$VAR[TopBarSelectedItemStrings]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>regularSemibold</font>
-						<textcolor>selected</textcolor>
-						<shadowcolor>ff111111</shadowcolor>
-						<animation effect="fade" start="80" end="80" condition="true">Conditional</animation>
-						<visible>Window.IsActive(4997)</visible>
-					</control>
-					<control type="label">
-						<width>1400</width>
-						<height>0</height>
-						<label>$VAR[TopBarSelectedItemStrings]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>regularSemibold</font>
-						<textcolor>selected</textcolor>
-						<shadowcolor>ff111111</shadowcolor>
-						<animation effect="fade" time="300" start="0" end="30" condition="true">Conditional</animation>
-						<visible>!Window.IsActive(4997)</visible>
-					</control>
-				</control>
+            <include>modalDialogInOutVertical</include>
+			<posy>row-2-begin</posy>
+			<control type="label">
+				<posy>118</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>disabled</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>APPEARANCE</label>
+				<visible>!Skin.String(SettingsCategory,appearance)</visible>
 			</control>
-			<control type="group">
-				<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-				<control type="image">
-					<posx>0</posx>
-					<posy>108</posy>
-					<texture>b-s-photos.png</texture>
-					<visible>!Skin.String(SettingsCategory,appearance)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>108</posy>
-					<texture>b-s-photos.png</texture>
-					<colordiffuse>80FFFFFF</colordiffuse>
-					<visible>Skin.String(SettingsCategory,appearance)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>158</posy>
-					<texture>b-s-video.png</texture>
-					<visible>!Skin.String(SettingsCategory,playback)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>158</posy>
-					<texture>b-s-video.png</texture>
-					<colordiffuse>80FFFFFF</colordiffuse>
-					<visible>Skin.String(SettingsCategory,playback)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>208</posy>
-					<texture>b-s-system.png</texture>
-					<visible>!Skin.String(SettingsCategory,system)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>208</posy>
-					<texture>b-s-system.png</texture>
-					<colordiffuse>80FFFFFF</colordiffuse>
-					<visible>Skin.String(SettingsCategory,system)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>258</posy>
-					<texture>b-s-network.png</texture>
-					<visible>!Skin.String(SettingsCategory,network)</visible>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>258</posy>
-					<texture>b-s-network.png</texture>
-					<colordiffuse>80FFFFFF</colordiffuse>
-					<visible>Skin.String(SettingsCategory,network)</visible>
-				</control>
+			<control type="label">
+				<posy>118</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>selected</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>APPEARANCE</label>
+				<visible>Skin.String(SettingsCategory,appearance)</visible>
+			</control>
+			<control type="label">
+				<posy>178</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>disabled</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>PLAYBACK</label>
+				<visible>!Skin.String(SettingsCategory,playback)</visible>
+			</control>
+			<control type="label">
+				<posy>178</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>selected</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>PLAYBACK</label>
+				<visible>Skin.String(SettingsCategory,playback)</visible>
+			</control>
+			<control type="label">
+				<posy>238</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>disabled</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>SYSTEM</label>
+				<visible>!Skin.String(SettingsCategory,system)</visible>
+			</control>
+			<control type="label">
+				<posy>238</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>selected</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>SYSTEM</label>
+				<visible>Skin.String(SettingsCategory,system)</visible>
+			</control>
+			<control type="label">
+				<posy>298</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>disabled</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>NETWORK</label>
+				<visible>!Skin.String(SettingsCategory,network)</visible>
+			</control>
+			<control type="label">
+				<posy>298</posy>
+				<width>237</width>
+				<font>itemTitle</font>
+				<texturefocus>colors/selected.png</texturefocus>
+				<textcolor>selected</textcolor>
+				<textoffsetx>20</textoffsetx>
+				<height>1-row</height>
+				<label>NETWORK</label>
+				<visible>Skin.String(SettingsCategory,network)</visible>
 			</control>
 		</control>
 	</include>
 	<include name="LeftSideMenuSettings2">
 		<control type="group">
-			<include>leftMenuInitSlide</include>
-			<include>leftMenuBgSettings</include>
+		    <posy>row-2-begin</posy>
 			<control type="grouplist" id="997">
-				<posx>0</posx>
-				<posy>108</posy>
+				<textoffsetx>20</textoffsetx>
+				<posy>118</posy>
 				<width>1000</width>
 				<height>700</height>
 				<onup>997</onup>
 				<ondown>997</ondown>
 				<onleft>-</onleft>
 				<onright>-</onright>
-				<itemgap>20</itemgap>
+				<itemgap>3</itemgap>
 				<scrolltime>0</scrolltime>
 				<orientation>vertical</orientation>
 				<control type="button" id="902">
 					<description>Appearance Settings Button</description>
-					<texturefocus>b-s-photos-s.png</texturefocus>
-					<texturenofocus>b-s-photos.png</texturenofocus>
-					<include>leftMenuPreplayButton</include>
+					<width>237</width>
+					<font>itemTitle</font>
+					<texturefocus>colors/selected.png</texturefocus>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<height>1-row</height>
+					<label>APPEARANCE</label>
 					<onfocus condition="!Window.IsActive(19)">XBMC.ReplaceWindow(19)</onfocus>
 					<onright>Dialog.Close(4997)</onright>
 					<onfocus>Skin.SetString(SettingsCategory,appearance)</onfocus>
 				</control>
 				<control type="button" id="901">
 					<description>Playback Settings Button</description>
-					<texturefocus>b-s-video-s.png</texturefocus>
-					<texturenofocus>b-s-video.png</texturenofocus>
-					<include>leftMenuPreplayButton</include>
+					<width>237</width>
+					<font>itemTitle</font>
+					<texturefocus>colors/selected.png</texturefocus>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<height>1-row</height>
+					<label>PLAYBACK</label>
 					<onfocus condition="!Window.IsActive(17)">XBMC.ReplaceWindow(17)</onfocus>
 					<onright>Dialog.Close(4997)</onright>
 					<onfocus>Skin.SetString(SettingsCategory,playback)</onfocus>
 				</control>
 				<control type="button" id="903">
 					<description>System Settings Button</description>
-					<texturefocus>b-s-system-s.png</texturefocus>
-					<texturenofocus>b-s-system.png</texturenofocus>
-					<include>leftMenuPreplayButton</include>
+					<width>237</width>
+					<font>itemTitle</font>
+					<texturefocus>colors/selected.png</texturefocus>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<height>1-row</height>
+					<label>SYSTEM</label>
 					<onfocus condition="!Window.IsActive(16)">XBMC.ReplaceWindow(16)</onfocus>
 					<onright>Dialog.Close(4997)</onright>
 					<onfocus>Skin.SetString(SettingsCategory,system)</onfocus>
 				</control>
 				<control type="button" id="904">
 					<description>Network Button</description>
-					<texturefocus>b-s-network-s.png</texturefocus>
-					<texturenofocus>b-s-network.png</texturenofocus>
-					<include>leftMenuPreplayButton</include>
+					<width>237</width>
+					<font>itemTitle</font>
+					<texturefocus>colors/selected.png</texturefocus>
+					<textcolor>black</textcolor>
+					<textoffsetx>20</textoffsetx>
+					<height>1-row</height>
+					<label>NETWORK</label>
 					<onfocus condition="!Window.IsActive(18)">XBMC.ReplaceWindow(18)</onfocus>
 					<onright>Dialog.Close(4997)</onright>
 					<onfocus>Skin.SetString(SettingsCategory,network)</onfocus>
