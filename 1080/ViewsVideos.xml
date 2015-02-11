@@ -355,11 +355,11 @@
 					</control>
 				</focusedlayout>
 			</control>
-		</control>
-		<control type="group">
-			<posx>col-13-begin</posx>
-			<posy>911</posy>
-			<include>keysListFooter</include>
+			<control type="group">
+				<posx>col-13-begin</posx>
+				<posy>911</posy>
+				<include>keysListFooter</include>
+			</control>
 		</control>
 	</include>
 	<!--seasons-->
@@ -969,11 +969,11 @@
 				</control>
 			</focusedlayout>
 		</control>
-	</control>
-	<control type="group">
-		<posx>col-13-begin</posx>
-		<posy>911</posy>
-		<include>keysListFooter</include>
+		<control type="group">
+			<posx>col-13-begin</posx>
+			<posy>911</posy>
+			<include>keysListFooter</include>
+		</control>
 	</control>
 </include>
 <include name="viewFilteredEmpty">
@@ -1026,13 +1026,9 @@
 				<visible>!Container.PlexContent(Clip) + !container.content(episode)</visible>
 				<posx>1263</posx>
 				<posy>0</posy>
-				<animation type="Conditional" condition="Skin.String(showtvinfos,1)">
+				<animation type="Conditional" condition="Skin.String(showtvinfos,1)" reversible="false">
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 					<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
-				</animation>
-				<animation type="Conditional" condition="!Skin.String(showtvinfos,1)">
-					<effect type="fade" start="100" end="0" time="300" delay="300"/>
-					<effect type="slide" start="0" end="800" tween="cubic" easing="out" time="400" delay="300"/>
 				</animation>
 				<!--overlay-->
 				<control type="image">
@@ -1310,14 +1306,14 @@
 				</content>
 			</control>
 		</control>
-	</control>
-</control>
-<control type="group">
-	<posx>col-4-begin</posx>
-	<posy>row-18-begin</posy>
-	<control type="group">
-		<posx>col-13-begin</posx>
-		<include>keysListFooter</include>
+		<control type="group">
+			<posx>col-4-begin</posx>
+			<posy>row-18-begin</posy>
+			<control type="group">
+				<posx>col-13-begin</posx>
+				<include>keysListFooter</include>
+			</control>
+		</control>
 	</control>
 </control>
 </include>
