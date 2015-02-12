@@ -37,7 +37,7 @@
 <keymap>
   <global>
     <keyboard>
-      <p>ReloadSkin</p>
+      <p>Play</p>
       <q>Queue</q>
       <r>Rewind</r>
       <left>Left</left>
