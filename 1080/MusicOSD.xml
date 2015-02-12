@@ -7,12 +7,9 @@
 		<control type="group" id="8765">
 			<posx>0</posx>
 			<posy>996</posy>
-			<!--<animation type="conditional" condition="!ControlGroup(8765).HasFocus">
+			<animation type="windowClose">
 				<effect type="slide" start="0,0" end="0,50" tween="cubic" easing="out" delay="500" time="300"/>
 				<effect type="fade" start="100" end="0" time="500" delay="500"/>
-			</animation>-->
-			<animation type="windowClose">
-				<effect type="fade" start="100" end="0" time="300"/>
 			</animation>
 			<control type="image">
 				<posx>0</posx>
@@ -56,11 +53,11 @@
 						<colordiffuse>ccFFFFFF</colordiffuse>
 					</control>
 					<control type="label">
-						<posx>44</posx>
-						<posy>8</posy>
+						<posx>42</posx>
+						<posy>5</posy>
 						<width>1-col</width>
 						<height>1-col</height>
-						<font>symbolx</font>
+						<font>symbolosd</font>
 						<textcolor>selected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label]</label>
@@ -78,11 +75,11 @@
 						<colordiffuse>ccFFFFFF</colordiffuse>
 					</control>
 					<control type="label">
-						<posx>44</posx>
-						<posy>8</posy>
+						<posx>42</posx>
+						<posy>5</posy>
 						<width>1-col</width>
 						<height>1-col</height>
-						<font>symbolx</font>
+						<font>symbolosd</font>
 						<textcolor>black</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label]</label>
@@ -222,6 +219,7 @@
             <onleft>8000</onleft>
             <onright>8000</onright>
             <onclick>Control.SetFocus(8000)</onclick>
+            <onfocus>Back</onfocus>
         </control>
     </controls>
 </window>

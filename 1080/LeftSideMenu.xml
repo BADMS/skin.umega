@@ -407,7 +407,7 @@
 			<control type="grouplist" id="998">
 				<visible>!Container.PlexContent(Movie) + !Container.PlexContent(Episode) + !Container.PlexContent(Clip) + Control.IsVisible(995)</visible>
 				<posy>5-row</posy>
-				<posx>-74</posx>
+				<posx>-44</posx>
 				<width>74</width>
 				<aligny>top</aligny>
 				<onup>998</onup>
@@ -416,8 +416,9 @@
 				<itemgap>8</itemgap>
 				<!-- Home -->
 				<control type="button" id="101">
-					<texturefocus>candy/home-s.png</texturefocus>
-					<texturenofocus>candy/home-u.png</texturenofocus>
+					<textoffsetx>-2</textoffsetx>
+					<font>symbol</font>
+					<label>p</label>
 					<onclick>ActivateWindow(home)</onclick>
 					<colordiffuse>black</colordiffuse>
 					<animation effect="fade" start="100" end="30" time="30" condition="!Control.HasFocus(101)">Conditional</animation>		
@@ -426,8 +427,8 @@
 				<!-- Filters -->
 				<!-- Play All -->
 				<control type="button" id="104">
-					<texturefocus>b-pp-play-s2.png</texturefocus>
-					<texturenofocus>b-pp-play2.png</texturenofocus>
+					<font>symbolx</font>
+					<label>P</label>
 					<colordiffuse>black</colordiffuse>
 					<onclick>Plex.PlayAll()</onclick>
 					<include>leftMenuBarButton</include>
@@ -437,8 +438,8 @@
 				</control>
 				<!-- Shuffle All -->
 				<control type="button" id="105">
-					<texturefocus>left-menu-shuffle-icon-s2.png</texturefocus>
-					<texturenofocus>left-menu-shuffle-icon-u2.png</texturenofocus>
+					<font>symbolx</font>
+					<label>s</label>
 					<colordiffuse>black</colordiffuse>
 					<onclick>Plex.ShuffleAll()</onclick>
 					<include>leftMenuBarButton</include>
@@ -448,8 +449,11 @@
 				</control>
 				<!-- Now Playing -->
 				<control type="button" id="106">
-					<texturefocus>left-menu-nowplaying-icon-s.png</texturefocus>
-					<texturenofocus>left-menu-nowplaying-icon-u.png</texturenofocus>
+					<textoffsetx>-2</textoffsetx>
+					<textoffsety>6</textoffsety>
+					<aligny>bottom</aligny>
+					<font>symbolx</font>
+					<label>M</label>
 					<colordiffuse>black</colordiffuse>
 					<animation effect="fade" start="100" end="30" time="30" condition="!Control.HasFocus(106)">Conditional</animation>		
 					<animation effect="slide" start="-10,0" end="10,0" time="2000" tween="cubic" easing="inout" pulse="true" condition="true">Conditional</animation>
@@ -504,7 +508,7 @@
 					<ondown>32000</ondown>
 					<onright>777</onright>
 					<itemgap>0</itemgap>
-					<animation effect="slide" end="0,-127" time="0" condition="Skin.String(SectionType,movies) | Container.Content(movies)">Conditional</animation>
+					<animation effect="slide" end="0,-106" time="0" condition="Skin.String(SectionType,movies) | Container.Content(movies)">Conditional</animation>
 					<animation effect="slide" end="0,-100" time="0" condition="Skin.String(SectionType,photos) | Window.IsActive(2)">Conditional</animation>
 					<animation effect="slide" end="0,-107" time="0" condition="Skin.String(SectionType,music) | Window.IsActive(501)">Conditional</animation>
 				</control>
@@ -540,7 +544,7 @@
 					<ondown>30000</ondown>
 					<onright>777</onright>
 					<itemgap>0</itemgap>
-					<animation effect="slide" end="0,-40" time="0" condition="[Skin.String(SectionType,movies) | Container.PlexContent(Movies)] + IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
+					<animation effect="slide" end="0,-20" time="0" condition="[Skin.String(SectionType,movies) | Container.PlexContent(Movies)] + IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
 					<animation effect="slide" end="0,-4" time="0" condition="[Skin.String(SectionType,movies) | Container.PlexContent(Movies)] + !IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
 					<animation effect="slide" end="0,-94" time="0" condition="[Skin.String(SectionType,tvshows) | Container.PlexContent(TVShows)] + IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
 					<animation effect="slide" end="0,-59" time="0" condition="[Skin.String(SectionType,tvshows) | Container.PlexContent(TVShows)] + !IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
@@ -578,7 +582,6 @@
 	<!-- Settings menu -->
 	<include name="LeftSideMenuSettings">
 		<control type="group">
-            <include>modalDialogInOutVertical</include>
 			<posy>row-2-begin</posy>
 			<control type="label">
 				<posy>118</posy>
@@ -690,7 +693,8 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<textcolor>black</textcolor>
+					<texturenofocus>colors/black.png</texturenofocus>
+					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
 					<label>APPEARANCE</label>
@@ -703,7 +707,8 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<textcolor>black</textcolor>
+					<texturenofocus>colors/black.png</texturenofocus>
+					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
 					<label>PLAYBACK</label>
@@ -716,7 +721,8 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<textcolor>black</textcolor>
+					<texturenofocus>colors/black.png</texturenofocus>
+					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
 					<label>SYSTEM</label>
@@ -729,7 +735,8 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<textcolor>black</textcolor>
+					<texturenofocus>colors/black.png</texturenofocus>
+					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
 					<label>NETWORK</label>

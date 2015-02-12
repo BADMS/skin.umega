@@ -170,7 +170,13 @@
 		<font>
 			<name>symbolx</name>
 			<filename>heydings_controls.ttf</filename>
-			<size>20</size>
+			<size>36</size>
+			<style/>
+		</font>
+		<font>
+			<name>symbolosd</name>
+			<filename>heydings_controls.ttf</filename>
+			<size>26</size>
 			<style/>
 		</font>
 		<font>

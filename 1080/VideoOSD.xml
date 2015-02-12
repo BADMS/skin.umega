@@ -130,11 +130,11 @@
                                 <colordiffuse>ccFFFFFF</colordiffuse>
                             </control>
                             <control type="label">
-                                <posx>44</posx>
-                                <posy>8</posy>
+								<posx>42</posx>
+								<posy>5</posy>
                                 <width>1-col</width>
                                 <height>1-col</height>
-                                <font>symbolx</font>
+                                <font>symbolosd</font>
                                 <textcolor>selected</textcolor>
                                 <shadowcolor>-</shadowcolor>
                                 <label>$INFO[ListItem.label]</label>
@@ -152,11 +152,11 @@
                                 <colordiffuse>ccFFFFFF</colordiffuse>
                             </control>
                             <control type="label">
-                                <posx>44</posx>
-                                <posy>8</posy>
+								<posx>42</posx>
+								<posy>5</posy>
                                 <width>1-col</width>
                                 <height>1-col</height>
-                                <font>symbolx</font>
+                                <font>symbolosd</font>
                                 <textcolor>black</textcolor>
                                 <shadowcolor>-</shadowcolor>
                                 <label>$INFO[ListItem.label]</label>

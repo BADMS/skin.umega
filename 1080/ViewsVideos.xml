@@ -224,7 +224,7 @@
 						<width>6-col</width>
 						<align>left</align>
 						<textcolor>selected</textcolor>
-						<height>338</height>
+						<height>6-row-synopsis</height>
 						<label>$INFO[ListItem.Plot]</label>
 						<autoscroll delay="10000" time="1000" repeat="10000"/>
 						<shadowcolor>-</shadowcolor>

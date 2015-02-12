@@ -118,7 +118,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>Skin.String(SectionType,playqueue)</visible>
+				<visible>Skin.String(SectionType,playqueue) + stringcompare(Container.FirstTitle,My Queue)</visible>
 					<animation type="visible" reversible="false">
 				<effect type="fade" start="0" end="100" time="500" delay="400"/>
 				</animation>
@@ -392,6 +392,27 @@
 					<label>        $INFO[ListItem.Label]</label>
 				</control>
 			</control>
+			<control type="group">
+                <animation effect="slide" start="0" end="120" time="1000" condition="container.content(songs) + skin.string(showinfos,1)">true</animation>
+                <animation effect="fade" start="0" end="100" time="1000" condition="container.content(songs) + skin.string(showinfos,1)">true</animation>
+				<control type="label">
+					<visible>Skin.String(SectionType,music) + container.content(songs) + skin.string(showinfos,1)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>H</label>
+				</control>
+				<control type="label">
+					<visible>container.content(songs) + Skin.String(SectionType,music) + skin.string(showinfos,1)</visible>
+					<visible>!isempty(ListItem.Label)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>buttonTitle</font>
+					<textcolor>selected</textcolor>
+					<label>        $INFO[ListItem.title]</label>
+				</control>
+			</control>
         </control>
     </include>
     <!--footer for media lists-->
@@ -433,6 +454,13 @@
 					<label>W /</label>
 				</control>
 				<control type="label">
+					<visible>!Skin.string(showinfos,1) + container.content(songs)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W >></label>
+				</control>
+				<control type="label">
 					<visible>!Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
 					<width>auto</width>
 					<font>symbol</font>
@@ -447,11 +475,18 @@
 					<label>W &#60;/-></label>
 				</control>
 				<control type="label">
+					<visible>Skin.string(showinfos,1) + container.content(songs)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W &#60;/-></label>
+				</control>
+				<control type="label">
 					<visible>Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
-					<label>W &#60;></label>
+					<label>o &#60;></label>
 				</control>
 		   </control>
        </control>

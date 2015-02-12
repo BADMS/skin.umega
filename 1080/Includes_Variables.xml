@@ -50,6 +50,7 @@
 		<value condition="Container.PlexContent(Movies) + StringCompare(Container.Property(PlexFilter),onDeck)">[UPPERCASE]$LOCALIZE[342][/UPPERCASE] [COLOR accented]ON DECK[/COLOR]</value>
 		<value condition="Container.PlexContent(Albums) + StringCompare(Container.Property(PlexFilter),recentlyAdded)">[UPPERCASE]$LOCALIZE[132][/UPPERCASE] [COLOR accented]RECENTLY ADDED[/COLOR]</value>
 		<value condition="Container.PlexContent(Albums) + StringCompare(Container.Property(PlexFilter),albums)">[UPPERCASE]$LOCALIZE[132][/UPPERCASE] [COLOR accented]ALL[/COLOR]</value>
+		<value condition="Container.PlexContent(Albums)">[UPPERCASE]$LOCALIZE[132][/UPPERCASE]</value>
 		<value condition="Container.PlexContent(Artists) + StringCompare(Container.Property(PlexFilter),all)">[UPPERCASE]$LOCALIZE[133][/UPPERCASE] [COLOR accented]ALL[/COLOR]</value>
 		<value condition="Container.PlexContent(Songs)">[UPPERCASE]$LOCALIZE[134][/UPPERCASE]</value>
 		<value condition="Container.Content(genres)">[UPPERCASE]$LOCALIZE[31131][/UPPERCASE]</value>

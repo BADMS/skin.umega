@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window>
+<window id="135">
     <defaultcontrol always="true">9000</defaultcontrol>
     <include>fadeInOut</include>
+	<onunload>SetFocus(777)</onunload>
     <controls>
         <include>modalDialog</include>
         <control type="group">
@@ -107,19 +108,19 @@
                     <content>
                         <item>
                             <description>Rating down</description>
-                            <label></label>
+                            <label>[</label>
                             <thumb>-</thumb>
                             <onclick>DecreaseRating</onclick>
                         </item>
                         <item>
                             <description>Rating up</description>
-                            <label></label>
+                            <label>]</label>
                             <thumb>-</thumb>
                             <onclick>IncreaseRating</onclick>
                         </item>
                         <item>
                             <description>Save</description>
-                            <label></label>
+                            <label>%</label>
                             <thumb>-</thumb>
                             <onclick>SendClick(135,10)</onclick>
                         </item>
@@ -195,16 +196,18 @@
                     <item>
                         <description>Album Info button</description>
                         <label>10523</label>
-                        <label2></label2>
+                        <label2>=</label2>
                         <thumb>-</thumb>
-                        <onclick>SendClick(135,12)</onclick>
+                        <onclick>skin.setstring(showinfos,1)</onclick>
+                        <onclick>Back</onclick>
                     </item>
                     <item>
                         <description>Get Thumb button</description>
                         <label>13405</label>
-                        <label2></label2>
+                        <label2>A</label2>
                         <thumb>-</thumb>
                         <onclick>SendClick(135,13)</onclick>
+                        <onclick>Back</onclick>
                     </item>
                 </content>
             </control>

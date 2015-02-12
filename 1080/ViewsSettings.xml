@@ -17,7 +17,6 @@
             <posx>col-3-begin</posx>
             <posy>row-2-begin</posy>
             <!--animations-->
-            <include>modalDialogInOutVertical</include>
             <control type="image">
                 <posx>-240</posx>
                 <posy>44</posy>
@@ -71,7 +70,6 @@
 	<!-- setting options (right) -->
 	<include name="SettingOptions">
 		<control type="group" id="301">
-            <include>modalDialogInOutVertical</include>
             <posx>col-3-begin</posx>
             <posy>row-2-begin</posy>
 			<width>1120</width>
@@ -102,9 +100,10 @@
 				<textoffsetx>20</textoffsetx>
 			</control>
 			<control type="scrollbar" id="61">
-				<posy>60</posy>
-				<posx>732</posx>
-				<height>410</height>
+				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(301).hasfocus">conditional</animation>
+				<posy>118</posy>
+				<posx>1460</posx>
+				<height>14-row</height>
 				<onup>61</onup>
 				<ondown>61</ondown>
 			</control>

@@ -3,10 +3,12 @@
     <defaultcontrol always="false">777</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
 	<onload>Skin.Reset(showinfos)</onload>
+	<onload>Skin.Reset(showsinfos)</onload>
 	<onload>Skin.SetString(SectionType,music)</onload>
 	<onunload>SetFocus(777)</onunload>
 	<onunload>Skin.Reset(SectionType)</onunload>
 	<onunload>Skin.Reset(showinfos)</onunload>
+	<onunload>Skin.Reset(showsinfos)</onunload>
     <controls>
         <include>globalBackground</include>
         <!--page container group-->
@@ -71,8 +73,11 @@
 						<posx>46r</posx>
 						<posy>276</posy>
 						<height>672</height>
+					<onleft condition="container.content(songs) + skin.string(showinfos,1)">skin.setstring(showinfos,0)</onleft>
+					<onright condition="!container.content(songs)">777</onright>
+					<onright condition="container.content(songs) + skin.string(showinfos,1)">skin.setstring(showinfos,0)</onright>
+					<onright condition="container.content(songs)">activatewindow(135)</onright>
 						<onleft>777</onleft>
-						<onright>777</onright>
 					</control>
 				</control>
 				<!--channel page scrollbar-->
