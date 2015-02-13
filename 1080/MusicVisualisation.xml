@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <window id="2006">
-	<defaultcontrol always="true">711</defaultcontrol>
+	<defaultcontrol always="true">8000</defaultcontrol>
 	<!--<onload>AlarmClock(controlDialog,setfocus(9876),00:05,silent)</onload>-->
 	<controls>
 		<control type="image">
