@@ -1001,7 +1001,7 @@
 	</control>
 </include>
 <include name="viewTVShowInfo">
-	<control type="group" id="777">
+	<control type="group" id="9229">
 		<!--fanart / coverart if available-->
 		<visible>skin.string(showtvinfos,1) + container.content(tvshows)</visible>
 		<control type="group">
@@ -1260,9 +1260,10 @@
 					</focusedlayout>
 					<content>
 						<item>
-							<label>31075</label>
-							<label2> ></label2>
+						<label>31075</label>
+						<label2> ></label2>
 						<thumb>-</thumb>
+						<onclick>Control.SetFocus(50)</onclick>
 						<onclick>Plex.PlayWith(VideoDefaultPlayer)</onclick>
 					</item>
 					<item>

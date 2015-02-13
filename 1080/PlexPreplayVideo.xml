@@ -3,8 +3,6 @@
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<include condition="skin.string(showcast,false)">fadeInOut</include>
-	<onunload>Skin.Reset(showcast)</onunload>
-	<onunload condition="skin.string(showcast,true)">action(info)</onunload>
 	<controls>
 		<control type="group">
 			<!--background / fanart-->
@@ -280,8 +278,8 @@
 				</focusedlayout>
 				<content>
 					<item>
-						<label>31075</label>
-						<label2> ></label2>
+					<label>31075</label>
+					<label2> ></label2>
 					<thumb>-</thumb>
 					<onclick>Plex.PlayWith(VideoDefaultPlayer)</onclick>
 				</item>
@@ -404,6 +402,8 @@
 				<width>12-col</width>
 				<height>1-row</height>
 				<itemgap>3</itemgap>
+				<onup>XBMC.NextItem</onup>
+				<ondown>XBMC.PrevItem</ondown>
 				<orientation>horizontal</orientation>
 				<itemlayout width="6-col" height="1-row">
 					<control type="image">

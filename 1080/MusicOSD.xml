@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <window id="120">
 	<defaultcontrol always="true">8000</defaultcontrol>
-    <onload>AlarmClock(controlDialog,setfocus(9876),00:05,silent)</onload>
+    <!--<onload>AlarmClock(controlDialog,setfocus(9876),00:05,silent)</onload>-->
 	<controls>
 		<!--dialog controls-->
 		<control type="group" id="8765">
@@ -88,7 +88,7 @@
 				<content>
 					<item id="1">
 						<label>p</label>
-						<onclick>PlayerControl(previous)</onclick>
+						<onclick>setfocus(9877)</onclick>
 					</item>
 					<item id="2">
 						<label>B</label>
@@ -101,12 +101,12 @@
 						<onclick>Dialog.Close(all,true)</onclick>
 					</item>
 					<item id="4">
-						<visible>!Player.Paused</visible>
+						<visible>!Player.Paused + !Player.Forwarding + !Player.Rewinding</visible>
 						<label>u</label>
 						<onclick>PlayerControl(play)</onclick>
 					</item>
 					<item id="5">
-						<visible>Player.Paused</visible>
+						<visible>Player.Paused | Player.Forwarding | Player.Rewinding</visible>
 						<label>P</label>
 						<onclick>PlayerControl(play)</onclick>
 					</item>
@@ -116,7 +116,7 @@
 					</item>
 					<item id="7">
 						<label>j</label>
-						<onclick>PlayerControl(next)</onclick>
+						<onclick>setfocus(9878)</onclick>
 					</item>
 				</content>
 			</control>
@@ -190,9 +190,8 @@
 					<item id="3">
 						<description>Playlist</description>
 						<label>31097</label>
-						<thumb>-</thumb>
-						<onclick>dialog.close(5001)</onclick>
-						<onclick>activateWindow(musicplaylist)</onclick>
+						<enable>System.PlexPlayQueue(music)</enable>
+						<onclick>ReplaceWindow(10094)</onclick>
 					</item>
 					<item id="4">
 						<description>Visualisation</description>
@@ -220,6 +219,22 @@
             <onright>8000</onright>
             <onclick>Control.SetFocus(8000)</onclick>
             <onfocus>Back</onfocus>
+        </control>
+        <control type="button" id="9877">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>1-col</height>
+            <width>1-col</width>
+            <onfocus>PlayerControl(Previous)</onfocus>
+            <onfocus>Control.SetFocus(8000)</onfocus>
+        </control>
+        <control type="button" id="9878">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>1-col</height>
+            <width>1-col</width>
+            <onfocus>PlayerControl(Next)</onfocus>
+            <onfocus>Control.SetFocus(8000)</onfocus>
         </control>
     </controls>
 </window>

@@ -37,7 +37,7 @@
 <keymap>
   <global>
     <keyboard>
-      <p>Play</p>
+      <p>ReloadSkin</p>
       <q>Queue</q>
       <r>Rewind</r>
       <left>Left</left>
@@ -319,6 +319,8 @@
 		<m>OSD</m>
 		<up>OSD</up>
 		<down>OSD</down>
+		  <right>FastForward</right>
+		  <left>Rewind</left>
 		<i>Info</i>
 		<p>ActivateWindow(VisualisationPresetList)</p>
 		<v>ActivateWindow(VisualisationSettings)</v>

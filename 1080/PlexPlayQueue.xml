@@ -46,7 +46,7 @@
 					<width>8-col</width>
 					<font>pageTitle</font>
 					<align>right</align>
-					<label>$INFO[Container.FirstTitle]</label>
+					<label>[UPPERCASE]$INFO[Container.FirstTitle][/UPPERCASE]</label>
 					<textcolor>selected</textcolor>
 				</control>
 				<control type="group">
