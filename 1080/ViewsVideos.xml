@@ -885,7 +885,7 @@
 					<width>276</width>
 					<height>273</height>
 					<aspectratio>stretch</aspectratio>
-					<texture fallback="candy/Space-large-invader.sh-600x600.png" border="0">$VAR[playlistImageType]</texture>
+					<texture fallback="candy/invader.png" border="0">$VAR[playlistImageType]</texture>
 					<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 					<bordersize>3</bordersize>
 					<colordiffuse>ffFFFFFF</colordiffuse>
@@ -929,7 +929,7 @@
 					<width>276</width>
 					<height>273</height>
 					<aspectratio>stretch</aspectratio>
-					<texture fallback="candy/Space-large-invader.sh-600x600.png" border="0">$VAR[playlistImageType]</texture>
+					<texture fallback="candy/invader.png" border="0">$VAR[playlistImageType]</texture>
 					<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 					<bordersize>3</bordersize>
 					<colordiffuse>ffFFFFFF</colordiffuse>
@@ -996,7 +996,7 @@
 			<posy>-95</posy>
 			<posx>-312</posx>
 			<include>FullScreenScaled</include>
-			<texture>candy/Space-large-invader.sh-600x600.png</texture>
+			<texture>candy/invader.png</texture>
 		</control>
 	</control>
 </include>

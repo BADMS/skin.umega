@@ -513,7 +513,7 @@
 					<width>8-col-gutter</width>
 					<align>left</align>
 					<textcolor>selected</textcolor>
-					<height>528</height>
+					<height>11-col-gutter</height>
 					<label>[B]$INFO[Container.Property(summary)][/B]</label>
 					<autoscroll delay="10000" time="1000" repeat="10000"/>
 					<shadowcolor>-</shadowcolor>

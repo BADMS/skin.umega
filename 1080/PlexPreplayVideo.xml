@@ -217,7 +217,7 @@
 				<width>8-col</width>
 				<height>6-row</height>
 				<itemgap>3</itemgap>
-				<onright>3</onright>
+				<onright condition="Skin.String(showcast,true)">3</onright>
 				<orientation>vertical</orientation>
 				<itemlayout width="4-col" height="1-row">
 					<control type="image">
@@ -288,8 +288,10 @@
 					<label>41008</label>
 					<label2>P</label2>
 					<thumb>-</thumb>
-					<onclick>Skin.SetString(showcast,true)</onclick>
-					<onclick>Control.SetFocus(3)</onclick>
+					<onclick condition="!Skin.String(showcast,true)">Skin.SetString(showcast,true)</onclick>
+					<onclick condition="Skin.String(showcast,true)">Skin.SetString(showcast,false)</onclick>
+					<onclick condition="!Skin.String(showcast,true)">Control.SetFocus(3)</onclick>
+					<onclick condition="Skin.String(showcast,true)">Control.SetFocus(8000)</onclick>
 				</item>
 				<item>
 					<label>41014</label>

@@ -346,6 +346,7 @@
       <p>ActivateWindow(VisualisationPresetList)</p>
       <v>ActivateWindow(VisualisationSettings)</v>
       <n>ActivateWindow(MusicPlaylist)</n>
+      <h>ActivateWindow(Home)</h>
     </keyboard>
   </MusicOSD>
   <VisualisationSettings>

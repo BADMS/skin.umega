@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <window id="120">
 	<defaultcontrol always="true">8000</defaultcontrol>
-    <!--<onload>AlarmClock(controlDialog,setfocus(9876),00:05,silent)</onload>-->
+    <onload>AlarmClock(controlDialog,setfocus(9876),00:25,silent)</onload>
 	<controls>
 		<!--dialog controls-->
 		<control type="group" id="8765">
@@ -201,8 +201,9 @@
 					<item>
 						<visible>Visualisation.Enabled</visible>
 						<description>Visualisation Settings</description>
-						<label>$LOCALIZE[21417]</label>
-						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+						<label>$LOCALIZE[31227]</label>
+						<!--<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>-->
+						<onclick>XBMC.ActivateWindow(122)</onclick>
 					</item>
 				</content>
 			</control>

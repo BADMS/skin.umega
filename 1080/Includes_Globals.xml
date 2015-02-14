@@ -37,7 +37,7 @@
             </control>
         </control>
         <control type="group">
-			<!--visualisation-->
+			<!--visualisation--blowsup-viz-settings-ofc.sigh-->
             <visible>[Player.HasAudio + !Skin.HasSetting(disableVizBg)]</visible>
 			<control type="visualisation" id="2">
 				<description>visualisation</description>
@@ -107,9 +107,17 @@
                 </control>
                 <control type="image">
                     <include>FullScreenScaled</include>
-                    <texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
+                    <texture fallback="backgrounds/lost.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
                     <colordiffuse>6affffff</colordiffuse>
                     <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="largeimage">
+					<fadetime>400</fadetime>
+                    <include>FullScreenScaled</include>
+                    <colordiffuse>6affffff</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+					<texture background="true">backgrounds/earth.png</texture>
+					<visible>Skin.String(SectionType,sharedcontent)</visible>
                 </control>
             </control>
 			<control type="group">
@@ -442,7 +450,7 @@
 					<width>auto</width>
 					<font>buttonTitleC</font>
 					<textcolor>selected</textcolor>
-					<label>©</label>
+					<label>Â©</label>
 				</control>
 				<control type="label">
 					<width>auto</width>
