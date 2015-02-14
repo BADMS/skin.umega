@@ -95,7 +95,7 @@
             </control>
             <!--show media fanart in relevant sections-->
             <control type="group">
-                <visible>container.content(seasons) | [!window.isactive(musicplaylist) + container.content(songs)] | [container.content(episodes) + !Substring(Container.folderpath,iplayer)]</visible>
+                <visible>Skin.HasSetting(useGlobalFanartBackground)</visible>
                 <animation type="visible" reversible="false">
                     <effect type="fade" start="0" end="100" time="500" delay="400"/>
                 </animation>
@@ -106,8 +106,9 @@
                     <aspectratio>stretch</aspectratio>
                 </control>
                 <control type="image">
+					<fadetime>400</fadetime>
                     <include>FullScreenScaled</include>
-                    <texture fallback="backgrounds/lost.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                    <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
                     <colordiffuse>6affffff</colordiffuse>
                     <aspectratio>stretch</aspectratio>
                 </control>
