@@ -6,7 +6,6 @@
 	<!-- settings menu (left) -->
 	<include name="SettingsMenu">
         <!--background-->
-        <include>globalBackground</include>
         <control type="image">
             <include>dimensionsFullscreen</include>
             <texture>colors/black.png</texture>
@@ -59,7 +58,6 @@
 					<width>276</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<texturenofocus>colors/black.png</texturenofocus>
 					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>

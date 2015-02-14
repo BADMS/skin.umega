@@ -6,8 +6,8 @@
 	<onunload>Skin.Reset(SettingsCategory)</onunload>
 	<onunload condition="Window.Next(0)">Dialog.Close(all,true)</onunload>
 	<controls>
+        <include>globalBackground</include>
 		<control type="group">
-            <include>modalDialogInOutVertical</include>
 			<!-- settings menu (left) -->
 			<include>SettingsMenu</include>		
 			<!-- setting options (right) -->
