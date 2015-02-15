@@ -301,6 +301,14 @@
                     <onclick>Skin.ToggleSetting(disableVizBg)</onclick>
                     <selected>Skin.HasSetting(disableVizBg)</selected>
                 </control>
+                <control type="radiobutton" id="19">
+                    <visible>Container(8000).Hasfocus(1)</visible>
+                    <description>Disable TV Show Episode Auto Advance</description>
+                    <width>16-col</width>
+                    <label>Disable TV Show Episode Auto Advance</label>
+                    <onclick>Skin.ToggleSetting(disableEpAutoAdv)</onclick>
+                    <selected>Skin.HasSetting(disableEpAutoAdv)</selected>
+                </control>
             </control>
             <!--reset buttons-->
             <control type="group">
@@ -309,7 +317,7 @@
                     <visible>Container(8000).Hasfocus(1)</visible>
                     <posy>120</posy>
                     <height>54</height>
-                    <width>60</width>
+                    <width>64</width>
                     <align>left</align>
                     <textoffsetx>18</textoffsetx>
                     <font>symbol</font>
@@ -325,7 +333,7 @@
                     <visible>Container(8000).Hasfocus(1)</visible>
                     <posy>177</posy>
                     <height>54</height>
-                    <width>60</width>
+                    <width>64</width>
                     <align>left</align>
                     <textoffsetx>18</textoffsetx>
                     <font>symbol</font>
@@ -342,7 +350,7 @@
                     <visible>Container(8000).Hasfocus(1)</visible>
                     <posy>234</posy>
                     <height>54</height>
-                    <width>60</width>
+                    <width>64</width>
                     <align>left</align>
                     <textoffsetx>18</textoffsetx>
                     <font>symbol</font>
@@ -359,7 +367,7 @@
                     <visible>Container(8000).Hasfocus(1)</visible>
                     <posy>291</posy>
                     <height>54</height>
-                    <width>60</width>
+                    <width>64</width>
                     <align>left</align>
                     <textoffsetx>18</textoffsetx>
                     <font>symbol</font>

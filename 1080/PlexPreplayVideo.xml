@@ -2,6 +2,7 @@
 <window id="10090">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
 	<include condition="skin.string(showcast,false)">fadeInOut</include>
 	<controls>
 		<control type="group">
