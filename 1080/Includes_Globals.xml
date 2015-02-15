@@ -421,7 +421,7 @@
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
-					<label>H</label>
+					<label>C</label>
 				</control>
 				<control type="label">
 					<visible>container.content(songs) + Skin.String(SectionType,music) + skin.string(showinfos,1)</visible>

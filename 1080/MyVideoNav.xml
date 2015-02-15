@@ -75,7 +75,7 @@
 					<align>right</align>
 					<label>$LOCALIZE[31141] $INFO[ListItem.Season]</label>
 					<textcolor>selected</textcolor>
-					<visible>!IsEmpty(Container.Property(primaryFilterActivated))</visible>
+					<visible>!IsEmpty(Container.Property(primaryFilterActivated)) + !Container.PlexContent(Seasons)</visible>
 				</control>
 				<control type="label">
 					<visible>ListItem.Type(episode)</visible>

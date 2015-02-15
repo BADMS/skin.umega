@@ -430,7 +430,7 @@
 				<!--coverart-->
 				<control type="image">
 					<visible>!isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1)</visible>
-					<posx>col-3-begin</posx>
+					<posx>col-4-begin</posx>
 					<posy>2-row</posy>
 					<width>12-col</width>
 					<height>12-col</height>
