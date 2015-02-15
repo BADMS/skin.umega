@@ -15,21 +15,8 @@
 		<animation effect="slide" start="0" end="-320" time="300" condition="ControlGroup(1500).HasFocus()">Conditional</animation>
 		<animation effect="slide" start="0" end="-320" time="300" condition="[ControlGroup(998).HasFocus() | ControlGroup(1300).HasFocus()] + Container.PlexContent(Secondary)">Conditional</animation>
 	</include>
-	<include name="leftMenuSlideHome">
-		<animation effect="slide" start="0" end="317" time="300" condition="ControlGroup(1300).HasFocus()">Conditional</animation>
-		<animation effect="slide" start="0" end="-317" time="300" condition="ControlGroup(1300).HasFocus()">WindowClose</animation>
-		<animation effect="slide" start="0" end="-317" time="300" condition="ControlGroup(1300).HasFocus() + Container.PlexContent(Secondary)">Conditional</animation>
-	</include>
-	<include name="leftMenuClockSlideHome">
-		<animation effect="slide" start="0" end="390" time="300" condition="ControlGroup(1300).HasFocus()">Conditional</animation>
-		<animation effect="slide" start="0" end="-390" time="300" condition="ControlGroup(1300).HasFocus()">WindowClose</animation>
-		<animation effect="slide" start="0" end="-390" time="300" condition="ControlGroup(1300).HasFocus() + Container.PlexContent(Secondary)">Conditional</animation>
-	</include>
 	<include name="rightSideSlide">
 		<animation effect="zoom" start="100" end="62" time="300" center="1140,360" condition="ControlGroup(1300).HasFocus() | ControlGroup(998).HasFocus() | ControlGroup(1500).HasFocus()">Conditional</animation>
-	</include>
-	<include name="rightSideSlideExtras">
-		<animation effect="zoom" start="100" end="79" time="300" center="1432,40" condition="IsEmpty(Skin.String(dsp_helper)) + Skin.HasSetting(AutoShowExtras) + !IsEmpty(ListItem.Property(PlexExtras)) | Control.HasFocus(3) + !Skin.HasSetting(AutoShowExtrasHack)">Conditional</animation>
 	</include>
 	<include name="leftMenuBg">
 		<control type="group">
@@ -42,25 +29,8 @@
 				<texture>colors/selected.png</texture>
 				<colordiffuse>ffffffff</colordiffuse>
 				<bordersize>0</bordersize>
-				<texture>backgrounds/background_black3.png</texture>
+				<texture>colors/black.png</texture>
 			</control>
-		</control>
-	</include>
-	<include name="leftMenuPreplayButton">
-		<width>74</width>
-		<height>30</height>
-		<onleft>1300</onleft>
-		<onright>-</onright>
-	</include>
-	<include name="leftMenuBgPreplay">
-		<control type="image">
-			<posx>0</posx>
-			<height>720</height>
-			<width>70</width>
-			<include>Black</include>
-			<animation type="Conditional" condition="true">
-				<effect type="fade" start="0" end="20"/>
-			</animation>
 		</control>
 	</include>
 	<include name="leftMenuBgSettings">
@@ -84,7 +54,7 @@
 		<focusedcolor>selected</focusedcolor>
 		<texturefocus>colors/black.png</texturefocus>
 		<textoffsetx>5</textoffsetx>
-		<alttexturefocus>colors/unselected.png</alttexturefocus>
+		<alttexturefocus>colors/selected.png</alttexturefocus>
 		<animation effect="fade" start="100" end="100" time="0" condition="true">Conditional</animation>
 		<align>left</align>
 		<width>270</width>
@@ -96,13 +66,10 @@
 		<focusedcolor>selected</focusedcolor>
 		<texturefocus>colors/black.png</texturefocus>
 		<textoffsetx>5</textoffsetx>
-		<alttexturefocus>colors/unselected.png</alttexturefocus>
+		<alttexturefocus>colors/selected.png</alttexturefocus>
 		<animation effect="fade" start="100" end="100" time="0" condition="true">Conditional</animation>
 		<align>left</align>
 		<width>270</width>
-	</include>
-	<include name="leftMenuSpacing">
-		<height>45</height>
 	</include>
 	<include name="leftMenuFormat">
 		<animation type="Conditional" condition="true">
@@ -115,7 +82,7 @@
 		<focusedcolor>selected</focusedcolor>
 		<texturefocus>colors/black.png</texturefocus>
 		<textoffsetx>5</textoffsetx>
-		<alttexturefocus>colors/unselected.png</alttexturefocus>
+		<alttexturefocus>colors/selected.png</alttexturefocus>
 		<radiowidth>16</radiowidth>
 		<radioposx>236</radioposx>
 		<radioposy>1</radioposy>
@@ -132,7 +99,7 @@
 		<focusedcolor>selected</focusedcolor>
 		<texturefocus>colors/black.png</texturefocus>
 		<textoffsetx>5</textoffsetx>
-		<alttexturefocus>colors/unselected.png</alttexturefocus>
+		<alttexturefocus>colors/selected.png</alttexturefocus>
 		<shadowcolor>-</shadowcolor>
 		<align>left</align>
 		<aligny>center</aligny>
@@ -148,7 +115,7 @@
 		<focusedcolor>selected</focusedcolor>
 		<texturefocus>colors/black.png</texturefocus>
 		<textoffsetx>5</textoffsetx>
-		<alttexturefocus>colors/unselected.png</alttexturefocus>
+		<alttexturefocus>colors/selected.png</alttexturefocus>
 		<align>left</align>
 		<aligny>center</aligny>
 		<animation type="Conditional" condition="true">
@@ -167,24 +134,24 @@
 	</include>
 	<include name="leftSubMenuRadioButton">
 		<width>185</width>
-		<height>26</height>
+		<height>30</height>
 		<align>left</align>
 		<aligny>center</aligny>
 		<textoffsetx>10</textoffsetx>
-		<font>Regular-17</font>
+		<font>filterTitle</font>
 		<shadowcolor>-</shadowcolor>
 		<textcolor>black</textcolor>
 		<focusedcolor>selected</focusedcolor>
-		<texturefocus border="5">black-bottom-grey.png</texturefocus>
+		<texturefocus border="5">colors/black.png</texturefocus>
 		<texturenofocus border="5">-</texturenofocus>
 		<radioposx>191</radioposx>
 		<radioheight>26</radioheight>
 	</include>
 	<include name="leftMenuSortingButton">
 		<description>sorting radio button</description>
-		<textureorderascending>arrow-big-up.png</textureorderascending>
-		<textureorderdescending flipy="true">arrow-big-up.png</textureorderdescending>
-		<colordiffuse>orange</colordiffuse>
+		<textureorderascending>arrow-big-up-gray.png</textureorderascending>
+		<textureorderdescending flipy="true">arrow-big-up-gray.png</textureorderdescending>
+		<colordiffuse>selected</colordiffuse>
 		<align>right</align>
 		<aligny>center</aligny>
 		<pulseonselect>false</pulseonselect>
@@ -545,7 +512,7 @@
 					<onright>777</onright>
 					<itemgap>0</itemgap>
 					<animation effect="slide" end="0,-20" time="0" condition="[Skin.String(SectionType,movies) | Container.PlexContent(Movies)] + IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
-					<animation effect="slide" end="0,-4" time="0" condition="[Skin.String(SectionType,movies) | Container.PlexContent(Movies)] + !IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
+					<animation effect="slide" end="0,16" time="0" condition="[Skin.String(SectionType,movies) | Container.PlexContent(Movies)] + !IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
 					<animation effect="slide" end="0,-94" time="0" condition="[Skin.String(SectionType,tvshows) | Container.PlexContent(TVShows)] + IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
 					<animation effect="slide" end="0,-59" time="0" condition="[Skin.String(SectionType,tvshows) | Container.PlexContent(TVShows)] + !IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
 					<animation effect="slide" end="0,-85" time="0" condition="[Skin.String(SectionType,photos) | Window.IsActive(2)] + IsEmpty(Container.Property(secondaryFilterActivated))">Conditional</animation>
@@ -571,7 +538,7 @@
 					<textcolor>black</textcolor>
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>colors/black.png</texturefocus>
-					<alttexturefocus>colors/unselected.png</alttexturefocus>
+					<alttexturefocus>colors/selected.png</alttexturefocus>
 					<radioposx>0</radioposx>
 					<align>left</align>
 					<aligny>center</aligny>

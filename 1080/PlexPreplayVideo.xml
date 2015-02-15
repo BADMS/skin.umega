@@ -488,7 +488,7 @@
 </control>
 <!--extras toggle-->
 <control type="group">
-	<visible>skin.string(showcast,true)</visible>
+	<visible>skin.string(showcast,true) + !Container.PlexContent(Clip) + !container.content(episode)</visible>
 	<posx>1263</posx>
 	<posy>0</posy>
 	<animation type="conditional" condition="skin.string(showcast,true)">
