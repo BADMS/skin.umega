@@ -3,9 +3,9 @@
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
-	<include condition="skin.string(showcast,false)">fadeInOut</include>
 	<controls>
 		<control type="group">
+			<include>fadeInOutPP</include>
 			<!--background / fanart-->
 			<control type="image">
 				<visible>!Container.PlexContent(Clip) + !container.content(episode)</visible>
@@ -50,6 +50,9 @@
 			<animation type="Windowopen">
 				<effect type="fade" start="0" end="100" time="300" delay="300"/>
 				<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
+			</animation>
+			<animation type="Windowclose">
+				<effect type="slide" start="0" end="1378" tween="cubic" easing="out" time="400" delay="300"/>
 			</animation>
 			<animation type="conditional" condition="skin.string(showcast,true)">
 				<effect type="slide" start="0" end="-578" tween="cubic" easing="out" time="400" delay="0"/>
@@ -219,6 +222,8 @@
 				<height>6-row</height>
 				<itemgap>3</itemgap>
 				<onright condition="Skin.String(showcast,true)">3</onright>
+				<onright condition="!Skin.String(showcast,true)">Back</onright>
+				<onleft>Back</onleft>
 				<orientation>vertical</orientation>
 				<itemlayout width="4-col" height="1-row">
 					<control type="image">
@@ -279,8 +284,8 @@
 				</focusedlayout>
 				<content>
 					<item>
-					<label>31075</label>
-					<label2> ></label2>
+						<label>31075</label>
+						<label2> ></label2>
 					<thumb>-</thumb>
 					<onclick>Plex.PlayWith(VideoDefaultPlayer)</onclick>
 				</item>
@@ -490,10 +495,15 @@
 <!--extras toggle-->
 <control type="group">
 	<visible>skin.string(showcast,true) + !Container.PlexContent(Clip) + !container.content(episode)</visible>
+	<animation effect="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="100">VisibleChange</animation>
 	<posx>1263</posx>
 	<posy>0</posy>
-	<animation type="conditional" condition="skin.string(showcast,true)">
-		<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="100"/>
+	<animation type="Windowclose">
+		<effect type="slide" start="0" end="800" tween="cubic" easing="out" time="400" delay="300"/>
+	</animation>
+	<animation type="Windowopen">
+		<effect type="fade" start="0" end="100" time="300" delay="300"/>
+		<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
 	</animation>
 	<!--overlay-->
 	<control type="image">
