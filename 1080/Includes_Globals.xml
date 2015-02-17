@@ -435,7 +435,7 @@
 			</control>
         </control>
     </include>
-    <!--footer for media lists-->
+    <!--keys for media lists-->
     <include name="keysListFooter">
         <control type="group">
 			<posx>0</posx>

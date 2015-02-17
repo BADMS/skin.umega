@@ -1315,7 +1315,10 @@
 					</item>
 				</content>
 			</control>
+	</control>
+</control>
 		<control type="group">
+				<visible>skin.string(showtvinfos,1) + container.content(tvshows)</visible>
 			<posx>col-4-begin</posx>
 			<posy>row-18-begin</posy>
 			<control type="group">
@@ -1323,7 +1326,5 @@
 				<include>keysListFooter</include>
 			</control>
 		</control>
-	</control>
-</control>
 </include>
 </includes>
