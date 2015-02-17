@@ -407,6 +407,7 @@
 		<control type="group">
 			<!--fanart / coverart if available-->
 			<visible>skin.string(showinfos,1) + [container.content(albums)|container.content(songs)]</visible>
+			<animation effect="fade" start="0" end="100" time="300" delay="300">VisibleChange</animation>
 			<control type="group">
 				<posx>-312</posx>
 				<posy>-95</posy>
@@ -459,10 +460,6 @@
 				<animation type="Conditional" condition="Skin.String(showinfos,1)">
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 					<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
-				</animation>
-				<animation type="Conditional" condition="Skin.String(showinfos,0)">
-					<effect type="fade" start="100" end="0" time="300" delay="300"/>
-					<effect type="slide" start="0" end="800" tween="cubic" easing="out" time="400" delay="300"/>
 				</animation>
 				<!--overlay-->
 				<control type="image">
@@ -524,7 +521,7 @@
 				<visible>!isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1)</visible>
 				<posx>1047</posx>
 				<posy>0</posy>
-				<animation type="Windowopen">
+				<animation type="Conditional" condition="Skin.String(showinfos,1)">
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 					<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
 				</animation>

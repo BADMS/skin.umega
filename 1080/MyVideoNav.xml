@@ -75,9 +75,9 @@
 					<align>right</align>
 					<label>$LOCALIZE[31141] $INFO[ListItem.Season]</label>
 					<textcolor>selected</textcolor>
-					<visible>!IsEmpty(Container.Property(primaryFilterActivated)) + !Container.PlexContent(Seasons)</visible>
+					<visible>!IsEmpty(Container.Property(primaryFilterActivated)) + !Container.PlexContent(Seasons) + !StringCompare(Container.Property(PlexFilter),recentlyViewedShows) + !StringCompare(Container.Property(PlexFilter),all)</visible>
 				</control>
-				<control type="label">
+				<control type="label"><!-- normal tv all/viewed-->
 					<visible>ListItem.Type(episode)</visible>
 					<posx>0</posx>
 					<posy>45</posy>

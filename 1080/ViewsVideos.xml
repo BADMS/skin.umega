@@ -1003,9 +1003,10 @@
 <include name="viewTVShowInfo">
 	<control type="group" id="9229">
 		<!--fanart / coverart if available-->
-		<visible>skin.string(showtvinfos,1) + container.content(tvshows)</visible>
 		<control type="group">
 			<!--fanart-->
+			<visible>skin.string(showtvinfos,1) + container.content(tvshows)</visible>
+			<animation effect="fade" start="0" end="100" time="300" delay="300">VisibleChange</animation>
 			<control type="image">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -1022,16 +1023,23 @@
 				<texture fallback="colors/black.png">$INFO[Listitem.art(fanart)]</texture>
 				<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
 			</control>
+			<control type="image">
+				<include>FullScreenScaled</include>
+				<texture>backgrounds/vignette.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+		</control>
 			<control type="group">
-				<visible>!Container.PlexContent(Clip) + !container.content(episode)</visible>
 				<posx>1263</posx>
 				<posy>0</posy>
-				<!--  <animation effect="fade" time="300">VisibleChange</animation> --bugnote-->
-				<animation type="Conditional" condition="Skin.String(showtvinfos,1)" reversible="false">
+				<!--  <animation type="Conditional" condition="Skin.String(showtvinfos,1)" reversible="false">
 					<effect type="fade" start="0" end="100" time="300" delay="300"/>
 					<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
-				</animation>
+				</animation> --bugnote-->
 				<!--overlay-->
+				<visible>skin.string(showtvinfos,1) + container.content(tvshows)</visible>
+				<animation effect="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300">VisibleChange</animation>
 				<control type="image">
 					<posx>84</posx>
 					<posy>0</posy>
@@ -1307,7 +1315,6 @@
 					</item>
 				</content>
 			</control>
-		</control>
 		<control type="group">
 			<posx>col-4-begin</posx>
 			<posy>row-18-begin</posy>
