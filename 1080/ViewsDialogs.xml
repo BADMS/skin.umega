@@ -1,90 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <!--list-->
-    <include name="viewDialogList">
-        <control type="panel" id="50">
-            <posx>0</posx>
-            <posy>3-row</posy>
-            <width>22-col</width>
-            <height>11-row</height>
-            <onleft>300</onleft>
-            <onright>60</onright>
-            <ondown>50</ondown>
-            <onup>5</onup>
-            <pagecontrol>60</pagecontrol>
-            <itemlayout height="1-row" width="11-col">
-                <control type="image">
-                    <posx>4</posx>
-                    <posy>4</posy>
-                    <width>48</width>
-                    <height>48</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
-                </control>
-                <control type="label">
-                    <posx>1-col</posx>
-                    <posy>0</posy>
-                    <width>7-col</width>
-                    <font>itemTitle</font>
-                    <textcolor>selected</textcolor>
-                    <shadowcolor>-</shadowcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-                <control type="label">
-                    <right>48</right>
-                    <posy>0</posy>
-                    <width>4-col</width>
-                    <align>right</align>
-                    <label>$INFO[ListItem.Label2]</label>
-                    <font>smallMedium</font>
-                    <textcolor>selected</textcolor>
-                    <selectedcolor>selected</selectedcolor>
-                    <shadowcolor>-</shadowcolor>
-                </control>
-            </itemlayout>
-            <focusedlayout height="1-row" width="11-col">
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>2</posy>
-                    <width>11-col-gutter</width>
-                    <height>53</height>
-                    <aspectratio>stretch</aspectratio>
-                    <texture border="24,0,24,0">UIControls/listitemFO.png</texture>
-                    <bordersize>0</bordersize>
-                    <colordiffuse>ffFFFFFF</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>4</posx>
-                    <posy>4</posy>
-                    <width>48</width>
-                    <height>48</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
-                    <texture fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
-                </control>
-                <control type="label">
-                    <posx>1-col</posx>
-                    <posy>0</posy>
-                    <width>7-col</width>
-                    <font>itemTitle</font>
-                    <textcolor>black</textcolor>
-                    <selectedcolor>black</selectedcolor>
-                    <shadowcolor>-</shadowcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                </control>
-                <control type="label">
-                    <right>48</right>
-                    <posy>0</posy>
-                    <width>4-col</width>
-                    <align>right</align>
-                    <label>$INFO[ListItem.Label2]</label>
-                    <font>smallMedium</font>
-                    <textcolor>black</textcolor>
-                    <selectedcolor>black</selectedcolor>
-                    <shadowcolor>-</shadowcolor>
-                </control>
-            </focusedlayout>
-        </control>
-    </include>
+	<!--list-->
+	<include name="viewDialogList">
+		<control type="panel" id="50">
+			<posx>0</posx>
+			<posy>3-row</posy>
+			<width>22-col</width>
+			<height>11-row</height>
+			<onleft>300</onleft>
+			<onright>60</onright>
+			<ondown>50</ondown>
+			<onup>5</onup>
+			<pagecontrol>60</pagecontrol>
+			<itemlayout height="1-row" width="11-col">
+				<control type="image">
+					<posx>4</posx>
+					<posy>4</posy>
+					<width>48</width>
+					<height>48</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+				</control>
+				<control type="label">
+					<posx>1-col</posx>
+					<posy>0</posy>
+					<width>7-col</width>
+					<font>itemTitle</font>
+					<textcolor>selected</textcolor>
+					<shadowcolor>-</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<right>48</right>
+					<posy>0</posy>
+					<width>4-col</width>
+					<align>right</align>
+					<label>$INFO[ListItem.Label2]</label>
+					<font>smallMedium</font>
+					<textcolor>selected</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<shadowcolor>-</shadowcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="1-row" width="11-col">
+				<control type="image">
+					<posx>0</posx>
+					<posy>2</posy>
+					<width>11-col-gutter</width>
+					<height>53</height>
+					<aspectratio>stretch</aspectratio>
+					<texture border="24,0,24,0">UIControls/listitemFO.png</texture>
+					<bordersize>0</bordersize>
+					<colordiffuse>ffFFFFFF</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>4</posx>
+					<posy>4</posy>
+					<width>48</width>
+					<height>48</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture fallback="colors/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+				</control>
+				<control type="label">
+					<posx>1-col</posx>
+					<posy>0</posy>
+					<width>7-col</width>
+					<font>itemTitle</font>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
+					<shadowcolor>-</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<right>48</right>
+					<posy>0</posy>
+					<width>4-col</width>
+					<align>right</align>
+					<label>$INFO[ListItem.Label2]</label>
+					<font>smallMedium</font>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
+					<shadowcolor>-</shadowcolor>
+				</control>
+			</focusedlayout>
+		</control>
+	</include>
 	<!-- global dialog includes -->
 	<include name="DialogBorder">
 		<posx>-1</posx>
@@ -1146,22 +1146,22 @@
 				<height>40</height>
 				<include>DialogHeading</include>
 				<label>[UPPERCASE]$LOCALIZE[33063][/UPPERCASE]</label>
-		</control>
-		<control type="grouplist" id="996">
-			<description>grouplist for context buttons</description>
-			<posx>10</posx>
-			<posy>30</posy>
-			<width>320</width>
-			<height max="400">auto</height>
-			<itemgap>0</itemgap>
-		</control>
-		<control type="button" id="1000">
-			<description>Buttons</description>
-			<posx>20</posx>
-			<width>380</width>
+			</control>
+			<control type="grouplist" id="996">
+				<description>grouplist for context buttons</description>
+				<posx>10</posx>
+				<posy>30</posy>
+				<width>320</width>
+				<height max="400">auto</height>
+				<itemgap>0</itemgap>
+			</control>
+			<control type="button" id="1000">
+				<description>Buttons</description>
+				<posx>20</posx>
+				<width>380</width>
+			</control>
 		</control>
 	</control>
-</control>
 </include>
 <!-- -->
 <!-- DialogAddonSettings.xml -->
@@ -1355,8 +1355,8 @@
 		<control type="group">
 			<control type="image">
 				<posy>0</posy>
-                        <width>285</width>
-                        <height>55</height>
+				<width>285</width>
+				<height>55</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>colors/selected.png</texture>
 			</control>
@@ -1596,78 +1596,73 @@
 	</control>
 </include>
 <include name="KeyboardFont">
-	<font>Regular-16</font>
-	<align>center</align>
-	<aligny>center</aligny>
-</include>
-<include name="KeyboardPINFont">
-	<font>Regular-36</font>
+	<font>buttonTitle</font>
 	<align>center</align>
 	<aligny>center</aligny>
 </include>
 <include name="KeyboardButton">
-	<font>Regular-18</font>
+	<font>buttonTitle</font>
 	<align>center</align>
 	<aligny>center</aligny>
 	<width>60</width>
 	<height>55</height>
-	<texturefocus>orange.png</texturefocus>
-	<texturenofocus>black.png</texturenofocus>
-	<focusedcolor>white</focusedcolor>
+	<texturefocus>colors/keyaccent.png</texturefocus>
+	<texturenofocus>colors/keyselected.png</texturenofocus>
+	<focusedcolor>selected</focusedcolor>
 </include>
 <include name="KeyboardButtonFaded">
-	<font>Regular-18</font>
+	<font>buttonTitle</font>
 	<align>center</align>
 	<aligny>center</aligny>
 	<width>60</width>
 	<height>50</height>
-	<texturefocus>black.png</texturefocus>
-	<texturenofocus>black.png</texturenofocus>
+	<texturefocus>colors/keyaccent.png</texturefocus>
+	<texturenofocus>colors/keyselected.png</texturenofocus>
 </include>
 <include name="KeyboardButtonDummy">
 	<width>60</width>
 	<height>50</height>
 </include>
 <include name="KeyboardButtonBig">
-	<font>Regular-24</font>
+	<font>symbol</font>
 	<align>center</align>
 	<aligny>center</aligny>
 	<width>60</width>
 	<height>55</height>
-	<texturefocus>orange.png</texturefocus>
-	<texturenofocus>black.png</texturenofocus>
-	<focusedcolor>white</focusedcolor>
+	<texturefocus>colors/keyaccent.png</texturefocus>
+	<texturenofocus>colors/keyselected.png</texturenofocus>
+	<focusedcolor>selected</focusedcolor>
 </include>
 <include name="KeyboardButtonBigFaded">
-	<font>Regular-24</font>
+	<font>symbol</font>
 	<align>center</align>
 	<aligny>center</aligny>
 	<width>60</width>
 	<height>50</height>
-	<texturefocus>black.png</texturefocus>
-	<texturenofocus>black.png</texturenofocus>
+	<texturefocus>colors/keyaccent.png</texturefocus>
+	<texturenofocus>colors/keyselected.png</texturenofocus>
 </include>
 <include name="KeyboardNumericFade">
 	<animation effect="fade" start="100" end="30" time="300" condition="Window.IsActive(109)">Conditional</animation>
 </include>
 <include name="KeyboardButtonLighter">
-	<font>Regular-18</font>
+	<font>buttonTitle</font>
 	<align>center</align>
 	<aligny>center</aligny>
 	<width>60</width>
 	<height>55</height>
-	<texturefocus>orange.png</texturefocus>
-	<texturenofocus>darkgrey.png</texturenofocus>
-	<focusedcolor>white</focusedcolor>
+	<texturefocus>colors/keyaccent.png</texturefocus>
+	<texturenofocus>colors/keyselected.png</texturenofocus>
+	<focusedcolor>selected</focusedcolor>
 </include>
 <include name="KeyboardButtonLighterNumeric">
-	<font>Regular-18</font>
+	<font>buttonTitle</font>
 	<align>center</align>
 	<aligny>center</aligny>
 	<width>60</width>
 	<height>50</height>
-	<texturefocus>darkgrey.png</texturefocus>
-	<texturenofocus>darkgrey.png</texturenofocus>
+	<texturefocus>colors/keyaccent.png</texturefocus>
+	<texturenofocus>colors/keyselected.png</texturenofocus>
 	<enable>!Window.IsVisible(109)</enable>
 	<animation effect="fade" start="100" end="30" time="300" condition="true">Conditional</animation>
 </include>
@@ -1675,38 +1670,56 @@
 	<control type="image">
 		<width>645</width>
 		<height>50</height>
-		<include>Black</include>
+		<texture>colors/black.png</texture>
 	</control>
 </include>
 <!-- keyboards -->
 <include name="KeyboardFull">
 	<control type="group">
-		<include>KeyboardBG</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>610</posy>
+			<width>fullscreenWidth</width>
+			<height>15-row</height>
+			<texture>colors/black.png</texture>
+			<colordiffuse>ddffffff</colordiffuse>
+		</control>
 	</control>
 	<control type="group">
-		<animation effect="fade" start="0" end="90" time="200">WindowOpen</animation>
-		<animation effect="fade" start="90" end="0" time="200">WindowClose</animation>
+		<animation effect="slide" start="0,500" end="0,0" time="200" tween="sine" easing="out">Windowopen</animation>
+		<animation effect="slide" start="0,0" end="0,500" time="200" tween="sine" easing="out">Windowclose</animation>
 		<animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(109)">Conditional</animation>
 		<!-- text field bg -->
 		<control type="grouplist">
-			<posy>170</posy>
-			<width>1280</width>
-			<height>50</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<orientation>horizontal</orientation>
-			<include>KeyboardTextFieldBG</include>
+			<posx>360</posx>
+			<posy>610</posy>
+			<control type="label" id="311">
+				<description>header label</description>
+				<width>17-col-gutter</width>
+				<height>1-row</height>
+				<align>center</align>
+				<font>itemTitleSmall</font>
+				<textcolor>selected</textcolor>
+			</control>
+			<control type="edit" id="312">
+				<description>Edit Text</description>
+				<posx>12</posx>
+				<posy>-12</posy>
+				<width>17-col</width>
+				<align>center</align>
+				<onup>300</onup>
+				<ondown>309</ondown>
+			</control>
 		</control>
 		<control type="grouplist">
 			<itemgap>5</itemgap>
-			<width>1280</width>
-			<height>720</height>
-			<align>center</align>
-			<aligny>center</aligny>
+			<width>1920</width>
+			<height>1080</height>
+			<posy>660</posy>
 			<orientation>vertical</orientation>
 			<!-- Row 0 -->
 			<control type="grouplist">
-				<width>1280</width>
+				<width>1920</width>
 				<height>75</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -1715,13 +1728,13 @@
 					<description>Edit Text</description>
 					<width>570</width>
 					<height>88</height>
-					<include>KeyboardFont</include>
+					<include>itemTitleSmall</include>
 				</control>
 			</control>
 			<!-- Row 1 -->
 			<control type="grouplist" id="501">
 				<itemgap>5</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>50</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -1810,7 +1823,7 @@
 			<!-- Row 2 -->
 			<control type="grouplist" id="502">
 				<itemgap>5</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>50</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -1899,7 +1912,7 @@
 			<!-- Row 3 -->
 			<control type="grouplist" id="503">
 				<itemgap>5</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>50</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -1988,7 +2001,7 @@
 			<!-- Row 4 -->
 			<control type="grouplist" id="504">
 				<itemgap>5</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>50</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2000,9 +2013,19 @@
 					<onup>75</onup>
 					<ondown>307</ondown>
 					<include>KeyboardButtonBig</include>
-					<label>&#x21EA;</label>
-					<alttexturenofocus>orange.png</alttexturenofocus>
-					<alttexturefocus>orange.png</alttexturefocus>
+					<label>]</label>
+					<textureradioonfocus>-</textureradioonfocus>
+					<textureradioonnofocus>colors/keyselected.png</textureradioonnofocus>
+					<textureradioofffocus>-</textureradioofffocus>
+					<textureradiooffnofocus>-</textureradiooffnofocus>
+					<radiowidth>24</radiowidth>
+					<radioheight>24</radioheight>
+					<radioposy>12</radioposy>
+					<radioposx>252</radioposx>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>selected</focusedcolor>
+					<textcolor>selected</textcolor>
+					<align>center</align>
 				</control>
 				<control type="togglebutton" id="304">
 					<description>Symbols button</description>
@@ -2012,8 +2035,8 @@
 					<ondown>307</ondown>
 					<include>KeyboardButton</include>
 					<label>{~}</label>
-					<alttexturenofocus>orange.png</alttexturenofocus>
-					<alttexturefocus>orange.png</alttexturefocus>
+					<alttexturenofocus>colors/keyselected.png</alttexturenofocus>
+					<alttexturefocus>colors/keyaccent.png</alttexturefocus>
 				</control>
 				<control type="button" id="85">
 					<description>'U' button</description>
@@ -2070,7 +2093,7 @@
 					<onleft>306</onleft>
 					<onright>49</onright>
 					<include>KeyboardButtonBig</include>
-					<label>&#x2190;</label>
+					<label>&lt;</label>
 				</control>
 				<control type="button" id="306">
 					<description>Next button</description>
@@ -2078,14 +2101,14 @@
 					<onright>305</onright>
 					<onup>84</onup>
 					<ondown>8</ondown>
-					<label>&#x2192;</label>
+					<label>&gt;</label>
 					<include>KeyboardButtonBig</include>
 				</control>
 			</control>
 			<!-- Row 5 -->
 			<control type="grouplist" id="505">
 				<itemgap>5</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>60</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2118,13 +2141,13 @@
 					<onup>504</onup>
 					<ondown>506</ondown>
 					<include>KeyboardButtonBig</include>
-					<label>&#x21A4;</label>
+					<label>X</label>
 				</control>
 			</control>
 			<!-- Row 6 -->
 			<control type="grouplist" id="506">
 				<itemgap>5</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>50</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2499,7 +2522,7 @@
 					<onup>305</onup>
 					<ondown>302</ondown>
 					<include>KeyboardButtonBigFaded</include>
-					<label>&#x21EA;</label>
+					<label>[</label>
 					<alttexturenofocus>black.png</alttexturenofocus>
 					<alttexturefocus>black.png</alttexturefocus>
 					<include>KeyboardNumericFade</include>
@@ -2579,7 +2602,7 @@
 					<onleft>306</onleft>
 					<onright>49</onright>
 					<include>KeyboardButtonBig</include>
-					<label>&#x2190;</label>
+					<label>&lt;</label>
 				</control>
 				<control type="button" id="22">
 					<description>Next button</description>
@@ -2587,7 +2610,7 @@
 					<onright>305</onright>
 					<onup>501</onup>
 					<ondown>505</ondown>
-					<label>&#x2192;</label>
+					<label>&gt;</label>
 					<include>KeyboardButtonBig</include>
 				</control>
 			</control>
@@ -2631,7 +2654,7 @@
 					<onup>504</onup>
 					<ondown>506</ondown>
 					<include>KeyboardButtonBig</include>
-					<label>&#x21A4;</label>
+					<label>X</label>
 				</control>
 			</control>
 			<!-- Row 6 -->
@@ -2648,221 +2671,6 @@
 					<onleft>8</onleft>
 					<onright>307</onright>
 					<onup>505</onup>
-					<ondown>501</ondown>
-					<include>KeyboardButton</include>
-					<label>$LOCALIZE[20177]</label>
-				</control>
-			</control>
-		</control>
-	</control>
-</include>
-<include name="KeyboardPIN">
-	<control type="group">
-		<control type="group">
-			<animation effect="fade" start="100" end="100" time="0">WindowOpen</animation>
-			<animation effect="fade" start="100" end="100" time="0">WindowClose</animation>
-			<control type="image">
-				<include>FullScreenScaled</include>
-				<texture>black.png</texture>
-			</control>
-			<control type="image">
-				<include>FullScreenScaled</include>
-				<texture>bg-overlay-grainy.png</texture>
-			</control>				
-			<control type="image">
-				<posy>50</posy>					
-				<width>1280</width>
-				<height>620</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture>plex-chevron-alone-big.png</texture>
-				<animation effect="fade" start="0" end="10" time="0" condition="true">Conditional</animation>
-			</control>
-		</control>
-	</control>
-	<control type="group">
-		<animation effect="fade" start="0" end="90" time="200">WindowOpen</animation>
-		<animation effect="fade" start="90" end="0" time="200">WindowClose</animation>
-		<control type="label" id="1">
-			<posy>147</posy>
-			<label>Please enter your PIN</label>
-			<width>1280</width>
-			<height>40</height>
-			<align>center</align>
-			<font>Regular-24</font>
-			<textcolor>Focused</textcolor>
-		</control>
-		<!-- text field bg -->
-		<control type="grouplist">
-			<posy>224</posy>
-			<width>1280</width>
-			<height>105</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<orientation>horizontal</orientation>
-			<control type="image">
-				<width>320</width>
-				<height>105</height>
-				<include>Black</include>
-			</control>
-		</control>
-		<control type="grouplist">
-			<itemgap>5</itemgap>
-			<width>1280</width>
-			<height>720</height>
-			<align>center</align>
-			<aligny>center</aligny>
-			<orientation>vertical</orientation>
-			<!-- Row 0 -->
-			<control type="grouplist">
-				<width>1280</width>
-				<height>105</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<control type="label" id="4">
-					<description>Edit Text</description>
-					<width>320</width>
-					<height>130</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$LOCALIZE[12323]</label>
-					<textcolor>orangeLight</textcolor>
-					<disabledcolor>white</disabledcolor>
-					<include>KeyboardPINFont</include>
-				</control>
-			</control>
-			<!-- Row 1 -->
-			<control type="grouplist" id="501">
-				<itemgap>5</itemgap>
-				<width>1280</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<control type="button" id="11">
-					<description>'1' button</description>
-					<onleft>501</onleft>
-					<onright>501</onright>
-					<onup>503</onup>
-					<ondown>16</ondown>
-					<label>$LOCALIZE[12311]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="12">
-					<description>'2' button</description>
-					<onleft>501</onleft>
-					<onright>501</onright>
-					<onup>503</onup>
-					<ondown>17</ondown>
-					<label>$LOCALIZE[12312]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="13">
-					<description>'3' button</description>
-					<onleft>501</onleft>
-					<onright>501</onright>
-					<onup>503</onup>
-					<ondown>18</ondown>
-					<label>$LOCALIZE[12313]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="14">
-					<description>'4' button</description>
-					<onleft>501</onleft>
-					<onright>501</onright>
-					<onup>503</onup>
-					<ondown>19</ondown>
-					<label>$LOCALIZE[12314]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="15">
-					<description>'5' button</description>
-					<onleft>501</onleft>
-					<onright>501</onright>
-					<onup>503</onup>
-					<ondown>10</ondown>
-					<label>$LOCALIZE[12315]</label>
-					<include>KeyboardButton</include>
-				</control>
-			</control>
-			<!-- Row 2 -->
-			<control type="grouplist" id="502">
-				<itemgap>5</itemgap>
-				<width>1280</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<control type="button" id="16">
-					<description>'6' button</description>
-					<onleft>502</onleft>
-					<onright>502</onright>
-					<onup>11</onup>
-					<ondown>23</ondown>
-					<label>$LOCALIZE[12316]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="17">
-					<description>'7' button</description>
-					<onleft>502</onleft>
-					<onright>502</onright>
-					<onup>12</onup>
-					<ondown>23</ondown>
-					<label>$LOCALIZE[12317]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="18">
-					<description>'8' button</description>
-					<onleft>502</onleft>
-					<onright>502</onright>
-					<onup>13</onup>
-					<ondown>21</ondown>
-					<label>$LOCALIZE[12318]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="19">
-					<description>'9' button</description>
-					<onleft>502</onleft>
-					<onright>502</onright>
-					<onup>14</onup>
-					<ondown>21</ondown>
-					<label>$LOCALIZE[12319]</label>
-					<include>KeyboardButton</include>
-				</control>
-				<control type="button" id="10">
-					<description>'0' button</description>
-					<onleft>502</onleft>
-					<onright>502</onright>
-					<onup>15</onup>
-					<ondown>21</ondown>
-					<label>$LOCALIZE[12310]</label>
-					<include>KeyboardButton</include>
-				</control>
-			</control>
-			<!-- Row 3 -->
-			<control type="grouplist" id="503">
-				<itemgap>5</itemgap>
-				<width>1280</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<control type="button" id="23">
-					<description>BACKSPACE button</description>
-					<width>125</width>
-					<onleft>503</onleft>
-					<onright>503</onright>
-					<onup>502</onup>
-					<ondown>501</ondown>
-					<include>KeyboardButtonBig</include>
-					<label>&#x21A4;</label>
-				</control>
-				<control type="button" id="21">
-					<description>DONE button</description>
-					<width>190</width>
-					<onleft>503</onleft>
-					<onright>503</onright>
-					<onup>502</onup>
 					<ondown>501</ondown>
 					<include>KeyboardButton</include>
 					<label>$LOCALIZE[20177]</label>

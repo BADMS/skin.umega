@@ -198,6 +198,12 @@
 			<style/>
 		</font>
 		<font>
+			<name>symbolLargex</name>
+			<filename>heydings_controls.ttf</filename>
+			<size>36</size>
+			<style/>
+		</font>
+		<font>
 			<name>symbolVeryLarge</name>
 			<filename>modernpics.otf</filename>
 			<size>96</size>

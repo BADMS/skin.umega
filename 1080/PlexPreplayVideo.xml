@@ -54,7 +54,7 @@
 			<animation type="Windowclose">
 				<effect type="slide" start="0" end="1378" tween="cubic" easing="out" time="400" delay="300"/>
 			</animation>
-			<animation type="conditional" condition="skin.string(showcast,true)">
+			<animation type="conditional" condition="skin.string(showcast,true) + !IsEmpty(ListItem.Property(PlexExtras))">
 				<effect type="slide" start="0" end="-578" tween="cubic" easing="out" time="400" delay="0"/>
 			</animation>
 			<!--overlay-->
@@ -123,13 +123,13 @@
 				</control>
 				<!-- MPAA flag -->
 				<control type="image">
-					<posy>51</posy>
+					<posy>-80</posy>
 					<posx>0</posx>
 					<width>543</width>
 					<height>30</height>
-					<align>right</align>
+					<align>left</align>
 					<texture>$INFO[Listitem.Art(mediaTag::contentRating)]</texture>
-					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
 					<colordiffuse>black</colordiffuse>
 				</control>
 				<!--synopsis-->
@@ -221,8 +221,9 @@
 				<width>8-col</width>
 				<height>6-row</height>
 				<itemgap>3</itemgap>
-				<onright condition="Skin.String(showcast,true)">3</onright>
+				<onright condition="Skin.String(showcast,true) + !IsEmpty(ListItem.Property(PlexExtras))">3</onright>
 				<onright condition="!Skin.String(showcast,true)">Back</onright>
+				<onright condition="Skin.String(showcast,true) + IsEmpty(ListItem.Property(PlexExtras))">Back</onright>
 				<onleft>Back</onleft>
 				<orientation>vertical</orientation>
 				<itemlayout width="4-col" height="1-row">
@@ -494,7 +495,7 @@
 </control>
 <!--extras toggle-->
 <control type="group">
-	<visible>skin.string(showcast,true) + !Container.PlexContent(Clip) + !container.content(episode)</visible>
+	<visible>skin.string(showcast,true) + !Container.PlexContent(Clip) + !container.content(episode) + !IsEmpty(ListItem.Property(PlexExtras))</visible>
 	<animation effect="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="100">VisibleChange</animation>
 	<posx>1263</posx>
 	<posy>0</posy>
@@ -603,6 +604,14 @@
 				<shadowcolor>-</shadowcolor>
 			</control>
 		</focusedlayout>
+	</control>
+</control>
+<control type="group">
+	<posx>col-4-begin</posx>
+	<posy>row-18-begin</posy>
+	<control type="group">
+		<posx>col-13-begin</posx>
+		<include>keysListFooter</include>
 	</control>
 </control>
 <include>musicOverlay</include>

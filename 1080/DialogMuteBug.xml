@@ -42,9 +42,9 @@
                 <posx>24</posx>
                 <posy>30</posy>
                 <width>1-col</width>
-                <font>symbolLarge</font>
+                <font>symbolLargex</font>
                 <textcolor>black</textcolor>
-                <label>X</label>
+                <label>Q</label>
                 <shadowcolor>-</shadowcolor>
                 <!--animations-->
                 <animation type="Windowopen">

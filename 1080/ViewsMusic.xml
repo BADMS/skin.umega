@@ -213,7 +213,7 @@
 			</control>
 		</control>
 	</include>
-	<!--Grid View-->
+	<!--Grid View Albums -->
 	<include name="viewMusicGrid">
 		<control type="group" id="777">
 			<posx>0</posx>

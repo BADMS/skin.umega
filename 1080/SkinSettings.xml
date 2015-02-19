@@ -297,6 +297,7 @@
 					<onclick>Skin.ToggleSetting(disableAnimateFanart)</onclick>
 					<selected>Skin.HasSetting(disableAnimateFanart)</selected>
 				</control>
+				<!-- disabled; kills screensaver booom!
 				<control type="radiobutton" id="18">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Disable visualisation background</description>
@@ -305,6 +306,7 @@
 					<onclick>Skin.ToggleSetting(disableVizBg)</onclick>
 					<selected>Skin.HasSetting(disableVizBg)</selected>
 				</control>
+				-->
 				<control type="radiobutton" id="19">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Disable TV Show Episode Auto Advance</description>
@@ -332,7 +334,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom shortcut in menu (url/menu/art): $INFO[Skin.String(Channel1_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel1_Name)</onclick>
 					<onclick>Skin.SetString(Channel1_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel1_Name_Art)</onclick>
@@ -350,7 +352,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom shortcut in menu (url/menu/art): $INFO[Skin.String(Channel2_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel2_Name)</onclick>
 					<onclick>Skin.SetString(Channel2_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel2_Name_Art)</onclick>
@@ -368,7 +370,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom shortcut in menu (url/menu/art): $INFO[Skin.String(Channel3_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel3_Name)</onclick>
 					<onclick>Skin.SetString(Channel3_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel3_Name_Art)</onclick>
@@ -386,7 +388,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom shortcut in menu (url/menu/art): $INFO[Skin.String(Channel4_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel4_Name)</onclick>
 					<onclick>Skin.SetString(Channel4_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel4_Name_Art)</onclick>
@@ -404,7 +406,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom shortcut in menu (url/menu/art): $INFO[Skin.String(Channel5_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel5_Name)</onclick>
 					<onclick>Skin.SetString(Channel5_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel5_Name_Art)</onclick>
@@ -422,7 +424,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom shortcut in menu (url/menu/art): $INFO[Skin.String(Channel6_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel6_Name)</onclick>
 					<onclick>Skin.SetString(Channel6_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel6_Name_Art)</onclick>
@@ -440,7 +442,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom USER Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom USER Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom USER shortcut in menu (url/menu/art): $INFO[Skin.String(Channel7_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel7_Name)</onclick>
 					<onclick>Skin.SetString(Channel7_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel7_Name_Art)</onclick>
@@ -458,7 +460,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom USER Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom USER Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom USER shortcut in menu (url/menu/art): $INFO[Skin.String(Channel8_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel8_Name)</onclick>
 					<onclick>Skin.SetString(Channel8_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel8_Name_Art)</onclick>
@@ -476,7 +478,7 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<description>Custom USER Channel requires URL, the menu name and the artwork to display on focus in menu</description>
-					<label>Custom USER Channel in Menu (Channel/Menu/Art)</label>
+					<label>Custom USER shortcut in menu (url/menu/art): $INFO[Skin.String(Channel9_Name_Menu)]</label>
 					<onclick>Skin.SetString(Channel9_Name)</onclick>
 					<onclick>Skin.SetString(Channel9_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel9_Name_Art)</onclick>
@@ -570,7 +572,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>1</onleft>
+					<onleft>21</onleft>
+					<onright>21</onright>
 					<ondown>602</ondown>
 					<onup>609</onup>
 					<onclick>Skin.Reset(Channel1_Name)</onclick>	
@@ -589,7 +592,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>2</onleft>
+					<onleft>22</onleft>
+					<onright>22</onright>
 					<ondown>603</ondown>
 					<onup>601</onup>
 					<onclick>Skin.Reset(Channel2_Name)</onclick>	
@@ -608,7 +612,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>3</onleft>
+					<onleft>23</onleft>
+					<onright>23</onright>
 					<ondown>604</ondown>
 					<onup>602</onup>
 					<onclick>Skin.Reset(Channel3_Name)</onclick>	
@@ -627,7 +632,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>4</onleft>
+					<onleft>24</onleft>
+					<onright>24</onright>
 					<onup>603</onup>
 					<ondown>605</ondown>
 					<onclick>Skin.Reset(Channel4_Name)</onclick>	
@@ -646,7 +652,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>4</onleft>
+					<onleft>25</onleft>
+					<onright>25</onright>
 					<onup>604</onup>
 					<ondown>606</ondown>
 					<onclick>Skin.Reset(Channel5_Name)</onclick>	
@@ -665,7 +672,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>4</onleft>
+					<onleft>26</onleft>
+					<onright>26</onright>
 					<onup>605</onup>
 					<ondown>607</ondown>
 					<onclick>Skin.Reset(Channel6_Name)</onclick>	
@@ -684,7 +692,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>4</onleft>
+					<onleft>27</onleft>
+					<onright>27</onright>
 					<onup>606</onup>
 					<ondown>608</ondown>
 					<onclick>Skin.Reset(Channel7_Name)</onclick>	
@@ -703,7 +712,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>4</onleft>
+					<onleft>28</onleft>
+					<onright>28</onright>
 					<onup>607</onup>
 					<ondown>609</ondown>
 					<onclick>Skin.Reset(Channel8_Name)</onclick>	
@@ -722,7 +732,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>4</onleft>
+					<onleft>29</onleft>
+					<onright>29</onright>
 					<onup>608</onup>
 					<ondown>601</ondown>
 					<onclick>Skin.Reset(Channel9_Name)</onclick>	

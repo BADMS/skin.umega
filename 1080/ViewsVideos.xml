@@ -422,7 +422,7 @@
 						<posy>0</posy>
 						<width>4-col-gutter</width>
 						<height>352</height>
-						<aspectratio aligny="top">scale</aspectratio>
+						<aspectratio aligny="top">stretch</aspectratio>
 						<texture fallback="colors/black.png" border="0">$INFO[ListItem.thumb]</texture>
 						<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 						<bordersize>3</bordersize>
@@ -465,7 +465,7 @@
 						<posy>0</posy>
 						<width>4-col-gutter</width>
 						<height>352</height>
-						<aspectratio aligny="top">scale</aspectratio>
+						<aspectratio aligny="top">stretch</aspectratio>
 						<texture fallback="colors/black.png" border="0">$INFO[ListItem.thumb]</texture>
 						<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 						<bordersize>3</bordersize>
@@ -1014,7 +1014,7 @@
 			<align>center</align>
 			<aligny>center</aligny>
 			<height>60</height>
-			<label>The list is empty go back!</label>
+			<label>The list is empty go back or press f!</label>
 			<font>regular</font>
 			<textcolor>selected</textcolor>
 			<shadowcolor>FF222222</shadowcolor>
@@ -1129,13 +1129,13 @@
 				</control>
 				<!-- MPAA flag -->
 				<control type="image">
-					<posy>51</posy>
+					<posy>-80</posy>
 					<posx>0</posx>
 					<width>543</width>
 					<height>30</height>
-					<align>right</align>
+					<align>left</align>
 					<texture>$INFO[Listitem.Art(mediaTag::contentRating)]</texture>
-					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
 					<colordiffuse>black</colordiffuse>
 				</control>
 				<!--synopsis-->

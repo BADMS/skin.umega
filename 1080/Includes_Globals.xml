@@ -37,17 +37,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>[Player.HasAudio + !Skin.HasSetting(disableVizBg)]</visible>
-			<control type="visualisation" id="2">
-				<description>visualisation</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<include>FullScreenScaled</include>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!Player.HasVideo | [Player.HasAudio + Skin.HasSetting(disableVizBg)]</visible>
-			<visible>![Player.HasAudio + !Skin.HasSetting(disableVizBg)]</visible>
+			<visible>!Player.HasVideo</visible>
 			<control type="image">
 				<include>FullScreenScaled</include>
 				<texture>colors/black.png</texture>
@@ -132,7 +122,7 @@
 					<height>fullscreenHeight</height>
 					<fadetime>400</fadetime>
 					<aspectratio>scale</aspectratio>
-					<texture background="true">$INFO[ListItem.CompositeImage(width=1280;height=720;cols=6;rows=2)]</texture>			
+					<texture background="true">$INFO[ListItem.CompositeImage(width=1280;height=720;cols=6;rows=2)]</texture>
 					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
 				</control>
 			</control>
@@ -148,7 +138,7 @@
 					<height>fullscreenHeight</height>
 					<fadetime>400</fadetime>
 					<aspectratio>stretch</aspectratio>
-					<texture background="true">$INFO[ListItem.Art(thumb)]</texture>			
+					<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
 					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
 				</control>
 			</control>
@@ -251,7 +241,7 @@
 					<include>BGHomeList</include>
 					<texture background="true">backgrounds/movie.jpg</texture>
 					<visible>isEmpty(Skin.String(HomeBGPlaylists))</visible>
-					<visible>ControlGroup(7005).HasFocus</visible>	
+					<visible>ControlGroup(7005).HasFocus</visible>
 					<visible>Container(11005).ListItem(0).Type(videoplaylist) | Container(11005).ListItem(0).Type(videoplayqueue)</visible>
 				</control>
 				<control type="largeimage">
@@ -440,7 +430,7 @@
 			<posx>0</posx>
 			<posy>11</posy>
 			<control type="grouplist">
-				<visible>!Skin.string(showtvinfos,1)</visible>
+				<visible>!Skin.string(showtvinfos,1) + !Window.Isactive(10090)</visible>
 				<posx>186</posx>
 				<posy>0</posy>
 				<width>20-col</width>
@@ -470,45 +460,52 @@
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
-					<label>W /</label>
+					<label>o /</label>
 				</control>
 				<control type="label">
 					<visible>!Skin.string(showinfos,1) + container.content(songs)</visible>
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
-					<label>W >></label>
+					<label>o >></label>
+				</control>
+				<control type="label">
+					<visible>!Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>o >></label>
+				</control>
+				<control type="label">
+					<visible>Skin.string(showinfos,1) + container.content(albums)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W &#60;/-></label>
+				</control>
+				<control type="label">
+					<visible>Skin.string(showinfos,1) + container.content(songs)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W &#60;/-></label>
+				</control>
+				<control type="label">
+					<visible>Skin.string(showtvinfos,1) + container.content(tvshows) | Window.Isactive(10090) + container.content(movie)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>W &#60;></label>
+				</control>
+				<control type="label">
+					<visible>Window.Isactive(10090) + container.content(episode)</visible>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>+ /-</label>
+				</control>
+			</control>
 		</control>
-		<control type="label">
-			<visible>!Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
-			<width>auto</width>
-			<font>symbol</font>
-			<textcolor>selected</textcolor>
-			<label>W >></label>
-</control>
-<control type="label">
-	<visible>Skin.string(showinfos,1) + container.content(albums)</visible>
-	<width>auto</width>
-	<font>symbol</font>
-	<textcolor>selected</textcolor>
-	<label>W &#60;/-></label>
-</control>
-<control type="label">
-	<visible>Skin.string(showinfos,1) + container.content(songs)</visible>
-	<width>auto</width>
-	<font>symbol</font>
-	<textcolor>selected</textcolor>
-	<label>W &#60;/-></label>
-</control>
-<control type="label">
-	<visible>Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
-	<width>auto</width>
-	<font>symbol</font>
-	<textcolor>selected</textcolor>
-	<label>o &#60;></label>
-</control>
-</control>
-</control>
 </include>
 <!--debugging-->
 <include name="DialogID">

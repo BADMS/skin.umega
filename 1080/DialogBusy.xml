@@ -2,6 +2,7 @@
 <window>
     <defaultcontrol always="true">-</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
+	<onload>SetFocus(777)</onload>
     <controls>
         <control type="label">
             <posy>0</posy>
