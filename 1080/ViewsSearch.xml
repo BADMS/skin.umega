@@ -1,11 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<!-- Card -->
+	<include name="SearchItemFullInfo">
+		<control type="group">
+			<!-- left side presentation -->
+			<control type="group">
+				<posx>20</posx>
+				<posy>82</posy>
+				<control type="group">
+					<!-- movie -->
+					<control type="group">
+						<visible>ControlGroup(7001).HasFocus</visible>
+						<control type="image">
+							<width>352</width>
+							<height>518</height>
+							<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+							<bordersize>3</bordersize>
+							<texture background="true">$INFO[Container(9001).Listitem.icon]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<posy>523</posy>
+							<width>352</width>
+							<height>455</height>
+							<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+							<texture background="true">colors/offblack.png</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<!--synopsis-->
+						<control type="textbox">
+							<posx>10</posx>
+							<posy>533</posy>
+							<font>textboxExtraLeading</font>
+							<width>332</width>
+							<align>left</align>
+							<textcolor>selected</textcolor>
+							<height>418</height>
+							<label>[B]$INFO[Container(9001).ListItem.plot][/B]</label>
+							<autoscroll delay="10000" time="1000" repeat="10000"/>
+							<shadowcolor>-</shadowcolor>
+						</control>
+					</control>
+					<!-- tv show -->
+					<control type="group">
+						<visible>ControlGroup(7002).HasFocus</visible>
+						<control type="image">
+							<width>352</width>
+							<height>518</height>
+							<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+							<bordersize>3</bordersize>
+							<texture background="true">$INFO[Container(9002).Listitem.icon]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<posy>523</posy>
+							<width>352</width>
+							<height>455</height>
+							<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+							<texture background="true">colors/offblack.png</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<!--synopsis-->
+						<control type="textbox">
+							<posx>10</posx>
+							<posy>533</posy>
+							<font>textboxExtraLeading</font>
+							<width>332</width>
+							<align>left</align>
+							<textcolor>selected</textcolor>
+							<height>418</height>
+							<label>[B]$INFO[Container(9002).ListItem.plot][/B]</label>
+							<autoscroll delay="10000" time="1000" repeat="10000"/>
+							<shadowcolor>-</shadowcolor>
+						</control>
+					</control>
+					<!-- tv episode -->
+					<control type="group">
+						<visible>ControlGroup(7004).HasFocus</visible>
+						<control type="image">
+							<width>352</width>
+							<height>518</height>
+							<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+							<bordersize>3</bordersize>
+							<texture background="true">$INFO[Container(9004).ListItem.Art(thumb)]</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<posy>523</posy>
+							<width>352</width>
+							<height>455</height>
+							<aspectratio scalediffuse="false" align="center">stretch</aspectratio>
+							<texture background="true">colors/offblack.png</texture>
+							<fadetime>200</fadetime>
+						</control>
+						<!--synopsis-->
+						<control type="textbox">
+							<posx>10</posx>
+							<posy>533</posy>
+							<font>textboxExtraLeading</font>
+							<width>332</width>
+							<align>left</align>
+							<textcolor>selected</textcolor>
+							<height>418</height>
+							<label>[B]$INFO[Container(9004).ListItem.plot][/B]</label>
+							<autoscroll delay="10000" time="1000" repeat="10000"/>
+							<shadowcolor>-</shadowcolor>
+						</control>
+					</control>
+					<!-- infos -->
+					<control type="group">
+						<posy>255</posy>
+						<posx>34</posx>
+						<control type="label">
+							<width>285</width>
+							<align>left</align>
+							<label>$VAR[SearchItemFullInfoTitle]</label>
+							<font>Regular-22</font>
+							<scroll>true</scroll>
+							<textcolor>white</textcolor>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+						<control type="label">
+							<posy>35</posy>
+							<align>left</align>
+							<label>$VAR[SearchItemFullInfoSecondTitle]</label>
+							<font>Regular-16</font>
+							<scroll>false</scroll>
+							<textcolor>title2</textcolor>
+							<wrapmultiline>false</wrapmultiline>
+							<width>300</width>
+						</control>
+						<control type="label">
+							<posy>55</posy>
+							<align>left</align>
+							<label>$VAR[SearchItemFullInfoThirdTitle]</label>
+							<font>Regular-16</font>
+							<scroll>false</scroll>
+							<textcolor>title2</textcolor>
+							<wrapmultiline>false</wrapmultiline>
+							<width>300</width>
+						</control>
+						<control type="label">
+							<posy>95</posy>
+							<align>left</align>
+							<label>$VAR[SearchItemFullInfoSource]</label>
+							<font>Regular-14</font>
+							<scroll>false</scroll>
+							<textcolor>orange</textcolor>
+							<wrapmultiline>false</wrapmultiline>
+							<width>300</width>
+						</control>
+						<control type="textbox">
+							<posy>130</posy>
+							<width>300</width>
+							<height>215</height>
+							<label>$VAR[SearchItemFullInfoPlot]</label>
+							<font>HomePlot</font>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
 	<include name="SearchScreenLoadingIndicator">
 		<!-- Loading indicator -->
 		<control type="group">
 			<visible>System.SearchInProgress</visible>
-			<posx>163</posx>
-			<posy>26</posy>
+			<posx>36</posx>
+			<posy>34</posy>
 			<control type="image">
 				<texture>busy.gif</texture>
 				<width>32</width>
@@ -45,6 +210,328 @@
 		<control type="group">
 			<include>SearchItemFullInfo</include>
 		</control>
+		<control type="image">
+			<posx>376</posx>
+			<posy>20</posy>
+			<width>1524</width>
+			<height>1-row</height>
+			<texture>colors/selected.png</texture>
+			<colordiffuse>selected</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<!-- title bar infos MOVIE -->
+		<control type="grouplist">
+			<posx>40</posx>
+			<posy>32</posy>
+			<height>1-row</height>
+			<align>right</align>
+			<width>1840</width>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<visible>Control.HasFocus(9001)</visible>
+			<control type="label">
+				<align>left</align>
+				<label>$INFO[Container(9001).ListItem(0).Title]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9001).ListItem(0).Title)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9001).ListItem(0).Year]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9001).ListItem(0).Year)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9001).ListItem(0).DurationStr]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9001).ListItem(0).DurationStr)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> / [UPPERCASE]$LOCALIZE[31111][/UPPERCASE]</label>
+				<font>pageTitle</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="800">auto</width>
+				<height>30</height>
+			</control>
+		</control>
+		<!-- title bar infos TVSHOW -->
+		<control type="grouplist">
+			<posx>40</posx>
+			<posy>32</posy>
+			<height>1-row</height>
+			<align>right</align>
+			<width>1840</width>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<visible>Control.HasFocus(9002)</visible>
+			<control type="label">
+				<align>left</align>
+				<label>$INFO[Container(9002).ListItem(0).Title]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9002).ListItem(0).Title)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9002).ListItem(0).Year]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9002).ListItem(0).Year)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9002).ListItem(0).DurationStr]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9002).ListItem(0).DurationStr)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> / [UPPERCASE]$LOCALIZE[31112][/UPPERCASE]</label>
+				<font>pageTitle</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="800">auto</width>
+				<height>30</height>
+			</control>
+		</control>
+		<!-- title bar infos EPISODE -->
+		<control type="grouplist">
+			<posx>40</posx>
+			<posy>32</posy>
+			<height>1-row</height>
+			<align>right</align>
+			<width>1840</width>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<visible>Control.HasFocus(9004)</visible>
+			<control type="label">
+				<align>left</align>
+				<label>$INFO[Container(9004).ListItem(0).TVShowTitle]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9004).ListItem(0).TVShowTitle)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9004).ListItem(0).Date]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9004).ListItem(0).Date)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9004).ListItem(0).Title]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9004).ListItem(0).Title)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9004).ListItem(0).DurationStr]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9004).ListItem(0).DurationStr)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> / [UPPERCASE]$LOCALIZE[31137][/UPPERCASE]</label>
+				<font>pageTitle</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="800">auto</width>
+				<height>30</height>
+			</control>
+		</control>
+		<!-- title bar infos ARTIST -->
+		<control type="grouplist">
+			<posx>40</posx>
+			<posy>32</posy>
+			<height>1-row</height>
+			<align>right</align>
+			<width>1840</width>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<visible>Control.HasFocus(9008)</visible>
+			<control type="label">
+				<align>left</align>
+				<label>$INFO[Container(9008).ListItem(0).Artist]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9008).ListItem(0).Artist)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> / [UPPERCASE]$LOCALIZE[32110][/UPPERCASE]</label>
+				<font>pageTitle</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="800">auto</width>
+				<height>30</height>
+			</control>
+		</control>
+		<!-- title bar infos ALBUM -->
+		<control type="grouplist">
+			<posx>40</posx>
+			<posy>32</posy>
+			<height>1-row</height>
+			<align>right</align>
+			<width>1840</width>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<visible>Control.HasFocus(9009)</visible>
+			<control type="label">
+				<align>left</align>
+				<label>$INFO[Container(9009).ListItem(0).Artist]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9009).ListItem(0).Artist)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9009).ListItem(0).Album]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9009).ListItem(0).Album)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9009).ListItem(0).Year]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9009).ListItem(0).Year)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> / [UPPERCASE]$LOCALIZE[32111][/UPPERCASE]</label>
+				<font>pageTitle</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="800">auto</width>
+				<height>30</height>
+			</control>
+		</control>
+		<!-- title bar infos SONG -->
+		<control type="grouplist">
+			<posx>40</posx>
+			<posy>32</posy>
+			<height>1-row</height>
+			<align>right</align>
+			<width>1840</width>
+			<orientation>horizontal</orientation>
+			<itemgap>0</itemgap>
+			<visible>Control.HasFocus(9010)</visible>
+			<control type="label">
+				<align>left</align>
+				<label>$INFO[Container(9010).ListItem(0).Artist]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9010).ListItem(0).Artist)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9010).ListItem(0).Title]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="1000">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9010).ListItem(0).Title)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> &#xB7; $INFO[Container(9010).ListItem(0).DurationStr]</label>
+				<font>regular</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="200">auto</width>
+				<height>30</height>
+				<visible>!IsEmpty(Container(9010).ListItem(0).DurationStr)</visible>
+			</control>
+			<control type="label">
+				<align>left</align>
+				<label> / [UPPERCASE]$LOCALIZE[32106][/UPPERCASE]</label>
+				<font>pageTitle</font>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+				<width min="1" max="800">auto</width>
+				<height>30</height>
+			</control>
+		</control>
 		<include>SearchScreenLoadingIndicator</include>
 		<!-- Keyboard & text field & results -->
 		<control type="group">
@@ -55,15 +542,16 @@
 			<control type="edit" id="310">
 				<description>Search</description>
 				<posx>20</posx>
-				<posy>82</posy>
+				<posy>20</posy>
 				<textcolor>selected</textcolor>
-				<width>320</width>
-				<height>50</height>
+				<focusedcolor>selected</focusedcolor>
+				<width>352</width>
+				<height>1-row</height>
 				<onleft>-</onleft>
 				<ondown>9001</ondown>
 				<onright>350</onright>
-				<emptylabel>-</emptylabel>
-				<emptycolor>accented</emptycolor>
+				<texturefocus>colors/inactive.png</texturefocus>
+				<texturenofocus>colors/inactive.png</texturenofocus>
 				<align>left</align>
 				<aligny>center</aligny>
 				<textoffsetx>16</textoffsetx>
@@ -72,12 +560,12 @@
 			<!-- keys -->
 			<control type="group" id="4000">
 				<animation effect="fade" start="100" end="0" time="200" condition="ControlGroup(7001).HasFocus | ControlGroup(7002).HasFocus | ControlGroup(7004).HasFocus">Conditional</animation>
-				<posx>20</posx>
-				<posy>77</posy>
+				<posx>36</posx>
+				<posy>73</posy>
 				<control type="grouplist" id="350">
 					<visible>true</visible>
 					<posx>0</posx>
-					<posy>50</posy>
+					<posy>0</posy>
 					<width>348</width>
 					<height>420</height>
 					<itemgap>0</itemgap>
@@ -511,12 +999,12 @@
 				<posx>376</posx>
 				<posy>82</posy>
 				<width>1920</width>
-				<height>1080</height>
+				<height>1040</height>
 				<!-- Container for the result categories -->
 				<control type="grouplist" id="5100">
 					<visible>true</visible>
 					<width>1920</width>
-					<height>998</height>
+					<height>978</height>
 					<ondown>5200</ondown>
 					<onup>310</onup>
 					<onright>350</onright>
@@ -546,7 +1034,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -564,11 +1052,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>H</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -595,7 +1083,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 								</control>
 								<control type="image">
@@ -623,11 +1111,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label></label>
+										<label>H</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -675,7 +1163,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -693,11 +1181,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>H</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -724,7 +1212,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="image">
@@ -752,11 +1240,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label></label>
+										<label>H</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -804,7 +1292,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -822,11 +1310,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>H</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -842,7 +1330,7 @@
 										<width>252</width>
 										<font>smallMedium</font>
 										<textcolor>selected</textcolor>
-										<label>$INFO[ListItem.Property(TvShowTitle),, • ]$INFO[ListItem.Property(Season),s]$INFO[ListItem.Property(Episode),e]</label>
+										<label>$INFO[ListItem.TvShowTitle,, • ]$INFO[ListItem.Season,s]$INFO[ListItem.Episode,e]</label>
 									</control>
 								</control>
 							</itemlayout>
@@ -853,7 +1341,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.icon]</texture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="image">
@@ -881,11 +1369,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label></label>
+										<label>H</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -904,7 +1392,7 @@
 										<font>smallMedium</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Property(TvShowTitle),, • ]$INFO[ListItem.Property(Season),s]$INFO[ListItem.Property(Episode),e]</label>
+										<label>$INFO[ListItem.TvShowTitle,, • ]$INFO[ListItem.Season,s]$INFO[ListItem.Episode,e]</label>
 									</control>
 								</control>
 							</focusedlayout>
@@ -933,7 +1421,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -951,11 +1439,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>C</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -971,7 +1459,7 @@
 										<width>252</width>
 										<font>smallMedium</font>
 										<textcolor>selected</textcolor>
-										<label>$INFO[ListItem.property(artist_genre)]</label>
+										<label>$INFO[ListItem.Genre]</label>
 									</control>
 								</control>
 							</itemlayout>
@@ -982,7 +1470,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="image">
@@ -1010,11 +1498,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label></label>
+										<label>C</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -1033,7 +1521,7 @@
 										<font>smallMedium</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.property(artist_genre)]</label>
+										<label>$INFO[ListItem.Genre]</label>
 									</control>
 								</control>
 							</focusedlayout>
@@ -1062,7 +1550,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -1080,11 +1568,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label>W</label>
+										<label>C</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -1100,7 +1588,7 @@
 										<width>252</width>
 										<font>smallMedium</font>
 										<textcolor>selected</textcolor>
-										<label>$INFO[ListItem.Property(Artist)]</label>
+										<label>$INFO[ListItem.Artist]$INFO[ListItem.Year, •,]</label>
 									</control>
 								</control>
 							</itemlayout>
@@ -1111,7 +1599,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="image">
@@ -1139,11 +1627,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label>W</label>
+										<label>C</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -1162,7 +1650,7 @@
 										<font>smallMedium</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Property(Artist)]</label>
+										<label>$INFO[ListItem.Artist]$INFO[ListItem.Year, •,]</label>
 									</control>
 								</control>
 							</focusedlayout>
@@ -1191,7 +1679,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -1209,11 +1697,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>C</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -1229,7 +1717,7 @@
 										<width>252</width>
 										<font>smallMedium</font>
 										<textcolor>selected</textcolor>
-										<label>$INFO[ListItem.Property(Artist)] • $INFO[ListItem.Property(Album)]</label>
+										<label>$INFO[ListItem.Artist] • $INFO[ListItem.Album]</label>
 									</control>
 								</control>
 							</itemlayout>
@@ -1240,7 +1728,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="image">
@@ -1268,11 +1756,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label>o</label>
+										<label>C</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -1291,7 +1779,7 @@
 										<font>smallMedium</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Property(Artist)] • $INFO[ListItem.Property(Album)]</label>
+										<label>$INFO[ListItem.Artist] • $INFO[ListItem.Album]</label>
 									</control>
 								</control>
 							</focusedlayout>
@@ -1319,7 +1807,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -1337,11 +1825,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>f</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -1368,7 +1856,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 								</control>
 								<control type="image">
@@ -1396,11 +1884,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label></label>
+										<label>f</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">
@@ -1447,7 +1935,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="0">-</bordertexture>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -1465,11 +1953,11 @@
 									<posy>272</posy>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>selected</textcolor>
-										<label></label>
+										<label>S</label>
 									</control>
 									<control type="label">
 										<posx>60</posx>
@@ -1496,7 +1984,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/black.png" border="0">$INFO[Listitem.icon]</texture>
+									<texture fallback="colors/black.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 								</control>
 								<control type="image">
@@ -1524,11 +2012,11 @@
 									</control>
 									<control type="label">
 										<posx>12</posx>
-										<posy>-1</posy>
+										<posy>4</posy>
 										<width>1-col</width>
 										<font>symbol</font>
 										<textcolor>black</textcolor>
-										<label></label>
+										<label>S</label>
 										<shadowcolor>-</shadowcolor>
 									</control>
 									<control type="label">

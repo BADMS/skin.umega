@@ -3,7 +3,17 @@
 	<defaultcontrol always="true">65</defaultcontrol>
 	<backgroundcolor>black</backgroundcolor>
 	<controls>
+	<control type="group">
 		<!-- ViewsSearch.xml -->
+		<animation type="Windowopen">
+			<effect type="fade" start="0" end="100" time="300" delay="0"/>
+			<effect type="slide" start="0,500" end="0,0" time="400" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Windowclose">
+			<effect type="fade" start="100" end="0" time="300" delay="0"/>
+			<effect type="slide" start="0,0" end="0,500" time="400" tween="sine" easing="out"/>
+		</animation>
 		<include>SearchMain</include>
+	</control>
 	</controls>
 </window>
