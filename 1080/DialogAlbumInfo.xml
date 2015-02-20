@@ -44,7 +44,7 @@
                 <posx>0</posx>
                 <posy>0</posy>
                 <include>FullScreenScaled</include>
-                <texture>vignette.png</texture>
+				<texture>backgrounds/vignette.png</texture>
                 <colordiffuse>ffffffff</colordiffuse>
                 <aspectratio>stretch</aspectratio>
             </control>

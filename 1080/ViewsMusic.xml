@@ -430,7 +430,7 @@
 				</control>
 				<!--coverart-->
 				<control type="image">
-					<visible>!isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1)</visible>
+					<visible>skin.string(showinfos,1) + !isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1) + [container.content(albums)|container.content(songs)]</visible>
 					<posx>col-4-begin</posx>
 					<posy>2-row</posy>
 					<width>12-col</width>
@@ -447,7 +447,7 @@
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>FullScreenScaled</include>
-					<texture>vignette.png</texture>
+					<texture>backgrounds/vignette.png</texture>
 					<colordiffuse>ffffffff</colordiffuse>
 					<aspectratio>stretch</aspectratio>
 				</control>
@@ -518,7 +518,7 @@
 			</control>
 			<!--content is album-->
 			<control type="group">
-				<visible>!isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1)</visible>
+				<visible>Skin.String(showinfos,1) + !isempty(ListItem.artist) + IntegerGreaterThan(Container.NumItems,1) + [container.content(albums)|container.content(songs)]</visible>
 				<posx>1047</posx>
 				<posy>0</posy>
 				<animation type="Conditional" condition="Skin.String(showinfos,1)">
