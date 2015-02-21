@@ -2,7 +2,11 @@
 <window id="51">
 	<defaultcontrol always="true">65</defaultcontrol>
 	<backgroundcolor>black</backgroundcolor>
+	<onload>Skin.SetString(SectionType,search)</onload>
+	<onunload>SetFocus(777)</onunload>
+	<onunload>Skin.Reset(SectionType)</onunload>
 	<controls>
+	<include>globalBackground</include>
 	<control type="group">
 		<!-- ViewsSearch.xml -->
 		<animation type="Windowopen">

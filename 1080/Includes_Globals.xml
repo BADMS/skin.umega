@@ -269,6 +269,48 @@
 					<texture background="true">$INFO[Container(11006).ListItem(0).Art(fanart)]</texture>
 				</control>
 			</control>
+			<!-- Homelists fanart -->
+			<control type="group">
+				<visible>!Player.HasVideo + Skin.String(SectionType,search)</visible>
+				<!-- generic autopopulated fanart slideshow -->
+				<visible>Skin.HasSetting(useGlobalFanartBackground)</visible>
+				<control type="largeimage">
+					<visible>Control.HasFocus(9001)</visible>
+					<include>BGHomeList</include>
+					<texture background="true">$INFO[Container(9001).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>Control.HasFocus(9002)</visible>
+					<include>BGHomeList</include>
+					<texture background="true">$INFO[Container(9002).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>Control.HasFocus(9004)</visible>
+					<include>BGHomeList</include>
+					<texture background="true">$INFO[Container(9004).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>Control.HasFocus(9008)</visible>
+					<include>BGHomeList</include>
+					<texture background="true">$INFO[Container(9008).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>Control.HasFocus(9009)</visible>
+					<include>BGHomeList</include>
+					<texture background="true">$INFO[Container(9009).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>Control.HasFocus(9010)</visible>
+					<include>BGHomeList</include>
+					<texture background="true">$INFO[Container(9010).ListItem(0).Art(fanart)]</texture>
+				</control>
+				<control type="image">
+					<include>FullScreenScaled</include>
+					<texture>backgrounds/vignette.png</texture>
+					<colordiffuse>ffffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+			</control>
 			<control type="image">
 				<include>FullScreenScaled</include>
 				<texture>backgrounds/vignette.png</texture>

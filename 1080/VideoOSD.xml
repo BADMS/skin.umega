@@ -262,8 +262,7 @@
                             <description>Subtitles</description>
                             <label>24012</label>
                             <thumb>-</thumb>
-                            <onclick>Close</onclick>
-                            <onclick>activateWindow(5100)</onclick>
+                            <onclick>ActivateWindow(10204)</onclick>
                         </item>
                         <item id="3">
                             <description>Audio Settings</description>

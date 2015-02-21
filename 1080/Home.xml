@@ -20,6 +20,7 @@
 		<!--default background-->
 		<include>globalBackground</include>
 		<include>HomeMenuDefault</include>
+		<include>HomeTitles</include>
 		<include>HomeLists</include>
 		<include>CurrentUserAvatar</include>
 		<include>musicOverlay</include>

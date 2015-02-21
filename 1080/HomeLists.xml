@@ -1,99 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+<include name="HomeTitles">
+	<control type="group">
+		<animation type="visible">
+			<effect type="fade" start="0" end="100" time="200"/>
+		</animation>
+		<animation type="hidden">
+			<effect type="fade" start="100" end="0" time="200"/>
+		</animation>
+		<visible>![Control.IsVisible(11000) + Control.IsVisible(11001) + Control.IsVisible(11002) + Control.IsVisible(11003) + Control.IsVisible(11004) + Control.IsVisible(11005) + Control.IsVisible(11006) + Control.IsVisible(11007) + Control.IsVisible(12000)]</visible>
+		<posx>col-4-begin</posx>
+		<posy>row-2-begin</posy>
+		<control type="label">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>14-col</width>
+			<font>pageTitle</font>
+			<label>[UPPERCASE]$INFO[Container(300).ListItem(0).Label][/UPPERCASE]</label>
+			<textcolor>selected</textcolor>
+		</control>
+	</control>
+	<control type="group">
+		<visible>[Control.IsVisible(11000) | Control.IsVisible(11001) | Control.IsVisible(11002) | Control.IsVisible(11003) | Control.IsVisible(11004) | Control.IsVisible(11005) | Control.IsVisible(11006) | Control.IsVisible(11007) | Control.IsVisible(12000)]</visible>
+		<posx>col-4-begin</posx>
+		<posy>row-2-begin</posy>
+		<animation type="visible">
+			<effect type="fade" start="0" end="100" time="200"/>
+		</animation>
+		<animation type="hidden">
+			<effect type="fade" start="100" end="0" time="200"/>
+		</animation>
+		<control type="label">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>14-col</width>
+			<font>pageTitle</font>
+			<label>[UPPERCASE]$INFO[Container(300).ListItem(0).Label][/UPPERCASE]</label>
+			<textcolor>selected</textcolor>
+		</control>
+		<!--source subtitle-->
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>Latest Content</label>
+			<textcolor>selected</textcolor>
+			<visible>Control.HasFocus(300)</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>$LOCALIZE[31045]</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7001).HasFocus</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>$LOCALIZE[41011]</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7002).HasFocus</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>$LOCALIZE[41012]</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7003).HasFocus</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>$LOCALIZE[134]</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7006).HasFocus</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>$LOCALIZE[31001]</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7007).HasFocus</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>$LOCALIZE[41013]</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7004).HasFocus</visible>
+		</control>
+		<control type="label">
+			<posx>0</posx>
+			<posy>45</posy>
+			<width>auto</width>
+			<font>regular</font>
+			<label>31045</label>
+			<textcolor>selected</textcolor>
+			<visible>ControlGroup(7005).HasFocus</visible>
+		</control>
+	</control>
+</include>
 	<!-- lists -->
 	<include name="HomeLists">
 		<!-- lists -->
 		<control type="group" id="5000">
-		<animation type="visible">
-			<include>listSlideIn</include>
-		</animation>
-		<animation type="hidden">
-			<effect type="fade" start="100" end="0" time="300"/>
-		</animation>
 			<visible>[Control.IsVisible(11000) | Control.IsVisible(11001) | Control.IsVisible(11002) | Control.IsVisible(11003) | Control.IsVisible(11004) | Control.IsVisible(11005) | Control.IsVisible(11006) | Control.IsVisible(11007) | Control.IsVisible(12000)]</visible>
+			<animation type="visible">
+				<include>listSlideIn</include>
+			</animation>
+			<animation type="hidden">
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
 			<posx>col-4-begin</posx>
 			<posy>row-2-begin</posy>
-			<control type="label">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>14-col</width>
-				<font>pageTitle</font>
-				<label>[UPPERCASE]$INFO[Container(300).ListItem(0).Label][/UPPERCASE]</label>
-				<textcolor>selected</textcolor>
-			</control>
-			<!--source subtitle-->
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>Latest Content</label>
-				<textcolor>selected</textcolor>
-				<visible>Control.HasFocus(300)</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>$LOCALIZE[31045]</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7001).HasFocus</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>$LOCALIZE[41011]</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7002).HasFocus</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>$LOCALIZE[41012]</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7003).HasFocus</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>$LOCALIZE[134]</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7006).HasFocus</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>$LOCALIZE[31001]</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7007).HasFocus</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>$LOCALIZE[41013]</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7004).HasFocus</visible>
-			</control>
-			<control type="label">
-				<posx>0</posx>
-				<posy>45</posy>
-				<width>auto</width>
-				<font>regular</font>
-				<label>31045</label>
-				<textcolor>selected</textcolor>
-				<visible>ControlGroup(7005).HasFocus</visible>
-			</control>
 			<!-- Container for the new lists -->
 			<!-- "On Deck" & "Recently Added" -->
 			<control type="grouplist" id="5100">
@@ -131,6 +163,15 @@
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffffffff</colordiffuse>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<texture>backgrounds/vignette.png</texture>
+									<colordiffuse>ffffffff</colordiffuse>
+									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
@@ -176,6 +217,15 @@
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffffffff</colordiffuse>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<texture>backgrounds/vignette.png</texture>
+									<colordiffuse>ffffffff</colordiffuse>
+									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
@@ -226,6 +276,15 @@
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<texture>backgrounds/vignette.png</texture>
+									<colordiffuse>ffffffff</colordiffuse>
+									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
@@ -303,6 +362,15 @@
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<texture>backgrounds/vignette.png</texture>
+									<colordiffuse>ffffffff</colordiffuse>
+									<aspectratio>stretch</aspectratio>
+								</control>
 								<control type="group">
 									<posx>0</posx>
 									<posy>272</posy>
@@ -349,6 +417,15 @@
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<texture>backgrounds/vignette.png</texture>
+									<colordiffuse>ffffffff</colordiffuse>
+									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
@@ -400,6 +477,15 @@
 									<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>363</width>
+									<height>269</height>
+									<texture>backgrounds/vignette.png</texture>
+									<colordiffuse>ffffffff</colordiffuse>
+									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
@@ -508,6 +594,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>272</posy>
@@ -583,6 +678,15 @@
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -681,6 +785,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>272</posy>
@@ -723,6 +836,15 @@
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -788,6 +910,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>272</posy>
@@ -830,6 +961,15 @@
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -896,6 +1036,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>276</posy>
@@ -938,6 +1087,15 @@
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -1003,6 +1161,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>276</width>
+								<height>273</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>276</posy>
@@ -1037,6 +1204,15 @@
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<width>276</width>
+								<height>273</height>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -1124,6 +1300,15 @@
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
@@ -1223,6 +1408,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>272</posy>
@@ -1314,6 +1508,15 @@
 								<bordersize>3</bordersize>
 								<colordiffuse>ffffffff</colordiffuse>
 							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
+							</control>
 							<control type="group">
 								<posx>0</posx>
 								<posy>272</posy>
@@ -1356,6 +1559,15 @@
 								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>363</width>
+								<height>269</height>
+								<texture>backgrounds/vignette.png</texture>
+								<colordiffuse>ffffffff</colordiffuse>
+								<aspectratio>stretch</aspectratio>
 							</control>
 							<control type="group">
 								<posx>0</posx>
