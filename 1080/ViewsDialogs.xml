@@ -165,7 +165,7 @@
 			<height>108</height>
 			<aspectratio scalediffuse="false" align="center">scale</aspectratio>
 			<colordiffuse>accented</colordiffuse>
-			<texture background="true">candy/spaceinvaders.png</texture>
+			<texture background="true" diffuse="masks/circlemedium.png" border="0">candy/spaceinvaders.png</texture>
 		</control>
 	</include>
 	<include name="DialogUserIcons">
