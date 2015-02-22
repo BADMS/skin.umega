@@ -264,6 +264,18 @@
 					<textcolor>selected</textcolor>
 					<label>$INFO[Container.Property(parentTitle)]</label>
 					<scroll>true</scroll>
+					<visible>!IsEmpty(Container.Property(parentTitle))</visible>
+				</control>
+				<control type="label">
+					<posx>624</posx>
+					<posy>-13</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>pageTitle</font>
+					<textcolor>selected</textcolor>
+					<label>$INFO[ListItem.Album]</label>
+					<scroll>true</scroll>
+					<visible>IsEmpty(Container.Property(parentTitle))</visible>
 				</control>
 				<control type="label">
 					<posx>624</posx>
@@ -274,6 +286,18 @@
 					<textcolor>selected</textcolor>
 					<label>$INFO[ListItem.Property(LeafCount)] $LOCALIZE[32106]</label>
 					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Property(LeafCount))</visible>
+				</control>
+				<control type="label">
+					<posx>624</posx>
+					<posy>32</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>regular</font>
+					<textcolor>selected</textcolor>
+					<label>$INFO[Container.NumItems] $LOCALIZE[32111]</label>
+					<scroll>true</scroll>
+					<visible>IsEmpty(ListItem.Property(LeafCount))</visible>
 				</control>
 				<control type="textbox">
 					<posx>624</posx>
