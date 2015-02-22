@@ -12,9 +12,20 @@
 						<visible>ControlGroup(7001).HasFocus | ControlGroup(7002).HasFocus | ControlGroup(7004).HasFocus</visible>
 						<posy>560</posy>
 						<width>372</width>
-						<height>418</height>
+						<height>364</height>
 						<texture>colors/black.png</texture>
 						<colordiffuse>ccffffff</colordiffuse>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="image">
+						<visible>ControlGroup(7001).HasFocus | ControlGroup(7002).HasFocus | ControlGroup(7004).HasFocus</visible>
+						<posx>0</posx>
+						<posy>921</posy>
+						<width>372</width>
+						<height>1-row</height>
+						<texture>colors/selected.png</texture>
+						<colordiffuse>selected</colordiffuse>
+						<aspectratio>stretch</aspectratio>
 						<fadetime>200</fadetime>
 					</control>
 					<!-- movie -->
@@ -32,15 +43,37 @@
 						<!--synopsis-->
 						<control type="textbox">
 							<posx>10</posx>
-							<posy>570</posy>
+							<posy>566</posy>
 							<font>textboxExtraLeading</font>
 							<width>352</width>
 							<align>left</align>
 							<textcolor>selected</textcolor>
-							<height>381</height>
+							<height>344</height>
 							<label>[B]$INFO[Container(9001).ListItem.plot][/B]</label>
 							<autoscroll delay="10000" time="1000" repeat="10000"/>
 							<shadowcolor>-</shadowcolor>
+						</control>
+						<!-- watched? -->
+						<control type="label">
+							<posx>362</posx>
+							<posy>920</posy>
+							<width>32</width>
+							<align>right</align>
+							<font>symbol</font>
+							<textcolor>black</textcolor>
+							<label>$VAR[vsmListItemOverlay]</label>
+							<shadowcolor>-</shadowcolor>
+						</control>
+						<!-- MPAA flag -->
+						<control type="image">
+							<posy>935</posy>
+							<posx>10</posx>
+							<width>352</width>
+							<height>30</height>
+							<align>left</align>
+							<texture>$INFO[Container(9001).Listitem.Art(mediaTag::contentRating)]</texture>
+							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<colordiffuse>black</colordiffuse>
 						</control>
 					</control>
 					<!-- tv show -->
@@ -68,6 +101,28 @@
 							<autoscroll delay="10000" time="1000" repeat="10000"/>
 							<shadowcolor>-</shadowcolor>
 						</control>
+						<!-- watched? -->
+						<control type="label">
+							<posx>362</posx>
+							<posy>920</posy>
+							<width>32</width>
+							<align>right</align>
+							<font>symbol</font>
+							<textcolor>black</textcolor>
+							<label>$VAR[vstvListItemOverlay]</label>
+							<shadowcolor>-</shadowcolor>
+						</control>
+						<!-- MPAA flag -->
+						<control type="image">
+							<posy>935</posy>
+							<posx>10</posx>
+							<width>352</width>
+							<height>30</height>
+							<align>left</align>
+							<texture>$INFO[Container(9002).Listitem.Art(mediaTag::contentRating)]</texture>
+							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<colordiffuse>black</colordiffuse>
+						</control>
 					</control>
 					<!-- tv episode -->
 					<control type="group">
@@ -93,6 +148,28 @@
 							<label>[B]$INFO[Container(9004).ListItem.plot][/B]</label>
 							<autoscroll delay="10000" time="1000" repeat="10000"/>
 							<shadowcolor>-</shadowcolor>
+						</control>
+						<!-- watched? -->
+						<control type="label">
+							<posx>362</posx>
+							<posy>920</posy>
+							<width>32</width>
+							<align>right</align>
+							<font>symbol</font>
+							<textcolor>black</textcolor>
+							<label>$VAR[vseListItemOverlay]</label>
+							<shadowcolor>-</shadowcolor>
+						</control>
+						<!-- MPAA flag -->
+						<control type="image">
+							<posy>935</posy>
+							<posx>10</posx>
+							<width>352</width>
+							<height>30</height>
+							<align>left</align>
+							<texture>$INFO[Container(9004).Listitem.Art(mediaTag::contentRating)]</texture>
+							<aspectratio align="left" aligny="center">keep</aspectratio>
+							<colordiffuse>black</colordiffuse>
 						</control>
 					</control>
 				</control>
@@ -968,7 +1045,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1028,7 +1105,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1109,7 +1186,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1169,7 +1246,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1250,7 +1327,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.icon]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1310,7 +1387,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.icon]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1371,12 +1448,12 @@
 					<!-- Artists -->
 					<control type="group" id="7008">
 						<!--found artists-->
-						<height>364</height>
+						<height>458</height>
 						<control type="fixedlist" id="9008">
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>22-col</width>
-							<height>364</height>
+							<height>458</height>
 							<visible allowhiddenfocus="false">true</visible>
 							<orientation>horizontal</orientation>
 							<ondown>7009</ondown>
@@ -1384,14 +1461,14 @@
 							<onright>-</onright>
 							<onleft>350</onleft>
 							<preloaditems>2</preloaditems>
-							<itemlayout width="387" height="354">
+							<itemlayout width="387" height="430">
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1400,14 +1477,14 @@
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<texture>backgrounds/vignette.png</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
-									<posy>272</posy>
+									<posy>366</posy>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -1444,14 +1521,14 @@
 									</control>
 								</control>
 							</itemlayout>
-							<focusedlayout width="387" height="354">
+							<focusedlayout width="387" height="430">
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1460,14 +1537,14 @@
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<texture>backgrounds/vignette.png</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
-									<posy>272</posy>
+									<posy>366</posy>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -1511,13 +1588,13 @@
 					</control>
 					<!-- Albums -->
 					<control type="group" id="7009">
-						<height>364</height>
+						<height>458</height>
 						<!--found albums-->
 						<control type="fixedlist" id="9009">
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>22-col</width>
-							<height>364</height>
+							<height>458</height>
 							<visible allowhiddenfocus="false">true</visible>
 							<orientation>horizontal</orientation>
 							<ondown>7010</ondown>
@@ -1525,14 +1602,14 @@
 							<onright>-</onright>
 							<onleft>350</onleft>
 							<preloaditems>2</preloaditems>
-							<itemlayout width="387" height="354">
+							<itemlayout width="387" height="430">
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1541,14 +1618,14 @@
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<texture>backgrounds/vignette.png</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
-									<posy>272</posy>
+									<posy>366</posy>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -1585,14 +1662,14 @@
 									</control>
 								</control>
 							</itemlayout>
-							<focusedlayout width="387" height="354">
+							<focusedlayout width="387" height="430">
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1601,14 +1678,14 @@
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<texture>backgrounds/vignette.png</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
-									<posy>272</posy>
+									<posy>366</posy>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -1653,12 +1730,12 @@
 					<!-- Tracks -->
 					<control type="group" id="7010">
 						<!--found songs-->
-						<height>364</height>
+						<height>458</height>
 						<control type="fixedlist" id="9010">
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>22-col</width>
-							<height>364</height>
+							<height>458</height>
 							<visible allowhiddenfocus="false">true</visible>
 							<orientation>horizontal</orientation>
 							<onup>7009</onup>
@@ -1666,14 +1743,14 @@
 							<onright>-</onright>
 							<onleft>350</onleft>
 							<preloaditems>2</preloaditems>
-							<itemlayout width="387" height="354">
+							<itemlayout width="387" height="430">
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1682,14 +1759,14 @@
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<texture>backgrounds/vignette.png</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
-									<posy>272</posy>
+									<posy>366</posy>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -1726,14 +1803,14 @@
 									</control>
 								</control>
 							</itemlayout>
-							<focusedlayout width="387" height="354">
+							<focusedlayout width="387" height="430">
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.icon]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1742,14 +1819,14 @@
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
-									<height>269</height>
+									<height>363</height>
 									<texture>backgrounds/vignette.png</texture>
 									<colordiffuse>ffffffff</colordiffuse>
 									<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="group">
 									<posx>0</posx>
-									<posy>272</posy>
+									<posy>366</posy>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -1813,7 +1890,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1873,7 +1950,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1953,7 +2030,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -2013,7 +2090,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="colors/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
+									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Property(Fanart_Image)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>

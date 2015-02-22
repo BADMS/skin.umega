@@ -13,6 +13,21 @@
 		<value condition="ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
 		<value condition="!ListItem.Status(Unwatched) + !ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">E</value>
 	</variable>
+	<variable name="vsmListItemOverlay">
+		<value condition="Container(9001).ListItem.Status(Unwatched) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="Container(9001).ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="!Container(9001).ListItem.Status(Unwatched) + !Container(9001).ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">E</value>
+	</variable>
+	<variable name="vstvListItemOverlay">
+		<value condition="Container(9002).ListItem.Status(Unwatched) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="Container(9002).ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="!Container(9002).ListItem.Status(Unwatched) + !Container(9002).ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">E</value>
+	</variable>
+	<variable name="vseListItemOverlay">
+		<value condition="Container(9004).ListItem.Status(Unwatched) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="Container(9004).ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
+		<value condition="!Container(9004).ListItem.Status(Unwatched) + !Container(9004).ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">E</value>
+	</variable>
     <variable name="seekSpeed">
         <value condition="Player.Forwarding2x">FF 2x</value>
         <value condition="Player.Forwarding4x">FF 4x</value>
