@@ -374,9 +374,27 @@
 			<style>uppercase</style>
 		</font>
 		<font>
+			<name>buttonTitleC</name>
+			<filename>sourceSansProCJK/regular.ttf</filename>
+			<size>32</size>
+			<style>uppercase</style>
+		</font>
+		<font>
+			<name>symbolx</name>
+			<filename>heydings_controls.ttf</filename>
+			<size>36</size>
+			<style/>
+		</font>
+		<font>
+			<name>symbolosd</name>
+			<filename>heydings_controls.ttf</filename>
+			<size>26</size>
+			<style/>
+		</font>
+		<font>
 			<name>symbol</name>
 			<filename>modernpics.otf</filename>
-			<size>20</size>
+			<size>36</size>
 			<style/>
 		</font>
 		<font>
@@ -388,6 +406,12 @@
 		<font>
 			<name>symbolLarge</name>
 			<filename>modernpics.otf</filename>
+			<size>36</size>
+			<style/>
+		</font>
+		<font>
+			<name>symbolLargex</name>
+			<filename>heydings_controls.ttf</filename>
 			<size>36</size>
 			<style/>
 		</font>
