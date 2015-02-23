@@ -18,8 +18,8 @@
 	<include name="BGHomeList">
 		<include>FullScreenScaled</include>
 		<fadetime>1000</fadetime>
-		<animation effect="fade" start="30" end="100" time="400" delay="0">Visible</animation>
-		<animation effect="fade" start="100" end="30" time="400" delay="0">Hidden</animation>
+		<animation effect="fade" start="0" end="100" time="400" delay="0">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="400" delay="0">Hidden</animation>
 	</include>
 	<!--Global background-->
 	<include name="globalBackground">
@@ -303,12 +303,6 @@
 					<visible>Control.HasFocus(9010)</visible>
 					<include>BGHomeList</include>
 					<texture background="true">$INFO[Container(9010).ListItem(0).Art(fanart)]</texture>
-				</control>
-				<control type="image">
-					<include>FullScreenScaled</include>
-					<texture>backgrounds/vignette.png</texture>
-					<colordiffuse>ffffffff</colordiffuse>
-					<aspectratio>stretch</aspectratio>
 				</control>
 			</control>
 			<control type="image">
