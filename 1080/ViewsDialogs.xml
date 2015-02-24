@@ -176,7 +176,7 @@
 			<height>12</height>
 			<font>symbol</font>
 			<textcolor>selected</textcolor>
-			<label>n</label>
+			<label>)</label>
 			<visible>!IsEmpty(ListItem.Property(admin))</visible>
 		</control>
 		<control type="label">
@@ -187,7 +187,7 @@
 			<font>symbol</font>
 			<textcolor>selected</textcolor>
 			<label>%</label>
-			<visible>ListItem.IsSelected</visible>
+			<visible>ListItem.IsSelected | Container(3).ListItem(0).IsSelected</visible>
 		</control>
 		<control type="label">
 			<posx>102</posx>
