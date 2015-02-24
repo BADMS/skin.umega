@@ -10,543 +10,52 @@
 				<include>FullScreenScaled</include>
 				<texture>backgrounds/lost.jpg</texture>
 			</control>
-			<control type="image">
-				<posy>0</posy>
-				<posx>540</posx>
-				<width>200</width>
-				<aspectratio>keep</aspectratio>
-				<texture>plex-logo-light-small.png</texture>
-				<animation effect="fade" start="0" end="100" time="0" condition="true">Conditional</animation>
-			</control>
-		</control>
-	</include>
-	<include name="UserSwitchLoginUser">
-		<control type="group">
-			<!-- card -->
-			<control type="group">
-				<control type="image">
-					<posx>4</posx>
-					<posy>4</posy>
-					<width>204</width>
-					<height>204</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture>mask-userswitch.png</texture>
-					<animation effect="fade" start="0" end="20" time="0" condition="true">Conditional</animation>
-				</control>
-				<control type="image">
-					<posx>4</posx>
-					<posy>4</posy>
-					<width>204</width>
-					<height>204</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="mask-userswitch.png" blur="20">$INFO[ListItem.Art(thumb)]</texture>
-				</control>
-				<control type="image">
-					<posx>4</posx>
-					<posy>4</posy>
-					<width>204</width>
-					<height>204</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture>mask-userswitch.png</texture>
-					<colordiffuse>black</colordiffuse>
-					<animation effect="fade" start="0" end="40" time="0" condition="true">Conditional</animation>
-				</control>
-			</control>
-			<!-- avatar -->
-			<control type="group">
-				<posy>30</posy>
-				<posx>30</posx>
-				<control type="image">
-					<width>150</width>
-					<height>150</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="masks/circle.png">masks/circle.png</texture>
-					<animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
-				</control>
-				<control type="image">
-					<posy>5</posy>
-					<posx>5</posx>
-					<width>140</width>
-					<height>140</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="masks/circle.png">candy/invader.png</texture>
-				</control>
-				<control type="image">
-					<posy>5</posy>
-					<posx>5</posx>
-					<width>140</width>
-					<height>140</height>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="masks/circle.png">$INFO[ListItem.Art(thumb)]</texture>
-				</control>
-			</control>
-			<!-- user icons -->
-			<control type="group">
-				<!-- admin -->
-				<control type="group">
-					<control type="image">
-						<posx>160</posx>
-						<posy>161</posy>
-						<width>38</width>
-						<height>38</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-						<colordiffuse>black</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>154</posx>
-						<posy>172</posy>
-						<width>50</width>
-						<height>16</height>
-						<aspectratio scalediffuse="false" align="center">keep</aspectratio>
-						<texture>icon-admin.png</texture>
-						<colordiffuse>orangeLight</colordiffuse>
-					</control>
-					<visible>!IsEmpty(ListItem.Property(admin)) | !IsEmpty(Container(3).ListItem(0).Property(admin))</visible>
-				</control>
-				<!-- selected -->
-				<control type="group">
-					<control type="image">
-						<posx>160</posx>
-						<posy>15</posy>
-						<width>38</width>
-						<height>38</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-						<colordiffuse>black</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>154</posx>
-						<posy>26</posy>
-						<width>50</width>
-						<height>16</height>
-						<aspectratio scalediffuse="false" align="center">keep</aspectratio>
-						<texture>icon-selected.png</texture>
-						<colordiffuse>FF5CB85C</colordiffuse>
-					</control>
-					<visible>ListItem.IsSelected | Container(3).ListItem(0).IsSelected</visible>
-				</control>
-				<!-- PIN -->
-				<control type="group">
-					<control type="image">
-						<posx>13</posx>
-						<posy>160</posy>
-						<width>38</width>
-						<height>38</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-						<colordiffuse>black</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>7</posx>
-						<posy>172</posy>
-						<width>50</width>
-						<height>16</height>
-						<aspectratio scalediffuse="false" align="center">keep</aspectratio>
-						<texture>icon-pin.png</texture>
-						<colordiffuse>FF5CB85C</colordiffuse>
-					</control>
-					<visible>!IsEmpty(ListItem.Property(protected)) | !IsEmpty(Container(3).ListItem(0).Property(protected))</visible>
-				</control>
-			</control>
-		</control>
-	</include>
-	<include name="UserSwitchLoginUserSelected">
-		<control type="group">
-			<!-- Sans PIN kb -->
-			<control type="group">
-				<visible>IsEmpty(ListItem.Property(protected)) | [!IsEmpty(ListItem.Property(protected)) + IsEmpty(Control.GetLabel(4)) + !ControlGroup(500).HasFocus]</visible>
-				<!-- card -->
-				<control type="group">
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>204</width>
-						<height>254</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture>mask-userswitch-selected-grey.png</texture>
-						<animation effect="fade" start="0" end="100" time="0" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>204</width>
-						<height>254</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="mask-userswitch-selected.png" blur="20">$INFO[ListItem.Art(thumb)]</texture>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>204</width>
-						<height>254</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture>mask-userswitch-selected.png</texture>
-						<colordiffuse>black</colordiffuse>
-						<animation effect="fade" start="0" end="40" time="0" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>208</posy>
-						<width>204</width>
-						<height>50</height>
-						<texture>mask-userswitch-selected-bottom.png</texture>
-						<colordiffuse>black</colordiffuse>
-						<animation effect="fade" start="0" end="20" time="0" condition="true">Conditional</animation>
-					</control>
-				</control>
-				<!-- avatar -->
-				<control type="group">
-					<posy>30</posy>
-					<posx>30</posx>
-					<control type="image">
-						<width>150</width>
-						<height>150</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="100" time="0" condition="true">Conditional</animation>
-						<colordiffuse>orange</colordiffuse>
-					</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>5</posx>
-						<width>140</width>
-						<height>140</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">candy/invader.png</texture>
-					</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>5</posx>
-						<width>140</width>
-						<height>140</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">$INFO[ListItem.Art(thumb)]</texture>
-					</control>
-				</control>
-			</control>
-			<!-- With PIN kb -->
-			<control type="group">
-				<visible>!IsEmpty(Control.GetLabel(4)) | ControlGroup(500).HasFocus</visible>
-				<!-- card -->
-				<control type="group">
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>204</width>
-						<height>254</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture>mask-userswitch-selected-PIN-grey.png</texture>
-						<animation effect="fade" start="0" end="100" time="0" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>204</width>
-						<height>254</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="mask-userswitch-selected-PIN.png" blur="20">$INFO[Container(3).ListItem(0).Art(thumb)]</texture>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>4</posy>
-						<width>204</width>
-						<height>254</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture>mask-userswitch-selected-PIN.png</texture>
-						<colordiffuse>black</colordiffuse>
-						<animation effect="fade" start="0" end="40" time="0" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<posx>4</posx>
-						<posy>208</posy>
-						<width>204</width>
-						<height>50</height>
-						<texture>base.png</texture>
-						<colordiffuse>black</colordiffuse>
-						<animation effect="fade" start="0" end="20" time="0" condition="true">Conditional</animation>
-					</control>
-				</control>
-				<!-- avatar -->
-				<control type="group">
-					<posy>30</posy>
-					<posx>30</posx>
-					<control type="image">
-						<width>150</width>
-						<height>150</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>5</posx>
-						<width>140</width>
-						<height>140</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">candy/invader.png</texture>
-					</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>5</posx>
-						<width>140</width>
-						<height>140</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">$INFO[ListItem.Art(thumb)]</texture>
-					</control>
-					<control type="image">
-						<posy>5</posy>
-						<posx>5</posx>
-						<width>140</width>
-						<height>140</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">$INFO[Container(3).ListItem(0).Art(thumb)]</texture>
-					</control>
-				</control>
-			</control>
-			<!-- name & dots labels -->
-			<control type="group">
-				<control type="label">
-					<posy>209</posy>
-					<posx>106</posx>
-					<width>174</width>
-					<height>49</height>
-					<label>$INFO[ListItem.Label]</label>
-					<font>buttonTitle</font>
-					<textcolor>selected</textcolor>
-					<align>center</align>
-					<visible>IsEmpty(Container.Property(LoginFailed))</visible>
-				</control>
-				<control type="group">
-					<control type="label">
-						<posy>209</posy>
-						<posx>19</posx>
-						<width>174</width>
-						<height>49</height>
-						<label>$INFO[Container(3).ListItem(0).Label]</label>
-						<font>buttonTitle</font>
-						<textcolor>selected</textcolor>
-						<align>center</align>
-						<visible>IsEmpty(Control.GetLabel(4))</visible>
-						<animation effect="fade" start="0" end="100" time="500" delay="3500" reversible="false" condition="!IsEmpty(Container.Property(LoginFailed))">Conditional</animation>
-					</control>
-					<control type="label" id="4">
-						<description>Edit Text</description>
-						<posy>200</posy>
-						<posx>4</posx>
-						<width>204</width>
-						<height>49</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$LOCALIZE[12323]</label>
-						<disabledcolor>white</disabledcolor>
-						<font>Bold-48</font>
-						<textcolor>selected</textcolor>
-						<visible>!IsEmpty(Control.GetLabel(4))</visible>
-						<animation effect="fade" time="100">VisibleChange</animation>
-					</control>
-					<control type="label">
-						<posy>212</posy>
-						<posx>4</posx>
-						<width>204</width>
-						<height>49</height>
-						<label>&#x2022; &#x2022; &#x2022; &#x2022;</label>
-						<font>Bold-26</font>
-						<textcolor>FFFF0000</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<visible>!IsEmpty(Container.Property(LoginFailed)) + ControlGroup(500).HasFocus + IsEmpty(Control.GetLabel(4))</visible>
-						<animation type="Visible" reversible="false">
-							<effect type="slide" start="0,0" end="-5,0" time="80" tween="elastic" easing="out" delay="100"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="180"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="260"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="340"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="420"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="500"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="580"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="660"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="740"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="820"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="900"/>
-							<effect type="slide" start="0,0" end="5,0" time="80" tween="elastic" easing="out" delay="980"/>
-							<effect type="fade" start="100" end="0" time="500" delay="3000"/>
-						</animation>
-					</control>
-					<control type="label">
-						<posy>212</posy>
-						<posx>102</posx>
-						<width>204</width>
-						<height>49</height>
-						<label>&#x2022; &#x2022; &#x2022; &#x2022;</label>
-						<font>Bold-26</font>
-						<textcolor>FFFF0000</textcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<visible>!IsEmpty(Container.Property(LoginFailed)) + !ControlGroup(500).HasFocus + IsEmpty(Control.GetLabel(4))</visible>
-						<animation type="Visible" reversible="false">
-							<effect type="slide" start="0,0" end="-5,0" time="80" tween="elastic" easing="out" delay="100"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="180"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="260"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="340"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="420"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="500"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="580"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="660"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="740"/>
-							<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="820"/>
-							<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="900"/>
-							<effect type="slide" start="0,0" end="5,0" time="80" tween="elastic" easing="out" delay="980"/>
-							<effect type="fade" start="100" end="0" time="500" delay="3000"/>
-						</animation>
-					</control>
-				</control>
-			</control>
-			<!-- user icons -->
-			<control type="group">
-				<!-- admin -->
-				<control type="group">
-					<control type="image">
-						<posx>160</posx>
-						<posy>161</posy>
-						<width>38</width>
-						<height>38</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-						<colordiffuse>black</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>154</posx>
-						<posy>172</posy>
-						<width>50</width>
-						<height>16</height>
-						<aspectratio scalediffuse="false" align="center">keep</aspectratio>
-						<texture>icon-admin.png</texture>
-						<colordiffuse>orangeLight</colordiffuse>
-					</control>
-					<visible>!IsEmpty(ListItem.Property(admin)) | !IsEmpty(Container(3).ListItem(0).Property(admin))</visible>
-				</control>
-				<!-- selected -->
-				<control type="group">
-					<control type="image">
-						<posx>160</posx>
-						<posy>15</posy>
-						<width>38</width>
-						<height>38</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-						<colordiffuse>black</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>154</posx>
-						<posy>26</posy>
-						<width>50</width>
-						<height>16</height>
-						<aspectratio scalediffuse="false" align="center">keep</aspectratio>
-						<texture>icon-selected.png</texture>
-						<colordiffuse>FF5CB85C</colordiffuse>
-					</control>
-					<visible>ListItem.IsSelected | Container(3).ListItem(0).IsSelected</visible>
-				</control>
-				<!-- PIN -->
-				<control type="group">
-					<control type="image">
-						<posx>13</posx>
-						<posy>160</posy>
-						<width>38</width>
-						<height>38</height>
-						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="masks/circle.png">masks/circle.png</texture>
-						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
-						<colordiffuse>black</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>7</posx>
-						<posy>172</posy>
-						<width>50</width>
-						<height>16</height>
-						<aspectratio scalediffuse="false" align="center">keep</aspectratio>
-						<texture>icon-pin.png</texture>
-						<colordiffuse>FF5CB85C</colordiffuse>
-					</control>
-					<visible>!IsEmpty(ListItem.Property(protected)) | !IsEmpty(Container(3).ListItem(0).Property(protected))</visible>
-				</control>
-			</control>
 		</control>
 	</include>
 	<include name="UserSwitchLoginKbButton">
-                <font>buttonTitle</font>
+		<font>buttonTitle</font>
 		<width>50</width>
 		<height>40</height>
 		<textoffsetx>20</textoffsetx>
-                <texturenofocus>colors/keyselected.png</texturenofocus>
-                <texturefocus>colors/keyaccent.png</texturefocus>
-                <focusedcolor>selected</focusedcolor>
-                <textcolor>selected</textcolor>
+		<texturenofocus>colors/keyselected.png</texturenofocus>
+		<texturefocus>colors/keyaccent.png</texturefocus>
+		<focusedcolor>selected</focusedcolor>
+		<textcolor>selected</textcolor>
 	</include>
 	<include name="UserSwitchLoginKbButtonBS">
-                <font>buttonTitle</font>
+		<font>buttonTitle</font>
 		<width>51</width>
 		<height>163</height>
 		<textoffsetx>20</textoffsetx>
-                <texturenofocus>colors/keyselected.png</texturenofocus>
-                <texturefocus>colors/keyaccent.png</texturefocus>
-                <focusedcolor>selected</focusedcolor>
-                <textcolor>selected</textcolor>
+		<texturenofocus>colors/keyselected.png</texturenofocus>
+		<texturefocus>colors/keyaccent.png</texturefocus>
+		<focusedcolor>selected</focusedcolor>
+		<textcolor>selected</textcolor>
 	</include>
 	<include name="UserSwitchLoginKbButtonZero">
 		<font>buttonTitle</font>
 		<width>152</width>
 		<height>40</height>
 		<textoffsetx>71</textoffsetx>
-                <texturenofocus>colors/keyselected.png</texturenofocus>
-                <texturefocus>colors/keyaccent.png</texturefocus>
-                <focusedcolor>selected</focusedcolor>
-                <textcolor>selected</textcolor>
-	</include>
-	<!-- list -->
-	<include name="UserSwitchLogin">
-		<control type="group">
-			<!-- list -->
-			<control type="group">
-				<posy>229</posy>
-				<posx>-138</posx>
-				<control type="fixedlist" id="3">
-					<width>1600</width>
-					<height>400</height>
-					<onleft>3</onleft>
-					<onright>3</onright>
-					<onup>3</onup>
-					<ondown>3</ondown>
-					<pagecontrol>-</pagecontrol>
-					<scrolltime>300</scrolltime>
-					<focusposition>3</focusposition>
-					<texturefocus>-</texturefocus>
-					<orientation>horizontal</orientation>
-					<itemlayout height="400" width="224">
-						<include>UserSwitchLoginUser</include>
-					</itemlayout>
-					<focusedlayout height="400" width="224">
-						<include>UserSwitchLoginUserSelected</include>
-					</focusedlayout>
-				</control>
-			</control>
-		</control>
+		<texturenofocus>colors/keyselected.png</texturenofocus>
+		<texturefocus>colors/keyaccent.png</texturefocus>
+		<focusedcolor>selected</focusedcolor>
+		<textcolor>selected</textcolor>
 	</include>
 	<!-- keyboard -->
 	<include name="KbPIN">
 		<control type="group">
 			<control type="grouplist" id="500">
 				<visible allowhiddenfocus="true">ControlGroup(500).HasFocus</visible>
-				<animation effect="slide" start="0,0" end="0,200" time="200">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,200" time="200">VisibleChange</animation>
+				<animation type="Windowclose">
+					<effect type="fade" start="100" end="0" time="300" delay="0"/>
+					<effect type="slide" start="0,0" end="0,500" time="400" tween="sine" easing="out"/>
+				</animation>
 				<posy>288</posy>
 				<posx>100</posx>
 				<itemgap>1</itemgap>
-				<width>1280</width>
+				<width>1920</width>
 				<height>200</height>
 				<onup>3</onup>
 				<align>center</align>
@@ -713,12 +222,114 @@
 						</control>
 					</control>
 				</control>
-			</control>				
+			</control>
 		</control>
 		<control type="group">
-			<posy>229</posy>
-			<posx>534</posx>
-			<include>UserSwitchLoginUserSelected</include>
+			<control type="group">
+				<visible>IsEmpty(ListItem.Property(protected)) | [!IsEmpty(ListItem.Property(protected)) + IsEmpty(Control.GetLabel(4)) + !ControlGroup(500).HasFocus]</visible>
+				<!-- name & dots labels -->
+				<animation type="Windowclose">
+					<effect type="fade" start="100" end="0" time="300" delay="0"/>
+					<effect type="slide" start="0,0" end="0,500" time="400" tween="sine" easing="out"/>
+				</animation>
+				<control type="group">
+					<visible>ControlGroup(500).HasFocus</visible>
+					<control type="label">
+						<posy>400</posy>
+						<posx>0</posx>
+						<width>1920</width>
+						<height>49</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>largeStrong</font>
+						<textcolor>selected</textcolor>
+						<align>center</align>
+						<visible>IsEmpty(Container.Property(LoginFailed))</visible>
+					</control>
+					<control type="group">
+						<control type="label">
+							<posy>400</posy>
+							<posx>0</posx>
+							<width>1920</width>
+							<height>49</height>
+							<label>$INFO[Container(3).ListItem(0).Label]</label>
+							<font>largeStrong</font>
+							<textcolor>blood</textcolor>
+							<align>center</align>
+							<visible>IsEmpty(Control.GetLabel(4))</visible>
+							<animation effect="fade" start="0" end="100" time="500" delay="3500" reversible="false" condition="!IsEmpty(Container.Property(LoginFailed))">Conditional</animation>
+						</control>
+						<control type="label" id="4">
+							<description>Edit Text</description>
+							<posy>400</posy>
+							<posx>0</posx>
+							<width>1920</width>
+							<height>49</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$LOCALIZE[12323]</label>
+							<disabledcolor>accented</disabledcolor>
+							<font>largeStrong</font>
+							<textcolor>blood</textcolor>
+							<visible>!IsEmpty(Control.GetLabel(4))</visible>
+							<animation effect="fade" time="100">VisibleChange</animation>
+						</control>
+						<control type="label">
+							<posy>400</posy>
+							<posx>0</posx>
+							<width>1920</width>
+							<height>49</height>
+							<label>&#x2022; &#x2022; &#x2022; &#x2022;</label>
+							<font>largeStrong</font>
+							<textcolor>accented</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible>!IsEmpty(Container.Property(LoginFailed)) + ControlGroup(500).HasFocus + IsEmpty(Control.GetLabel(4))</visible>
+							<animation type="Visible" reversible="false">
+								<effect type="slide" start="0,0" end="-5,0" time="80" tween="elastic" easing="out" delay="100"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="180"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="260"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="340"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="420"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="500"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="580"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="660"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="740"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="820"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="900"/>
+								<effect type="slide" start="0,0" end="5,0" time="80" tween="elastic" easing="out" delay="980"/>
+								<effect type="fade" start="100" end="0" time="500" delay="3000"/>
+							</animation>
+						</control>
+						<control type="label">
+							<posy>212</posy>
+							<posx>102</posx>
+							<width>204</width>
+							<height>49</height>
+							<label>&#x2022; &#x2022; &#x2022; &#x2022;</label>
+							<font>regularStrong</font>
+							<textcolor>accented</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible>!IsEmpty(Container.Property(LoginFailed)) + !ControlGroup(500).HasFocus + IsEmpty(Control.GetLabel(4))</visible>
+							<animation type="Visible" reversible="false">
+								<effect type="slide" start="0,0" end="-5,0" time="80" tween="elastic" easing="out" delay="100"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="180"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="260"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="340"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="420"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="500"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="580"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="660"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="740"/>
+								<effect type="slide" start="0,0" end="10,0" time="80" tween="elastic" easing="out" delay="820"/>
+								<effect type="slide" start="0,0" end="-10,0" time="80" tween="elastic" easing="out" delay="900"/>
+								<effect type="slide" start="0,0" end="5,0" time="80" tween="elastic" easing="out" delay="980"/>
+								<effect type="fade" start="100" end="0" time="500" delay="3000"/>
+							</animation>
+						</control>
+					</control>
+				</control>
+			</control>
 			<visible>!IsEmpty(Control.GetLabel(4)) | ControlGroup(500).HasFocus</visible>
 		</control>
 	</include>

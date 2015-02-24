@@ -260,13 +260,14 @@
 				<colordiffuse>selected</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<control type="label" id="1">
+			<control type="label">
 				<posy>32</posy>
 				<width>1920</width>
 				<height>40</height>
 				<align>center</align>
 				<font>dialogTitle</font>
 				<textcolor>black</textcolor>
+				<label>$LOCALIZE[31624] $LOCALIZE[31068]</label>
 			</control>
 			<control type="group">
 				<posx>670</posx>
