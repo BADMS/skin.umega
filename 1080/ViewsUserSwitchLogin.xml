@@ -8,8 +8,7 @@
 			<animation effect="fade" start="100" end="100" time="0">WindowClose</animation>
 			<control type="image">
 				<include>FullScreenScaled</include>
-				<texture>base.png</texture>
-				<colordiffuse>FF111111</colordiffuse>
+				<texture>backgrounds/lost.jpg</texture>
 			</control>
 			<control type="image">
 				<posy>0</posy>
@@ -61,7 +60,7 @@
 					<width>150</width>
 					<height>150</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="round-big.png">round-big.png</texture>
+					<texture diffuse="masks/circle.png">masks/circle.png</texture>
 					<animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
 				</control>
 				<control type="image">
@@ -70,7 +69,7 @@
 					<width>140</width>
 					<height>140</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="round-big.png">default-avatar.png</texture>
+					<texture diffuse="masks/circle.png">candy/invader.png</texture>
 				</control>
 				<control type="image">
 					<posy>5</posy>
@@ -78,7 +77,7 @@
 					<width>140</width>
 					<height>140</height>
 					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-					<texture diffuse="round-big.png">$INFO[ListItem.Art(thumb)]</texture>
+					<texture diffuse="masks/circle.png">$INFO[ListItem.Art(thumb)]</texture>
 				</control>
 			</control>
 			<!-- user icons -->
@@ -91,7 +90,7 @@
 						<width>38</width>
 						<height>38</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-small.png">round-small.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
 						<colordiffuse>black</colordiffuse>
 					</control>
@@ -114,7 +113,7 @@
 						<width>38</width>
 						<height>38</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-small.png">round-small.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
 						<colordiffuse>black</colordiffuse>
 					</control>
@@ -137,7 +136,7 @@
 						<width>38</width>
 						<height>38</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-small.png">round-small.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
 						<colordiffuse>black</colordiffuse>
 					</control>
@@ -207,7 +206,7 @@
 						<width>150</width>
 						<height>150</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">round-big.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="100" time="0" condition="true">Conditional</animation>
 						<colordiffuse>orange</colordiffuse>
 					</control>
@@ -217,7 +216,7 @@
 						<width>140</width>
 						<height>140</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">default-avatar.png</texture>
+						<texture diffuse="masks/circle.png">candy/invader.png</texture>
 					</control>
 					<control type="image">
 						<posy>5</posy>
@@ -225,7 +224,7 @@
 						<width>140</width>
 						<height>140</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">$INFO[ListItem.Art(thumb)]</texture>
+						<texture diffuse="masks/circle.png">$INFO[ListItem.Art(thumb)]</texture>
 					</control>
 				</control>
 			</control>
@@ -279,7 +278,7 @@
 						<width>150</width>
 						<height>150</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">round-big.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="20" end="20" time="0" condition="true">Conditional</animation>
 					</control>
 					<control type="image">
@@ -288,7 +287,7 @@
 						<width>140</width>
 						<height>140</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">default-avatar.png</texture>
+						<texture diffuse="masks/circle.png">candy/invader.png</texture>
 					</control>
 					<control type="image">
 						<posy>5</posy>
@@ -296,7 +295,7 @@
 						<width>140</width>
 						<height>140</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">$INFO[ListItem.Art(thumb)]</texture>
+						<texture diffuse="masks/circle.png">$INFO[ListItem.Art(thumb)]</texture>
 					</control>
 					<control type="image">
 						<posy>5</posy>
@@ -304,7 +303,7 @@
 						<width>140</width>
 						<height>140</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-big.png">$INFO[Container(3).ListItem(0).Art(thumb)]</texture>
+						<texture diffuse="masks/circle.png">$INFO[Container(3).ListItem(0).Art(thumb)]</texture>
 					</control>
 				</control>
 			</control>
@@ -316,8 +315,8 @@
 					<width>174</width>
 					<height>49</height>
 					<label>$INFO[ListItem.Label]</label>
-					<font>Regular-18</font>
-					<textcolor>Focused</textcolor>
+					<font>buttonTitle</font>
+					<textcolor>selected</textcolor>
 					<align>center</align>
 					<visible>IsEmpty(Container.Property(LoginFailed))</visible>
 				</control>
@@ -328,8 +327,8 @@
 						<width>174</width>
 						<height>49</height>
 						<label>$INFO[Container(3).ListItem(0).Label]</label>
-						<font>Regular-18</font>
-						<textcolor>Focused</textcolor>
+						<font>buttonTitle</font>
+						<textcolor>selected</textcolor>
 						<align>center</align>
 						<visible>IsEmpty(Control.GetLabel(4))</visible>
 						<animation effect="fade" start="0" end="100" time="500" delay="3500" reversible="false" condition="!IsEmpty(Container.Property(LoginFailed))">Conditional</animation>
@@ -345,7 +344,7 @@
 						<label>$LOCALIZE[12323]</label>
 						<disabledcolor>white</disabledcolor>
 						<font>Bold-48</font>
-						<textcolor>Focused</textcolor>
+						<textcolor>selected</textcolor>
 						<visible>!IsEmpty(Control.GetLabel(4))</visible>
 						<animation effect="fade" time="100">VisibleChange</animation>
 					</control>
@@ -415,7 +414,7 @@
 						<width>38</width>
 						<height>38</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-small.png">round-small.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
 						<colordiffuse>black</colordiffuse>
 					</control>
@@ -438,7 +437,7 @@
 						<width>38</width>
 						<height>38</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-small.png">round-small.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
 						<colordiffuse>black</colordiffuse>
 					</control>
@@ -461,7 +460,7 @@
 						<width>38</width>
 						<height>38</height>
 						<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-						<texture diffuse="round-small.png">round-small.png</texture>
+						<texture diffuse="masks/circle.png">masks/circle.png</texture>
 						<animation effect="fade" start="0" end="50" time="0" condition="true">Conditional</animation>
 						<colordiffuse>black</colordiffuse>
 					</control>
@@ -480,34 +479,34 @@
 		</control>
 	</include>
 	<include name="UserSwitchLoginKbButton">
-		<font>Regular-16</font>
+                <font>buttonTitle</font>
 		<width>50</width>
 		<height>40</height>
 		<textoffsetx>20</textoffsetx>
-		<textcolor>white</textcolor>
-		<texturefocus>orange.png</texturefocus>
-		<texturenofocus>mask-userswitch-kb-button.png</texturenofocus>
-		<focusedcolor>black</focusedcolor>
+                <texturenofocus>colors/keyselected.png</texturenofocus>
+                <texturefocus>colors/keyaccent.png</texturefocus>
+                <focusedcolor>selected</focusedcolor>
+                <textcolor>selected</textcolor>
 	</include>
 	<include name="UserSwitchLoginKbButtonBS">
-		<font>Regular-12</font>
+                <font>buttonTitle</font>
 		<width>51</width>
 		<height>163</height>
 		<textoffsetx>20</textoffsetx>
-		<textcolor>white</textcolor>
-		<texturefocus>mask-userswitch-kb-delete-selected.png</texturefocus>
-		<texturenofocus>mask-userswitch-kb-delete.png</texturenofocus>
-		<focusedcolor>black</focusedcolor>
+                <texturenofocus>colors/keyselected.png</texturenofocus>
+                <texturefocus>colors/keyaccent.png</texturefocus>
+                <focusedcolor>selected</focusedcolor>
+                <textcolor>selected</textcolor>
 	</include>
 	<include name="UserSwitchLoginKbButtonZero">
-		<font>Regular-16</font>
+		<font>buttonTitle</font>
 		<width>152</width>
 		<height>40</height>
 		<textoffsetx>71</textoffsetx>
-		<textcolor>white</textcolor>
-		<texturefocus>mask-userswitch-kb-zero-selected.png</texturefocus>
-		<texturenofocus>mask-userswitch-kb-zero.png</texturenofocus>
-		<focusedcolor>black</focusedcolor>
+                <texturenofocus>colors/keyselected.png</texturenofocus>
+                <texturefocus>colors/keyaccent.png</texturefocus>
+                <focusedcolor>selected</focusedcolor>
+                <textcolor>selected</textcolor>
 	</include>
 	<!-- list -->
 	<include name="UserSwitchLogin">

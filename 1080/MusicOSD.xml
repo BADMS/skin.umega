@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <window id="120">
-	<defaultcontrol always="true">8000</defaultcontrol>
+    <onload>Control.SetFocus(8000,3)</onload>
     <onload>AlarmClock(controlDialog,setfocus(9876),00:25,silent)</onload>
+	<onunload>CancelAlarm(controlDialog,true)</onunload>
 	<controls>
 		<!--dialog controls-->
 		<control type="group" id="8765">
