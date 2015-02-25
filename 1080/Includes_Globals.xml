@@ -111,6 +111,7 @@
 				</control>
 			</control>
 			<control type="group">
+				<visible>Skin.HasSetting(useGlobalFanartBackground)</visible>
 				<visible>Skin.String(SectionType,playlists)</visible>
 				<animation type="visible" reversible="false">
 					<effect type="fade" start="0" end="100" time="500" delay="400"/>
@@ -127,6 +128,7 @@
 				</control>
 			</control>
 			<control type="group">
+				<visible>Skin.HasSetting(useGlobalFanartBackground)</visible>
 				<visible>Skin.String(SectionType,playqueue) + stringcompare(Container.FirstTitle,My Queue)</visible>
 				<animation type="visible" reversible="false">
 					<effect type="fade" start="0" end="100" time="500" delay="400"/>
@@ -150,8 +152,9 @@
 				<control type="multiimage" id="10101">
 					<visible>!Container(300).hasFocus(560) + !Container(300).hasFocus(561) + !Container(300).hasFocus(562) + !Container(300).hasFocus(563) + !Container(300).hasFocus(564) + !Container(300).hasFocus(565)</visible>
 					<include>FullScreenScaled</include>
-					<timeperimage>8000</timeperimage>
+					<timeperimage>25000</timeperimage>
 					<fadetime>1000</fadetime>
+					<pauseatend>10000</pauseatend>
 					<randomize>true</randomize>
 					<loop>yes</loop>
 					<include condition="!Skin.HasSetting(disableAnimateFanart)">kenBurnsey</include>
@@ -538,7 +541,7 @@
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
-					<label>+ /-</label>
+					<label>+ -/</label>
 				</control>
 			</control>
 		</control>

@@ -188,6 +188,16 @@
 							<onclick>fullscreen</onclick>
 							<visible>Player.HasAudio | Player.HasVideo</visible>
 						</item>
+						<item id="116">
+							<label>$LOCALIZE[32205]</label>
+							<onclick>Skin.SetString(pf_helper,1)</onclick>
+							<onclick>Skin.SetString(FileBrowserType,file)</onclick>
+							<onclick>Skin.Reset(PlayFilePath)</onclick>
+							<onclick>Skin.SetFile(PlayFilePath)</onclick>
+							<onclick condition="!isEmpty(Skin.String(PlayFilePath))">PlayMedia($ESCINFO[Skin.String(PlayFilePath)])</onclick>
+							<onclick>Skin.Reset(PlayFilePath)</onclick>
+							<onclick>Skin.Reset(pf_helper)</onclick>
+						</item>
 					</content>
 				</control>
 			</control>

@@ -8,7 +8,7 @@
         <include>globalBackground</include>
         <!--fanart (if available)-->
         <control type="image">
-            <visible>SubString(ListItem.label,fanart)</visible>
+            <visible>SubString(ListItem.label,fanart) + !Skin.String(pf_helper,1)</visible>
             <include>FullScreenScaled</include>
             <texture>$INFO[listitem.thumb]</texture>
             <colordiffuse>6affffff</colordiffuse>
@@ -16,7 +16,7 @@
             <fadetime>400</fadetime>
         </control>
         <control type="image">
-            <visible>!SubString(ListItem.label,fanart)</visible>
+            <visible>!SubString(ListItem.label,fanart) + !Skin.String(pf_helper,1)</visible>
             <include>FullScreenScaled</include>
             <texture>$INFO[listitem.FileNameAndPath]</texture>
             <colordiffuse>ffffffff</colordiffuse>
@@ -25,7 +25,7 @@
         </control>
         <!--poster (if available)-->
         <control type="image">
-            <visible>SubString(ListItem.label,remote art)</visible>
+            <visible>SubString(ListItem.label,remote art) + !Skin.String(pf_helper,1)</visible>
             <include>FullScreenScaled</include>
             <texture>$INFO[listitem.thumb]</texture>
             <colordiffuse>6affffff</colordiffuse>
