@@ -273,7 +273,9 @@
 				<width>13-col</width>
 				<height>12-row</height>
 				<onleft>300</onleft>
-				<onright>60</onright>
+				<onright condition="IntegerGreaterThan(container.Numitems,12) | !container.content(tvshows)">60</onright>
+				<onright condition="!IntegerGreaterThan(container.Numitems,12) + container.content(tvshows)">SetFocus(9119)</onright>
+				<onright condition="!IntegerGreaterThan(container.Numitems,12) + container.content(tvshows)">Skin.SetString(showtvinfos,1)</onright>
 				<ondown>50</ondown>
 				<onup>50</onup>
 				<pagecontrol>60</pagecontrol>
