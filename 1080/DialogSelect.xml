@@ -71,7 +71,7 @@
                                 <width>48</width>
                                 <height>48</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                                <texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
                             </control>
                             <control type="label">
                                 <posx>1-col</posx>
@@ -110,7 +110,7 @@
                                 <width>48</width>
                                 <height>48</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                                <texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
                             </control>
                             <control type="label">
                                 <posx>1-col</posx>
@@ -158,7 +158,7 @@
                                 <width>48</width>
                                 <height>48</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                                <texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
                             </control>
                             <control type="label">
                                 <posx>1-col</posx>
@@ -187,7 +187,7 @@
                                 <width>48</width>
                                 <height>48</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                                <texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
                             </control>
                             <control type="label">
                                 <posx>1-col</posx>
@@ -274,14 +274,14 @@
                         <item id="1">
                             <description>Ok / manual / getmore Button</description>
                             <label fallback="186">$INFO[control.getlabel(5)]</label>
-                            <label2></label2>
+                            <label2>%</label2>
                             <thumb>-</thumb>
                             <onclick>SendClick(2000,5)</onclick>
                         </item>
                         <item id="2">
                             <description>Cancel Button</description>
                             <label>222</label>
-                            <label2></label2>
+                            <label2>X</label2>
                             <thumb>-</thumb>
                             <onclick>PreviousMenu</onclick>
                         </item>

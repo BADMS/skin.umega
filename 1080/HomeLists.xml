@@ -159,7 +159,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffffffff</colordiffuse>
@@ -213,7 +213,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffffffff</colordiffuse>
@@ -260,7 +260,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffffffff</colordiffuse>
@@ -272,7 +272,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -357,7 +357,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -413,7 +413,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -461,7 +461,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -473,7 +473,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 									<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -577,7 +577,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffffffff</colordiffuse>
@@ -589,7 +589,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -662,7 +662,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -674,7 +674,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -780,7 +780,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -832,7 +832,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -905,7 +905,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -957,7 +957,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1031,7 +1031,7 @@
 								<width>276</width>
 								<height>273</height>
 								<aspectratio>stretch</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1083,7 +1083,7 @@
 								<width>276</width>
 								<height>273</height>
 								<aspectratio>stretch</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1156,7 +1156,7 @@
 								<width>276</width>
 								<height>273</height>
 								<aspectratio>stretch</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$VAR[playlistImageType]</texture>
+								<texture fallback="candy/default.png" border="0">$VAR[playlistImageType]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1200,7 +1200,7 @@
 								<width>276</width>
 								<height>273</height>
 								<aspectratio>stretch</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$VAR[playlistImageType]</texture>
+								<texture fallback="candy/default.png" border="0">$VAR[playlistImageType]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1272,7 +1272,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffffffff</colordiffuse>
@@ -1284,7 +1284,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1296,7 +1296,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1379,7 +1379,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1391,7 +1391,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="co/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="co/default.png" border="0">$INFO[Listitem.thumb]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1403,7 +1403,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="co/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="co/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1503,7 +1503,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="co/invader.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="co/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffffffff</colordiffuse>
@@ -1555,7 +1555,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/invader.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 								<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>

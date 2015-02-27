@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <defaultcontrol always="true">8000</defaultcontrol>
+    <onload>Control.SetFocus(8000,3)</onload>
     <include>fadeInOut</include>
     <controls>
         <control type="group">

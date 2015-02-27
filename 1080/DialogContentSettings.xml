@@ -118,7 +118,7 @@
                         <width>50</width>
                         <height>50</height>
                         <aspectratio>scale</aspectratio>
-                        <texture fallback="candy/invader.png" border="0">$INFO[Listitem.icon]</texture>
+                        <texture fallback="candy/default.png" border="0">$INFO[Listitem.icon]</texture>
                     </control>
                     <control type="label">
                         <posx>1-col</posx>
@@ -137,7 +137,7 @@
                         <font>symbol</font>
                         <textcolor>selected</textcolor>
                         <shadowcolor>-</shadowcolor>
-                        <label></label>
+                        <label>%</label>
                     </control>
                 </itemlayout>
                 <focusedlayout width="12-col" height="1-row">
@@ -155,7 +155,7 @@
                         <width>50</width>
                         <height>50</height>
                         <aspectratio>scale</aspectratio>
-                        <texture fallback="candy/invader.png" border="0">$INFO[Listitem.icon]</texture>
+                        <texture fallback="candy/default.png" border="0">$INFO[Listitem.icon]</texture>
                     </control>
                     <control type="label">
                         <posx>1-col</posx>
@@ -176,7 +176,7 @@
                         <textcolor>black</textcolor>
                         <selectedcolor>black</selectedcolor>
                         <shadowcolor>-</shadowcolor>
-                        <label></label>
+                        <label>%</label>
                     </control>
                 </focusedlayout>
             </control>
@@ -286,14 +286,14 @@
                     <item id="1">
                         <description>Ok Button</description>
                         <label>186</label>
-                        <label2></label2>
+                        <label2>%</label2>
                         <thumb>-</thumb>
                         <onclick>SendClick(132,28)</onclick>
                     </item>
                     <item id="2">
                         <description>Cancel Button</description>
                         <label>222</label>
-                        <label2></label2>
+                        <label2>X</label2>
                         <thumb>-</thumb>
                         <onclick>SendClick(132,29)</onclick>
                     </item>

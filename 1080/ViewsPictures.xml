@@ -20,7 +20,7 @@
                     <width>276</width>
                     <height>273</height>
                     <aspectratio>scale</aspectratio>
-                    <texture fallback="candy/invader.png">$INFO[Listitem.icon]</texture>
+                    <texture fallback="candy/default.png">$INFO[Listitem.icon]</texture>
                     <bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
                     <bordersize>3</bordersize>
                     <colordiffuse>ffFFFFFF</colordiffuse>
@@ -63,7 +63,7 @@
                     <width>276</width>
                     <height>273</height>
                     <aspectratio>scale</aspectratio>
-                    <texture fallback="candy/invader.png">$INFO[Listitem.icon]</texture>
+                    <texture fallback="candy/default.png">$INFO[Listitem.icon]</texture>
                     <bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
                     <bordersize>3</bordersize>
                     <colordiffuse>ffFFFFFF</colordiffuse>

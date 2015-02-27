@@ -29,7 +29,7 @@
 						<width>276</width>
 						<height>273</height>
 						<aspectratio>stretch</aspectratio>
-						<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+						<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 						<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 						<bordersize>3</bordersize>
 						<colordiffuse>ffFFFFFF</colordiffuse>
@@ -72,7 +72,7 @@
 						<width>276</width>
 						<height>273</height>
 						<aspectratio>stretch</aspectratio>
-						<texture fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+						<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 						<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 						<bordersize>3</bordersize>
 						<colordiffuse>ffFFFFFF</colordiffuse>
@@ -158,7 +158,7 @@
 							<width>6-col</width>
 							<height>576</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="candy/invader.png" border="0">$INFO[Listitem.art(poster)]</texture>
+							<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.art(poster)]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 							<bordersize>3</bordersize>
 							<fadetime>200</fadetime>
@@ -172,7 +172,7 @@
 							<width>6-col</width>
 							<height>576</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+							<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 							<bordersize>3</bordersize>
 							<fadetime>200</fadetime>
@@ -186,7 +186,7 @@
 							<width>6-col</width>
 							<height>576</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="candy/invader.png" border="0">$INFO[Listitem.art(poster)]</texture>
+							<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.art(poster)]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 							<bordersize>3</bordersize>
 							<fadetime>200</fadetime>
@@ -200,7 +200,7 @@
 							<width>6-col</width>
 							<height>243</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="candy/invader.png" border="0">$INFO[listitem.art(fanart)]</texture>
+							<texture background="true" fallback="candy/default.png" border="0">$INFO[listitem.art(fanart)]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 							<bordersize>3</bordersize>
 							<fadetime>200</fadetime>
@@ -214,7 +214,7 @@
 							<width>6-col</width>
 							<height>243</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+							<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 							<bordersize>3</bordersize>
 							<fadetime>200</fadetime>
@@ -228,7 +228,7 @@
 							<width>6-col</width>
 							<height>576</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="candy/invader.png" border="0">$INFO[Listitem.thumb]</texture>
+							<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 							<bordersize>3</bordersize>
 							<fadetime>200</fadetime>
@@ -297,7 +297,7 @@
 						<width>48</width>
 						<height>48</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+						<texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
 					</control>
 					<control type="label">
 						<posx>1-col</posx>
@@ -348,7 +348,7 @@
 						<width>48</width>
 						<height>48</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+						<texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
 					</control>
 					<control type="label">
 						<posx>1-col</posx>
@@ -598,7 +598,7 @@
 						<width>48</width>
 						<height>48</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+						<texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
 					</control>
 					<control type="label">
 						<posx>60</posx>
@@ -649,7 +649,7 @@
 						<width>48</width>
 						<height>48</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+						<texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
 					</control>
 					<control type="label">
 						<posx>60</posx>
@@ -733,7 +733,7 @@
 						<width>48</width>
 						<height>48</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+						<texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
 					</control>
 					<control type="label">
 						<posx>60</posx>
@@ -815,7 +815,7 @@
 					<width>48</width>
 					<height>48</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture fallback="candy/invader.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					<texture fallback="candy/default.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
 				</control>
 				<control type="label">
 					<posx>60</posx>
@@ -915,7 +915,7 @@
 					<width>276</width>
 					<height>273</height>
 					<aspectratio>stretch</aspectratio>
-					<texture fallback="candy/invader.png" border="0">$VAR[playlistImageType]</texture>
+					<texture fallback="candy/default.png" border="0">$VAR[playlistImageType]</texture>
 					<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 					<bordersize>3</bordersize>
 					<colordiffuse>ffFFFFFF</colordiffuse>
@@ -959,7 +959,7 @@
 					<width>276</width>
 					<height>273</height>
 					<aspectratio>stretch</aspectratio>
-					<texture fallback="candy/invader.png" border="0">$VAR[playlistImageType]</texture>
+					<texture fallback="candy/default.png" border="0">$VAR[playlistImageType]</texture>
 					<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 					<bordersize>3</bordersize>
 					<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1026,7 +1026,7 @@
 			<posy>-95</posy>
 			<posx>-312</posx>
 			<include>FullScreenScaled</include>
-			<texture>candy/invader.png</texture>
+			<texture>candy/default.png</texture>
 		</control>
 	</control>
 </include>

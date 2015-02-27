@@ -158,7 +158,7 @@
                                 <item id="2">
                                     <description>Remove Rule</description>
                                     <label>1210</label>
-                                    <label2></label2>
+                                    <label2>X</label2>
                                     <thumb>-</thumb>
                                     <onclick>SendClick(129,14)</onclick>
                                 </item>
@@ -373,14 +373,14 @@
                         <item id="1">
                             <description>Ok Button</description>
                             <label>186</label>
-                            <label2></label2>
+                            <label2>%</label2>
                             <thumb>-</thumb>
                             <onclick>SendClick(129,20)</onclick>
                         </item>
                         <item id="2">
                             <description>Cancel Button</description>
                             <label>222</label>
-                            <label2></label2>
+                            <label2>X</label2>
                             <thumb>-</thumb>
                             <onclick>SendClick(129,21)</onclick>
                         </item>

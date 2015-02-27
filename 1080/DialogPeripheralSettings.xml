@@ -142,21 +142,21 @@
                     <item id="1">
                         <description>Ok Button</description>
                         <label>186</label>
-                        <label2></label2>
+                        <label2>%</label2>
                         <thumb>-</thumb>
                         <onclick>SendClick(28)</onclick>
                     </item>
                     <item id="2">
                         <description>Cancel Button</description>
                         <label>222</label>
-                        <label2></label2>
+                        <label2>X</label2>
                         <thumb>-</thumb>
                         <onclick>SendClick(29)</onclick>
                     </item>
                     <item id="3">
                         <description>Defaults Button</description>
                         <label>409</label>
-                        <label2></label2>
+                        <label2>R</label2>
                         <thumb>-</thumb>
                         <onclick>SendClick(50)</onclick>
                     </item>

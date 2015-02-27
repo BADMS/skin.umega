@@ -67,7 +67,7 @@
                 <width>5-col</width>
                 <height>5-col</height>
                 <aspectratio>stretch</aspectratio>
-                <texture fallback="candy/invader.png">$INFO[ListItem.art(thumb)]</texture>
+                <texture fallback="candy/default.png">$INFO[ListItem.art(thumb)]</texture>
             </control>
             <control type="group">
                 <posx>6-col</posx>
