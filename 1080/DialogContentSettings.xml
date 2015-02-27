@@ -118,7 +118,7 @@
                         <width>50</width>
                         <height>50</height>
                         <aspectratio>scale</aspectratio>
-                        <texture fallback="colors/offblack.png" border="0">$INFO[Listitem.icon]</texture>
+                        <texture fallback="candy/invader.png" border="0">$INFO[Listitem.icon]</texture>
                     </control>
                     <control type="label">
                         <posx>1-col</posx>
@@ -155,7 +155,7 @@
                         <width>50</width>
                         <height>50</height>
                         <aspectratio>scale</aspectratio>
-                        <texture fallback="colors/offblack.png" border="0">$INFO[Listitem.icon]</texture>
+                        <texture fallback="candy/invader.png" border="0">$INFO[Listitem.icon]</texture>
                     </control>
                     <control type="label">
                         <posx>1-col</posx>

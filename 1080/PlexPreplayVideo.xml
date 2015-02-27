@@ -560,7 +560,7 @@
 				<width>111</width>
 				<height>111</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture border="0" fallback="colors/offblack.png">$INFO[ListItem.Art(thumb)]</texture>
+				<texture border="0" fallback="candy/invader.png">$INFO[ListItem.Art(thumb)]</texture>
 				<bordersize>0</bordersize>
 				<colordiffuse>ffFFFFFF</colordiffuse>
 			</control>
@@ -591,7 +591,7 @@
 				<width>111</width>
 				<height>111</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture border="0" fallback="colors/offblack.png">$INFO[ListItem.Art(thumb)]</texture>
+				<texture border="0" fallback="candy/invader.png">$INFO[ListItem.Art(thumb)]</texture>
 				<bordersize>0</bordersize>
 				<colordiffuse>ffFFFFFF</colordiffuse>
 			</control>
