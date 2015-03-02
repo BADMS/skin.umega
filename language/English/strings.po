@@ -1186,7 +1186,6 @@ msgctxt "#32203"
 msgid "Metadata not available"
 msgstr "Metadata not available"
 
-
 msgctxt "#32204"
 msgid "Menu"
 msgstr "Menu"
@@ -1235,3 +1234,6 @@ msgctxt "#41016"
 msgid "Shared Content"
 msgstr "Shared Content"
 
+msgctxt "#32205"
+msgid "Play File"
+msgstr "Play File"
