@@ -348,7 +348,7 @@
 				<width>12-col</width>
 				<height>486</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture background="true" fallback="colors/black.png" border="0">$INFO[Listitem.thumb]</texture>
+				<texture background="true" fallback="colors/black.png" border="0">$VAR[listItemVideoPreview]</texture>
 				<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 				<bordersize>3</bordersize>
 			</control>
@@ -401,7 +401,7 @@
 				<textcolor>selected</textcolor>
 				<shadowcolor>-</shadowcolor>
 				<height>228</height>
-				<label>[B]$INFO[ListItem.plot][/B]</label>
+				<label>[B]$VAR[listItemFullInfoPlot][/B]</label>
 				<autoscroll delay="10000" time="1000" repeat="10000"/>
 			</control>
 			<!--dialog controls-->

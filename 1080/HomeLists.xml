@@ -272,7 +272,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
+									<texture fallback="candy/default.png" border="0">$VAR[homelistItemVideoPreview]</texture>
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -473,7 +473,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
+									<texture fallback="candy/default.png" border="0">$VAR[homelistItemVideoPreview]</texture>
 									<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -589,7 +589,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="candy/default.png" border="0">$VAR[homelistItemVideoPreview]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -674,7 +674,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="candy/default.png" border="0">$VAR[homelistItemVideoPreview]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1284,7 +1284,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="candy/default.png" border="0">$VAR[homelistItemVideoPreview]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>
@@ -1391,7 +1391,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="co/default.png" border="0">$INFO[Listitem.thumb]</texture>
+								<texture fallback="co/default.png" border="0">$VAR[homelistItemVideoPreview]</texture>
 								<bordertexture border="3" colordiffuse="FFFFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffFFFFFF</colordiffuse>

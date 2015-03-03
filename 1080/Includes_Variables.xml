@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Skin variables-->
 <includes>
+	<variable name="listItemFullInfoPlot">
+		<value condition="Container.PlexContent(Channel)">$INFO[ListItem.Plot]</value>
+		<value condition="Container.PlexContent(Seasons) + IsEmpty(ListItem.Plot)">$INFO[Container.ShowPlot]</value>
+		<value condition="!ListItem.Type(episode)">$INFO[ListItem.Plot]</value>
+		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Plot]</value>
+		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Plot]</value>
+		<value condition="ListItem.Type(episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">$LOCALIZE[32105]</value>
+		<value condition="IsEmpty(ListItem.Plot)">NoPlotDefault</value>
+		<value condition="IsEmpty(ListItem.Plot) + IsEmpty(Container.ShowPlot)">NoPlotDefault</value>
+	</variable>
+	<variable name="listItemVideoPreview">
+		<value condition="!ListItem.Type(episode)">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="IsEmpty(ListItem.Art(thumb))]">candy/default.png</value>
+		<value>candy/spoiler.jpg</value>
+	</variable>
+	<variable name="homelistItemVideoPreview">
+		<value condition="!ListItem.Type(episode)">$INFO[Listitem.thumb]</value>
+		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[Listitem.thumb]</value>
+		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[Listitem.thumb]</value>
+		<value condition="IsEmpty(Listitem.thumb)]">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<value>$INFO[ListItem.Property(Fanart_Image)]</value>
+	</variable>
 	<variable name="playlistImageType">
 		<value condition="ListItem.Type(musicplaylist) | ListItem.Type(musicplayqueue)">$INFO[ListItem.CompositeImage(width=720;height=720;cols=2;rows=2)]</value>
 		<value condition="ListItem.Type(videoplaylist) | ListItem.Type(videoplayqueue) | Skin.String(SectionType,sharedcontent)">$INFO[ListItem.CompositeImage(width=720;height=720;cols=3;rows=2)]</value>

@@ -323,7 +323,15 @@
 					<onclick>Skin.ToggleSetting(disableTVListInfos)</onclick>
 					<selected>Skin.HasSetting(disableTVListInfos)</selected>
 				</control>
-				<control type="button" id="21">
+				<control type="radiobutton" id="21">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Hide thumbs/plot spoilers for unwatched</description>
+					<width>16-col</width>
+					<label>Hide Spoilers for Unwatched Episodes</label>
+					<onclick>Skin.ToggleSetting(disableTVSpoilers)</onclick>
+					<selected>Skin.HasSetting(disableTVSpoilers)</selected>
+				</control>
+				<control type="button" id="221">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -341,7 +349,7 @@
 					<selected>!isEmpty(Skin.String(Channel1_Name))</selected>
 					<onright>601</onright>
 				</control>
-				<control type="button" id="22">
+				<control type="button" id="222">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -359,7 +367,7 @@
 					<selected>!isEmpty(Skin.String(Channel2_Name))</selected>
 					<onright>602</onright>
 				</control>
-				<control type="button" id="23">
+				<control type="button" id="223">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -377,7 +385,7 @@
 					<selected>!isEmpty(Skin.String(Channel3_Name))</selected>
 					<onright>603</onright>
 				</control>
-				<control type="button" id="24">
+				<control type="button" id="224">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -395,7 +403,7 @@
 					<selected>!isEmpty(Skin.String(Channel4_Name))</selected>
 					<onright>604</onright>
 				</control>
-				<control type="button" id="25">
+				<control type="button" id="225">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -413,7 +421,7 @@
 					<selected>!isEmpty(Skin.String(Channel5_Name))</selected>
 					<onright>601</onright>
 				</control>
-				<control type="button" id="26">
+				<control type="button" id="226">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -431,7 +439,7 @@
 					<selected>!isEmpty(Skin.String(Channel6_Name))</selected>
 					<onright>606</onright>
 				</control>
-				<control type="button" id="27">
+				<control type="button" id="227">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -449,7 +457,7 @@
 					<selected>!isEmpty(Skin.String(Channel7_Name))</selected>
 					<onright>607</onright>
 				</control>
-				<control type="button" id="28">
+				<control type="button" id="228">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
@@ -467,7 +475,7 @@
 					<selected>!isEmpty(Skin.String(Channel8_Name))</selected>
 					<onright>608</onright>
 				</control>
-				<control type="button" id="29">
+				<control type="button" id="229">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
 					<width>15-col</width>
