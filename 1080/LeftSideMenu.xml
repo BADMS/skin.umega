@@ -172,7 +172,6 @@
 			<control type="list" id="1300">
 				<description>Home Secondary Menu</description>
 				<posx>20</posx>
-				<include>HomeMenuPosyHideHeader</include>
 				<width>372</width>
 				<height>370</height>
 				<onup>1300</onup>
