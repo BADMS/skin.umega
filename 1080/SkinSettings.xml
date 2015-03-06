@@ -228,7 +228,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Movie Art: $INFO[Skin.String(menuArtMovie)]</label>
+					<label>Section Movie Art: $INFO[Skin.String(menuArtMovie)]</label>
 					<onclick>Skin.SetLargeImage(menuArtMovie)</onclick>
 					<onright>701</onright>
 				</control>
@@ -243,7 +243,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Music Art: $INFO[Skin.String(menuArtMusic)]</label>
+					<label>Section Music Art: $INFO[Skin.String(menuArtMusic)]</label>
 					<onclick>Skin.SetLargeImage(menuArtMusic)</onclick>
 					<onright>702</onright>
 				</control>
@@ -258,7 +258,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Pictures Art: $INFO[Skin.String(menuArtPhoto)]</label>
+					<label>Section Pictures Art: $INFO[Skin.String(menuArtPhoto)]</label>
 					<onclick>Skin.SetLargeImage(menuArtPhoto)</onclick>
 					<onright>703</onright>
 				</control>
@@ -273,7 +273,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type TV Art: $INFO[Skin.String(menuArtTV)]</label>
+					<label>Section TV Art: $INFO[Skin.String(menuArtTV)]</label>
 					<onclick>Skin.SetLargeImage(menuArtTV)</onclick>
 					<onright>704</onright>
 				</control>
@@ -288,7 +288,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Playlists Art: $INFO[Skin.String(menuArtPlaylist)]</label>
+					<label>Section Playlists Art: $INFO[Skin.String(menuArtPlaylist)]</label>
 					<onclick>Skin.SetLargeImage(menuArtPlaylist)</onclick>
 					<onright>705</onright>
 				</control>
@@ -303,7 +303,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Channel Art: $INFO[Skin.String(menuArtChannel)]</label>
+					<label>Section Channel Art: $INFO[Skin.String(menuArtChannel)]</label>
 					<onclick>Skin.SetLargeImage(menuArtChannel)</onclick>
 					<onright>706</onright>
 				</control>
@@ -318,7 +318,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Shared Art: $INFO[Skin.String(menuArtShared)]</label>
+					<label>Section Shared Art: $INFO[Skin.String(menuArtShared)]</label>
 					<onclick>Skin.SetLargeImage(menuArtShared)</onclick>
 					<onright>707</onright>
 				</control>
@@ -333,7 +333,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Queue Art: $INFO[Skin.String(menuArtQueue)]</label>
+					<label>Section Queue Art: $INFO[Skin.String(menuArtQueue)]</label>
 					<onclick>Skin.SetLargeImage(menuArtQueue)</onclick>
 					<onright>708</onright>
 				</control>
@@ -348,7 +348,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Clip Art: $INFO[Skin.String(menuArtClip)]</label>
+					<label>Section Clip Art: $INFO[Skin.String(menuArtClip)]</label>
 					<onclick>Skin.SetLargeImage(menuArtClip)</onclick>
 					<onright>709</onright>
 				</control>
@@ -363,7 +363,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Playing Art: $INFO[Skin.String(menuArtPlaying)]</label>
+					<label>Section Playing Art: $INFO[Skin.String(menuArtPlaying)]</label>
 					<onclick>Skin.SetLargeImage(menuArtPlaying)</onclick>
 					<onright>710</onright>
 				</control>
@@ -378,7 +378,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Search Art: $INFO[Skin.String(menuArtSearch)]</label>
+					<label>Section Search Art: $INFO[Skin.String(menuArtSearch)]</label>
 					<onclick>Skin.SetLargeImage(menuArtSearch)</onclick>
 					<onright>711</onright>
 				</control>
@@ -393,7 +393,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Type Play File: $INFO[Skin.String(menuArtFile)]</label>
+					<label>Section Play File Art: $INFO[Skin.String(menuArtFile)]</label>
 					<onclick>Skin.SetLargeImage(menuArtFile)</onclick>
 					<onright>712</onright>
 				</control>
