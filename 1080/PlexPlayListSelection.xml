@@ -4,7 +4,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload>Skin.SetString(SectionType,playlists)</onload>
 	<onunload>SetFocus(777)</onunload>
-	<onunload>Skin.Reset(SectionType)</onunload>
+	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
 	<controls>
 		<include>globalBackground</include>
 		<!--default background-->
@@ -127,7 +127,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>PlexPlaylistSelection.xml</label>
+			<label>PlexPlaylistSelection.xml ---> $INFO[Skin.String(SectionType)]</label>
 		</control>
 	</controls>
 </window>

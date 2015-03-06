@@ -6,7 +6,7 @@
 	<onload>Skin.Reset(showsinfos)</onload>
 	<onload>Skin.SetString(SectionType,music)</onload>
 	<onunload>SetFocus(777)</onunload>
-	<onunload>Skin.Reset(SectionType)</onunload>
+	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
 	<onunload>Skin.Reset(showinfos)</onunload>
 	<onunload>Skin.Reset(showsinfos)</onunload>
     <controls>
@@ -108,7 +108,7 @@
 		<include>DebugGrid</include>
         <control type="label">
             <include>WindowID</include>
-            <label>MyMusicSongs.xml</label>
+            <label>MyMusicSongs.xml ---> $INFO[Skin.String(SectionType)]</label>
         </control>
     </controls>
 </window>

@@ -4,7 +4,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload>Skin.SetString(SectionType,programs)</onload>
 	<onunload>SetFocus(777)</onunload>
-	<onunload>Skin.Reset(SectionType)</onunload>
+	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
 	<include>fadeInOut</include>
 	<controls>
 		<!--page container group-->
@@ -77,7 +77,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>MyPrograms.xml</label>
+			<label>MyPrograms.xml ---> $INFO[Skin.String(SectionType)]</label>
 		</control>
 	</controls>
 </window>

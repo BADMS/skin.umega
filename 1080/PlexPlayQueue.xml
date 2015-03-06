@@ -3,7 +3,7 @@
 	<defaultcontrol always="false">777</defaultcontrol>
 	<onload>Skin.SetString(SectionType,playqueue)</onload>
 	<onunload>SetFocus(777)</onunload>
-	<onunload>Skin.Reset(SectionType)</onunload>
+	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
 	<controls>
 		<include>globalBackground</include>
 		<!--default background-->
@@ -138,7 +138,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>PlexPlayQueue.xml </label>
+			<label>PlexPlayQueue.xml ---> $INFO[Skin.String(SectionType)]</label>
 		</control>
 	</controls>
 </window>

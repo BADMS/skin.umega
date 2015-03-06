@@ -5,9 +5,12 @@
 	<onload>Skin.Reset(showtvinfos)</onload>
 	<onload condition="Container.PlexContent(Movies)">Skin.SetString(SectionType,movies)</onload>
 	<onload condition="Container.PlexContent(TVShows)">Skin.SetString(SectionType,tvshows)</onload>
+	<onload condition="Container.PlexContent(Seasons)">Skin.SetString(SectionType,tvshows)</onload>
+	<onload condition="Container.PlexContent(Episodes)">Skin.SetString(SectionType,tvshows)</onload>
 	<onload condition="Container.PlexContent(Clips)">Skin.SetString(SectionType,clips)</onload>
+	<onload condition="Container.Content(channel)">Skin.SetString(SectionType,channels)</onload>
 	<onunload>SetFocus(777)</onunload>
-	<onunload>Skin.Reset(SectionType)</onunload>
+	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
 	<onunload>Skin.Reset(showtvinfos)</onunload>
 	<controls>
 		<include>globalBackground</include>
@@ -137,7 +140,7 @@
 					<include>viewFilteredEmpty</include>
 				</control>
 			</control>
-			<!--movie page scrollbar-->
+			<!--episodes page scrollbar-->
 			<control type="group" id="8001">
 				<visible>Control.IsVisible(60) + container.content(episodes)</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8001).hasfocus">conditional</animation>
@@ -179,7 +182,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>MyVideoNav.xml </label>
+			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)]</label>
 		</control>
 	</controls>
 </window>

@@ -138,42 +138,36 @@
 							<description>Channel4</description>
 							<label>$INFO[Skin.String(Channel4_Name_Menu)]</label>
 							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel4_Name)],return)</onclick>
-							<onclick>Skin.SetString(dsp_helper,1)</onclick>
 							<visible>!isEmpty(Skin.String(Channel4_Name)) + !System.UserIsRestricted</visible>
 						</item>
 						<item id="564">
 							<description>Channel5</description>
 							<label>$INFO[Skin.String(Channel5_Name_Menu)]</label>
 							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel5_Name)],return)</onclick>
-							<onclick>Skin.SetString(dsp_helper,1)</onclick>
 							<visible>!isEmpty(Skin.String(Channel5_Name)) + !System.UserIsRestricted</visible>
 						</item>
 						<item id="565">
 							<description>Channel6</description>
 							<label>$INFO[Skin.String(Channel6_Name_Menu)]</label>
 							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel6_Name)],return)</onclick>
-							<onclick>Skin.SetString(dsp_helper,1)</onclick>
 							<visible>!isEmpty(Skin.String(Channel6_Name)) + !System.UserIsRestricted</visible>
 						</item>
 						<item id="566">
 							<description>Channel7</description>
 							<label>$INFO[Skin.String(Channel7_Name_Menu)]</label>
 							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel7_Name)],return)</onclick>
-							<onclick>Skin.SetString(dsp_helper,1)</onclick>
 							<visible>!isEmpty(Skin.String(Channel7_Name))</visible>
 						</item>
 						<item id="567">
 							<description>Channel8</description>
 							<label>$INFO[Skin.String(Channel8_Name_Menu)]</label>
 							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel8_Name)],return)</onclick>
-							<onclick>Skin.SetString(dsp_helper,1)</onclick>
 							<visible>!isEmpty(Skin.String(Channel8_Name))</visible>
 						</item>
 						<item id="568">
 							<description>Channel9</description>
 							<label>$INFO[Skin.String(Channel9_Name_Menu)]</label>
 							<onclick>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel9_Name)],return)</onclick>
-							<onclick>Skin.SetString(dsp_helper,1)</onclick>
 							<visible>!isEmpty(Skin.String(Channel9_Name))</visible>
 						</item>
 						<item id="114">
@@ -191,6 +185,7 @@
 						</item>
 						<item id="116">
 							<label>$LOCALIZE[32205]</label>
+							<onclick>Skin.SetString(SectionType,playfile)</onclick>
 							<onclick>Skin.SetString(pf_helper,1)</onclick>
 							<onclick>Skin.SetString(FileBrowserType,file)</onclick>
 							<onclick>Skin.Reset(PlayFilePath)</onclick>
@@ -198,6 +193,7 @@
 							<onclick condition="!isEmpty(Skin.String(PlayFilePath))">PlayMedia($ESCINFO[Skin.String(PlayFilePath)])</onclick>
 							<onclick>Skin.Reset(PlayFilePath)</onclick>
 							<onclick>Skin.Reset(pf_helper)</onclick>
+							<onclick>Skin.Reset(SectionType)</onclick>
 						</item>
 					</content>
 				</control>

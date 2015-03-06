@@ -2,10 +2,12 @@
 <window id="0">
 	<defaultcontrol always="true">301</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>Skin.SetString(SectionType,home)</onload>
+	<!-- <onload>Skin.SetString(SectionType,home)</onload> -->
+	<onload>AlarmClock(controlType,Skin.Reset(SectionType),00:01,silent)</onload>
 	<onload>Skin.SetString(AspectRatio,$INFO[Skin.AspectRatio])</onload>
 	<onload>Skin.Reset(dsp_helper)</onload>
 	<onunload>Skin.Reset(SectionType)</onunload>
+	<onunload>CancelAlarm(controlType,true)</onunload>
 	<controls>
 		<!-- PHT NoFocus Bug Workaround -->
 		<control type="button" id="301">
@@ -26,7 +28,7 @@
 		<include>musicOverlay</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>Home.xml</label>
+			<label>Home.xml ---> $INFO[Skin.String(SectionType)]</label>
 		</control>
 	</controls>
 </window>

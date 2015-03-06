@@ -48,10 +48,11 @@
 			<control type="image">
 				<visible>!Skin.HasSetting(useGlobalFanartBackground) + isempty(skin.string(globalBackground))</visible>
 				<include>FullScreenScaled</include>
-				<texture>backgrounds/background001.jpg</texture>
+				<texture>$VAR[imagePerType]</texture>
 				<colordiffuse>6affffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
-				<animation effect="fade" start="0" end="100" time="1000" condition="window.previous(home)">windowopen</animation>
+				<fadetime>500</fadetime>
+				<animation effect="fade" start="0" end="100" time="500" condition="window.previous(home)">windowopen</animation>
 			</control>
 			<!--User setting: global background override-->
 			<control type="image">
@@ -146,11 +147,11 @@
 			</control>
 			<!-- Homelists fanart -->
 			<control type="group">
-				<visible>!Player.HasVideo + Skin.String(SectionType,home)</visible>
+				<visible>!Player.HasVideo + Window.IsActive(0)</visible>
 				<!-- generic autopopulated fanart slideshow -->
 				<visible>Skin.HasSetting(useGlobalFanartBackground)</visible>
 				<control type="multiimage" id="10101">
-					<visible>!Container(300).hasFocus(560) + !Container(300).hasFocus(561) + !Container(300).hasFocus(562) + !Container(300).hasFocus(563) + !Container(300).hasFocus(564) + !Container(300).hasFocus(565)</visible>
+					<visible>!Container(300).hasFocus(560) + !Container(300).hasFocus(561) + !Container(300).hasFocus(562) + !Container(300).hasFocus(563) + !Container(300).hasFocus(564) + !Container(300).hasFocus(565) + !Container(300).hasFocus(566) + !Container(300).hasFocus(567) + !Container(300).hasFocus(568)</visible>
 					<include>FullScreenScaled</include>
 					<timeperimage>25000</timeperimage>
 					<fadetime>1000</fadetime>
