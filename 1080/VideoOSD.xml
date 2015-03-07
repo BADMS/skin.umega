@@ -252,12 +252,12 @@
                             </control>
                     </focusedlayout>
                     <content>
-                        <item id="1">
+                        <!--<item id="1">
                             <description>DVD Menu</description>
                             <label>31140</label>
                             <thumb>-</thumb>
                             <onclick>PlayerControl(ShowVideoMenu)</onclick>
-                        </item>
+                        </item>-->
                         <item id="2">
                             <description>Subtitles</description>
                             <label>24012</label>

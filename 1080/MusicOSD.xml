@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <window id="120">
     <onload>Control.SetFocus(8000,3)</onload>
-    <onload>AlarmClock(controlDialog,setfocus(9876),00:25,silent)</onload>
+    <onload>AlarmClock(controlDialog,action(Back),00:25,silent)</onload>
 	<onunload>CancelAlarm(controlDialog,true)</onunload>
 	<controls>
 		<!--dialog controls-->
@@ -9,8 +9,12 @@
 			<posx>0</posx>
 			<posy>996</posy>
 			<animation type="windowClose">
-				<effect type="slide" start="0,0" end="0,50" tween="cubic" easing="out" delay="500" time="300"/>
+				<effect type="slide" start="0,0" end="0,54" tween="cubic" easing="out" delay="500" time="300"/>
 				<effect type="fade" start="100" end="0" time="500" delay="500"/>
+			</animation>
+			<animation type="windowOpen">
+				<effect type="slide" start="0,54" end="0,0" tween="cubic" easing="out" delay="500" time="300"/>
+				<effect type="fade" start="0" end="100" time="500" delay="500"/>
 			</animation>
 			<control type="image">
 				<posx>0</posx>
@@ -40,8 +44,8 @@
 				<orientation>horizontal</orientation>
 				<onright>Control.SetFocus(8002,0)</onright>
 				<onleft>Control.SetFocus(8002,4)</onleft>
-				<onup>9876</onup>
-				<ondown>9876</ondown>
+				<onup>Back</onup>
+				<ondown>Back</ondown>
 				<itemlayout width="1-col" height="1-col">
 					<control type="image">
 						<posx>19</posx>
@@ -131,8 +135,8 @@
 				<orientation>horizontal</orientation>
 				<onleft>Control.SetFocus(8000,5)</onleft>
 				<onright>Control.SetFocus(8000,0)</onright>
-				<onup>9876</onup>
-				<ondown>9876</ondown>
+				<onup>Back</onup>
+				<ondown>Back</ondown>
 				<itemlayout width="3-col" height="1-col">
 					<control type="image">
 						<posx>0</posx>
