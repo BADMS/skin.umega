@@ -282,6 +282,11 @@
                             <thumb>-</thumb>
                             <onclick>ActivateWindow(125)</onclick>
                         </item>
+                        <item id="6">
+                            <description>Empty filler for now temporary</description>
+                            <label>-</label>
+                            <thumb>-</thumb>
+                        </item>
                     </content>
                 </control>
             </control>
