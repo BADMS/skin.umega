@@ -2,17 +2,26 @@
 <includes>
     <!--Photo browser-->
     <include name="viewPictureGrid">
+		<control type="group" id="777">
+			<posx>0</posx>
+			<posy>158</posy>
+			<animation type="windowopen">
+				<include>listSlideIn</include>
+			</animation>
+			<animation type="windowclose">
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
         <control type="panel" id="52">
             <visible>true</visible>
-            <posx>0</posx>
-            <posy>-12</posy>
-            <width>22-col</width>
-            <height>744</height>
-            <onleft>9000</onleft>
-            <onright>60</onright>
-            <ondown>51</ondown>
-            <onup>51</onup>
-            <pagecontrol>60</pagecontrol>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>22-col</width>
+				<height>744</height>
+				<onleft>300</onleft>
+				<onright>60</onright>
+				<ondown>52</ondown>
+				<onup>52</onup>
+				<pagecontrol>60</pagecontrol>
             <itemlayout width="312" height="366">
                 <control type="image">
                     <posx>0</posx>
@@ -102,6 +111,7 @@
                     </control>
                 </control>
             </focusedlayout>
+        </control>
         </control>
     </include>
 </includes>

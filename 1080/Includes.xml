@@ -14,7 +14,7 @@
 	<include file="ViewsVideos.xml"/>
 	<include file="ViewsChannels.xml"/>
 	<include file="ViewsMusic.xml"/>
-	<include file="ViewsPhoto.xml"/>
+	<include file="ViewsPictures.xml"/>
 	<include file="ViewsClip.xml"/>
 	<include file="ViewsSharedContent.xml"/>
 	<include file="ViewsPreplay.xml"/>

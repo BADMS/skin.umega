@@ -246,7 +246,7 @@
 										<width>339</width>
 										<font>itemTitleSmallCondensed</font>
 										<textcolor>selected</textcolor>
-										<label>$INFO[ListItem.Label]]</label>
+										<label>$INFO[ListItem.Label]</label>
 									</control>
 								</control>
 							</control>
@@ -436,9 +436,9 @@
 										<width>363</width>
 										<height>64</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>colors/black.png</texture>
+										<texture>colors/selected.png</texture>
 										<bordersize>0</bordersize>
-										<colordiffuse>77FFFFFF</colordiffuse>
+										<colordiffuse>ffFFFFFF</colordiffuse>
 									</control>
 									<control type="label">
 										<posx>12</posx>
@@ -447,7 +447,7 @@
 										<font>itemTitleSmallCondensed</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Label]]</label>
+										<label>$INFO[ListItem.Label]</label>
 									</control>
 								</control>
 							</control>
