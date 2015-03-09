@@ -2,6 +2,7 @@
 <!--Skin variables-->
 <includes>
 	<variable name="imagePerType">
+		<value condition="Container.Content(empty)">backgrounds/black.png</value>
 		<value condition="Container(300).hasFocus(560)">$INFO[Skin.String(Channel1_Name_Art)]</value>
 		<value condition="Container(300).hasFocus(561)">$INFO[Skin.String(Channel2_Name_Art)]</value>
 		<value condition="Container(300).hasFocus(562)">$INFO[Skin.String(Channel3_Name_Art)]</value>
@@ -11,19 +12,18 @@
 		<value condition="Container(300).hasFocus(566)">$INFO[Skin.String(Channel7_Name_Art)]</value>
 		<value condition="Container(300).hasFocus(567)">$INFO[Skin.String(Channel8_Name_Art)]</value>
 		<value condition="Container(300).hasFocus(568)">$INFO[Skin.String(Channel9_Name_Art)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtFile)) + [stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtSearch)) + [[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[137]) + Window.IsActive(0)] | Skin.String(SectionType,search)]">$INFO[Skin.String(menuArtSearch)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtPlaying)) + stringcompare(Container(300).ListItem(0).Label,Now Playing)">$INFO[Skin.String(menuArtPlaying)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtChannel)) + [stringcompare(Container(300).ListItem(0).Label,Channels) | Skin.String(SectionType,channels)]">$INFO[Skin.String(menuArtChannel)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtPlaylist)) + [stringcompare(Container(300).ListItem(0).Label,Playlists) | Skin.String(SectionType,playlists)]">$INFO[Skin.String(menuArtPlaylist)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtQueue)) + [stringcompare(Container(300).ListItem(0).Label,Watch Later) | Skin.String(SectionType,playqueue)]">$INFO[Skin.String(menuArtQueue)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtShared)) + [stringcompare(Container(300).ListItem(0).Label,Shared Content) | Skin.String(SectionType,sharedcontent)]">$INFO[Skin.String(menuArtShared)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtMusic)) + [[Container(11000).HasFocus(0) + Container(11000).ListItem(0).Type(album) | !IsEmpty(Container(11000).ListItem(0).Artist)] | Skin.String(SectionType,music)]">$INFO[Skin.String(menuArtMusic)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtTV)) + [[Container(11000).HasFocus(0) + Container(11000).ListItem(0).Type(episode)] | Skin.String(SectionType,tvshows)]">$INFO[Skin.String(menuArtTV)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtMovie)) + [[Container(11000).HasFocus(0) + Container(11000).ListItem(0).Type(movie)] | Skin.String(SectionType,movies)]">$INFO[Skin.String(menuArtMovie)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtClip)) + [Container(11000).ListItem(0).Type(clip) | Skin.String(SectionType,clips)]">$INFO[Skin.String(menuArtClip)]</value>
-		<value condition="!IsEmpty(Skin.String(menuArtPhoto)) + [Container(11000).ListItem(0).Type(photo) | Container(11001).ListItem(0).Type(photo) | Skin.String(SectionType,photos)]">$INFO[Skin.String(menuArtPhoto)]</value>
-		<value>backgrounds/black.png</value>
+		<value condition="[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
+		<value condition="[[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[137]) + Window.IsActive(0)] | Skin.String(SectionType,search)]">$INFO[Skin.String(menuArtSearch)]</value>
+		<value condition="stringcompare(Container(300).ListItem(0).Label,Now Playing)">$INFO[Skin.String(menuArtPlaying)]</value>
+		<value condition="[stringcompare(Container(300).ListItem(0).Label,Channels) | Skin.String(SectionType,channels)]">$INFO[Skin.String(menuArtChannel)]</value>
+		<value condition="[stringcompare(Container(300).ListItem(0).Label,Playlists) | Skin.String(SectionType,playlists)]">$INFO[Skin.String(menuArtPlaylist)]</value>
+		<value condition="[stringcompare(Container(300).ListItem(0).Label,Watch Later) | Skin.String(SectionType,playqueue)]">$INFO[Skin.String(menuArtQueue)]</value>
+		<value condition="[stringcompare(Container(300).ListItem(0).Label,Shared Content) | Skin.String(SectionType,sharedcontent)]">$INFO[Skin.String(menuArtShared)]</value>
+		<value condition="[[Container(11000).HasFocus(0) + Container(11000).ListItem(0).Type(album) | !IsEmpty(Container(11000).ListItem(0).Artist)] | Skin.String(SectionType,music)]">$INFO[Skin.String(menuArtMusic)]</value>
+		<value condition="[[Container(11000).HasFocus(0) + Container(11000).ListItem(0).Type(episode)] | Skin.String(SectionType,tvshows)]">$INFO[Skin.String(menuArtTV)]</value>
+		<value condition="[[Container(11000).HasFocus(0) + Container(11000).ListItem(0).Type(movie)] | Skin.String(SectionType,movies)]">$INFO[Skin.String(menuArtMovie)]</value>
+		<value condition="[Container(11000).ListItem(0).Type(clip) | Skin.String(SectionType,clips)]">$INFO[Skin.String(menuArtClip)]</value>
+		<value condition="[Container(11000).ListItem(0).Type(photo) | Container(11001).ListItem(0).Type(photo) | Skin.String(SectionType,photos)]">$INFO[Skin.String(menuArtPhoto)]</value>
 	</variable>
 	<variable name="listItemFullInfoPlot">
 		<value condition="Container.PlexContent(Channel)">$INFO[ListItem.Plot]</value>
