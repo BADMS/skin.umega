@@ -1341,6 +1341,17 @@
 				</item>
 			</content>
 		</control>
+		<!--empty image if no extras-->
+		<control type="image">
+			<visible>IsEmpty(ListItem.Property(PlexExtras))</visible>
+			<posx>372</posx>
+			<posy>952</posy>
+			<width>285</width>
+			<height>55</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>colors/black.png</texture>
+			<colordiffuse>cc000000</colordiffuse>
+		</control>
 	</control>
 </control>
 <control type="group">
