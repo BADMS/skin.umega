@@ -153,7 +153,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Video Fanart location: </label>
+					<label>Video fanart location: </label>
 					<label2>$INFO[Skin.String(videoFanartLocation)]</label2>
 					<onclick>Skin.SetPath(videoFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
@@ -170,7 +170,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Music Fanart location: </label>
+					<label>Music fanart location: </label>
 					<label2>$INFO[Skin.String(musicFanartLocation)]</label2>
 					<onclick>Skin.SetPath(musicFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
@@ -187,7 +187,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Game Fanart location: </label>
+					<label>Game fanart location: </label>
 					<label2>$INFO[Skin.String(gameFanartLocation)]</label2>
 					<onclick>Skin.SetPath(gameFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
@@ -228,7 +228,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Movie Art: $INFO[Skin.String(menuArtMovie)]</label>
+					<label>Section movie art: $INFO[Skin.String(menuArtMovie)]</label>
 					<onclick>Skin.SetLargeImage(menuArtMovie)</onclick>
 					<onright>701</onright>
 				</control>
@@ -243,7 +243,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Music Art: $INFO[Skin.String(menuArtMusic)]</label>
+					<label>Section music art: $INFO[Skin.String(menuArtMusic)]</label>
 					<onclick>Skin.SetLargeImage(menuArtMusic)</onclick>
 					<onright>702</onright>
 				</control>
@@ -258,7 +258,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Pictures Art: $INFO[Skin.String(menuArtPhoto)]</label>
+					<label>Section pictures art: $INFO[Skin.String(menuArtPhoto)]</label>
 					<onclick>Skin.SetLargeImage(menuArtPhoto)</onclick>
 					<onright>703</onright>
 				</control>
@@ -273,7 +273,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section TV Art: $INFO[Skin.String(menuArtTV)]</label>
+					<label>Section TV art: $INFO[Skin.String(menuArtTV)]</label>
 					<onclick>Skin.SetLargeImage(menuArtTV)</onclick>
 					<onright>704</onright>
 				</control>
@@ -288,7 +288,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Playlists Art: $INFO[Skin.String(menuArtPlaylist)]</label>
+					<label>Section playlists art: $INFO[Skin.String(menuArtPlaylist)]</label>
 					<onclick>Skin.SetLargeImage(menuArtPlaylist)</onclick>
 					<onright>705</onright>
 				</control>
@@ -303,7 +303,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Channel Art: $INFO[Skin.String(menuArtChannel)]</label>
+					<label>Section channel art: $INFO[Skin.String(menuArtChannel)]</label>
 					<onclick>Skin.SetLargeImage(menuArtChannel)</onclick>
 					<onright>706</onright>
 				</control>
@@ -318,7 +318,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Shared Art: $INFO[Skin.String(menuArtShared)]</label>
+					<label>Section shared art: $INFO[Skin.String(menuArtShared)]</label>
 					<onclick>Skin.SetLargeImage(menuArtShared)</onclick>
 					<onright>707</onright>
 				</control>
@@ -333,7 +333,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Queue Art: $INFO[Skin.String(menuArtQueue)]</label>
+					<label>Section queue art: $INFO[Skin.String(menuArtQueue)]</label>
 					<onclick>Skin.SetLargeImage(menuArtQueue)</onclick>
 					<onright>708</onright>
 				</control>
@@ -348,7 +348,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Clip Art: $INFO[Skin.String(menuArtClip)]</label>
+					<label>Section clip art: $INFO[Skin.String(menuArtClip)]</label>
 					<onclick>Skin.SetLargeImage(menuArtClip)</onclick>
 					<onright>709</onright>
 				</control>
@@ -363,7 +363,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Playing Art: $INFO[Skin.String(menuArtPlaying)]</label>
+					<label>Section playing art: $INFO[Skin.String(menuArtPlaying)]</label>
 					<onclick>Skin.SetLargeImage(menuArtPlaying)</onclick>
 					<onright>710</onright>
 				</control>
@@ -378,7 +378,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Search Art: $INFO[Skin.String(menuArtSearch)]</label>
+					<label>Section search art: $INFO[Skin.String(menuArtSearch)]</label>
 					<onclick>Skin.SetLargeImage(menuArtSearch)</onclick>
 					<onright>711</onright>
 				</control>
@@ -393,7 +393,7 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Section Play File Art: $INFO[Skin.String(menuArtFile)]</label>
+					<label>Section play file art: $INFO[Skin.String(menuArtFile)]</label>
 					<onclick>Skin.SetLargeImage(menuArtFile)</onclick>
 					<onright>712</onright>
 				</control>
@@ -401,7 +401,7 @@
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Enable Debug Grid</description>
 					<width>16-col</width>
-					<label>Enable Debug Grid</label>
+					<label>Enable debug grid</label>
 					<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
 					<selected>Skin.HasSetting(DebugGrid)</selected>
 				</control>
@@ -409,7 +409,7 @@
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Disable Debug Info</description>
 					<width>16-col</width>
-					<label>Enable Debug Info</label>
+					<label>Enable debug info</label>
 					<onclick>Skin.ToggleSetting(DebugInfo)</onclick>
 					<selected>Skin.HasSetting(DebugInfo)</selected>
 				</control>
@@ -417,7 +417,7 @@
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Disable Fanart animation</description>
 					<width>16-col</width>
-					<label>Disable Fanart Animations (for low powered devices)</label>
+					<label>Disable fanart animations (for low powered devices)</label>
 					<onclick>Skin.ToggleSetting(disableAnimateFanart)</onclick>
 					<selected>Skin.HasSetting(disableAnimateFanart)</selected>
 				</control>
@@ -435,7 +435,7 @@
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Disable TV Show Episode Auto Advance</description>
 					<width>16-col</width>
-					<label>Disable TV Show Episode Auto Advance</label>
+					<label>Disable TV show episode auto advance</label>
 					<onclick>Skin.ToggleSetting(disableEpAutoAdv)</onclick>
 					<selected>Skin.HasSetting(disableEpAutoAdv)</selected>
 				</control>
@@ -443,7 +443,7 @@
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Disable TV Show Lists Infos</description>
 					<width>16-col</width>
-					<label>Disable TV Show List Right Side Info</label>
+					<label>Disable TV show list right side info</label>
 					<onclick>Skin.ToggleSetting(disableTVListInfos)</onclick>
 					<selected>Skin.HasSetting(disableTVListInfos)</selected>
 				</control>
@@ -451,9 +451,17 @@
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Hide thumbs/plot spoilers for unwatched</description>
 					<width>16-col</width>
-					<label>Hide Spoilers for Unwatched Episodes</label>
+					<label>Hide spoilers for unwatched episodes</label>
 					<onclick>Skin.ToggleSetting(disableTVSpoilers)</onclick>
 					<selected>Skin.HasSetting(disableTVSpoilers)</selected>
+				</control>
+				<control type="radiobutton" id="26">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Hide picture bottom info bar in slideshow</description>
+					<width>16-col</width>
+					<label>Hide picture bottom info bar in slideshow</label>
+					<onclick>Skin.ToggleSetting(disablePictureBar)</onclick>
+					<selected>Skin.HasSetting(disablePictureBar)</selected>
 				</control>
 				<control type="button" id="221">
 					<visible>Container(8000).Hasfocus(4)</visible>

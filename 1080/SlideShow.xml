@@ -10,7 +10,8 @@
         </control>
         <!--picture info-->
         <control type="group">
-            <posx>col-5-begin</posx>
+		<visible>!Skin.HasSetting(disablePictureBar)</visible>
+           <posx>col-5-begin</posx>
             <posy>row-18-begin</posy>
             <!--background-->
             <control type="image">
