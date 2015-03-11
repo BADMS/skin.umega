@@ -2,9 +2,12 @@
 <window id="10090">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
+	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
+	<onload condition="Skin.Hassetting(disableClipPP) + Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">action(back)</onload>
+	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + !Skin.String(SectionType,channels) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
 	<controls>
 		<control type="group">
+			<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
 			<include>fadeInOutPP</include>
 			<!--background / fanart-->
 			<control type="image">
@@ -44,7 +47,7 @@
 		</control>
 		<!--content is movie or tvshow (from XBMC Library)-->
 		<control type="group">
-			<visible>!Container.PlexContent(Clip) + !container.content(episode)</visible>
+			<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)] + !Container.PlexContent(Clip) + !container.content(episode)</visible>
 			<posx>1263</posx>
 			<posy>0</posy>
 			<animation type="Windowopen">
@@ -346,7 +349,7 @@
 	</control>
 	<!--content is tvshow episode or content is from a plugin-->
 	<control type="group">
-		<visible>Container.PlexContent(Clip) | container.content(episode)</visible>
+		<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)] + [Container.PlexContent(Clip) | container.content(episode)]</visible>
 		<!--animations-->
 		<include>modalDialogInOut</include>
 		<!--thumbnail if available-->
@@ -620,6 +623,7 @@
 	</control>
 </control>
 <control type="group">
+	<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
 	<posx>col-4-begin</posx>
 	<posy>row-18-begin</posy>
 	<control type="group">
@@ -632,7 +636,7 @@
 <include>DebugGrid</include>
 <control type="label">
 	<include>DialogID</include>
-	<label>DialogVideoInfo.xml</label>
+	<label>PlexPrePlayVideo.xml</label>
 </control>
 </controls>
 </window>

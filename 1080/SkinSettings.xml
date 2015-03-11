@@ -463,6 +463,14 @@
 					<onclick>Skin.ToggleSetting(disablePictureBar)</onclick>
 					<selected>Skin.HasSetting(disablePictureBar)</selected>
 				</control>
+				<control type="radiobutton" id="27">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Skip channel pre/post play screen</description>
+					<width>16-col</width>
+					<label>Skip channel pre/post play screen</label>
+					<onclick>Skin.ToggleSetting(disableClipPP)</onclick>
+					<selected>Skin.HasSetting(disableClipPP)</selected>
+				</control>
 				<control type="button" id="221">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>
