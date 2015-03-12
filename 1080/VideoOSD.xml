@@ -29,7 +29,7 @@
                     <width>24-col</width>
                     <font>smallStrong</font>
                     <textcolor>selected</textcolor>
-                    <label fallback="31136">$INFO[VideoPlayer.ChannelNumber,,]$INFO[VideoPlayer.ChannelName,. ,]$INFO[Videoplayer.tvshowTitle]$INFO[Videoplayer.season, &#xB7; $LOCALIZE[31141] ]$INFO[Videoplayer.episode, &#xB7; $LOCALIZE[31114] ]</label>
+                    <label fallback="">$INFO[VideoPlayer.ChannelNumber,,]$INFO[VideoPlayer.ChannelName,. ,]$INFO[Videoplayer.tvshowTitle]$INFO[Videoplayer.season, &#xB7; $LOCALIZE[31141] ]$INFO[Videoplayer.episode, &#xB7; $LOCALIZE[31114] ]</label>
                     <scroll>false</scroll>
                 </control>
                 <control type="label">

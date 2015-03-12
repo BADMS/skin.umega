@@ -435,7 +435,7 @@
 					<visible>!container.content(albums) + !Skin.String(SectionType,music) + !container.content(songs)</visible>
 					<visible>!isempty(ListItem.Label)</visible>
 					<posx>2-col</posx>
-					<width>auto</width>
+					<width>13-col</width>
 					<font>buttonTitle</font>
 					<textcolor>selected</textcolor>
 					<label>        $INFO[ListItem.Label]</label>
@@ -456,7 +456,7 @@
 					<visible>container.content(songs) + Skin.String(SectionType,music) + skin.string(showinfos,1)</visible>
 					<visible>!isempty(ListItem.Label)</visible>
 					<posx>2-col</posx>
-					<width>auto</width>
+					<width>13-col</width>
 					<font>buttonTitle</font>
 					<textcolor>selected</textcolor>
 					<label>        $INFO[ListItem.title]</label>

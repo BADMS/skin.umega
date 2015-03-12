@@ -12,9 +12,9 @@
 		<value condition="Container(300).hasFocus(566)">$INFO[Skin.String(Channel7_Name_Art)]</value>
 		<value condition="Container(300).hasFocus(567)">$INFO[Skin.String(Channel8_Name_Art)]</value>
 		<value condition="Container(300).hasFocus(568)">$INFO[Skin.String(Channel9_Name_Art)]</value>
-		<value condition="[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
-		<value condition="[[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[137]) + Window.IsActive(0)] | Skin.String(SectionType,search)]">$INFO[Skin.String(menuArtSearch)]</value>
-		<value condition="stringcompare(Container(300).ListItem(0).Label,Now Playing)">$INFO[Skin.String(menuArtPlaying)]</value>
+		<value condition="!ControlGroup(777).HasFocus + [stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
+		<value condition="!ControlGroup(777).HasFocus + [[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[137])] | Skin.String(SectionType,search)]">$INFO[Skin.String(menuArtSearch)]</value>
+		<value condition="!ControlGroup(777).HasFocus + stringcompare(Container(300).ListItem(0).Label,Now Playing)">$INFO[Skin.String(menuArtPlaying)]</value>
 		<value condition="[stringcompare(Container(300).ListItem(0).Label,Channels) | Skin.String(SectionType,channels)]">$INFO[Skin.String(menuArtChannel)]</value>
 		<value condition="[stringcompare(Container(300).ListItem(0).Label,Playlists) | Skin.String(SectionType,playlists)]">$INFO[Skin.String(menuArtPlaylist)]</value>
 		<value condition="[stringcompare(Container(300).ListItem(0).Label,Watch Later) | Skin.String(SectionType,playqueue)]">$INFO[Skin.String(menuArtQueue)]</value>
