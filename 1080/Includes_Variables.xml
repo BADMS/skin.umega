@@ -2,16 +2,16 @@
 <!--Skin variables-->
 <includes>
 	<variable name="imagePerType">
-		<value condition="Container.Content(empty)">backgrounds/black.png</value>
-		<value condition="Container(300).hasFocus(560)">$INFO[Skin.String(Channel1_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(561)">$INFO[Skin.String(Channel2_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(562)">$INFO[Skin.String(Channel3_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(563)">$INFO[Skin.String(Channel4_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(564)">$INFO[Skin.String(Channel5_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(565)">$INFO[Skin.String(Channel6_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(566)">$INFO[Skin.String(Channel7_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(567)">$INFO[Skin.String(Channel8_Name_Art)]</value>
-		<value condition="Container(300).hasFocus(568)">$INFO[Skin.String(Channel9_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container.Content(empty)">backgrounds/black.png</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(560)">$INFO[Skin.String(Channel1_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(561)">$INFO[Skin.String(Channel2_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(562)">$INFO[Skin.String(Channel3_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(563)">$INFO[Skin.String(Channel4_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(564)">$INFO[Skin.String(Channel5_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(565)">$INFO[Skin.String(Channel6_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(566)">$INFO[Skin.String(Channel7_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(567)">$INFO[Skin.String(Channel8_Name_Art)]</value>
+		<value condition="!ControlGroup(777).HasFocus + Container(300).hasFocus(568)">$INFO[Skin.String(Channel9_Name_Art)]</value>
 		<value condition="!ControlGroup(777).HasFocus + [stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
 		<value condition="!ControlGroup(777).HasFocus + [[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[137])] | Skin.String(SectionType,search)]">$INFO[Skin.String(menuArtSearch)]</value>
 		<value condition="!ControlGroup(777).HasFocus + stringcompare(Container(300).ListItem(0).Label,Now Playing)">$INFO[Skin.String(menuArtPlaying)]</value>
