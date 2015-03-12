@@ -2,9 +2,9 @@
 <window id="10090">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">action(back)</onload>
-	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + !Skin.String(SectionType,channels) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
 	<controls>
 		<control type="group">
 			<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
