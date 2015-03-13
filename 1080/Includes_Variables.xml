@@ -32,8 +32,8 @@
 		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Plot]</value>
 		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Plot]</value>
 		<value condition="ListItem.Type(episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">$LOCALIZE[32105]</value>
-		<value condition="IsEmpty(ListItem.Plot)">NoPlotDefault</value>
-		<value condition="IsEmpty(ListItem.Plot) + IsEmpty(Container.ShowPlot)">NoPlotDefault</value>
+		<value condition="IsEmpty(ListItem.Plot)">No plot in metadata please add one.</value>
+		<value condition="IsEmpty(ListItem.Plot) + IsEmpty(Container.ShowPlot)">No plot in metadata please add one.</value>
 	</variable>
 	<variable name="listItemVideoPreview">
 		<value condition="!ListItem.Type(episode)">$INFO[ListItem.Art(thumb)]</value>

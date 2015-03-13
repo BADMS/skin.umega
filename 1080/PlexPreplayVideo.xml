@@ -3,6 +3,9 @@
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
+	<onload condition="!Container.PlexContent(Episode) | Container.PlexContent(Episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">Skin.Reset(playerPlot)</onload>
+	<onload condition="Container.PlexContent(Episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">Skin.SetString(playerPlot,$LOCALIZE[32105])</onload>
+	<onload condition="Container.PlexContent(Episode) + IsEmpty(ListItem.Plot)">Skin.SetString(playerPlot,No plot in metadata please add one.)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">action(back)</onload>
 	<controls>
@@ -646,7 +649,7 @@
 <include>DebugGrid</include>
 <control type="label">
 	<include>DialogID</include>
-	<label>PlexPrePlayVideo.xml</label>
+	<label>PlexPrePlayVideo.xml ---> $INFO[Skin.String(SectionType)] ---> $VAR[ContainerContent]</label>
 </control>
 </controls>
 </window>

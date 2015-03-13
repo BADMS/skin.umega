@@ -43,6 +43,7 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label">
+ 					<visible>IsEmpty(Skin.String(playerPlot))</visible>
                     <posx>0</posx>
                     <posy>98</posy>
                     <width>24-col</width>
@@ -50,6 +51,18 @@
                     <font>small</font>
                     <textcolor>selected</textcolor>
                     <label fallback="31009">$INFO[Videoplayer.plot]</label>
+                    <scroll>true</scroll>
+                    <scrollspeed>60</scrollspeed>
+                </control>
+                <control type="label">
+ 					<visible>!IsEmpty(Skin.String(playerPlot))</visible>
+				    <posx>0</posx>
+                    <posy>98</posy>
+                    <width>24-col</width>
+                    <height>30</height>
+                    <font>small</font>
+                    <textcolor>selected</textcolor>
+                    <label fallback="31009">$INFO[Skin.String(playerPlot)]</label>
                     <scroll>true</scroll>
                     <scrollspeed>60</scrollspeed>
                 </control>

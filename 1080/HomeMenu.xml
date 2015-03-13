@@ -48,16 +48,11 @@
 					<orientation>vertical</orientation>
 					<onup>300</onup>
 					<ondown>300</ondown>
-					<onleft condition="Window.IsActive(videolibrary) | Container.PlexContent(Channels) | Skin.String(SectionType,programs) | Skin.String(SectionType,music) | Skin.String(SectionType,playlists) | Skin.String(SectionType,playqueue) | Skin.String(SectionType,sharedcontent) | Skin.String(SectionType,photos)">998</onleft>
-					<onleft condition="!Window.IsActive(videolibrary) + !Container.PlexContent(Channels) + !Skin.String(SectionType,programs) + !Skin.String(SectionType,music) + !Skin.String(SectionType,playlists) + !Skin.String(SectionType,playqueue) + !Skin.String(SectionType,sharedcontent) + !Skin.String(SectionType,photos)">Plex.ActivateWindow(4998)</onleft>
-					<onright condition="!Window.IsActive(videolibrary) + !Container.PlexContent(Channels) + !Skin.String(SectionType,programs) + !Skin.String(SectionType,music) + !Skin.String(SectionType,playlists) + !Skin.String(SectionType,playqueue) + !Skin.String(SectionType,sharedcontent) + !Skin.String(SectionType,photos)">5000</onright>
-					<onright condition="Skin.String(SectionType,programs)">777</onright>
-					<onright condition="Skin.String(SectionType,music)">777</onright>
-					<onright condition="Skin.String(SectionType,playqueue)">777</onright>
-					<onright condition="Skin.String(SectionType,playlists)">777</onright>
-					<onright condition="Skin.String(SectionType,sharedcontent)">777</onright>
-					<onright condition="Skin.String(SectionType,photos)">777</onright>
-					<onright condition="Window.IsActive(videolibrary) | Container.PlexContent(Channels)">777</onright>
+					<onleft condition="!Window.IsActive(0)">998</onleft>
+					<onleft condition="Window.IsActive(0)">Plex.ActivateWindow(4998)</onleft>
+					<onright condition="Window.IsActive(0)">5000</onright>
+					<onright condition="!Window.IsActive(0)">777</onright>
+					<!--<onright condition="stringcompare(Container(300).ListItem(0).Label,Watch Later)">Skin.SetString(SectionType,playqueue)</onright>-->
 					<scrolltime>200</scrolltime>
 					<itemlayout width="4-col" height="43">
 						<control type="label">
