@@ -2,6 +2,7 @@
 <!--Skin variables-->
 <includes>
 	<variable name="imagePerType">
+		<value condition="!Control.HasFocus(300) + Skin.String(SectionType,tvshows)">$INFO[Skin.String(menuArtTV)]</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container.Content(empty)">backgrounds/black.png</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container(300).hasFocus(560)">$INFO[Skin.String(Channel1_Name_Art)]</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container(300).hasFocus(561)">$INFO[Skin.String(Channel2_Name_Art)]</value>

@@ -181,6 +181,7 @@
 						</item>
 						<item id="116">
 							<label>$LOCALIZE[32205]</label>
+							<onclick>Skin.SetString(xSectionType,$INFO[skin.string(SectionType)])</onclick>
 							<onclick>Skin.SetString(SectionType,playfile)</onclick>
 							<onclick>Skin.SetString(pf_helper,1)</onclick>
 							<onclick>Skin.SetString(FileBrowserType,file)</onclick>
@@ -189,7 +190,7 @@
 							<onclick condition="!isEmpty(Skin.String(PlayFilePath))">PlayMedia($ESCINFO[Skin.String(PlayFilePath)])</onclick>
 							<onclick>Skin.Reset(PlayFilePath)</onclick>
 							<onclick>Skin.Reset(pf_helper)</onclick>
-							<onclick>Skin.Reset(SectionType)</onclick>
+							<onclick>Skin.SetString(SectionType,$INFO[skin.string(xSectionType)])</onclick>
 						</item>
 					</content>
 				</control>
