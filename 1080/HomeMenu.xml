@@ -52,7 +52,7 @@
 					<onleft condition="Window.IsActive(0)">Plex.ActivateWindow(4998)</onleft>
 					<onright condition="Window.IsActive(0)">5000</onright>
 					<onright condition="!Window.IsActive(0)">777</onright>
-					<onright condition="stringcompare(Container(300).ListItem(0).Label,Watch Later)">Skin.SetString(SectionType,playqueue)</onright>
+					<!--<onright condition="stringcompare(Container(300).ListItem(0).Label,Watch Later)">Skin.SetString(SectionType,playqueue)</onright>-->
 					<scrolltime>200</scrolltime>
 					<itemlayout width="4-col" height="43">
 						<control type="label">
