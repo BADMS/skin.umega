@@ -42,7 +42,7 @@
 				<control type="list" id="300">
 					<description>Home Main Menu</description>
 					<posx>-14</posx>
-					<posy>180</posy>
+					<posy>158</posy>
 					<width>3-col</width>
 					<height>12-row</height>
 					<orientation>vertical</orientation>

@@ -763,6 +763,7 @@
 						<width>22-col</width>
 						<height>768</height>
 						<orientation>horizontal</orientation>
+						<onback>Skin.Reset(SectionType)</onback>
 						<ondown>Skin.Reset(SectionType)</ondown>
 						<onup>Skin.Reset(SectionType)</onup>
 						<onleft>Skin.Reset(SectionType)</onleft>
