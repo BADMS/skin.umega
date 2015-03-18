@@ -61,7 +61,7 @@
                         <width>252</width>
                         <font>smallMedium</font>
                         <textcolor>selected</textcolor>
-                        <label>$INFO[ListItem.PictureResolution,, &#xB7; ]$INFO[ListItem.label2]</label>
+                        <label>$INFO[ListItem.PictureResolution]$INFO[ListItem.label2, , &#xB7; ]</label>
                     </control>
                 </control>
             </itemlayout>
@@ -107,11 +107,16 @@
                         <font>smallMedium</font>
                         <textcolor>black</textcolor>
                         <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.PictureResolution,, &#xB7; ]$INFO[ListItem.label2]</label>
+                        <label>$INFO[ListItem.PictureResolution]$INFO[ListItem.label2, , &#xB7; ]</label>
                     </control>
                 </control>
             </focusedlayout>
         </control>
         </control>
+		<control type="group">
+			<posx>col-13-begin</posx>
+			<posy>911</posy>
+			<include>keysListFooter</include>
+		</control>
     </include>
 </includes>
