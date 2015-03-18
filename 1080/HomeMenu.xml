@@ -177,9 +177,17 @@
 						</item>
 						<item id="115">
 							<description>Now Playing</description>
-							<label>31220</label>
+							<label>Playing $INFO[VideoPlayer.Title]</label>
 							<onclick>fullscreen</onclick>
-							<visible>!Window.IsActive(0) + [Player.HasAudio | Player.HasVideo]</visible>
+							<!--<visible>!Window.IsActive(0) + [Player.HasAudio | Player.HasVideo]</visible>-->
+							<visible>Player.HasVideo</visible>
+						</item>
+						<item id="115">
+							<description>Now Playing</description>
+							<label>Playing $INFO[MusicPlayer.Title]</label>
+							<onclick>fullscreen</onclick>
+							<!--<visible>!Window.IsActive(0) + [Player.HasAudio | Player.HasVideo]</visible>-->
+							<visible>Player.HasAudio</visible>
 						</item>
 						<item id="116">
 							<label>$LOCALIZE[32205]</label>
