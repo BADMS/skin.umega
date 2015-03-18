@@ -149,7 +149,7 @@
 						<onup>300</onup>
 						<onright>-</onright>
 						<onleft>300</onleft>
-						<itemlayout width="387" height="362">
+						<itemlayout width="387" height="1362">
 							<!-- album -->
 							<control type="group">
 								<visible>ListItem.Type(album)</visible>
@@ -203,6 +203,51 @@
 										<label>$INFO[listitem.year]</label>
 									</control>
 								</control>
+								<!-- box infos -->
+								<!--<control type="group">
+									<visible>StringCompare(Container(11000).ListItem(0).title,$INFO[listitem.title])</visible>
+									<posx>774</posx>
+									<posy>366</posy>
+									<control type="label">
+										<posy>-13</posy>
+										<width>750</width>
+										<font>pageTitle</font>
+										<textcolor>selected</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[ListItem.Artist] &#xB7; $INFO[listitem.title]</label>
+									</control>
+									<control type="label">
+										<posx>0</posx>
+										<posy>32</posy>
+										<width>750</width>
+										<font>regular</font>
+										<textcolor>selected</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.year,, ]$INFO[listitem.genre]</label>
+									</control>
+									<control type="textbox">
+										<posx>0</posx>
+										<posy>77</posy>
+										<font>textboxExtraLeading</font>
+										<width>750</width>
+										<align>left</align>
+										<textcolor>selected</textcolor>
+										<height>146</height>
+										<label fallback="There is no description available for this. You can add one for it in the Media Manager.">$INFO[ListItem.Property(summary)]</label>
+										<autoscroll delay="10000" time="1000" repeat="10000"/>
+										<shadowcolor>-</shadowcolor>
+									</control>
+									<control type="image">
+										<posx>-774</posx>
+										<width>750</width>
+										<height>336</height>
+										<aspectratio>scale</aspectratio>
+										<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+										<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+										<bordersize>3</bordersize>
+										<colordiffuse>ffffffff</colordiffuse>
+									</control>
+								</control>-->
 							</control>
 							<!-- photos -->
 							<control type="group">
@@ -347,7 +392,7 @@
 								</control>
 							</control>
 						</itemlayout>
-						<focusedlayout width="387" height="362">
+						<focusedlayout width="387" height="1362">
 							<!-- album -->
 							<control type="group">
 								<visible>ListItem.Type(album)</visible>
@@ -357,7 +402,7 @@
 									<width>363</width>
 									<height>269</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 									<bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
@@ -402,6 +447,53 @@
 										<shadowcolor>-</shadowcolor>
 										<label>$INFO[listitem.year]</label>
 									</control>
+								</control>
+								<!-- box infos -->
+								<control type="group">
+									<posx>774</posx>
+									<posy>366</posy>
+									<control type="label">
+										<posy>-13</posy>
+										<width>750</width>
+										<font>pageTitle</font>
+										<textcolor>selected</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[ListItem.Artist] &#xB7; $INFO[listitem.title]</label>
+									</control>
+									<control type="label">
+										<posx>0</posx>
+										<posy>32</posy>
+										<width>750</width>
+										<font>regular</font>
+										<textcolor>selected</textcolor>
+										<shadowcolor>-</shadowcolor>
+										<label>$INFO[listitem.year,, ]$INFO[listitem.genre]</label>
+									</control>
+									<!--synopsis-->
+									<control type="textbox">
+										<posx>0</posx>
+										<posy>94</posy>
+										<font>textboxExtraLeading</font>
+										<width>750</width>
+										<align>left</align>
+										<textcolor>selected</textcolor>
+										<height>228</height>
+										<label fallback="There is no description available for this. You can add one for it in the Media Manager.">$INFO[ListItem.Property(summary)]</label>
+										<autoscroll delay="10000" time="1000" repeat="10000"/>
+										<shadowcolor>-</shadowcolor>
+									</control>
+								</control>
+								<control type="image">
+									<posx>0</posx>
+									<posy>366</posy>
+									<width>750</width>
+									<height>324</height>
+									<fadetime>300</fadetime>
+									<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
+									<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
+									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
+									<bordersize>3</bordersize>
+									<colordiffuse>ffffffff</colordiffuse>
 								</control>
 							</control>
 							<!-- photos -->

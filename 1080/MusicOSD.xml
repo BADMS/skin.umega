@@ -26,7 +26,7 @@
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<posx>1391</posx>
+				<posx>1822</posx>
 				<posy>28</posy>
 				<width>8-col</width>
 				<height>54</height>
@@ -43,7 +43,7 @@
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<onright>Control.SetFocus(8002,0)</onright>
-				<onleft>Control.SetFocus(8002,4)</onleft>
+				<onleft>Control.SetFocus(8002,5)</onleft>
 				<onup>Back</onup>
 				<ondown>Back</ondown>
 				<itemlayout width="1-col" height="1-col">
@@ -209,6 +209,12 @@
 						<label>$LOCALIZE[31227]</label>
 						<!--<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>-->
 						<onclick>XBMC.ActivateWindow(122)</onclick>
+					</item>
+					<item>
+						<visible>Visualisation.Enabled</visible>
+						<description>Visualisation Settings</description>
+						<label>$LOCALIZE[31060]</label>
+						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					</item>
 				</content>
 			</control>

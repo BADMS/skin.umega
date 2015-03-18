@@ -76,7 +76,8 @@
                 <posy>120</posy>
                 <width>12-col</width>
                 <height>11-row</height>
-                <onright>9000</onright>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
                 <itemlayout height="1-row" width="12-col">
                     <control type="image">
                         <posx>0</posx>
@@ -137,7 +138,7 @@
                     </control>
                 </focusedlayout>
             </control>
-            <!--larger thumbnail-->
+           <!--larger thumbnail-->
             <control type="image">
                 <posx>12-col</posx>
                 <posy>5-row</posy>
@@ -237,7 +238,7 @@
                     </item>
                 </content>
             </control>
-        </control>
+       </control>
         <!--buttons-->
         <control type="group">
             <visible>false</visible>
@@ -251,6 +252,18 @@
                 <description>New folder</description>
             </control>
         </control>
+  			<!--page scrollbar-->
+			<control type="group" id="8000">
+            <include>modalDialogInOutVertical</include>
+				<visible>Control.IsVisible(60)</visible>
+				<control type="scrollbar" id="60">
+					<posx>1228</posx>
+					<posy>215</posy>
+					<height>11-row</height>
+					<onleft>450</onleft>
+					<onright>9000</onright>
+				</control>
+			</control>
         <!--debugging-->
         <include>DebugGrid</include>
         <control type="label">

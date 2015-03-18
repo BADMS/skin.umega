@@ -28,7 +28,7 @@
 		<include>musicOverlay</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>Home.xml ---> $INFO[Skin.String(SectionType)]</label>
+			<label>Home.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label]</label>
 		</control>
 	</controls>
 </window>

@@ -13,9 +13,9 @@
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container(300).hasFocus(566)">$INFO[Skin.String(Channel7_Name_Art)]</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container(300).hasFocus(567)">$INFO[Skin.String(Channel8_Name_Art)]</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container(300).hasFocus(568)">$INFO[Skin.String(Channel9_Name_Art)]</value>
-		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + [stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
+		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8001).HasFocus + [stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[32205]) | Skin.String(SectionType,playfile)]">$INFO[Skin.String(menuArtFile)]</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + [[stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[137])] | Skin.String(SectionType,search)]">$INFO[Skin.String(menuArtSearch)]</value>
-		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + stringcompare(Container(300).ListItem(0).Label,Now Playing)">$INFO[Skin.String(menuArtPlaying)]</value>
+		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + [stringcompare(Container(300).ListItem(0).Label,$LOCALIZE[31220]) | Skin.String(SectionType,playing)]">$INFO[Skin.String(menuArtPlaying)]</value>
 		<value condition="[stringcompare(Container(300).ListItem(0).Label,Channels) | Skin.String(SectionType,channels)]">$INFO[Skin.String(menuArtChannel)]</value>
 		<value condition="[stringcompare(Container(300).ListItem(0).Label,Playlists) | Skin.String(SectionType,playlists)]">$INFO[Skin.String(menuArtPlaylist)]</value>
 		<value condition="[stringcompare(Container(300).ListItem(0).Label,Watch Later) | Skin.String(SectionType,playqueue) | Skin.String(SectionType,hplayqueue)]">$INFO[Skin.String(menuArtQueue)]</value>
@@ -33,8 +33,8 @@
 		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Plot]</value>
 		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Plot]</value>
 		<value condition="ListItem.Type(episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">$LOCALIZE[32105]</value>
-		<value condition="IsEmpty(ListItem.Plot)">No plot in metadata please add one.</value>
-		<value condition="IsEmpty(ListItem.Plot) + IsEmpty(Container.ShowPlot)">No plot in metadata please add one.</value>
+		<value condition="IsEmpty(ListItem.Plot)">$LOCALIZE[32103]. $LOCALIZE[32104].</value>
+		<value condition="IsEmpty(ListItem.Plot) + IsEmpty(Container.ShowPlot)">$LOCALIZE[32103]. $LOCALIZE[32104].</value>
 	</variable>
 	<variable name="listItemVideoPreview">
 		<value condition="!ListItem.Type(episode)">$INFO[ListItem.Art(thumb)]</value>

@@ -48,6 +48,8 @@
 					<orientation>vertical</orientation>
 					<onup>300</onup>
 					<ondown>300</ondown>
+					<onleft condition="StringCompare(Container(300).ListItem(0).Label,$LOCALIZE[31220]) + [Player.HasAudio | Player.HasVideo]">Skin.SetString(SectionType,playing)</onleft>
+					<onleft condition="SubString(Container(300).ListItem(0).Label,$LOCALIZE[31220]) + [Player.HasAudio | Player.HasVideo]">fullscreen</onleft>
 					<onleft condition="!Window.IsActive(0)">998</onleft>
 					<onleft condition="Window.IsActive(0)">Plex.ActivateWindow(4998)</onleft>
 					<onright condition="Window.IsActive(0)">5000</onright>
@@ -177,7 +179,7 @@
 							<description>Now Playing</description>
 							<label>31220</label>
 							<onclick>fullscreen</onclick>
-							<visible>Player.HasAudio | Player.HasVideo</visible>
+							<visible>!Window.IsActive(0) + [Player.HasAudio | Player.HasVideo]</visible>
 						</item>
 						<item id="116">
 							<label>$LOCALIZE[32205]</label>

@@ -307,7 +307,7 @@
 					<align>left</align>
 					<textcolor>selected</textcolor>
 					<height>228</height>
-					<label>$INFO[ListItem.Property(summary)]</label>
+					<label fallback="There is no description available for this. You can add one for it in the Media Manager.">$INFO[ListItem.Property(summary)]</label>
 					<autoscroll delay="10000" time="1000" repeat="10000"/>
 					<shadowcolor>-</shadowcolor>
 					<visible>IntegerGreaterThan(Container.NumItems,1)</visible>
@@ -320,7 +320,7 @@
 					<align>left</align>
 					<textcolor>selected</textcolor>
 					<height>228</height>
-					<label>$INFO[Container.Property(summary)]</label>
+					<label fallback="There is no description available for this. You can add one for it in the Media Manager.">$INFO[Container.Property(summary)]</label>
 					<autoscroll delay="10000" time="1000" repeat="10000"/>
 					<shadowcolor>-</shadowcolor>
 					<visible>!IntegerGreaterThan(Container.NumItems,1)</visible>
@@ -391,7 +391,7 @@
 							<width>252</width>
 							<font>smallMedium</font>
 							<textcolor>selected</textcolor>
-							<label>$INFO[ListItem.Property(Addon.summary)]</label>
+							<label fallback="There is no description available for this. You can add one for it in the Media Manager.">$INFO[ListItem.Property(Addon.summary)]</label>
 						</control>
 					</control>
 				</itemlayout>
@@ -447,7 +447,7 @@
 							<font>smallMedium</font>
 							<textcolor>black</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Property(Addon.summary)]</label>
+							<label fallback="There is no description available for this. You can add one for it in the Media Manager.">$INFO[ListItem.Property(Addon.summary)]</label>
 						</control>
 					</control>
 				</focusedlayout>
@@ -560,7 +560,7 @@
 					<align>left</align>
 					<textcolor>selected</textcolor>
 					<height>11-col-gutter</height>
-					<label>[B]$INFO[Container.Property(summary)][/B]</label>
+					<label fallback="There is no description available for this. You can add one for it in the Media Manager.">[B]$INFO[Container.Property(summary)][/B]</label>
 					<autoscroll delay="10000" time="1000" repeat="10000"/>
 					<shadowcolor>-</shadowcolor>
 				</control>
@@ -627,7 +627,7 @@
 						<align>left</align>
 						<textcolor>selected</textcolor>
 						<height>11-col-gutter</height>
-						<label>[B]$INFO[ListItem.Property(summary)][/B]</label>
+						<label fallback="[B]There is no description available for this. You can add one for it in the Media Manager.[/B]">$INFO[ListItem.Property(summary),[B],[/B]]</label>
 						<autoscroll delay="10000" time="1000" repeat="10000"/>
 						<shadowcolor>-</shadowcolor>
 					</control>
