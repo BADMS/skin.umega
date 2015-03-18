@@ -488,7 +488,7 @@
 									<posy>366</posy>
 									<width>750</width>
 									<height>324</height>
-									<fadetime>300</fadetime>
+									<!--<fadetime>300</fadetime>-->
 									<aspectratio scalediffuse="false" align="center" aligny="top">stretch</aspectratio>
 									<texture fallback="candy/default.png" border="0">$INFO[Listitem.art(fanart)]</texture>
 									<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
