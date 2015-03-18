@@ -471,6 +471,14 @@
 					<onclick>Skin.ToggleSetting(disableClipPP)</onclick>
 					<selected>Skin.HasSetting(disableClipPP)</selected>
 				</control>
+				<control type="radiobutton" id="28">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Skip tv pre/post play screen</description>
+					<width>16-col</width>
+					<label>Skip TV pre/post play screen if unwatched or empty plot</label>
+					<onclick>Skin.ToggleSetting(disableTVPP)</onclick>
+					<selected>Skin.HasSetting(disableTVPP)</selected>
+				</control>
 				<control type="button" id="221">
 					<visible>Container(8000).Hasfocus(4)</visible>
 					<height>54</height>

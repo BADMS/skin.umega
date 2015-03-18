@@ -7,10 +7,13 @@
 	<onload condition="Container.PlexContent(Episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">Skin.SetString(playerPlot,$LOCALIZE[32105])</onload>
 	<onload condition="Container.PlexContent(Episode) + IsEmpty(ListItem.Plot)">Skin.SetString(playerPlot,There is no description available for this. You can add one for it in the Media Manager.)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
+	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Plex.PlayWith(VideoDefaultPlayer)</onload>
+	<onload condition="Skin.Hassetting(disableTVPP) + Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">action(back)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">action(back)</onload>
 	<controls>
 		<control type="group">
 			<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
+			<visible>![Skin.Hassetting(disableTVPP) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]</visible>
 			<include>fadeInOutPP</include>
 			<!--background / fanart-->
 			<control type="image">
@@ -363,6 +366,7 @@
 	<!--content is tvshow episode or content is from a plugin-->
 	<control type="group">
 		<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)] + [Container.PlexContent(Clip) | container.content(episode)]</visible>
+		<visible>![Skin.Hassetting(disableTVPP) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]</visible>
 		<!--animations-->
 		<include>modalDialogInOut</include>
 		<!--thumbnail if available-->
