@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <window id="2006">
     <onload>AlarmClock(controlOSD,ActivateWindow(120),00:01,silent)</onload>
-    <onload>AlarmClock(controlOSDtoo,action(Back),00:03,silent)</onload>
+    <onload>AlarmClock(controlOSDtoo,action(Back),00:02,silent)</onload>
 	<defaultcontrol always="true">711</defaultcontrol>
 	<onunload>CancelAlarm(controlOSD,true)</onunload>
 	<onunload>CancelAlarm(controlOSDtoo,true)</onunload>

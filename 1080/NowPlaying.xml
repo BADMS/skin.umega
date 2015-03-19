@@ -1,8 +1,252 @@
 <?xml version="1.0"?>
 <window id="50">
-	<defaultcontrol always="true">711</defaultcontrol>
+    <onload>Control.SetFocus(8000,3)</onload>
 	<backgroundcolor>black</backgroundcolor>
 	<controls>
 	<include>NowPlaying</include>	
-	</controls>
+		<!--dialog controls-->
+		<control type="group" id="8765">
+			<posx>0</posx>
+			<posy>996</posy>
+			<animation type="windowClose">
+				<effect type="slide" start="0,0" end="0,54" tween="cubic" easing="out" delay="500" time="300"/>
+				<effect type="fade" start="100" end="0" time="500" delay="500"/>
+			</animation>
+			<animation type="windowOpen">
+				<effect type="slide" start="0,54" end="0,0" tween="cubic" easing="out" delay="500" time="300"/>
+				<effect type="fade" start="0" end="100" time="500" delay="500"/>
+			</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>28</posy>
+				<width>91</width>
+				<height>54</height>
+				<texture>colors/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>1822</posx>
+				<posy>28</posy>
+				<width>8-col</width>
+				<height>54</height>
+				<texture>colors/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--player controls-->
+			<control type="list" id="8000">
+				<posx>75</posx>
+				<posy>10</posy>
+				<width>24-col</width>
+				<height>1-col</height>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<onright>Control.SetFocus(8002,0)</onright>
+				<onleft>Control.SetFocus(8002,5)</onleft>
+				<onup>Back</onup>
+				<ondown>Back</ondown>
+				<itemlayout width="1-col" height="1-col">
+					<control type="image">
+						<posx>19</posx>
+						<posy>18</posy>
+						<width>69</width>
+						<height>69</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture border="0">colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>42</posx>
+						<posy>5</posy>
+						<width>1-col</width>
+						<height>1-col</height>
+						<font>symbolosd</font>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="1-col" height="1-col">
+					<control type="image">
+						<posx>19</posx>
+						<posy>18</posy>
+						<width>69</width>
+						<height>69</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture border="0">colors/selected.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>42</posx>
+						<posy>5</posy>
+						<width>1-col</width>
+						<height>1-col</height>
+						<font>symbolosd</font>
+						<textcolor>black</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>p</label>
+						<onclick>setfocus(9877)</onclick>
+					</item>
+					<item id="2">
+						<label>B</label>
+						<onclick>PlayerControl(rewind)</onclick>
+					</item>
+					<item id="3">
+						<label>S</label>
+						<onclick>PlayerControl(stop)</onclick>
+						<onclick>ActivateWindow(musiclibrary)</onclick>
+						<onclick>Dialog.Close(all,true)</onclick>
+					</item>
+					<item id="4">
+						<visible>!Player.Paused + !Player.Forwarding + !Player.Rewinding</visible>
+						<label>u</label>
+						<onclick>PlayerControl(play)</onclick>
+					</item>
+					<item id="5">
+						<visible>Player.Paused | Player.Forwarding | Player.Rewinding</visible>
+						<label>P</label>
+						<onclick>PlayerControl(play)</onclick>
+					</item>
+					<item id="6">
+						<label>F</label>
+						<onclick>PlayerControl(forward)</onclick>
+					</item>
+					<item id="7">
+						<label>j</label>
+						<onclick>setfocus(9878)</onclick>
+					</item>
+				</content>
+			</control>
+			<!--shuffle and repeat / vis options-->
+			<control type="list" id="8002">
+				<posx>526</posx>
+				<posy>28</posy>
+				<width>24-col</width>
+				<height>1-col</height>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<onleft>Control.SetFocus(8000,5)</onleft>
+				<onright>Control.SetFocus(8000,0)</onright>
+				<onup>Back</onup>
+				<ondown>Back</ondown>
+				<itemlayout width="3-col" height="1-col">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>213</width>
+						<height>54</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture border="0">colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>184</width>
+						<align>left</align>
+						<font>menuTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="3-col" height="1-col">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>213</width>
+						<height>54</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<texture border="0">colors/selected.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>184</width>
+						<align>left</align>
+						<font>menuTitle</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Repeat</description>
+						<label>$VAR[repeatState]</label>
+						<onclick>PlayerControl(Repeat)</onclick>
+					</item>
+					<item id="2">
+						<description>Shuffle</description>
+						<label>$VAR[shuffleState]</label>
+						<onclick>PlayerControl(Random)</onclick>
+					</item>
+					<item id="3">
+						<description>Playlist</description>
+						<label>31097</label>
+						<enable>System.PlexPlayQueue(music)</enable>
+						<onclick>ReplaceWindow(10094)</onclick>
+					</item>
+					<item id="4">
+						<description>Visualisation</description>
+						<label>31032</label>
+						<onclick>sendclick(10120,500)</onclick>
+					</item>
+					<item>
+						<visible>Visualisation.Enabled</visible>
+						<description>Visualisation Settings</description>
+						<label>$LOCALIZE[31227]</label>
+						<!--<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>-->
+						<onclick>XBMC.ActivateWindow(122)</onclick>
+					</item>
+					<item>
+						<visible>Visualisation.Enabled</visible>
+						<description>Visualisation Settings</description>
+						<label>$LOCALIZE[31060]</label>
+						<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+        <!--hidden button to handle dialog autohide-->
+        <control type="button" id="9876">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>1-col</height>
+            <width>1-col</width>
+            <onup>8765</onup>
+            <ondown>8000</ondown>
+            <onleft>8000</onleft>
+            <onright>8000</onright>
+            <onclick>Control.SetFocus(8000)</onclick>
+            <onfocus>Back</onfocus>
+        </control>
+        <control type="button" id="9877">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>1-col</height>
+            <width>1-col</width>
+            <onfocus>PlayerControl(Previous)</onfocus>
+            <onfocus>Control.SetFocus(8000)</onfocus>
+        </control>
+        <control type="button" id="9878">
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>1-col</height>
+            <width>1-col</width>
+            <onfocus>PlayerControl(Next)</onfocus>
+            <onfocus>Control.SetFocus(8000)</onfocus>
+        </control>
+    </controls>
 </window>
