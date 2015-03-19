@@ -247,7 +247,7 @@
 					</control>
 					<control type="textbox">
 						<posx>0</posx>
-						<posy>310</posy>
+						<posy>327</posy>
 						<font>textboxExtraLeading</font>
 						<width>6-col</width>
 						<align>left</align>

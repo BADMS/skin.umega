@@ -6,6 +6,10 @@
 	<include>NowPlaying</include>	
 		<!--dialog controls-->
 		<control type="group" id="8765">
+			<!--Screen burn protection-->
+			<animation type="conditional" condition="true" pulse="true">
+				<effect type="fade" start="100" end="0" time="2500" delay="20000"/>
+			</animation>
 			<posx>0</posx>
 			<posy>996</posy>
 			<animation type="windowClose">
@@ -219,7 +223,18 @@
 				</content>
 			</control>
 		</control>
-        <!--hidden button to handle dialog autohide-->
+		<control type="progress" id="1234">
+			<description>Progressbar</description>
+			<posx>3</posx>
+			<posy>979</posy>
+			<width>1914</width>
+			<info>Player.Progress</info>
+			<!--Screen burn protection-->
+			<animation type="conditional" condition="true" pulse="true">
+				<effect type="fade" start="100" end="0" time="2500" delay="10000"/>
+			</animation>
+		</control>
+       <!--hidden button to handle dialog autohide-->
         <control type="button" id="9876">
             <posx>0</posx>
             <posy>0</posy>

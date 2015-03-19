@@ -17,45 +17,44 @@
 		<control type="group">
 			<!--Cover active-->
 			<control type="group">
+				<posy>240</posy>
+				<posx>720</posx>
 				<control type="image">
-					<posy>300</posy>
-					<posx>720</posx>
 					<width>480</width>
 					<height>480</height>
 					<texture>$INFO[MusicPlayer.Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 				</control>
-				<control type="group">
-					<posx>6</posx>
-					<posy>6</posy>
-					<control type="label">
-						<posy>0</posy>
-						<width>700</width>
-						<font>smallStrong</font>
-						<textcolor>title2</textcolor>
-						<label>$INFO[MusicPlayer.Artist]</label>
-						<align>left</align>
-						<angle>45</angle>
-					</control>
-					<control type="label">
-						<posy>55</posy>
-						<width>700</width>
-						<font>smallStrong</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Title]</label>
-						<align>left</align>
-						<angle>45</angle>
-					</control>
-					<control type="label">
-						<posy>105</posy>
-						<width>700</width>
-						<font>smallStrong</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Album]</label>
-						<align>left</align>
-						<angle>45</angle>
-					</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>62</width>
+					<height>480</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>colors/black.png</texture>
+					<bordersize>0</bordersize>
+					<colordiffuse>77FFFFFF</colordiffuse>
 				</control>
+				<control type="fadelabel" id="1">
+					<description>My First fadelabel</description>
+					<posx>-103</posx>
+					<posy>3</posy>
+					<width>400</width>
+					<visible>true</visible>
+					<scroll>false</scroll>
+					<scrollout>false</scrollout>
+					<pauseatend>200</pauseatend>
+					<info>MusicPlayer.Artist</info>
+					<info>MusicPlayer.Title</info>
+					<info>MusicPlayer.Album</info>
+					<info>MusicPlayer.Genre</info>
+					<info>MusicPlayer.Year</info>
+					<font>pageTitle</font>
+					<textcolor>selected</textcolor>
+					<animation effect="rotate" end="90" time="0" center="170,170" condition="true">Conditional</animation>
+				</control>
+					<animation effect="rotateY" end="-10" center="auto,auto" time="500" condition="true">Conditional</animation>
+
 			</control>
 			<!--Cover 1-->
 			<control type="group">
@@ -69,19 +68,27 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
-
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
+						<textcolor>selected</textcolor>
 						<label>$INFO[MusicPlayer.Offset(1).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
-
 				</control>
 			</control>
 			<!--Cover 2-->
@@ -96,47 +103,32 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
-				<control type="group">
-					<posx>4</posx>
-					<control type="label">
-						<posy>154</posy>
-						<width>160</width>
-						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Offset(2).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
 					</control>
-				</control>
-			</control>
-			<!--Cover 2-->
-			<control type="group">
-				<posx>384</posx>
-				<posy>0</posy>
-				<visible>!IsEmpty(MusicPlayer.Offset(2).Title)</visible>
-				<control type="image">
-					<width>192</width>
-					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(2).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
-				</control>
 				<control type="group">
-					<posx>4</posx>
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
+						<textcolor>selected</textcolor>
 						<label>$INFO[MusicPlayer.Offset(2).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 				</control>
 			</control>
 			<!--Cover 3-->
 			<control type="group">
-				<posx>576</posx>
+				<posx>384</posx>
 				<posy>0</posy>
 				<visible>!IsEmpty(MusicPlayer.Offset(3).Title)</visible>
 				<control type="image">
@@ -146,24 +138,32 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
-
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
+						<textcolor>selected</textcolor>
 						<label>$INFO[MusicPlayer.Offset(3).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
-
 				</control>
 			</control>
 			<!--Cover 4-->
 			<control type="group">
-				<posx>768</posx>
+				<posx>576</posx>
 				<posy>0</posy>
 				<visible>!IsEmpty(MusicPlayer.Offset(4).Title)</visible>
 				<control type="image">
@@ -173,24 +173,33 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
-
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
+						<textcolor>selected</textcolor>
 						<label>$INFO[MusicPlayer.Offset(4).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 
 				</control>
 			</control>
 			<!--Cover 5-->
 			<control type="group">
-				<posx>960</posx>
+				<posx>768</posx>
 				<posy>0</posy>
 				<visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
 				<control type="image">
@@ -200,16 +209,62 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
+						<textcolor>selected</textcolor>
 						<label>$INFO[MusicPlayer.Offset(5).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+
+				</control>
+			</control>
+			<!--Cover 66-->
+			<control type="group">
+				<posx>960</posx>
+				<posy>0</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(6).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(6).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(6).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 				</control>
 			</control>
@@ -217,103 +272,702 @@
 			<control type="group">
 				<posx>1152</posx>
 				<posy>0</posy>
-				<visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+				<visible>!IsEmpty(MusicPlayer.Offset(7).Title)</visible>
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(5).Cover]</texture>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(7).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Offset(5).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(7).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 				</control>
 			</control>
-			<!--Cover 5-->
+			<!--Cover 8-->
 			<control type="group">
 				<posx>1344</posx>
 				<posy>0</posy>
-				<visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+				<visible>!IsEmpty(MusicPlayer.Offset(8).Title)</visible>
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(5).Cover]</texture>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(8).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Offset(5).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(8).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 				</control>
 			</control>
-			<!--Cover 5-->
+			<!--Cover 9-->
 			<control type="group">
 				<posx>1536</posx>
 				<posy>0</posy>
-				<visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+				<visible>!IsEmpty(MusicPlayer.Offset(9).Title)</visible>
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(5).Cover]</texture>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(9).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Offset(5).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(9).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 				</control>
 			</control>
-			<!--Cover 5-->
+			<!--Cover 10-->
 			<control type="group">
 				<posx>1728</posx>
 				<posy>0</posy>
-				<visible>!IsEmpty(MusicPlayer.Offset(5).Title)</visible>
+				<visible>!IsEmpty(MusicPlayer.Offset(10).Title)</visible>
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(5).Cover]</texture>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(10).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
 				<control type="group">
-					<posx>4</posx>
+					<posx>11</posx>
 					<control type="label">
 						<posy>154</posy>
-						<width>160</width>
+						<width>166</width>
 						<font>itemTitleSmallCondensed</font>
-						<textcolor>white</textcolor>
-						<label>$INFO[MusicPlayer.Offset(5).Title]</label>
-						<align>left</align>
-						<angle>45</angle>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(10).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
 					</control>
 				</control>
 			</control>
-
+			<!--Cover 11-->
+			<control type="group">
+				<posx>1728</posx>
+				<posy>192</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(11).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(11).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(11).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 12-->
+			<control type="group">
+				<posx>1728</posx>
+				<posy>384</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(12).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(12).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(12).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 13-->
+			<control type="group">
+				<posx>1728</posx>
+				<posy>576</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(13).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(13).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(13).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 14-->
+			<control type="group">
+				<posx>1728</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(14).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(14).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(14).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 15-->
+			<control type="group">
+				<posx>1536</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(15).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(15).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(15).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 16-->
+			<control type="group">
+				<posx>1344</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(16).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(16).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(16).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 17-->
+			<control type="group">
+				<posx>1152</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(17).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(17).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(17).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 18-->
+			<control type="group">
+				<posx>960</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(18).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(18).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(18).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 19-->
+			<control type="group">
+				<posx>768</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(19).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(19).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(19).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 20-->
+			<control type="group">
+				<posx>576</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(20).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(20).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(20).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 21-->
+			<control type="group">
+				<posx>384</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(21).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(21).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(21).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 22-->
+			<control type="group">
+				<posx>192</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(22).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(22).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(22).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 23-->
+			<control type="group">
+				<posx>0</posx>
+				<posy>768</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(23).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(23).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(23).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 24-->
+			<control type="group">
+				<posx>0</posx>
+				<posy>576</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(24).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(24).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(24).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 25-->
+			<control type="group">
+				<posx>0</posx>
+				<posy>384</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(25).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(25).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(25).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
+			<!--Cover 26-->
+			<control type="group">
+				<posx>0</posx>
+				<posy>192</posy>
+				<visible>!IsEmpty(MusicPlayer.Offset(26).Title)</visible>
+				<control type="image">
+					<width>192</width>
+					<height>192</height>
+					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(26).Cover]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+				</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>53</width>
+						<height>192</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>colors/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>77FFFFFF</colordiffuse>
+					</control>
+				<control type="group">
+					<posx>11</posx>
+					<control type="label">
+						<posy>154</posy>
+						<width>166</width>
+						<font>itemTitleSmallCondensed</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[MusicPlayer.Offset(26).Title]</label>
+						<scroll>true</scroll>
+						<animation effect="rotate" end="90" time="0" center="6,174" condition="true">Conditional</animation>
+					</control>
+				</control>
+			</control>
 		</control>
 		</include>
 </includes>
