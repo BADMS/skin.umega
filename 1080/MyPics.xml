@@ -54,12 +54,12 @@
 					<onright>777</onright>
 				</control>
 			</control>
-			<!--Sort / misc labels (footer)
+			<!--Sort / misc labels (footer)-->
 			<control type="group">
 				<posx>col-4-begin</posx>
 				<posy>row-18-begin</posy>
 				<include>mediaListFooter</include>
-			</control>-->
+			</control>
 			<include condition="!Skin.HasSetting(SuperKioskMode)">HomeMenuDefault</include>
 		</control>
 		<!-- top-level ui (LeftSidemenu.xml & IncludesGlobals.xml & Debug.xml) -->

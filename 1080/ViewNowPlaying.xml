@@ -53,8 +53,7 @@
 					<textcolor>selected</textcolor>
 					<animation effect="rotate" end="90" time="0" center="170,170" condition="true">Conditional</animation>
 				</control>
-					<animation effect="rotateY" end="-10" center="auto,auto" time="500" condition="true">Conditional</animation>
-
+				<animation effect="rotateY" end="-10" center="auto,auto" time="500" condition="true">Conditional</animation>
 			</control>
 			<!--Cover 1-->
 			<control type="group">
@@ -65,8 +64,9 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(1).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
+								
 				</control>
 					<control type="image">
 						<posx>0</posx>
@@ -100,7 +100,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(2).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -135,7 +135,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(3).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -170,7 +170,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(4).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -206,7 +206,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(5).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -242,7 +242,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(6).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -277,7 +277,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(7).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -312,7 +312,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(8).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -347,7 +347,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(9).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -382,7 +382,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(10).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -417,7 +417,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(11).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -452,7 +452,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(12).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -487,7 +487,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(13).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -522,7 +522,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(14).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -557,7 +557,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(15).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -592,7 +592,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(16).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -627,7 +627,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(17).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -662,7 +662,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(18).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -697,7 +697,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(19).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -732,7 +732,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(20).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -767,7 +767,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(21).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -802,7 +802,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(22).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -837,7 +837,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(23).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -872,7 +872,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(24).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -907,7 +907,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(25).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">
@@ -942,7 +942,7 @@
 					<width>192</width>
 					<height>192</height>
 					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(26).Cover]</texture>
-					<aspectratio scalediffuse="false">scale</aspectratio>
+					<aspectratio scalediffuse="false">scale</aspectratio><bordertexture border="3" colordiffuse="ffFFFFFF">colors/selected.png</bordertexture><bordersize>3</bordersize>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
 					<control type="image">

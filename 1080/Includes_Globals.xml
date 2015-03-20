@@ -387,14 +387,14 @@
 			<width>20-col</width>
 			<height>1-row</height>
 			<control type="label">
-				<visible>!container.content(albums)</visible>
+				<!--<visible>!container.content(albums)</visible>-->
 				<width>auto</width>
 				<font>symbol</font>
 				<textcolor>selected</textcolor>
 				<label>a</label>
 			</control>
 			<control type="label">
-				<visible>!container.content(albums)</visible>
+				<!--<visible>!container.content(albums)</visible>-->
 				<width>auto</width>
 				<font>buttonTitle</font>
 				<textcolor>selected</textcolor>
@@ -421,10 +421,27 @@
 				</control>
 			</control>
 			<control type="group">
+				<visible>!isempty(ListItem.Label)</visible>
 				<animation effect="slide" start="0" end="120" time="1000" condition="Container.PlexContent(Movies) + !Window.IsActive(plexplayqueue)">windowopen</animation>
 				<animation effect="slide" start="120" end="0" time="1000" condition="Container.PlexContent(Movies) + !Window.IsActive(plexplayqueue)">windowclose</animation>
 				<control type="label">
-					<visible>!isempty(ListItem.Label) + !Skin.String(SectionType,music) + !container.content(songs)</visible>
+					<visible>container.content(albums) | Skin.String(SectionType,music)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>C</label>
+				</control>
+				<control type="label">
+					<visible>Container.PlexContent(Photos) | Container.Content(photoalbum) | Container.PlexContent(PhotoAlbums) | Skin.String(SectionType,photos)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>A</label>
+				</control>
+				<control type="label">
+					<visible>!Container.PlexContent(Photos) + !Container.Content(photoalbum) + !Container.PlexContent(PhotoAlbums) + !Skin.String(SectionType,photos) + !container.content(albums) + !Skin.String(SectionType,music) + !container.content(albums) + !Skin.String(SectionType,music) + !container.content(songs)</visible>
 					<posx>2-col</posx>
 					<width>auto</width>
 					<font>symbol</font>
@@ -432,7 +449,6 @@
 					<label>H</label>
 				</control>
 				<control type="label">
-					<visible>!container.content(albums) + !Skin.String(SectionType,music) + !container.content(songs)</visible>
 					<visible>!isempty(ListItem.Label)</visible>
 					<posx>2-col</posx>
 					<width>13-col</width>
@@ -442,10 +458,10 @@
 				</control>
 			</control>
 			<control type="group">
+				<visible>!isempty(ListItem.Label) + Skin.String(SectionType,music) + container.content(songs) + skin.string(showinfos,1)</visible>
 				<animation effect="slide" start="0" end="120" time="1000" condition="container.content(songs) + skin.string(showinfos,1)">true</animation>
 				<animation effect="fade" start="0" end="100" time="1000" condition="container.content(songs) + skin.string(showinfos,1)">true</animation>
 				<control type="label">
-					<visible>Skin.String(SectionType,music) + container.content(songs) + skin.string(showinfos,1)</visible>
 					<posx>2-col</posx>
 					<width>auto</width>
 					<font>symbol</font>
@@ -453,8 +469,6 @@
 					<label>C</label>
 				</control>
 				<control type="label">
-					<visible>container.content(songs) + Skin.String(SectionType,music) + skin.string(showinfos,1)</visible>
-					<visible>!isempty(ListItem.Label)</visible>
 					<posx>2-col</posx>
 					<width>13-col</width>
 					<font>buttonTitle</font>

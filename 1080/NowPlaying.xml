@@ -22,6 +22,33 @@
 			</animation>
 			<control type="image">
 				<posx>0</posx>
+				<posy>-33</posy>
+				<width>91</width>
+				<height>57</height>
+				<texture>colors/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+					<control type="label">
+						<posx>12</posx>
+						<posy>-33</posy>
+						<width>auto</width>
+						<align>left</align>
+						<font>menuTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[Player.Time]</label>
+					</control>
+			<control type="image">
+				<posx>95</posx>
+				<posy>-33</posy>
+				<width>1723</width>
+				<height>57</height>
+				<texture>colors/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>0</posx>
 				<posy>28</posy>
 				<width>91</width>
 				<height>54</height>
@@ -38,6 +65,24 @@
 				<colordiffuse>ccffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
+			<control type="image">
+				<posx>1822</posx>
+				<posy>-33</posy>
+				<width>98</width>
+				<height>57</height>
+				<texture>colors/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+					<control type="label">
+						<posx>12r</posx>
+						<posy>-33</posy>
+						<width>98</width>
+						<align>right</align>
+						<font>menuTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[Player.Duration]</label>
+					</control>
 			<!--player controls-->
 			<control type="list" id="8000">
 				<posx>75</posx>
@@ -225,9 +270,9 @@
 		</control>
 		<control type="progress" id="1234">
 			<description>Progressbar</description>
-			<posx>3</posx>
+			<posx>114</posx>
 			<posy>979</posy>
-			<width>1914</width>
+			<width>1692</width>
 			<info>Player.Progress</info>
 			<!--Screen burn protection-->
 			<animation type="conditional" condition="true" pulse="true">
