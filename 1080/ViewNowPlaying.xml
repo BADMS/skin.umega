@@ -43,7 +43,7 @@
 					<visible>true</visible>
 					<scroll>false</scroll>
 					<scrollout>false</scrollout>
-					<pauseatend>200</pauseatend>
+					<pauseatend>2000</pauseatend>
 					<info>MusicPlayer.Artist</info>
 					<info>MusicPlayer.Title</info>
 					<info>MusicPlayer.Album</info>
