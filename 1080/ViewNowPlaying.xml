@@ -22,7 +22,7 @@
 				<control type="image">
 					<width>480</width>
 					<height>480</height>
-					<texture>$INFO[MusicPlayer.Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 				</control>
 				<control type="image">
@@ -64,7 +64,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(1).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(1).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -99,7 +99,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(2).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(2).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -134,7 +134,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(3).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(3).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -169,7 +169,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(4).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(4).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -205,7 +205,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(5).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(5).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -241,7 +241,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(6).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(6).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -276,7 +276,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(7).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(7).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -311,7 +311,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(8).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(8).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -346,7 +346,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(9).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(9).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -381,7 +381,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(10).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(10).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -416,7 +416,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(11).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(11).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -451,7 +451,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(12).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(12).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -486,7 +486,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(13).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(13).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -521,7 +521,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(14).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(14).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -556,7 +556,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(15).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(15).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -591,7 +591,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(16).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(16).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -626,7 +626,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(17).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(17).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -661,7 +661,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(18).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(18).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -696,7 +696,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(19).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(19).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -731,7 +731,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(20).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(20).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -766,7 +766,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(21).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(21).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -801,7 +801,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(22).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(22).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -836,7 +836,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(23).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(23).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -871,7 +871,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(24).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(24).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -906,7 +906,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(25).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(25).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
@@ -941,7 +941,7 @@
 				<control type="image">
 					<width>192</width>
 					<height>192</height>
-					<texture diffuse="base.png">$INFO[MusicPlayer.Offset(26).Cover]</texture>
+					<texture fallback="backgrounds/music.jpg">$INFO[MusicPlayer.Offset(26).Cover]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation effect="fade" start="0" end="80" time="300" condition="true">Conditional</animation>
 				</control>
