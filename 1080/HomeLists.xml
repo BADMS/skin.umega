@@ -1602,7 +1602,7 @@
 								<width>363</width>
 								<height>269</height>
 								<aspectratio>scale</aspectratio>
-								<texture fallback="co/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
+								<texture fallback="candy/default.png" border="0">$INFO[ListItem.Art(smallThumb)]</texture>
 								<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 								<bordersize>3</bordersize>
 								<colordiffuse>ffffffff</colordiffuse>
