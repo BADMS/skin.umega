@@ -96,7 +96,7 @@
 							<width>352</width>
 							<align>left</align>
 							<textcolor>selected</textcolor>
-							<height>381</height>
+							<height>344</height>
 							<label fallback="[B]There is no description available for this. You can add one for it in the Media Manager.[/B]">$INFO[Container(9002).ListItem.plot,[B],[/B]]</label>
 							<autoscroll delay="10000" time="1000" repeat="10000"/>
 							<shadowcolor>-</shadowcolor>
@@ -144,7 +144,7 @@
 							<width>352</width>
 							<align>left</align>
 							<textcolor>selected</textcolor>
-							<height>381</height>
+							<height>344</height>
 							<label fallback="[B]There is no description available for this. You can add one for it in the Media Manager.[/B]">$INFO[Container(9004).ListItem.plot,[B],[/B]]</label>
 							<autoscroll delay="10000" time="1000" repeat="10000"/>
 							<shadowcolor>-</shadowcolor>
