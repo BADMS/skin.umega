@@ -293,6 +293,14 @@
 										<textcolor>selected</textcolor>
 										<label>$INFO[ListItem.Label]</label>
 									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>selected</textcolor>
+										<label>$INFO[listitem.date]</label>
+									</control>
 								</control>
 							</control>
 							<!-- movie & episode when both lists are visible -->
@@ -540,6 +548,14 @@
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
 										<label>$INFO[ListItem.Label]</label>
+									</control>
+									<control type="label">
+										<posx>12</posx>
+										<posy>18</posy>
+										<width>339</width>
+										<font>smallMedium</font>
+										<textcolor>black</textcolor>
+										<label>$INFO[listitem.date]</label>
 									</control>
 								</control>
 							</control>

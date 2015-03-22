@@ -24,25 +24,25 @@
 				<posx>0</posx>
 				<posy>-33</posy>
 				<width>91</width>
-				<height>57</height>
+				<height>58</height>
 				<texture>colors/black.png</texture>
 				<colordiffuse>ccffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-					<control type="label">
-						<posx>12</posx>
-						<posy>-33</posy>
-						<width>auto</width>
-						<align>left</align>
-						<font>menuTitle</font>
-						<textcolor>selected</textcolor>
-						<label>$INFO[Player.Time]</label>
-					</control>
-			<control type="image">
-				<posx>95</posx>
+			<control type="label">
+				<posx>12</posx>
 				<posy>-33</posy>
-				<width>1723</width>
-				<height>57</height>
+				<width>auto</width>
+				<align>left</align>
+				<font>menuTitle</font>
+				<textcolor>selected</textcolor>
+				<label>$INFO[Player.Time]</label>
+			</control>
+			<control type="image">
+				<posx>94</posx>
+				<posy>-33</posy>
+				<width>1725</width>
+				<height>58</height>
 				<texture>colors/black.png</texture>
 				<colordiffuse>ccffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
@@ -69,20 +69,20 @@
 				<posx>1822</posx>
 				<posy>-33</posy>
 				<width>98</width>
-				<height>57</height>
+				<height>58 </height>
 				<texture>colors/black.png</texture>
 				<colordiffuse>ccffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-					<control type="label">
-						<posx>12r</posx>
-						<posy>-33</posy>
-						<width>98</width>
-						<align>right</align>
-						<font>menuTitle</font>
-						<textcolor>selected</textcolor>
-						<label>$INFO[Player.Duration]</label>
-					</control>
+			<control type="label">
+				<posx>12r</posx>
+				<posy>-33</posy>
+				<width>98</width>
+				<align>right</align>
+				<font>menuTitle</font>
+				<textcolor>selected</textcolor>
+				<label>$INFO[Player.Duration]</label>
+			</control>
 			<!--player controls-->
 			<control type="list" id="8000">
 				<posx>75</posx>

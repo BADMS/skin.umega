@@ -401,10 +401,10 @@
 				<label>        $INFO[container.currentpage] / $INFO[container.numpages]</label>
 			</control>
 			<control type="group">
-				<animation effect="fade" start="0" end="100" time="1000" condition="Container.PlexContent(Movies) | Container.PlexContent(Songs)">windowopen</animation>
-				<animation effect="fade" start="100" end="0" time="200" condition="Container.PlexContent(Movies) | Container.PlexContent(Songs)">windowclose</animation>
+				<animation effect="fade" start="0" end="100" time="0" condition="Container.PlexContent(Movie) | Container.PlexContent(Movies) | Container.PlexContent(Songs)">windowopen</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="Container.PlexContent(Movie) | Container.PlexContent(Movies) | Container.PlexContent(Songs)">windowclose</animation>
 				<control type="label">
-					<visible>!isempty(Listitem.Property(mediaTag-audioCodec)) + [Container.PlexContent(Movies) | Container.PlexContent(Songs)]</visible>
+					<visible>!isempty(Listitem.Property(mediaTag-audioCodec)) + [Container.PlexContent(Movie) | Container.PlexContent(Movies) | Container.PlexContent(Songs)]</visible>
 					<posx>2-col</posx>
 					<font>symbol</font>
 					<width>auto</width>
@@ -412,7 +412,7 @@
 					<label>Y</label>
 				</control>
 				<control type="label">
-					<visible>!isempty(Listitem.Property(mediaTag-audioCodec)) + [Container.PlexContent(Movies) | Container.PlexContent(Songs)]</visible>
+					<visible>!isempty(Listitem.Property(mediaTag-audioCodec)) + [Container.PlexContent(Movie) | Container.PlexContent(Movies) | Container.PlexContent(Songs)]</visible>
 					<posx>2-col</posx>
 					<width>auto</width>
 					<font>buttonTitle</font>
@@ -422,8 +422,16 @@
 			</control>
 			<control type="group">
 				<visible>!isempty(ListItem.Label)</visible>
-				<animation effect="slide" start="0" end="120" time="1000" condition="Container.PlexContent(Movies)">windowopen</animation>
-				<animation effect="slide" start="120" end="0" time="1000" condition="Container.PlexContent(Movies)">windowclose</animation>
+				<animation effect="slide" start="0" end="120" time="0" condition="Container.PlexContent(Movie) | Container.PlexContent(Movies)">windowopen</animation>
+				<animation effect="slide" start="120" end="0" time="0" condition="Container.PlexContent(Movie) | Container.PlexContent(Movies)">windowclose</animation>
+				<control type="label">
+					<visible>Skin.String(SectionType,playlists)</visible>
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>Z</label>
+				</control>
 				<control type="label">
 					<visible>Container.PlexContent(Photos) | Container.Content(photoalbum) | Container.PlexContent(PhotoAlbums) | Skin.String(SectionType,photos)</visible>
 					<posx>2-col</posx>
@@ -433,7 +441,7 @@
 					<label>A</label>
 				</control>
 				<control type="label">
-					<visible>!Container.PlexContent(Photos) + !Container.Content(photoalbum) + !Container.PlexContent(PhotoAlbums) + !Skin.String(SectionType,photos) + !container.content(albums) + !Skin.String(SectionType,music) + !container.content(albums) + !Skin.String(SectionType,music) + !Container.PlexContent(Songs)</visible>
+					<visible>!Skin.String(SectionType,playlists) + !Container.PlexContent(Photos) + !Container.Content(photoalbum) + !Container.PlexContent(PhotoAlbums) + !Skin.String(SectionType,photos) + !container.content(albums) + !Skin.String(SectionType,music) + !container.content(albums) + !Skin.String(SectionType,music) + !Container.PlexContent(Songs)</visible>
 					<posx>2-col</posx>
 					<width>auto</width>
 					<font>symbol</font>
@@ -451,9 +459,28 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>!isempty(ListItem.Label) + [Skin.String(SectionType,music) | Container.PlexContent(Songs) | container.content(artists) | container.content(albums)]</visible>
-	<animation effect="slide" start="0" end="120" time="1000" condition="container.content(songs)">true</animation>
-				<animation effect="slide" start="120" end="0" time="1000" condition="container.content(songs)">windowclose</animation>
+				<visible>!Skin.String(SectionType,playqueue)</visible>
+				<visible>!isempty(ListItem.Label) + [Skin.String(SectionType,music)]</visible>
+				<animation effect="slide" start="0" end="120" time="0" condition="container.content(songs)">conditional</animation>
+				<control type="label">
+					<posx>2-col</posx>
+					<width>auto</width>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<label>C</label>
+				</control>
+				<control type="label">
+					<posx>2-col</posx>
+					<width>13-col</width>
+					<font>buttonTitle</font>
+					<textcolor>selected</textcolor>
+					<label>        $INFO[ListItem.Label]</label>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Skin.String(SectionType,playqueue)</visible>
+				<visible>!isempty(ListItem.Label) + [Container.PlexContent(Songs)]</visible>
+				<animation effect="slide" start="0" end="120" time="0" condition="Container.PlexContent(Songs)">conditional</animation>
 				<control type="label">
 					<posx>2-col</posx>
 					<width>auto</width>

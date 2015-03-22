@@ -108,7 +108,7 @@
 		<include>DebugGrid</include>
         <control type="label">
             <include>WindowID</include>
-            <label>MyMusicSongs.xml ---> $INFO[Skin.String(SectionType)]</label>
+            <label>MyMusicSongs.xml ---> $INFO[Skin.String(SectionType)] ---> $VAR[ContainerContent] - $INFO[ListItem.Label]</label>
         </control>
     </controls>
 </window>

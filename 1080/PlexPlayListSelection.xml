@@ -127,7 +127,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>PlexPlaylistSelection.xml ---> $INFO[Skin.String(SectionType)]</label>
+			<label>PlexPlaylistSelection.xml ---> $INFO[Skin.String(SectionType)] ---> $VAR[ContainerContent] - $INFO[ListItem.Label]</label>
 		</control>
 	</controls>
 </window>
