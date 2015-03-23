@@ -22,6 +22,7 @@
 			<texturefocus>UIControls/textButtonFO.png</texturefocus>
 		</control>
 		<control type="list" id="8000">
+			<visible>!container.content(songs) + !container.content(photos)</visible>
 			<posx>col-16-begin</posx>
 			<posy>4-row</posy>
 			<width>5-col</width>
@@ -165,6 +166,7 @@
 		</control>
 		<!--reset buttons channels-->
 		<control type="list" id="8001">
+			<visible>!container.content(songs) + !container.content(photos)</visible>
 			<posx>col-21-begin</posx>
 			<posy>4-row</posy>
 			<width>5-col</width>
