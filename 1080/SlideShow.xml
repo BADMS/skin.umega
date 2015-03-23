@@ -34,7 +34,7 @@
                 <shadowcolor>-</shadowcolor>
                 <label>$INFO[Slideshow.SlideIndex]</label>
             </control>
-            <control type="label">
+            <!--<control type="label">
                 <posx>2-col</posx>
                 <posy>0</posy>
                 <width>10-col</width>
@@ -42,7 +42,7 @@
                 <textcolor>selected</textcolor>
                 <shadowcolor>-</shadowcolor>
                 <label>$INFO[Slideshow.Filename]</label>
-            </control>
+            </control>-->
             <control type="label">
                 <posx>13-col</posx>
                 <posy>0</posy>

@@ -1,29 +1,261 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <defaultcontrol always="true">1000</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
-    <include>fadeInOut</include>
-    <controls>
-        <include>modalDialog</include>
-        <control type="grouplist" id="996">
-            <posx>col-10-begin</posx>
-            <posy>4-row</posy>
-            <itemgap>0</itemgap>
-        </control>
-        <control type="button" id="1000">
-            <description>Buttons</description>
-            <width>5-col</width>
-            <textcolor>unselected</textcolor>
-            <focusedcolor>selected</focusedcolor>
-            <font>itemTitle</font>
-            <textoffsetx>12</textoffsetx>
-            <texturefocus>UIControls/textButtonFO.png</texturefocus>
-        </control>
-        <!--debugging-->
-        <include>DebugGrid</include>
-        <control type="label">
-            <include>DialogID</include>
-            <label>DialogContextMenu.xml</label>
-        </control>
-    </controls>
+	<defaultcontrol always="true">1000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<include>fadeInOut</include>
+	<controls>
+		<include>modalDialog</include>
+		<control type="grouplist" id="996">
+			<posx>col-10-begin</posx>
+			<posy>4-row</posy>
+			<itemgap>0</itemgap>
+			<onright>8000</onright>
+			<onleft>8000</onleft>
+		</control>
+		<control type="button" id="1000">
+			<description>Buttons</description>
+			<width>5-col</width>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<font>itemTitle</font>
+			<textoffsetx>12</textoffsetx>
+			<texturefocus>UIControls/textButtonFO.png</texturefocus>
+		</control>
+		<control type="list" id="8000">
+			<posx>col-16-begin</posx>
+			<posy>4-row</posy>
+			<width>5-col</width>
+			<height>11-col</height>
+			<itemgap>0</itemgap>
+			<orientation>vertical</orientation>
+			<onleft>996</onleft>
+			<onright>8001</onright>
+			<itemlayout width="1-col" height="56">
+				<control type="image">
+					<width>5-col</width>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>-</texture>
+					<colordiffuse>ccFFFFFF</colordiffuse>
+				</control>
+				<control type="label">
+					<width>5-col</width>
+					<textcolor>unselected</textcolor>
+					<font>itemTitle</font>
+					<textoffsetx>12</textoffsetx>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="1-col" height="56">
+				<control type="image">
+					<width>5-col</width>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>UIControls/textButtonFO.png</texture>
+					<colordiffuse>ccFFFFFF</colordiffuse>
+				</control>
+				<control type="label">
+					<width>5-col</width>
+					<textcolor>selected</textcolor>
+					<font>itemTitle</font>
+					<textoffsetx>12</textoffsetx>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>f01: $INFO[skin.string(f1Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f1))">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1))">skin.setstring(f1Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1))">skin.setstring(f1,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) +  !Skin.String(f1Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f1)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) + Skin.String(f1Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f1)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="2">
+					<label>f02: $INFO[skin.string(f2Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f2))">skin.setstring(f2Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2))">skin.setstring(f2Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2))">skin.setstring(f2,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) +  !Skin.String(f2Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f2)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) + Skin.String(f2Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f2)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="3">
+					<label>f03: $INFO[skin.string(f3Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f3))">skin.setstring(f3Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3))">skin.setstring(f3Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3))">skin.setstring(f3,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) +  !Skin.String(f3Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f3)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) + Skin.String(f3Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f3)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="4">
+					<label>f04: $INFO[skin.string(f4Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f4))">skin.setstring(f4Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4))">skin.setstring(f4Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4))">skin.setstring(f4,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) +  !Skin.String(f4Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f4)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) + Skin.String(f4Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f4)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="5">
+					<label>f05: $INFO[skin.string(f5Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f5))">skin.setstring(f5Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5))">skin.setstring(f5Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5))">skin.setstring(f5,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) +  !Skin.String(f5Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f5)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) + Skin.String(f5Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f5)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="6">
+					<label>f06: $INFO[skin.string(f6Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f6))">skin.setstring(f6Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6))">skin.setstring(f6Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6))">skin.setstring(f6,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) +  !Skin.String(f6Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f6)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) + Skin.String(f6Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f6)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="7">
+					<label>f07: $INFO[skin.string(f7Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f7))">skin.setstring(f7Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7))">skin.setstring(f7Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7))">skin.setstring(f7,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) +  !Skin.String(f7Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f7)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) + Skin.String(f7Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f7)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="8">
+					<label>f08: $INFO[skin.string(f8Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f8))">skin.setstring(f8Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8))">skin.setstring(f8Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8))">skin.setstring(f8,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) +  !Skin.String(f8Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f8)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) + Skin.String(f8Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f8)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="9">
+					<label>f09: $INFO[skin.string(f9Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f9))">skin.setstring(f9Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9))">skin.setstring(f9Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9))">skin.setstring(f9,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) +  !Skin.String(f9Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f9)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) + Skin.String(f9Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f9)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9))">Dialog.Close(all,true)</onclick>
+				</item>
+				<item id="10">
+					<label>f10: $INFO[skin.string(f10Title)]</label>
+					<onclick condition="isEmpty(Skin.String(f10))">skin.setstring(f10Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10))">skin.setstring(f10Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10))">skin.setstring(f10,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) +  !Skin.String(f10Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f10)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) + Skin.String(f10Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f10)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10))">Dialog.Close(all,true)</onclick>
+				</item>
+			</content>
+		</control>
+		<!--reset buttons channels-->
+		<control type="list" id="8001">
+			<posx>col-21-begin</posx>
+			<posy>4-row</posy>
+			<width>5-col</width>
+			<height>11-col</height>
+			<itemgap>0</itemgap>
+			<orientation>vertical</orientation>
+			<onleft>8000</onleft>
+			<onright>996</onright>
+			<itemlayout width="1-col" height="56">
+				<control type="image">
+					<height>54</height>
+					<width>64</width>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>colors/selected.png</texture>
+					<colordiffuse>black</colordiffuse>
+				</control>
+				<control type="label">
+					<width>5-col</width>
+					<textcolor>selected</textcolor>
+					<font>symbol</font>
+					<align>left</align>
+					<textoffsetx>18</textoffsetx>
+					<label>x</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="1-col" height="56">
+				<control type="image">
+					<height>54</height>
+					<width>64</width>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture>colors/selected.png</texture>
+					<colordiffuse>selected</colordiffuse>
+				</control>
+				<control type="label">
+					<width>5-col</width>
+					<textcolor>black</textcolor>
+					<font>symbol</font>
+					<align>left</align>
+					<textoffsetx>18</textoffsetx>
+					<label>x</label>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<onclick>Skin.Reset(f1)</onclick>
+					<onclick>Skin.Reset(f1Title)</onclick>
+					<onclick>Skin.Reset(f1Type)</onclick>
+				</item>
+				<item id="2">
+					<onclick>Skin.Reset(f2)</onclick>
+					<onclick>Skin.Reset(f2Title)</onclick>
+					<onclick>Skin.Reset(f2Type)</onclick>
+				</item>
+				<item id="3">
+					<onclick>Skin.Reset(f3)</onclick>
+					<onclick>Skin.Reset(f3Title)</onclick>
+					<onclick>Skin.Reset(f3Type)</onclick>
+				</item>
+				<item id="4">
+					<onclick>Skin.Reset(f4)</onclick>
+					<onclick>Skin.Reset(f4Title)</onclick>
+					<onclick>Skin.Reset(f4Type)</onclick>
+				</item>
+				<item id="5">
+					<onclick>Skin.Reset(f5)</onclick>
+					<onclick>Skin.Reset(f5Title)</onclick>
+					<onclick>Skin.Reset(f5Type)</onclick>
+				</item>
+				<item id="6">
+					<onclick>Skin.Reset(f6)</onclick>
+					<onclick>Skin.Reset(f6Title)</onclick>
+					<onclick>Skin.Reset(f6Type)</onclick>
+				</item>
+				<item id="7">
+					<onclick>Skin.Reset(f7)</onclick>
+					<onclick>Skin.Reset(f7Title)</onclick>
+					<onclick>Skin.Reset(f7Type)</onclick>
+				</item>
+				<item id="8">
+					<onclick>Skin.Reset(f8)</onclick>
+					<onclick>Skin.Reset(f8Title)</onclick>
+					<onclick>Skin.Reset(f8Type)</onclick>
+				</item>
+				<item id="9">
+					<onclick>Skin.Reset(f9)</onclick>
+					<onclick>Skin.Reset(f9Title)</onclick>
+					<onclick>Skin.Reset(f9Type)</onclick>
+				</item>
+				<item id="10">
+					<onclick>Skin.Reset(f10)</onclick>
+					<onclick>Skin.Reset(f10Title)</onclick>
+					<onclick>Skin.Reset(f10Type)</onclick>
+				</item>
+			</content>
+		</control>
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DialogID</include>
+			<label>DialogContextMenu.xml - $INFO[Skin.String(SectionType)] ===> $INFO[Container.FolderName]  ==> $INFO[ListItem.FileNameAndPath] => $INFO[ListItem.Label] >$INFO[Control.GetLabel(402)] >$INFO[Control.GetLabel(2)]</label>
+			<scroll>true</scroll>
+		</control>
+	</controls>
 </window>

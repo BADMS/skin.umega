@@ -37,6 +37,7 @@
                         <width>8-col-gutter</width>
                         <align>left</align>
                         <info>ListItem.Label2</info>
+						<haspath>true</haspath>
                         <font>smallMedium</font>
                     </control>
                 </itemlayout>
@@ -53,6 +54,7 @@
                         <align>left</align>
                         <info>ListItem.Label2</info>
                         <font>smallMedium</font>
+						<haspath>true</haspath>
                     </control>
                 </focusedlayout>
             </control>
