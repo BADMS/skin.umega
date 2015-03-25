@@ -178,7 +178,7 @@
 				</control>
 				<control type="button" id="4">
 					<visible>Container(8000).Hasfocus(1)</visible>
-					<description>Set cast fanart</description>
+					<description>Set game fanart</description>
 					<height>54</height>
 					<width>15-col</width>
 					<align>left</align>
@@ -187,9 +187,9 @@
 					<textcolor>selected</textcolor>
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
-					<label>Cast fanart location: </label>
-					<label2>$INFO[Skin.String(castFanartLocation)]</label2>
-					<onclick>Skin.SetPath(castFanartLocation)</onclick>
+					<label>Game fanart location: </label>
+					<label2>$INFO[Skin.String(gameFanartLocation)]</label2>
+					<onclick>Skin.SetPath(gameFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
 					<onright>504</onright>
 				</control>
@@ -567,7 +567,7 @@
 					<onclick>Skin.SetString(Channel5_Name_Menu)</onclick>
 					<onclick>Skin.SetLargeImage(Channel5_Name_Art)</onclick>
 					<selected>!isEmpty(Skin.String(Channel5_Name))</selected>
-					<onright>605</onright>
+					<onright>601</onright>
 				</control>
 				<control type="button" id="226">
 					<visible>Container(8000).Hasfocus(4)</visible>
@@ -710,7 +710,7 @@
 					<onleft>4</onleft>
 					<onup>503</onup>
 					<ondown>5</ondown>
-					<onclick>Skin.Reset(castFanartLocation)</onclick>
+					<onclick>Skin.Reset(gameFanartLocation)</onclick>
 				</control>
 			</control>
 			<!--reset buttons channels-->
@@ -728,8 +728,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>221</onleft>
-					<onright>221</onright>
+					<onleft>21</onleft>
+					<onright>21</onright>
 					<ondown>602</ondown>
 					<onup>609</onup>
 					<onclick>Skin.Reset(Channel1_Name)</onclick>	
@@ -748,8 +748,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>222</onleft>
-					<onright>222</onright>
+					<onleft>22</onleft>
+					<onright>22</onright>
 					<ondown>603</ondown>
 					<onup>601</onup>
 					<onclick>Skin.Reset(Channel2_Name)</onclick>	
@@ -768,8 +768,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>223</onleft>
-					<onright>223</onright>
+					<onleft>23</onleft>
+					<onright>23</onright>
 					<ondown>604</ondown>
 					<onup>602</onup>
 					<onclick>Skin.Reset(Channel3_Name)</onclick>	
@@ -788,8 +788,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>224</onleft>
-					<onright>224</onright>
+					<onleft>24</onleft>
+					<onright>24</onright>
 					<onup>603</onup>
 					<ondown>605</ondown>
 					<onclick>Skin.Reset(Channel4_Name)</onclick>	
@@ -808,8 +808,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>225</onleft>
-					<onright>225</onright>
+					<onleft>25</onleft>
+					<onright>25</onright>
 					<onup>604</onup>
 					<ondown>606</ondown>
 					<onclick>Skin.Reset(Channel5_Name)</onclick>	
@@ -828,8 +828,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>226</onleft>
-					<onright>226</onright>
+					<onleft>26</onleft>
+					<onright>26</onright>
 					<onup>605</onup>
 					<ondown>607</ondown>
 					<onclick>Skin.Reset(Channel6_Name)</onclick>	
@@ -848,8 +848,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>227</onleft>
-					<onright>227</onright>
+					<onleft>27</onleft>
+					<onright>27</onright>
 					<onup>606</onup>
 					<ondown>608</ondown>
 					<onclick>Skin.Reset(Channel7_Name)</onclick>	
@@ -868,8 +868,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>228</onleft>
-					<onright>228</onright>
+					<onleft>28</onleft>
+					<onright>28</onright>
 					<onup>607</onup>
 					<ondown>609</ondown>
 					<onclick>Skin.Reset(Channel8_Name)</onclick>	
@@ -888,8 +888,8 @@
 					<focusedcolor>black</focusedcolor>
 					<texturefocus>colors/selected.png</texturefocus>
 					<label>x</label>
-					<onleft>229</onleft>
-					<onright>229</onright>
+					<onleft>29</onleft>
+					<onright>29</onright>
 					<onup>608</onup>
 					<ondown>601</ondown>
 					<onclick>Skin.Reset(Channel9_Name)</onclick>	

@@ -452,7 +452,7 @@
 					<visible>Container.PlexContent(Photos) | Container.Content(photoalbum) | Container.PlexContent(PhotoAlbums) | Skin.String(SectionType,photos) | [!Container.PlexContent(Photos) + !Container.Content(photoalbum) + !Container.PlexContent(PhotoAlbums) + !Skin.String(SectionType,photos) + !container.content(albums) + !Skin.String(SectionType,music) + !container.content(albums) + !Skin.String(SectionType,music) + !Container.PlexContent(Songs)]</visible>
 					<visible>!isempty(ListItem.Label)</visible>
 					<posx>2-col</posx>
-					<width>12-col</width>
+					<width>13-col</width>
 					<font>buttonTitle</font>
 					<textcolor>selected</textcolor>
 					<label>        $INFO[ListItem.Label]</label>
@@ -471,7 +471,7 @@
 				</control>
 				<control type="label">
 					<posx>2-col</posx>
-					<width>12-col</width>
+					<width>13-col</width>
 					<font>buttonTitle</font>
 					<textcolor>selected</textcolor>
 					<label>        $INFO[ListItem.Label]</label>
