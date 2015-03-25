@@ -240,9 +240,12 @@
 				<width>8-col</width>
 				<height>6-row</height>
 				<itemgap>3</itemgap>
+					<onright condition="!Skin.String(showcast,true)">Skin.SetString(showcast,true)</onright>
+					<onright condition="!Skin.String(showcast,true)">Control.SetFocus(3)</onright>
 				<onright condition="Skin.String(showcast,true) + !IsEmpty(ListItem.Property(PlexExtras))">3</onright>
-				<onright condition="!Skin.String(showcast,true)">Back</onright>
-				<onright condition="Skin.String(showcast,true) + IsEmpty(ListItem.Property(PlexExtras))">Back</onright>
+				<onright condition="IsEmpty(ListItem.Property(PlexExtras))">Back</onright>
+				<!--<onright condition="!Skin.String(showcast,true)">Back</onright>-->
+				<!--<onright condition="Skin.String(showcast,true) + IsEmpty(ListItem.Property(PlexExtras))">Back</onright>-->
 				<onleft>Back</onleft>
 				<orientation>vertical</orientation>
 				<itemlayout width="4-col" height="1-row">
@@ -556,6 +559,20 @@
 		<height>16-row</height>
 		<texture>colors/black.png</texture>
 		<colordiffuse>ccffffff</colordiffuse>
+		<aspectratio>stretch</aspectratio>
+	</control>
+	<control type="multiimage">
+		<visible>!IsEmpty(Skin.String(castFanartLocation))</visible>
+		<posx>514</posx>
+		<posy>10</posy>
+		<width>133</width>
+		<height>178</height>
+		<imagepath>$INFO[Skin.String(castFanartLocation)]$INFO[ListItem.label] ($INFO[ListItem.year])\.actors</imagepath>
+		<timeperimage>2000</timeperimage>
+		<fadetime>100</fadetime>
+		<pauseatend>200</pauseatend>
+		<randomize>true</randomize>
+		<loop>yes</loop>
 		<aspectratio>stretch</aspectratio>
 	</control>
 	<!--content-->
