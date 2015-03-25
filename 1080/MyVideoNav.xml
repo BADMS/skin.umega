@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="6">
-	<defaultcontrol always="false">777</defaultcontrol>
+	<defaultcontrol>777</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload>Skin.Reset(showtvinfos)</onload>
 	<onload condition="Container.PlexContent(Movies)">Skin.SetString(SectionType,movies)</onload>
@@ -144,7 +144,7 @@
 			</control>
 			<!--episodes page scrollbar-->
 			<control type="group" id="8001">
-				<visible>Control.IsVisible(60) + container.content(episodes)</visible>
+				<visible>Control.IsVisible(60) + [container.content(episodes) | Container.PlexContent(Seasons)]</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8001).hasfocus">conditional</animation>
 				<control type="scrollbar" id="60">
 					<posx>46r</posx>
@@ -156,7 +156,7 @@
 			</control>
 			<!--tvshow page scrollbar-->
 			<control type="group" id="8000">
-				<visible>Control.IsVisible(60) + [container.content(tvshows) | container.content(movies) | !container.content(episodes)]</visible>
+				<visible>Control.IsVisible(60) + [container.content(tvshows) | container.content(movies)] + !container.content(episodes)</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
 				<control type="scrollbar" id="60">
 					<posx>646r</posx>
@@ -184,7 +184,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label]</label>
+			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] - $INFO[Container.PlexContent]</label>
 		</control>
 	</controls>
 </window>
