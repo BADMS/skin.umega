@@ -6,6 +6,7 @@
 	<onload>AlarmClock(controlType,Skin.Reset(SectionType),00:01,silent)</onload>
 	<onload>Skin.SetString(AspectRatio,$INFO[Skin.AspectRatio])</onload>
 	<onload>Skin.Reset(dsp_helper)</onload>
+	<!-- <onload>XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Channel1_Name)],return)</onload> -->
 	<onunload>Skin.Reset(SectionType)</onunload>
 	<onunload>CancelAlarm(controlType,true)</onunload>
 	<controls>
@@ -28,7 +29,7 @@
 		<include>musicOverlay</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>Home.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label]</label>
+			<label>Home.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] url. $INFO[Container(300).ListItem(0).FileNameAndPath]</label>
 		</control>
 	</controls>
 </window>

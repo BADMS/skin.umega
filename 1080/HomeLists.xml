@@ -475,7 +475,7 @@
 										<font>regular</font>
 										<textcolor>selected</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$INFO[listitem.year,, ]$INFO[listitem.genre]</label>
+										<label>$INFO[listitem.year,, ]$INFO[listitem.genre,, ]$INFO[ListItem.Property(LeafCount)]</label>
 									</control>
 									<!--synopsis-->
 									<control type="textbox">

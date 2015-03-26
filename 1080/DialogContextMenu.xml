@@ -259,7 +259,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>DialogID</include>
-			<label>DialogContextMenu.xml - $INFO[Skin.String(SectionType)] ft. $INFO[Container.FirstTitle] pt. $INFO[Container.Property(parentTitle)] ===> $INFO[Container.FolderName]  => $INFO[ListItem.Label] >$INFO[Control.GetLabel(1)] >$INFO[Container.Position]</label>
+			<label>DialogContextMenu.xml - st. $INFO[Skin.String(SectionType)] ft. $INFO[Container.FirstTitle] pt. $INFO[Container.Property(parentTitle)] ===> fn. $INFO[Container.FolderName]  => ll. $INFO[ListItem.Label] >300. $INFO[Container(300).ListItem(0).Label] >pos. $INFO[Container.Position] url. $INFO[ListItem.FileNameAndPath]</label>
 			<scroll>true</scroll>
 		</control>
 	</controls>
