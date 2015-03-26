@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">301</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<!-- <onload>Skin.SetString(SectionType,home)</onload> -->
+	<onload condition="!isEmpty(Skin.String(Section1_Name))">XBMC.ActivateWindow(MyVideoFiles,$INFO[Skin.String(Section1_Name)],return)</onload>
 	<onload>AlarmClock(controlType,Skin.Reset(SectionType),00:01,silent)</onload>
 	<onload>Skin.SetString(AspectRatio,$INFO[Skin.AspectRatio])</onload>
 	<onload>Skin.Reset(dsp_helper)</onload>

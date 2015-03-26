@@ -202,6 +202,18 @@
 							<onclick>Skin.Reset(pf_helper)</onclick>
 							<onclick>Skin.SetString(SectionType,$INFO[skin.string(xSectionType)])</onclick>
 						</item>
+						<item id="116">
+							<description>Quit</description>
+							<label>Quit</label>
+							<onclick>Quit</onclick>
+							<visible>!Window.IsActive(0)</visible>
+						</item>
+						<item id="117">
+							<description>Quit</description>
+							<label>Preferences</label>
+							<onclick>ActivateWindow(appearancesettings)</onclick>
+							<visible>!Window.IsActive(0)</visible>
+						</item>
 					</content>
 				</control>
 			</control>

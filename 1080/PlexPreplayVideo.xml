@@ -109,6 +109,7 @@
 				<posx>col-1-begin</posx>
 				<posy>row-2-begin</posy>
 				<control type="label">
+					<visible>!container.content(seasons)</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>8-col-gutter</width>
@@ -120,6 +121,19 @@
 					<shadowcolor>-</shadowcolor>
 				</control>
 				<control type="label">
+					<visible>container.content(seasons)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>pageTitle</font>
+					<textcolor>black</textcolor>
+					<label>$INFO[Container.SecondTitle]</label>
+					<scroll>true</scroll>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<control type="label">
+					<visible>!container.content(seasons)</visible>
 					<posx>0</posx>
 					<posy>42</posy>
 					<width>8-col-gutter</width>
@@ -127,6 +141,17 @@
 					<font>itemTitleSmall</font>
 					<textcolor>black</textcolor>
 					<label>$INFO[ListItem.duration,, mins. ]</label>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<control type="label">
+					<visible>container.content(seasons)</visible>
+					<posx>0</posx>
+					<posy>42</posy>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<font>itemTitleSmall</font>
+					<textcolor>black</textcolor>
+					<label>$INFO[Skin.String(tvGenre)]</label>
 					<shadowcolor>-</shadowcolor>
 				</control>
 				<!-- watched? -->
@@ -153,6 +178,7 @@
 				</control>
 				<!--synopsis-->
 				<control type="textbox">
+					<visible>!container.content(seasons)</visible>
 					<posx>0</posx>
 					<posy>132</posy>
 					<font>textboxExtraLeading</font>
@@ -161,6 +187,20 @@
 					<textcolor>selected</textcolor>
 					<height>6-row-synopsis</height>
 					<label fallback="[B]There is no description available for this. You can add one for it in the Media Manager.[/B]">$INFO[ListItem.plot,[B],[/B]]</label>
+					<autoscroll delay="10000" time="1000" repeat="10000"/>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<!--synopsis tv-->
+				<control type="textbox">
+					<visible>container.content(seasons)</visible>
+					<posx>0</posx>
+					<posy>132</posy>
+					<font>textboxExtraLeading</font>
+					<width>8-col-gutter</width>
+					<align>left</align>
+					<textcolor>selected</textcolor>
+					<height>6-row-synopsis</height>
+					<label fallback="[B]There is no description available for this. You can add one for it in the Media Manager.[/B]">$INFO[Container.Property(summary),[B],[/B]]</label>
 					<autoscroll delay="10000" time="1000" repeat="10000"/>
 					<shadowcolor>-</shadowcolor>
 				</control>
@@ -313,8 +353,18 @@
 					<onclick>Plex.PlayWith(VideoDefaultPlayer)</onclick>
 				</item>
 				<item>
-					<visible>!IsEmpty(ListItem.Property(PlexExtras))</visible>
+					<visible>!IsEmpty(ListItem.Property(PlexExtras)) + !container.content(seasons)</visible>
 					<label>41008</label>
+					<label2>P</label2>
+					<thumb>-</thumb>
+					<onclick condition="!Skin.String(showcast,true)">Skin.SetString(showcast,true)</onclick>
+					<onclick condition="Skin.String(showcast,true)">Skin.SetString(showcast,false)</onclick>
+					<onclick condition="!Skin.String(showcast,true)">Control.SetFocus(3)</onclick>
+					<onclick condition="Skin.String(showcast,true)">Control.SetFocus(8000)</onclick>
+				</item>
+				<item>
+					<visible>!IsEmpty(ListItem.Property(PlexExtras)) + container.content(seasons)</visible>
+					<label>31137</label>
 					<label2>P</label2>
 					<thumb>-</thumb>
 					<onclick condition="!Skin.String(showcast,true)">Skin.SetString(showcast,true)</onclick>
@@ -580,6 +630,7 @@
 		<posx>col-1-begin</posx>
 		<posy>row-2-begin</posy>
 		<control type="label">
+			<visible>!IsEmpty(ListItem.Property(PlexExtras)) + !container.content(seasons)</visible>
 			<posx>0</posx>
 			<posy>42</posy>
 			<width>8-col-gutter</width>
@@ -587,6 +638,17 @@
 			<font>itemTitleSmall</font>
 			<textcolor>black</textcolor>
 			<label>$LOCALIZE[41008]</label>
+			<shadowcolor>-</shadowcolor>
+		</control>
+		<control type="label">
+			<visible>!IsEmpty(ListItem.Property(PlexExtras)) + container.content(seasons)</visible>
+			<posx>0</posx>
+			<posy>42</posy>
+			<width>8-col-gutter</width>
+			<align>left</align>
+			<font>itemTitleSmall</font>
+			<textcolor>black</textcolor>
+			<label>$LOCALIZE[31137]</label>
 			<shadowcolor>-</shadowcolor>
 		</control>
 	</control>

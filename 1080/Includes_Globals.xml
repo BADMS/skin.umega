@@ -504,7 +504,7 @@
 			<posx>0</posx>
 			<posy>11</posy>
 			<control type="grouplist">
-				<visible>!Skin.string(showtvinfos,1) + !Window.Isactive(10090)</visible>
+				<visible>!Window.Isactive(10090)</visible>
 				<posx>186</posx>
 				<posy>0</posy>
 				<width>20-col</width>
@@ -544,7 +544,7 @@
 					<label>o >></label>
 				</control>
 				<control type="label">
-					<visible>!Skin.string(showtvinfos,1) + container.content(tvshows)</visible>
+					<visible>[container.content(tvshows) | container.content(movies)]</visible>
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
@@ -565,7 +565,7 @@
 					<label>W &#60;/-></label>
 				</control>
 				<control type="label">
-					<visible>Skin.string(showtvinfos,1) + container.content(tvshows) | Window.Isactive(10090) + container.content(movie)</visible>
+					<visible>Window.Isactive(10090) + [container.content(tvshows) | container.content(movies)]</visible>
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>

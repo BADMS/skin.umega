@@ -70,7 +70,7 @@
 						<align>left</align>
 						<font>pageTitle</font>
 						<textcolor>black</textcolor>
-						<label>$INFO[ListItem.label]</label>
+						<label>1111$INFO[skin.string(mpath)]</label>
 						<scroll>true</scroll>
 						<shadowcolor>-</shadowcolor>
 					</control>

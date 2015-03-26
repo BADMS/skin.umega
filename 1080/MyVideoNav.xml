@@ -2,7 +2,6 @@
 <window id="6">
 	<defaultcontrol>777</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>Skin.Reset(showtvinfos)</onload>
 	<onload condition="Container.PlexContent(Movies)">Skin.SetString(SectionType,movies)</onload>
 	<onload condition="Container.PlexContent(TVShows)">Skin.SetString(SectionType,tvshows)</onload>
 	<onload condition="Container.PlexContent(Seasons)">Skin.SetString(SectionType,tvshows)</onload>
@@ -13,14 +12,12 @@
 	<onunload>SetFocus(777)</onunload>
 	<onunload>CancelAlarm(controlViewmode,true)</onunload>
 	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
-	<onunload>Skin.Reset(showtvinfos)</onunload>
 	<controls>
 		<include>globalBackground</include>
-		<include>viewTVShowInfo</include>
 		<!--default background-->
 		<control type="group">
 			<!--window fader-->
-			<animation type="conditional" condition="Skin.String(showtvinfos,1) | window.next(0) | window.next(1)">
+			<animation type="conditional" condition="window.next(0) | window.next(1)">
 				<effect type="fade" start="100" end="0" time="300"/>
 			</animation>
 			<!--shift page for certain modal dialogs-->
@@ -146,6 +143,9 @@
 			<control type="group" id="8001">
 				<visible>Control.IsVisible(60) + [container.content(episodes) | Container.PlexContent(Seasons)]</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8001).hasfocus">conditional</animation>
+				<animation type="windowclose">
+					<effect type="fade" start="100" end="0" time="300" delay="0"/>
+				</animation>
 				<control type="scrollbar" id="60">
 					<posx>46r</posx>
 					<posy>276</posy>
@@ -156,16 +156,19 @@
 			</control>
 			<!--tvshow page scrollbar-->
 			<control type="group" id="8000">
-				<visible>Control.IsVisible(60) + [container.content(tvshows) | container.content(movies)] + !container.content(episodes)</visible>
+				<visible>Control.IsVisible(60) + [container.content(tvshows) | container.content(movies) | Skin.String(SectionType,channels)] + !container.content(episodes)</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+				<animation type="windowclose">
+					<effect type="fade" start="100" end="0" time="300" delay="0"/>
+				</animation>
 				<control type="scrollbar" id="60">
 					<posx>646r</posx>
 					<posy>276</posy>
 					<height>672</height>
 					<onleft>777</onleft>
-					<onright condition="!container.content(tvshows)">777</onright>
-					<onright condition="container.content(tvshows)">SetFocus(9119)</onright>
-					<onright condition="container.content(tvshows)">Skin.SetString(showtvinfos,1)</onright>
+					<onright condition="!container.content(tvshows) + !container.content(movies)">777</onright>
+					<onright condition="[container.content(tvshows) | container.content(movies)]">Skin.SetString(tvGenre,$INFO[ListItem.Year,, &#xB7; ]$INFO[ListItem.Country,, &#xB7; ]$INFO[ListItem.Genre])</onright>
+					<onright condition="[container.content(tvshows) | container.content(movies)]">ActivateWindow(10090,$INFO[ListItem.FileNameAndPath],return)</onright>
 				</control>
 			</control>
 			<!--Sort / misc labels (footer)-->
@@ -184,7 +187,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] - $INFO[Container.PlexContent]</label>
+			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] - $INFO[Container.PlexContent] ---> $VAR[ListItemType]</label>
 		</control>
 	</controls>
 </window>

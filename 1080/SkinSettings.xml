@@ -113,6 +113,10 @@
 							<label>Custom menu items</label>
 							<onclick>noop</onclick>
 						</item>
+						<item id="5">
+							<label>Expert</label>
+							<onclick>noop</onclick>
+						</item>
 					</content>
 				</control>
 			</control>
@@ -641,10 +645,45 @@
 					<selected>!isEmpty(Skin.String(Channel9_Name))</selected>
 					<onright>609</onright>
 				</control>
+				<control type="button" id="301">
+					<visible>Container(8000).Hasfocus(5)</visible>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>selected</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<texturefocus>colors/selected.png</texturefocus>
+					<description>Custom auto select requires URL</description>
+					<label>Auto select this URL on home (url/menu): $INFO[Skin.String(Section1_Name_Menu)]</label>
+					<onclick>Skin.SetString(Section1_Name)</onclick>
+					<onclick>Skin.SetString(Section1_Name_Menu)</onclick>
+					<selected>!isEmpty(Skin.String(Section1_Name))</selected>
+					<onright>701</onright>
+				</control>
 			</control>
 			<!--reset buttons-->
 			<control type="group">
 				<posx>19-col</posx>
+				<control type="button" id="701">
+					<visible>Container(8000).Hasfocus(5)</visible>
+					<posy>120</posy>
+					<height>54</height>
+					<width>64</width>
+					<align>left</align>
+					<textoffsetx>18</textoffsetx>
+					<font>symbol</font>
+					<textcolor>selected</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<texturefocus>colors/selected.png</texturefocus>
+					<label>x</label>
+					<onleft>301</onleft>
+					<ondown>1</ondown>
+					<onclick>Skin.Reset(Section1_Name)</onclick>	
+					<onclick>Skin.Reset(Section1_Name_Menu)</onclick>	
+					<onclick>Skin.Reset(Section1_Name_Art)</onclick>	
+				</control>
 				<control type="button" id="501">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<posy>120</posy>
