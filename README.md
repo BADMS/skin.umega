@@ -13,12 +13,6 @@ Skin is 1920x1080p native, will work in other resolutions as well.
 
 Custom Menu Items URL shortcuts how to:
 
-First 3 channels need a plugin name ie. youtube, iplayer, iTunes, vimeo, lmwt etc (get from plex logs or plugin dir .py code)
-
-Next 6 use complete URL (Of course Plex (Windows Kodi) doesn't let you paste in keyboard box....)
-
-OK,so here we go.
-
 Get this: http://www.hot-keyboard.com/docs/paste_help.htm
 
 Enable PHT debug logging, start PHT and go to the channel and where you want shortcut to link to.
