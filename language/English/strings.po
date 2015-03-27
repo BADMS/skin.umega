@@ -1095,7 +1095,7 @@ msgid "* Plot hidden to avoid spoilers *"
 msgstr ""
 
 msgctxt "#32106"
-msgid "Tracks"
+msgid "Track(s)"
 msgstr ""
 
 msgctxt "#32107"

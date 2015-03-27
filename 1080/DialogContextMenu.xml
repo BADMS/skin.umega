@@ -66,9 +66,12 @@
 					<label>f01: $INFO[skin.string(f1Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f1)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f1Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1))">skin.setstring(f1Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f1Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + ListItem.Type(movie)">skin.setstring(f1Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !ListItem.Type(movie)">skin.setstring(f1Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1))">skin.setstring(f1,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f1)) +  !Skin.String(f1Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f1)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) +  Skin.String(f1Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f1)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) +  !Skin.String(f1Type,music) +  !Skin.String(f1Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f1)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f1)) + Skin.String(f1Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f1)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f1))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -76,9 +79,12 @@
 					<label>f02: $INFO[skin.string(f2Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f2)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f2Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f2Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f2))">skin.setstring(f2Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f2Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(2)) + ListItem.Type(movie)">skin.setstring(f2Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !ListItem.Type(movie)">skin.setstring(f2Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f2))">skin.setstring(f2,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f2)) +  !Skin.String(f2Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f2)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) +  Skin.String(f2Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f2)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) +  !Skin.String(f2Type,music) +  !Skin.String(f2Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f2)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f2)) + Skin.String(f2Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f2)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f2))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -86,9 +92,12 @@
 					<label>f03: $INFO[skin.string(f3Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f3)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f3Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f3Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f3))">skin.setstring(f3Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f3Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + ListItem.Type(movie)">skin.setstring(f3Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !ListItem.Type(movie)">skin.setstring(f3Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f3))">skin.setstring(f3,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f3)) +  !Skin.String(f3Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f3)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) +  Skin.String(f3Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f3)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) +  !Skin.String(f3Type,music) +  !Skin.String(f3Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f3)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f3)) + Skin.String(f3Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f3)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f3))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -96,9 +105,12 @@
 					<label>f04: $INFO[skin.string(f4Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f4)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f4Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f4Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f4))">skin.setstring(f4Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f4Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + ListItem.Type(movie)">skin.setstring(f4Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !ListItem.Type(movie)">skin.setstring(f4Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f4))">skin.setstring(f4,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f4)) +  !Skin.String(f4Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f4)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) +  Skin.String(f4Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f4)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) +  !Skin.String(f4Type,music) +  !Skin.String(f4Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f4)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f4)) + Skin.String(f4Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f4)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f4))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -106,9 +118,12 @@
 					<label>f05: $INFO[skin.string(f5Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f5)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f5Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f5Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f5))">skin.setstring(f5Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f5Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + ListItem.Type(movie)">skin.setstring(f5Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !ListItem.Type(movie)">skin.setstring(f5Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f5))">skin.setstring(f5,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f5)) +  !Skin.String(f5Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f5)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) +  Skin.String(f5Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f5)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) +  !Skin.String(f5Type,music) +  !Skin.String(f5Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f5)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f5)) + Skin.String(f5Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f5)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f5))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -116,9 +131,12 @@
 					<label>f06: $INFO[skin.string(f6Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f6)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f6Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f6Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f6))">skin.setstring(f6Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f6Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + ListItem.Type(movie)">skin.setstring(f6Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !ListItem.Type(movie)">skin.setstring(f6Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f6))">skin.setstring(f6,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f6)) +  !Skin.String(f6Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f6)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) +  Skin.String(f6Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f6)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) +  !Skin.String(f6Type,music) +  !Skin.String(f6Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f6)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f6)) + Skin.String(f6Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f6)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f6))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -126,9 +144,12 @@
 					<label>f07: $INFO[skin.string(f7Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f7)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f7Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f7Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f7))">skin.setstring(f7Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f7Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + ListItem.Type(movie)">skin.setstring(f7Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !ListItem.Type(movie)">skin.setstring(f7Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f7))">skin.setstring(f7,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f7)) +  !Skin.String(f7Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f7)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) +  Skin.String(f7Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f7)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) +  !Skin.String(f7Type,music) +  !Skin.String(f7Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f7)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f7)) + Skin.String(f7Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f7)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f7))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -136,9 +157,12 @@
 					<label>f08: $INFO[skin.string(f8Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f8)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f8Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f8Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f8))">skin.setstring(f8Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f8Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + ListItem.Type(movie)">skin.setstring(f8Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !ListItem.Type(movie)">skin.setstring(f8Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f8))">skin.setstring(f8,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f8)) +  !Skin.String(f8Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f8)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) +  Skin.String(f8Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f8)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) +  !Skin.String(f8Type,music) +  !Skin.String(f8Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f8)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f8)) + Skin.String(f8Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f8)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f8))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -146,9 +170,12 @@
 					<label>f09: $INFO[skin.string(f9Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f9)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f9Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f9Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f9))">skin.setstring(f9Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f9Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + ListItem.Type(movie)">skin.setstring(f9Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !ListItem.Type(movie)">skin.setstring(f9Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f9))">skin.setstring(f9,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f9)) +  !Skin.String(f9Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f9)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) +  Skin.String(f9Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f9)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) +  !Skin.String(f9Type,music) +  !Skin.String(f9Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f9)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f9)) + Skin.String(f9Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f9)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f9))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -156,9 +183,12 @@
 					<label>f10: $INFO[skin.string(f10Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f10)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f10Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f10Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f10))">skin.setstring(f10Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f10Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + ListItem.Type(movie)">skin.setstring(f10Type,preplay)</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !ListItem.Type(movie)">skin.setstring(f10Type,$INFO[Skin.String(SectionType)])</onclick>
 					<onclick condition="isEmpty(Skin.String(f10))">skin.setstring(f10,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="!isEmpty(Skin.String(f10)) +  !Skin.String(f10Type,music)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f10)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) +  Skin.String(f10Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f10)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) +  !Skin.String(f10Type,music) +  !Skin.String(f10Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f10)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f10)) + Skin.String(f10Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f10)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f10))">Dialog.Close(all,true)</onclick>
 				</item>
@@ -259,7 +289,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>DialogID</include>
-			<label>DialogContextMenu.xml - st. $INFO[Skin.String(SectionType)] ft. $INFO[Container.FirstTitle] pt. $INFO[Container.Property(parentTitle)] ===> fn. $INFO[Container.FolderName]  => ll. $INFO[ListItem.Label] >300. $INFO[Container(300).ListItem(0).Label] >pos. $INFO[Container.Position] url. $INFO[ListItem.FileNameAndPath]</label>
+			<label>DialogContextMenu.xml - st. $INFO[Skin.String(SectionType)] ft. $INFO[Container.FirstTitle] pt. $INFO[Container.Property(parentTitle)] ===> fn. $INFO[Container.FolderName]  => ll. $INFO[ListItem.Label] >300. $INFO[Container(300).ListItem(0).Label] >pos. $INFO[Container.Position] url. $INFO[ListItem.FileNameAndPath] =$VAR[ListItemType]</label>
 			<scroll>true</scroll>
 		</control>
 	</controls>
