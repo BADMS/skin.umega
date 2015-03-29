@@ -2,18 +2,20 @@
 <window id="10090">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<onload condition="!Window.Previous(fullscreenvideo)">Skin.Reset(preSkip)</onload>
 	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
 	<onload condition="!Container.PlexContent(Episode) | Container.PlexContent(Episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">Skin.Reset(playerPlot)</onload>
 	<onload condition="Container.PlexContent(Episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">Skin.SetString(playerPlot,$LOCALIZE[32105])</onload>
 	<onload condition="Container.PlexContent(Episode) + IsEmpty(ListItem.Plot)">Skin.SetString(playerPlot,There is no description available for this. You can add one for it in the Media Manager.)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Plex.PlayWith(VideoDefaultPlayer)</onload>
-	<onload condition="Skin.Hassetting(disableTVPP) + Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">action(back)</onload>
+	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Skin.SetString(preSkip,1)</onload>
+	<onload condition="Skin.Hassetting(disableTVPP) + Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched) | Skin.String(preSkip,1)]">action(back)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">action(back)</onload>
 	<controls>
 		<control type="group">
 			<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
-			<visible>![Skin.Hassetting(disableTVPP) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]</visible>
+			<visible>![Skin.Hassetting(disableTVPP) + !Skin.String(preSkipEV,1) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]</visible>
 			<include>fadeInOutPP</include>
 			<!--background / fanart-->
 			<control type="image">
@@ -419,7 +421,7 @@
 	<!--content is tvshow episode or content is from a plugin-->
 	<control type="group">
 		<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)] + [Container.PlexContent(Clip) | container.content(episode)]</visible>
-		<visible>![Skin.Hassetting(disableTVPP) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]</visible>
+		<visible>![Skin.Hassetting(disableTVPP) + !Skin.String(preSkipEV,1) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]</visible>
 		<!--animations-->
 		<include>modalDialogInOut</include>
 		<!--thumbnail if available-->
@@ -495,6 +497,8 @@
 				<width>12-col</width>
 				<height>1-row</height>
 				<itemgap>3</itemgap>
+				<onup>Skin.SetString(preSkipEV,1)</onup>
+				<ondown>Skin.SetString(preSkipEV,1)</ondown>
 				<onup>XBMC.NextItem</onup>
 				<ondown>XBMC.PrevItem</ondown>
 				<onleft>Back</onleft>
@@ -561,6 +565,7 @@
 						<label>31075</label>
 						<label2>></label2>
 					<thumb>-</thumb>
+					<onclick>Skin.Reset(preSkipEV)</onclick>
 					<onclick>Plex.PlayWith(VideoDefaultPlayer)</onclick>
 				</item>
 				<item id="2">
@@ -719,7 +724,7 @@
 	</control>
 </control>
 <control type="group">
-	<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
+	<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)] | !Skin.String(preSkip,1)</visible>
 	<posx>col-4-begin</posx>
 	<posy>row-18-begin</posy>
 	<control type="group">
