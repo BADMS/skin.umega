@@ -64,7 +64,8 @@
 			<content>
 				<item id="1">
 					<label>f01: $INFO[skin.string(f1Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f1)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1))">skin.setstring(f1Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.FolderName)">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f1Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f1Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1)) + ListItem.Type(movie)">skin.setstring(f1Type,preplay)</onclick>
@@ -77,7 +78,8 @@
 				</item>
 				<item id="2">
 					<label>f02: $INFO[skin.string(f2Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f2)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f2Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2))">skin.setstring(f2Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.FolderName)">skin.setstring(f2Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f2Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f2)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f2Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(2)) + ListItem.Type(movie)">skin.setstring(f2Type,preplay)</onclick>
@@ -90,7 +92,8 @@
 				</item>
 				<item id="3">
 					<label>f03: $INFO[skin.string(f3Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f3)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f3Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3))">skin.setstring(f3Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.FolderName)">skin.setstring(f3Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f3Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f3)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f3Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f3)) + ListItem.Type(movie)">skin.setstring(f3Type,preplay)</onclick>
@@ -103,7 +106,8 @@
 				</item>
 				<item id="4">
 					<label>f04: $INFO[skin.string(f4Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f4)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f4Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4))">skin.setstring(f4Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.FolderName)">skin.setstring(f4Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f4Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f4)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f4Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f4)) + ListItem.Type(movie)">skin.setstring(f4Type,preplay)</onclick>
@@ -116,7 +120,8 @@
 				</item>
 				<item id="5">
 					<label>f05: $INFO[skin.string(f5Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f5)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f5Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5))">skin.setstring(f5Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.FolderName)">skin.setstring(f5Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f5Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f5)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f5Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f5)) + ListItem.Type(movie)">skin.setstring(f5Type,preplay)</onclick>
@@ -129,7 +134,8 @@
 				</item>
 				<item id="6">
 					<label>f06: $INFO[skin.string(f6Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f6)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f6Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6))">skin.setstring(f6Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.FolderName)">skin.setstring(f6Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f6Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f6)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f6Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f6)) + ListItem.Type(movie)">skin.setstring(f6Type,preplay)</onclick>
@@ -142,7 +148,8 @@
 				</item>
 				<item id="7">
 					<label>f07: $INFO[skin.string(f7Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f7)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f7Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7))">skin.setstring(f7Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.FolderName)">skin.setstring(f7Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f7Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f7)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f7Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f7)) + ListItem.Type(movie)">skin.setstring(f7Type,preplay)</onclick>
@@ -155,7 +162,8 @@
 				</item>
 				<item id="8">
 					<label>f08: $INFO[skin.string(f8Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f8)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f8Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8))">skin.setstring(f8Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.FolderName)">skin.setstring(f8Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f8Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f8)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f8Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f8)) + ListItem.Type(movie)">skin.setstring(f8Type,preplay)</onclick>
@@ -168,7 +176,8 @@
 				</item>
 				<item id="9">
 					<label>f09: $INFO[skin.string(f9Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f9)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f9Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9))">skin.setstring(f9Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.FolderName)">skin.setstring(f9Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f9Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f9)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f9Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f9)) + ListItem.Type(movie)">skin.setstring(f9Type,preplay)</onclick>
@@ -181,7 +190,8 @@
 				</item>
 				<item id="10">
 					<label>f10: $INFO[skin.string(f10Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f10)) + isEmpty(Container.Property(parentTitle))">skin.setstring(f10Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10))">skin.setstring(f10Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.FolderName)">skin.setstring(f10Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.Property(parentTitle))">skin.setstring(f10Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f10)) + Skin.String(SectionType,sharedcontent)">skin.setstring(f10Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f10)) + ListItem.Type(movie)">skin.setstring(f10Type,preplay)</onclick>

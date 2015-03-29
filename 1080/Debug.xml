@@ -53,6 +53,12 @@
 		<value condition="Container.PlexContent(PhotoAlbums)">photoalbums</value>
 		<value/>
 	</variable>
+	<variable name="ListItemTypeDialog">
+		<value condition="Skin.String(SectionType,channels)">$LOCALIZE[32107]</value>
+		<value condition="Skin.String(SectionType,tvshows)">$LOCALIZE[31143]</value>
+		<value condition="Skin.String(SectionType,movies)">$LOCALIZE[31142]</value>
+		<value condition="Skin.String(SectionType,music)">$LOCALIZE[31002]</value>
+	</variable>
 	<variable name="ListItemType">
 		<value condition="ListItem.Type(files)">files</value>
 		<value condition="ListItem.Type(file)">file</value>
