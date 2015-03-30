@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol always="true">1000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<onunload condition="Skin.String(preSkip,1)">back</onunload>
 	<include>fadeInOut</include>
 	<controls>
 		<include>modalDialog</include>
@@ -86,6 +87,10 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
+					<!--<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + container.content(photos)">skin.setstring(f1Thumb,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos) + !isEmpty(Listitem.art(poster))">skin.setstring(f1Thumb,$INFO[Listitem.art(poster)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos) + !isEmpty(Listitem.Thumb)">skin.setstring(f1Thumb,$INFO[ListItem.Thumb])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + container.content(photos)">skin.setstring(f1Type,picture)</onclick>-->
 					<label>f01: $INFO[skin.string(f1Title)]</label>
 					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos)">skin.setstring(f1Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
