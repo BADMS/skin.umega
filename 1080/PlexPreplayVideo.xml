@@ -618,7 +618,7 @@
 		<aspectratio>stretch</aspectratio>
 	</control>
 	<control type="multiimage">
-		<visible>!IsEmpty(Skin.String(castFanartLocation))</visible>
+		<visible>!IsEmpty(Skin.String(castFanartLocation)) + container.content(movie)</visible>
 		<posx>514</posx>
 		<posy>10</posy>
 		<width>133</width>
@@ -676,7 +676,7 @@
 				<width>111</width>
 				<height>111</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture border="0" fallback="candy/default.png">$INFO[ListItem.Art(thumb)]</texture>
+				<texture border="0" fallback="candy/default.png">$VAR[imageSpoiler]</texture>
 				<bordersize>0</bordersize>
 				<colordiffuse>ffFFFFFF</colordiffuse>
 			</control>
@@ -707,7 +707,7 @@
 				<width>111</width>
 				<height>111</height>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<texture border="0" fallback="candy/default.png">$INFO[ListItem.Art(thumb)]</texture>
+				<texture border="0" fallback="candy/default.png">$VAR[imageSpoiler]</texture>
 				<bordersize>0</bordersize>
 				<colordiffuse>ffFFFFFF</colordiffuse>
 			</control>

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Skin variables-->
 <includes>
+	<variable name="imageSpoiler">
+		<value condition="!ListItem.Type(episode)">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="IsEmpty(ListItem.Art(thumb))]">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<value>$INFO[ListItem.Property(Fanart_Image)]</value>
+	</variable>
 	<variable name="imagePerType">
 		<value condition="!Control.HasFocus(300) + Skin.String(SectionType,tvshows)">$INFO[Skin.String(menuArtTV)]</value>
 		<value condition="!ControlGroup(777).HasFocus + !ControlGroup(8000).HasFocus + !ControlGroup(8001).HasFocus + Container.Content(empty)">backgrounds/black.png</value>
