@@ -4,8 +4,6 @@
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<!-- bg's -->
-		<include>BeginnersBackground</include>
-		<include>SlideshowDimmed</include>
 		<control type="image">
 			<width>1280</width>
 			<height>100</height>

@@ -298,8 +298,11 @@
 				</animation>
 			</control>
 		</control>
-		<include>debugInfos</include>
-		<include>Grid</include>
-		<include>Non16x9Cache</include>
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DialogID</include>
+			<label>MyPlexLogin.xml</label>
+		</control>
 	</controls>
 </window>

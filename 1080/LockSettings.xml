@@ -166,5 +166,11 @@
 			<posy>0</posy>
 			<include>Clock</include>
 		</control>
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DialogID</include>
+			<label>LockSettings.xml</label>
+		</control>
 	</controls>
 </window>

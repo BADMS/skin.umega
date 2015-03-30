@@ -10,7 +10,6 @@
 	<include file="Includes_Grid.xml"/>
 	<include file="Includes_Variables.xml"/>
 	<include file="Includes_Globals.xml"/>
-	<include file="Views.xml"/>
 	<include file="ViewsVideos.xml"/>
 	<include file="ViewsChannels.xml"/>
 	<include file="ViewsMusic.xml"/>
