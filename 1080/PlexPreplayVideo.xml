@@ -5,9 +5,9 @@
 	<onload>Skin.Reset(preSkipEV)</onload>
 	<onload condition="!Window.Previous(fullscreenvideo)">Skin.Reset(preSkip)</onload>
 	<onload condition="!Skin.Hassetting(disableEpAutoAdv) + Window.Previous(fullscreenvideo) + ![ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">XBMC.NextItem</onload>
-	<onload condition="!Container.PlexContent(Episode) | Container.PlexContent(Episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">Skin.Reset(playerPlot)</onload>
-	<onload condition="Container.PlexContent(Episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">Skin.SetString(playerPlot,$LOCALIZE[32105])</onload>
-	<onload condition="Container.PlexContent(Episode) + IsEmpty(ListItem.Plot)">Skin.SetString(playerPlot,There is no description available for this. You can add one for it in the Media Manager.)</onload>
+	<onunload condition="!Container.PlexContent(Episode) | Container.PlexContent(Episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">Skin.Reset(playerPlot)</onunload>
+	<onunload condition="Container.PlexContent(Episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">Skin.SetString(playerPlot,$LOCALIZE[32105])</onunload>
+	<onunload condition="Container.PlexContent(Episode) + IsEmpty(ListItem.Plot)">Skin.SetString(playerPlot,$LOCALIZE[31009])</onunload>
 	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Skin.SetString(preSkip,1)</onload>

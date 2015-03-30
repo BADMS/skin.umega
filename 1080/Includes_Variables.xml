@@ -43,6 +43,13 @@
 		<value condition="IsEmpty(ListItem.Art(thumb))]">candy/default.png</value>
 		<value>candy/spoiler.jpg</value>
 	</variable>
+	<variable name="listItemEpisodePreview">
+		<value condition="!ListItem.Type(episode)">$INFO[ListItem.Thumb]</value>
+		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Thumb]</value>
+		<value condition="[Container.PlexContent(Episodes) + !IsEmpty(Container.Property(primaryFilterActivated))] + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[ListItem.Thumb]</value>
+		<value condition="IsEmpty(ListItem.Thumb)]">candy/default.png</value>
+		<value>candy/spoiler.jpg</value>
+	</variable>
 	<variable name="homelistItemVideoPreview">
 		<value condition="!ListItem.Type(episode)">$INFO[Listitem.thumb]</value>
 		<value condition="ListItem.Type(episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">$INFO[Listitem.thumb]</value>
