@@ -1245,3 +1245,7 @@ msgstr "Shared Content"
 msgctxt "#32205"
 msgid "Play File"
 msgstr "Play File"
+
+msgctxt "#32206"
+msgid "The list is empty go back or press f!"
+msgstr "The list is empty go back or press f!"

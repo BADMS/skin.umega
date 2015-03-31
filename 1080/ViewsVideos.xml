@@ -1010,24 +1010,21 @@
 <include name="viewFilteredEmpty">
 	<control type="group">
 		<visible>Container.Content(empty)</visible>
-		<control type="label">
-			<posy>30</posy>
-			<posx>0</posx>
-			<width>1280</width>
-			<align>center</align>
-			<aligny>center</aligny>
-			<height>60</height>
-			<label>The list is empty go back or press f!</label>
-			<font>regular</font>
-			<textcolor>selected</textcolor>
-			<shadowcolor>FF222222</shadowcolor>
-			<animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
-		</control>
 		<control type="image">
 			<posy>-95</posy>
 			<posx>-312</posx>
 			<include>FullScreenScaled</include>
-			<texture>candy/default.png</texture>
+			<texture>candy/empty.jpg</texture>
+		</control>
+		<control type="label">
+			<posy>row-8-begin</posy>
+			<posx>0</posx>
+			<width>1280</width>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>$LOCALIZE[32206]</label>
+			<font>pageTitle</font>
+			<textcolor>selected</textcolor>
 		</control>
 	</control>
 </include>

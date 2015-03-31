@@ -81,7 +81,7 @@
 						<align>left</align>
 						<font>itemTitleSmall</font>
 						<textcolor>black</textcolor>
-						<label>$INFO[ListItem.duration,, mins. ]</label>
+						<label>$INFO[ListItem.duration,, $LOCALIZE[41015] ]</label>
 						<shadowcolor>-</shadowcolor>
 					</control>
 					<!-- watched? -->
