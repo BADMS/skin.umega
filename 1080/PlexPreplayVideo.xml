@@ -13,6 +13,7 @@
 	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Skin.SetString(preSkip,1)</onload>
 	<onload condition="Skin.Hassetting(disableTVPP) + Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched) | Skin.String(preSkip,1)]">action(back)</onload>
 	<onload condition="Skin.Hassetting(disableClipPP) + Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">action(back)</onload>
+	<onload condition="!Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)">AlarmClock(controlViewmode,SetFocus(8000),00:00,silent)</onload>
 	<controls>
 		<control type="group">
 			<visible>![Skin.Hassetting(disableClipPP) + Skin.String(SectionType,channels)]</visible>
@@ -283,8 +284,8 @@
 				<width>8-col</width>
 				<height>6-row</height>
 				<itemgap>3</itemgap>
-					<onright condition="!Skin.String(showcast,true)">Skin.SetString(showcast,true)</onright>
-					<onright condition="!Skin.String(showcast,true)">Control.SetFocus(3)</onright>
+				<onright condition="!Skin.String(showcast,true)">Skin.SetString(showcast,true)</onright>
+				<onright condition="!Skin.String(showcast,true)">Control.SetFocus(3)</onright>
 				<onright condition="Skin.String(showcast,true) + !IsEmpty(ListItem.Property(PlexExtras))">3</onright>
 				<onright condition="IsEmpty(ListItem.Property(PlexExtras))">Back</onright>
 				<!--<onright condition="!Skin.String(showcast,true)">Back</onright>-->
