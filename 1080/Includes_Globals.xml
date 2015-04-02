@@ -565,11 +565,20 @@
 					<label>W &#60;/-></label>
 				</control>
 				<control type="label">
-					<visible>Window.Isactive(10090) + [container.content(tvshows) | container.content(movies)]</visible>
+					<visible>Window.Isactive(10090) + [container.content(tvshow) | container.content(seasons)]</visible>
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
 					<label>W &#60;></label>
+					<animation effect="fade" start="0" end="100" time="300" delay="0" condition="Window.Isactive(10090) + [container.content(tvshow) | container.content(seasons)]">conditional</animation>
+					<animation type="windowopen">
+						<effect type="fade" start="0" end="100" time="300" delay="300"/>
+						<effect type="slide" start="3-col" end="0" tween="cubic" easing="out" time="400" delay="300"/>
+					</animation>
+					<animation type="windowclose">
+						<effect type="fade" start="100" end="0" time="300" delay="300"/>
+						<effect type="slide" start="0" end="3-col" tween="cubic" easing="out" time="400" delay="300"/>
+					</animation>
 				</control>
 				<control type="label">
 					<visible>Window.Isactive(10090) + container.content(episode)</visible>
@@ -577,6 +586,12 @@
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
 					<label>+ -/</label>
+					<animation type="windowopen">
+						<effect type="fade" start="0" end="100" time="300" delay="300"/>
+					</animation>
+					<animation type="windowclose">
+						<effect type="fade" start="100" end="0" time="300" delay="300"/>
+					</animation>
 				</control>
 			</control>
 		</control>
