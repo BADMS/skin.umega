@@ -2,10 +2,20 @@
 <window>
 	<defaultcontrol always="true">1000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<onload>skin.reset(fThumb)</onload>
 	<onunload condition="Skin.String(preSkip,1)">back</onunload>
 	<include>fadeInOut</include>
 	<controls>
 		<include>modalDialog</include>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture background="true" fallback="" border="0">$INFO[skin.string(fThumb)]</texture>
+			<fadetime>200</fadetime>
+		</control>
 		<control type="grouplist" id="996">
 			<posx>col-10-begin</posx>
 			<posy>4-row</posy>
@@ -21,30 +31,6 @@
 			<font>itemTitle</font>
 			<textoffsetx>12</textoffsetx>
 			<texturefocus>UIControls/textButtonFO.png</texturefocus>
-		</control>
-		<control type="image">
-			<posx>col-3-begin</posx>
-			<posy>4-row</posy>
-			<width>6-col</width>
-			<height>576</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.art(poster)]</texture>
-			<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
-			<bordersize>3</bordersize>
-			<fadetime>200</fadetime>
-			<visible>!isempty(Listitem.art(poster))</visible>
-		</control>
-		<control type="image">
-			<posx>col-3-begin</posx>
-			<posy>4-row</posy>
-			<width>6-col</width>
-			<height>576</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" fallback="candy/default.png" border="0">$INFO[Listitem.thumb]</texture>
-			<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
-			<bordersize>3</bordersize>
-			<fadetime>200</fadetime>
-			<visible>isempty(Listitem.art(poster)) + !isempty(Listitem.thumb)</visible>
 		</control>
 		<control type="list" id="8000">
 			<posx>col-16-begin</posx>
@@ -87,148 +73,164 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
-					<!--<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + container.content(photos)">skin.setstring(f1Thumb,$INFO[ListItem.FileNameAndPath])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos) + !isEmpty(Listitem.art(poster))">skin.setstring(f1Thumb,$INFO[Listitem.art(poster)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos) + !isEmpty(Listitem.Thumb)">skin.setstring(f1Thumb,$INFO[ListItem.Thumb])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + container.content(photos)">skin.setstring(f1Type,picture)</onclick>-->
 					<label>f01: $INFO[skin.string(f1Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos)">skin.setstring(f1Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f1Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f1Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) + Skin.String(f1Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f1)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs)">skin.setstring(f1Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f1Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f1Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f1Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f1)) + ListItem.Type(movie)">skin.setstring(f1Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + !ListItem.Type(movie)">skin.setstring(f1Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs) + !container.content(photos)">skin.setstring(f1,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + container.content(photos)">skin.setstring(f1Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f1Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f1)) + !container.content(songs)">skin.setstring(f1,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f1)) +  Skin.String(f1Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f1)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f1)) +  !Skin.String(f1Type,music) +  !Skin.String(f1Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f1)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) +  !Skin.String(f1Type,music) +  !Skin.String(f1Type,preplay) + !Skin.String(f1Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f1)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f1)) + Skin.String(f1Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f1)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f1))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f1)) + !Skin.String(f1Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="2">
 					<label>f02: $INFO[skin.string(f2Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f2)) + !container.content(songs) + !container.content(photos)">skin.setstring(f2Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f2Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f2Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f2)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f2Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) + Skin.String(f2Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f2)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !container.content(songs)">skin.setstring(f2Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f2Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f2Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f2Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(2)) + ListItem.Type(movie)">skin.setstring(f2Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f2)) + !ListItem.Type(movie)">skin.setstring(f2Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f2)) + !container.content(songs) + !container.content(photos)">skin.setstring(f2,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + container.content(photos)">skin.setstring(f2Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f2Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f2)) + !container.content(songs)">skin.setstring(f2,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f2)) +  Skin.String(f2Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f2)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f2)) +  !Skin.String(f2Type,music) +  !Skin.String(f2Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f2)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) +  !Skin.String(f2Type,music) +  !Skin.String(f2Type,preplay) + !Skin.String(f2Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f2)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f2)) + Skin.String(f2Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f2)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f2))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f2)) + !Skin.String(f2Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="3">
 					<label>f03: $INFO[skin.string(f3Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f3)) + !container.content(songs) + !container.content(photos)">skin.setstring(f3Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f3Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f3Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f3)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f3Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) + Skin.String(f3Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f3)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !container.content(songs)">skin.setstring(f3Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f3Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f3Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f3Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f3)) + ListItem.Type(movie)">skin.setstring(f3Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f3)) + !ListItem.Type(movie)">skin.setstring(f3Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f3)) + !container.content(songs) + !container.content(photos)">skin.setstring(f3,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + container.content(photos)">skin.setstring(f3Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f3Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f3)) + !container.content(songs)">skin.setstring(f3,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f3)) +  Skin.String(f3Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f3)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f3)) +  !Skin.String(f3Type,music) +  !Skin.String(f3Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f3)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) +  !Skin.String(f3Type,music) +  !Skin.String(f3Type,preplay) + !Skin.String(f3Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f3)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f3)) + Skin.String(f3Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f3)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f3))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f3)) + !Skin.String(f3Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="4">
 					<label>f04: $INFO[skin.string(f4Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f4)) + !container.content(songs) + !container.content(photos)">skin.setstring(f4Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f4Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f4Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f4)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f4Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) + Skin.String(f4Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f4)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !container.content(songs)">skin.setstring(f4Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f4Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f4Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f4Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f4)) + ListItem.Type(movie)">skin.setstring(f4Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f4)) + !ListItem.Type(movie)">skin.setstring(f4Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f4)) + !container.content(songs) + !container.content(photos)">skin.setstring(f4,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + container.content(photos)">skin.setstring(f4Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f4Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f4)) + !container.content(songs)">skin.setstring(f4,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f4)) +  Skin.String(f4Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f4)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f4)) +  !Skin.String(f4Type,music) +  !Skin.String(f4Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f4)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) +  !Skin.String(f4Type,music) +  !Skin.String(f4Type,preplay) + !Skin.String(f4Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f4)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f4)) + Skin.String(f4Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f4)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f4))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f4)) + !Skin.String(f4Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="5">
 					<label>f05: $INFO[skin.string(f5Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f5)) + !container.content(songs) + !container.content(photos)">skin.setstring(f5Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f5Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f5Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f5)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f5Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) + Skin.String(f5Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f5)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !container.content(songs)">skin.setstring(f5Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f5Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f5Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f5Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f5)) + ListItem.Type(movie)">skin.setstring(f5Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f5)) + !ListItem.Type(movie)">skin.setstring(f5Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f5)) + !container.content(songs) + !container.content(photos)">skin.setstring(f5,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + container.content(photos)">skin.setstring(f5Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f5Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f5)) + !container.content(songs)">skin.setstring(f5,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f5)) +  Skin.String(f5Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f5)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f5)) +  !Skin.String(f5Type,music) +  !Skin.String(f5Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f5)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) +  !Skin.String(f5Type,music) +  !Skin.String(f5Type,preplay) + !Skin.String(f5Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f5)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f5)) + Skin.String(f5Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f5)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f5))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f5)) + !Skin.String(f5Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="6">
 					<label>f06: $INFO[skin.string(f6Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f6)) + !container.content(songs) + !container.content(photos)">skin.setstring(f6Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f6Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f6Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f6)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f6Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) + Skin.String(f6Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f6)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !container.content(songs)">skin.setstring(f6Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f6Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f6Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f6Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f6)) + ListItem.Type(movie)">skin.setstring(f6Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f6)) + !ListItem.Type(movie)">skin.setstring(f6Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f6)) + !container.content(songs) + !container.content(photos)">skin.setstring(f6,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + container.content(photos)">skin.setstring(f6Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f6Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f6)) + !container.content(songs)">skin.setstring(f6,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f6)) +  Skin.String(f6Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f6)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f6)) +  !Skin.String(f6Type,music) +  !Skin.String(f6Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f6)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) +  !Skin.String(f6Type,music) +  !Skin.String(f6Type,preplay) + !Skin.String(f6Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f6)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f6)) + Skin.String(f6Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f6)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f6))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f6)) + !Skin.String(f6Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="7">
 					<label>f07: $INFO[skin.string(f7Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f7)) + !container.content(songs) + !container.content(photos)">skin.setstring(f7Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f7Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f7Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f7)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f7Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) + Skin.String(f7Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f7)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !container.content(songs)">skin.setstring(f7Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f7Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f7Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f7Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f7)) + ListItem.Type(movie)">skin.setstring(f7Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f7)) + !ListItem.Type(movie)">skin.setstring(f7Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f7)) + !container.content(songs) + !container.content(photos)">skin.setstring(f7,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + container.content(photos)">skin.setstring(f7Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f7Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f7)) + !container.content(songs)">skin.setstring(f7,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f7)) +  Skin.String(f7Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f7)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f7)) +  !Skin.String(f7Type,music) +  !Skin.String(f7Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f7)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) +  !Skin.String(f7Type,music) +  !Skin.String(f7Type,preplay) + !Skin.String(f7Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f7)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f7)) + Skin.String(f7Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f7)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f7))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f7)) + !Skin.String(f7Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="8">
 					<label>f08: $INFO[skin.string(f8Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f8)) + !container.content(songs) + !container.content(photos)">skin.setstring(f8Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f8Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f8Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f8)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f8Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) + Skin.String(f8Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f8)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !container.content(songs)">skin.setstring(f8Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f8Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f8Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f8Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f8)) + ListItem.Type(movie)">skin.setstring(f8Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f8)) + !ListItem.Type(movie)">skin.setstring(f8Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f8)) + !container.content(songs) + !container.content(photos)">skin.setstring(f8,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + container.content(photos)">skin.setstring(f8Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f8Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f8)) + !container.content(songs)">skin.setstring(f8,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f8)) +  Skin.String(f8Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f8)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f8)) +  !Skin.String(f8Type,music) +  !Skin.String(f8Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f8)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) +  !Skin.String(f8Type,music) +  !Skin.String(f8Type,preplay) + !Skin.String(f8Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f8)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f8)) + Skin.String(f8Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f8)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f8))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f8)) + !Skin.String(f8Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="9">
 					<label>f09: $INFO[skin.string(f9Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f9)) + !container.content(songs) + !container.content(photos)">skin.setstring(f9Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f9Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f9Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f9)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f9Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) + Skin.String(f9Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f9)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !container.content(songs)">skin.setstring(f9Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f9Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f9Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f9Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f9)) + ListItem.Type(movie)">skin.setstring(f9Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f9)) + !ListItem.Type(movie)">skin.setstring(f9Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f9)) + !container.content(songs) + !container.content(photos)">skin.setstring(f9,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + container.content(photos)">skin.setstring(f9Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f9Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f9)) + !container.content(songs)">skin.setstring(f9,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f9)) +  Skin.String(f9Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f9)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f9)) +  !Skin.String(f9Type,music) +  !Skin.String(f9Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f9)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) +  !Skin.String(f9Type,music) +  !Skin.String(f9Type,preplay) + !Skin.String(f9Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f9)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f9)) + Skin.String(f9Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f9)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f9))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f9)) + !Skin.String(f9Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 				<item id="10">
 					<label>f10: $INFO[skin.string(f10Title)]</label>
-					<onclick condition="isEmpty(Skin.String(f10)) + !container.content(songs) + !container.content(photos)">skin.setstring(f10Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.FolderName) + !container.content(songs) + !container.content(photos)">skin.setstring(f10Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs) + !container.content(photos)">skin.setstring(f10Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
-					<onclick condition="isEmpty(Skin.String(f10)) + Skin.String(SectionType,sharedcontent) + !container.content(songs) + !container.content(photos)">skin.setstring(f10Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) + Skin.String(f10Type,picture)">skin.setstring(fThumb,$INFO[skin.string(f10)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !container.content(songs)">skin.setstring(f10Title,$VAR[ListItemTypeDialog]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.FolderName) + !container.content(songs)">skin.setstring(f10Title,$INFO[Container.FolderName]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !isEmpty(Container.Property(parentTitle)) + !container.content(songs)">skin.setstring(f10Title,$INFO[Container.Property(parentTitle)]/$INFO[ListItem.Label])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + Skin.String(SectionType,sharedcontent) + !container.content(songs)">skin.setstring(f10Title,$INFO[ListItem.Property(serverName)]/$INFO[ListItem.Label])</onclick>
 					<onclick condition="isEmpty(Skin.String(f10)) + ListItem.Type(movie)">skin.setstring(f10Type,preplay)</onclick>
-					<onclick condition="isEmpty(Skin.String(f10)) + !ListItem.Type(movie)">skin.setstring(f10Type,$INFO[Skin.String(SectionType)])</onclick>
-					<onclick condition="isEmpty(Skin.String(f10)) + !container.content(songs) + !container.content(photos)">skin.setstring(f10,$INFO[ListItem.FileNameAndPath])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + container.content(photos)">skin.setstring(f10Type,picture)</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !ListItem.Type(movie) + !container.content(photos)">skin.setstring(f10Type,$INFO[Skin.String(SectionType)])</onclick>
+					<onclick condition="isEmpty(Skin.String(f10)) + !container.content(songs)">skin.setstring(f10,$INFO[ListItem.FileNameAndPath])</onclick>
 					<onclick condition="!isEmpty(Skin.String(f10)) +  Skin.String(f10Type,preplay)">ActivateWindow(10090,$INFO[skin.string(f10)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f10)) +  !Skin.String(f10Type,music) +  !Skin.String(f10Type,preplay)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f10)],return)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) +  !Skin.String(f10Type,music) +  !Skin.String(f10Type,preplay) + !Skin.String(f10Type,picture)">ActivateWindow(MyVideoFiles,$INFO[skin.string(f10)],return)</onclick>
 					<onclick condition="!isEmpty(Skin.String(f10)) + Skin.String(f10Type,music)">ActivateWindow(MyMusicFiles,$INFO[skin.string(f10)],return)</onclick>
-					<onclick condition="!isEmpty(Skin.String(f10))">Dialog.Close(all,true)</onclick>
+					<onclick condition="!isEmpty(Skin.String(f10)) + !Skin.String(f10Type,picture)">Dialog.Close(all,true)</onclick>
 				</item>
 			</content>
 		</control>
