@@ -565,7 +565,7 @@
 					<label>W &#60;/-></label>
 				</control>
 				<control type="label">
-					<visible>Window.Isactive(10090) + [container.content(tvshow) | container.content(seasons)]</visible>
+					<visible>Window.Isactive(10090) + [container.content(movie) | container.content(seasons)]</visible>
 					<width>auto</width>
 					<font>symbol</font>
 					<textcolor>selected</textcolor>
