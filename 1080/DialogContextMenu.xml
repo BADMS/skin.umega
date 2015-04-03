@@ -8,32 +8,27 @@
 	<controls>
 		<include>modalDialog</include>
         <control type="group">
-			<visible>!isempty(skin.string(fThumb))</visible>
+			<animation effect="fade" start="100" end="0" time="200" condition="isempty(skin.string(fThumb))">Conditional</animation>	
 			<control type="image">
 				<include>FullScreenScaled</include>
 				<texture>$INFO[skin.string(fThumb)]</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
-			<control type="group">
-				<posx>522</posx>
-				<posy>11</posy>
-				<width>20-col</width>
+			<control type="label">
+				<posx>1794</posx>
+				<posy>1018</posy>
+				<width>auto</width>
 				<height>1-row</height>
-				<control type="label">
-					<posx>1272</posx>
-					<posy>row-18-begin</posy>
-					<width>auto</width>
-					<font>symbol</font>
-					<textcolor>selected</textcolor>
-					<label>W &#60;/-></label>
-					<animation type="visiblechange">
-						<effect type="fade" start="0" end="100" time="300" delay="300"/>
-					</animation>
-				</control>
+				<font>symbol</font>
+				<textcolor>selected</textcolor>
+				<label>W &#60;/-></label>
+				<animation type="visiblechange">
+					<effect type="fade" start="0" end="100" time="300" delay="300"/>
+				</animation>
 			</control>
         </control>
 		<control type="grouplist" id="996">
-			<visible>isempty(skin.string(fThumb))</visible>
+			<animation effect="fade" start="100" end="0" time="200" condition="!isempty(skin.string(fThumb))">Conditional</animation>	
 			<posx>col-10-begin</posx>
 			<posy>4-row</posy>
 			<itemgap>0</itemgap>
@@ -41,7 +36,7 @@
 			<onleft>8000</onleft>
 		</control>
 		<control type="button" id="1000">
-			<visible>isempty(skin.string(fThumb))</visible>
+			<animation effect="fade" start="100" end="0" time="200" condition="!isempty(skin.string(fThumb))">Conditional</animation>	
 			<description>Buttons</description>
 			<width>5-col</width>
 			<textcolor>unselected</textcolor>
@@ -260,7 +255,7 @@
 		</control>
 		<!--reset buttons channels-->
 		<control type="list" id="8001">
-			<visible>isempty(skin.string(fThumb))</visible>
+			<animation effect="fade" start="100" end="0" time="200" condition="!isempty(skin.string(fThumb))">Conditional</animation>	
 			<posx>col-21-begin</posx>
 			<posy>4-row</posy>
 			<width>5-col</width>
