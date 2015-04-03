@@ -327,6 +327,7 @@
 				<height>744</height>
 				<onleft>300</onleft>
 				<onright>60</onright>
+				<!--<ondown>activatewindow(musicinformation,$INFO[ListItem.FileNameAndPath],return)</ondown>-->
 				<ondown condition="Skin.String(showinfos,1)">Skin.Reset(showinfos)</ondown>
 				<ondown condition="!Skin.String(showinfos,1)">Skin.SetString(showinfos,1)</ondown>
 				<onup condition="!Skin.String(showinfos,1)">300</onup>

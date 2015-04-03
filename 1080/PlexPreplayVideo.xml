@@ -8,6 +8,13 @@
 	<onunload condition="!Container.PlexContent(Episode) | Container.PlexContent(Episode) + [ListItem.Status(Watched) | [!Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)]]]">Skin.Reset(playerPlot)</onunload>
 	<onunload condition="Container.PlexContent(Episode) + [Skin.HasSetting(disableTVSpoilers) + [ListItem.Status(InProgress) | ListItem.Status(UnWatched)] + !IsEmpty(ListItem.Plot)]">Skin.SetString(playerPlot,$LOCALIZE[32105])</onunload>
 	<onunload condition="Container.PlexContent(Episode) + IsEmpty(ListItem.Plot)">Skin.SetString(playerPlot,$LOCALIZE[31009])</onunload>
+	<onunload>Skin.Reset(tvGenre)</onunload>
+	<onunload>Skin.Reset(tvDuration)</onunload>
+	<onunload>Skin.Reset(tvCount)</onunload>
+	<onunload>Skin.Reset(tvRating)</onunload>
+	<onunload>Skin.Reset(tvStudio)</onunload>
+	<onunload>Skin.Reset(tvYear)</onunload>
+	<onunload>Skin.Reset(tvMPAA)</onunload>
 	<onload condition="Skin.Hassetting(disableClipPP) + !Window.Previous(fullscreenvideo) + Skin.String(SectionType,channels)">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Plex.PlayWith(VideoDefaultPlayer)</onload>
 	<onload condition="Skin.Hassetting(disableTVPP) + !Window.Previous(fullscreenvideo) + Container.Content(episode) + [IsEmpty(ListItem.Plot) | ListItem.Status(InProgress) | ListItem.Status(UnWatched)]">Skin.SetString(preSkip,1)</onload>
@@ -155,7 +162,7 @@
 					<align>left</align>
 					<font>itemTitleSmall</font>
 					<textcolor>black</textcolor>
-					<label>$INFO[Skin.String(tvGenre)]</label>
+					<label>$INFO[Skin.String(tvDuration),, $LOCALIZE[41015] ]</label>
 					<shadowcolor>-</shadowcolor>
 				</control>
 				<!-- watched? -->
@@ -171,12 +178,25 @@
 				</control>
 				<!-- MPAA flag -->
 				<control type="image">
+					<visible>!container.content(seasons)</visible>
 					<posy>-80</posy>
 					<posx>0</posx>
 					<width>543</width>
 					<height>30</height>
 					<align>left</align>
 					<texture>$INFO[Listitem.Art(mediaTag::contentRating)]</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+					<colordiffuse>black</colordiffuse>
+				</control>
+				<!-- MPAA flag -->
+				<control type="image">
+					<visible>container.content(seasons)</visible>
+					<posy>-80</posy>
+					<posx>0</posx>
+					<width>543</width>
+					<height>30</height>
+					<align>left</align>
+					<texture>$INFO[Skin.String(tvMPAA)]</texture>
 					<aspectratio align="left" aligny="center">keep</aspectratio>
 					<colordiffuse>black</colordiffuse>
 				</control>
@@ -246,6 +266,13 @@
 						<onclick>noop</onclick>
 					</item>
 					<item>
+						<label>$LOCALIZE[562]</label>
+						<visible>!isempty(Skin.String(tvYear))</visible>
+						<label2>$INFO[Skin.String(tvYear)]</label2>
+						<thumb>-</thumb>
+						<onclick>noop</onclick>
+					</item>
+					<item>
 						<label>$LOCALIZE[31135]</label>
 						<visible>!isempty(ListItem.director)</visible>
 						<label2>$INFO[ListItem.director]</label2>
@@ -253,9 +280,24 @@
 						<onclick>noop</onclick>
 					</item>
 					<item>
+						<label>$LOCALIZE[32113]</label>
+						<visible>!isempty(Skin.String(tvStudio))</visible>
+						<label2>$INFO[Skin.String(tvStudio)]</label2>
+						<thumb>-</thumb>
+						<onclick>noop</onclick>
+					</item>
+					<item>
 						<label>$LOCALIZE[515]</label>
 						<visible>!isempty(ListItem.Genre)</visible>
 						<label2>$INFO[ListItem.Genre]</label2>
+						<thumb>-</thumb>
+						<onclick>noop</onclick>
+						<visible>!Container.Content(episode)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[515]</label>
+						<visible>!isempty(Skin.String(tvGenre))</visible>
+						<label2>$INFO[Skin.String(tvGenre)]</label2>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
 						<visible>!Container.Content(episode)</visible>
@@ -272,6 +314,13 @@
 						<label>$LOCALIZE[563]</label>
 						<visible>!isempty(ListItem.Rating)</visible>
 						<label2>$INFO[ListItem.Rating,,/10]</label2>
+						<thumb>-</thumb>
+						<onclick>noop</onclick>
+					</item>
+					<item>
+						<label>$LOCALIZE[563]</label>
+						<visible>!isempty(Skin.String(tvRating))</visible>
+						<label2>$INFO[Skin.String(tvRating)]</label2>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
 					</item>
@@ -655,7 +704,7 @@
 			<align>left</align>
 			<font>itemTitleSmall</font>
 			<textcolor>black</textcolor>
-			<label>$LOCALIZE[31137]</label>
+			<label>$INFO[Skin.String(tvCount)] $LOCALIZE[31137]</label>
 			<shadowcolor>-</shadowcolor>
 		</control>
 	</control>

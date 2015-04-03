@@ -7,6 +7,7 @@
 	<onload condition="Container.PlexContent(Seasons)">Skin.SetString(SectionType,tvshows)</onload>
 	<onload condition="Container.PlexContent(Episodes)">Skin.SetString(SectionType,tvshows)</onload>
 	<onload condition="Container.PlexContent(Clips)">Skin.SetString(SectionType,clips)</onload>
+	<onload condition="Container.Content(homemovies)">Skin.SetString(SectionType,clips)</onload>
 	<onload condition="Container.PlexContent(Channel)">Skin.SetString(SectionType,channels)</onload>
 	<onload condition="StringCompare(ListItem.Label,)">AlarmClock(controlViewmode,SetFocus(777),00:02,silent)</onload>
 	<onunload>SetFocus(777)</onunload>
@@ -167,7 +168,14 @@
 					<height>672</height>
 					<onleft>777</onleft>
 					<onright condition="!container.content(tvshows) + !container.content(movies)">777</onright>
-					<onright condition="[container.content(tvshows) | container.content(movies)]">Skin.SetString(tvGenre,$INFO[ListItem.Year,, &#xB7; ]$INFO[ListItem.Country,, &#xB7; ]$INFO[ListItem.Genre])</onright>
+					<!--<onright condition="[container.content(tvshows) | container.content(movies)]">Skin.SetString(tvGenre,$INFO[ListItem.Year,, &#xB7; ]$INFO[ListItem.Country,, &#xB7; ]$INFO[ListItem.Genre])</onright>-->
+					<onright condition="container.content(tvshows)">Skin.SetString(tvGenre,$INFO[ListItem.genre])</onright>
+					<onright condition="container.content(tvshows)">Skin.SetString(tvDuration,$INFO[ListItem.duration])</onright>
+					<onright condition="container.content(tvshows)">Skin.SetString(tvCount,$INFO[ListItem.property(leafcount)])</onright>
+					<onright condition="container.content(tvshows)">Skin.SetString(tvRating,$INFO[ListItem.rating])</onright>
+					<onright condition="container.content(tvshows)">Skin.SetString(tvStudio,$INFO[ListItem.property(mediatag-studio)])</onright>
+					<onright condition="container.content(tvshows)">Skin.SetString(tvYear,$INFO[ListItem.year])</onright>
+					<onright condition="container.content(tvshows)">Skin.SetString(tvMPAA,$INFO[Listitem.Art(mediaTag::contentRating)])</onright>
 					<onright condition="[container.content(tvshows) | container.content(movies)]">ActivateWindow(10090,$INFO[ListItem.FileNameAndPath],return)</onright>
 				</control>
 			</control>
@@ -187,7 +195,7 @@
 		<include>DebugGrid</include>
 		<control type="label">
 			<include>WindowID</include>
-			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] - $INFO[Container.PlexContent] ---> $VAR[ListItemType]</label>
+			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] - $INFO[Container.PlexContent] ---> $VAR[ListItemType] CC=$VAR[ContainerContent]</label>
 		</control>
 	</controls>
 </window>
