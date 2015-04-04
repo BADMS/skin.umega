@@ -2,7 +2,8 @@
 <window>
     <defaultcontrol always="true">-</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
- 	<onunload condition="Skin.String(SectionType,channels) | Container.PlexContent(Channels) | Container.PlexContent(Channel)">AlarmClock(controlViewmode,SetFocus(777),00:00,silent)</onunload>
+ 	<!--<onunload condition="Skin.String(SectionType,channels) | Container.PlexContent(Channels) | Container.PlexContent(Channel)">AlarmClock(controlViewmode,SetFocus(777),00:00,silent)</onunload>-->
+ 	<onunload condition="!Window.IsActive(0)">AlarmClock(controlViewmode,SetFocus(777),00:01,silent)</onunload>
    <controls>
         <control type="label">
             <posy>0</posy>

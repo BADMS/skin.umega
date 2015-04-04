@@ -28,9 +28,6 @@
 		<include>HomeLists</include>
 		<include>CurrentUserAvatar</include>
 		<include>musicOverlay</include>
-		<control type="label">
-			<include>WindowID</include>
-			<label>Home.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] url. $INFO[Container(300).ListItem(0).FileNameAndPath]</label>
-		</control>
+		<include>debugInfos</include>
 	</controls>
 </window>

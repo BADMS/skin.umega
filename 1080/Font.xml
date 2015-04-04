@@ -52,6 +52,12 @@
 			<linespacing>0.9</linespacing>
 		</font>
 		<font>
+			<name>regulardebug</name>
+			<filename>sourceSansPro/regular.ttf</filename>
+			<size>20</size>
+			<linespacing>0.9</linespacing>
+		</font>
+		<font>
 			<name>regular</name>
 			<filename>sourceSansPro/regular.ttf</filename>
 			<size>36</size>

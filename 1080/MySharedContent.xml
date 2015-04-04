@@ -4,6 +4,7 @@
     <allowoverlay>yes</allowoverlay>
 	<onload>Skin.SetString(SectionType,sharedcontent)</onload>
 	<onunload>SetFocus(777)</onunload>
+	<onunload>Skin.SetString(serverName,$INFO[Listitem.Property(ServerName)])</onunload>
 	<!-- <onunload>Skin.Reset(SectionType)</onunload> -->
     <controls>
         <include>globalBackground</include>
@@ -83,9 +84,6 @@
 		<include>musicOverlay</include>
         <include>loadingIndicator</include>
 		<include>DebugGrid</include>
-        <control type="label">
-            <include>WindowID</include>
-            <label>MySharedContent.xml ---> $INFO[Skin.String(SectionType)]</label>
-        </control>
+		<include>debugInfos</include>
     </controls>
 </window>

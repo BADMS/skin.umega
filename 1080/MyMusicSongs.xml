@@ -106,9 +106,6 @@
 		<include>musicOverlay</include>
         <include>loadingIndicator</include>
 		<include>DebugGrid</include>
-        <control type="label">
-            <include>WindowID</include>
-            <label>MyMusicSongs.xml ---> st. $INFO[Skin.String(SectionType)] ---> v. $VAR[ContainerContent] - ll. $INFO[ListItem.Label]</label>
-        </control>
+		<include>debugInfos</include>
     </controls>
 </window>

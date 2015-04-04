@@ -157,7 +157,7 @@
 			</control>
 			<!--tvshow page scrollbar-->
 			<control type="group" id="8000">
-				<visible>Control.IsVisible(60) + [container.content(tvshows) | container.content(movies) | Skin.String(SectionType,channels)] + !container.content(episodes)</visible>
+				<visible>Control.IsVisible(60) + [container.content(secondary) | stringcompare(container.secondtitle,By Starring Actor) | container.content(tvshows) | container.content(movies) | Skin.String(SectionType,channels)] + !container.content(episodes)</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
 				<animation type="windowclose">
 					<effect type="fade" start="100" end="0" time="300" delay="0"/>
@@ -192,10 +192,6 @@
 		<!--loading indicator-->
 		<include>musicOverlay</include>
 		<include>loadingIndicator</include>
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>WindowID</include>
-			<label>MyVideoNav.xml ---> $INFO[Skin.String(SectionType)] - $INFO[Container(300).ListItem(0).Label] - $INFO[Container.PlexContent] ---> $VAR[ListItemType] CC=$VAR[ContainerContent]</label>
-		</control>
+		<include>debugInfos</include>
 	</controls>
 </window>

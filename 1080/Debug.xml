@@ -3,8 +3,8 @@
 	<include name="debugFont">
 		<width>570</width>
 		<height>12</height>
-		<font>Regular-12</font>
-		<textcolor>white</textcolor>
+		<font>regulardebug</font>
+		<textcolor>yellow</textcolor>
 		<align>left</align>
 		<scroll>false</scroll>
 		<wrapmultiline>false</wrapmultiline>
@@ -147,7 +147,7 @@
 </variable>
 <include name="debugInfos">
 	<control type="group" id="1">
-		<visible>Skin.HasSetting(showdebug)</visible>
+		<visible>Skin.HasSetting(DebugInfo)</visible>
 		<control type="group">
 			<animation effect="fade" start="0" end="85" condition="true">Conditional</animation>
 			<control type="image">
@@ -161,12 +161,12 @@
 		</control>
 		<!-- left list -->
 		<control type="grouplist">
-			<posx>40</posx>
+			<posx>0</posx>
 			<posy>40</posy>
-			<width>350</width>
-			<height>680</height>
+			<width>600</width>
+			<height>1080</height>
 			<orientation>vertical</orientation>
-			<itemgap>5</itemgap>
+			<itemgap>10</itemgap>
 			<control type="label">
 				<include>debugFont</include>
 				<label>System.CurrentWindow : [COLOR=orangeLight]$INFO[System.CurrentWindow][/COLOR]</label>
@@ -185,7 +185,7 @@
 			</control>
 			<control type="label">
 				<include>debugFont</include>
-				<label>Skin.AspectRatio : [COLOR=orangeLight]$INFO[Skin.AspectRatio][/COLOR]</label>
+				<label>Skin.AspectRatio : [COLOR=orangeLight]$INFO[ListItem.Icon][/COLOR]</label>
 			</control>
 			<control type="label">
 				<include>debugFont</include>
@@ -341,10 +341,6 @@
 		<label>System.NoPlexServers : [COLOR=orangeLight]1[/COLOR]</label>
 		<visible>System.NoPlexServers</visible>
 	</control>
-	<control type="label">
-		<include>debugFont</include>
-		<label/>
-	</control>
 	<!--><control type="label">
 		<include>debugFont</include>
 		<label>Container.PluginName : [COLOR=orangeLight]$INFO[Container.PluginName][/COLOR]</label>
@@ -360,12 +356,12 @@
 </control>
 <!-- middle list -->
 <control type="grouplist">
-	<posx>400</posx>
+	<posx>600</posx>
 	<posy>40</posy>
-	<width>390</width>
-	<height>680</height>
+	<width>600</width>
+	<height>1080</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<control type="label">
 		<include>debugFont</include>
 		<label>Listitem.Type : [COLOR=orangeLight]$VAR[ListItemType][/COLOR]</label>
@@ -526,12 +522,12 @@
 <!-- right list -->
 <!-- PHOTOS -->
 <control type="grouplist">
-	<posx>820</posx>
+	<posx>1200</posx>
 	<posy>40</posy>
-	<width>390</width>
-	<height>680</height>
+	<width>600</width>
+	<height>1080</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<visible>Window.IsVisible(2)</visible>
 	<control type="label">
 		<include>debugFont</include>
@@ -600,12 +596,12 @@
 </control>
 <!-- VIDEO -->
 <control type="grouplist">
-	<posx>820</posx>
+	<posx>1200</posx>
 	<posy>40</posy>
-	<width>390</width>
-	<height>680</height>
+	<width>600</width>
+	<height>1080</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<visible>Window.IsVisible(25) | Window.IsVisible(10090) | [Window.IsVisible(plexplayqueue) + System.PlexPlayQueue(Video)]</visible>
 	<control type="label">
 		<include>debugFont</include>
@@ -697,7 +693,7 @@
 	<width>390</width>
 	<height>680</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<visible>Window.IsVisible(2005) | Window.IsVisible(2901)</visible>
 	<control type="label">
 		<include>debugFont</include>
@@ -746,12 +742,12 @@
 </control>
 <!-- TV SPECIFIC -->
 <control type="grouplist">
-	<posx>820</posx>
-	<posy>400</posy>
-	<width>390</width>
-	<height>680</height>
+	<posx>1200</posx>
+	<posy>500</posy>
+	<width>600</width>
+	<height>1080</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<visible>Container.PlexContent(TVShows) | Container.Content(tvshow) | Container.PlexContent(Seasons) | Container.Content(season) | Container.PlexContent(Episodes) | Container.PlexContent(Episode) | [Window.IsVisible(plexplayqueue) + System.PlexPlayQueue(Video)]</visible>
 	<control type="label">
 		<include>debugFont</include>
@@ -816,12 +812,12 @@
 </control>
 <!-- MUSIC -->
 <control type="grouplist">
-	<posx>820</posx>
+	<posx>1200</posx>
 	<posy>40</posy>
-	<width>390</width>
-	<height>680</height>
+	<width>600</width>
+	<height>1080</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<visible>Window.IsVisible(501) | [Window.IsVisible(plexplayqueue) + System.PlexPlayQueue(Music)]</visible>
 	<control type="label">
 		<include>debugFont</include>
@@ -895,7 +891,7 @@
 	<width>390</width>
 	<height>680</height>
 	<orientation>vertical</orientation>
-	<itemgap>5</itemgap>
+	<itemgap>10</itemgap>
 	<visible>Window.IsVisible(0)</visible>
 	<control type="label">
 		<include>debugFont</include>
