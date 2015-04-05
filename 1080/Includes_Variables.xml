@@ -65,6 +65,7 @@
 		<value condition="!ListItem.Status(Unwatched) + !ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
 	</variable>
 	<variable name="vListItemOverlay">
+		<value condition="container.content(secondary) | stringcompare(container.secondtitle,By Starring Actor)">4</value>
 		<value condition="ListItem.Status(Unwatched) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
 		<value condition="ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">*</value>
 		<value condition="!ListItem.Status(Unwatched) + !ListItem.Status(InProgress) + !Skin.HasSetting(HideUnwatchedIconsMovies)">E</value>
