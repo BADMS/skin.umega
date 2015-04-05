@@ -43,6 +43,7 @@
                 <textcolor>black</textcolor>
             </control>
 			<control type="group" id="302">
+				<animation effect="fade" start="100" end="50" time="0" delay="0" reversible="false" condition="window.isactive(4997)">Conditional</animation>
 				<control type="grouplist" id="3">
 					<posx>0</posx>
 					<posy>118</posy>

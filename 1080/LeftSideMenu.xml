@@ -389,7 +389,7 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<texturenofocus>colors/black.png</texturenofocus>
+					<texturenofocus>-</texturenofocus>
 					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
@@ -403,7 +403,7 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<texturenofocus>colors/black.png</texturenofocus>
+					<texturenofocus>-</texturenofocus>
 					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
@@ -417,7 +417,7 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<texturenofocus>colors/black.png</texturenofocus>
+					<texturenofocus>-</texturenofocus>
 					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
@@ -431,7 +431,7 @@
 					<width>237</width>
 					<font>itemTitle</font>
 					<texturefocus>colors/selected.png</texturefocus>
-					<texturenofocus>colors/black.png</texturenofocus>
+					<texturenofocus>-</texturenofocus>
 					<textcolor>selected</textcolor>
 					<textoffsetx>20</textoffsetx>
 					<height>1-row</height>
