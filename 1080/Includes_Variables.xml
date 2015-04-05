@@ -108,7 +108,7 @@
 		<value condition="Skin.String(SectionType,sharedcontent) + !isempty(Container.SecondTitle) + !container.content(secondary)">[UPPERCASE]$INFO[Skin.String(serverName)][/UPPERCASE] [COLOR accented]$INFO[Container.FirstTitle] $INFO[Container.SecondTitle][/COLOR]</value>
 		<value condition="Skin.String(SectionType,sharedcontent)">[UPPERCASE]$LOCALIZE[41016][/UPPERCASE]</value>
 		<value condition="Container.Content(channels)">[UPPERCASE]$VAR[ContainerContent][/UPPERCASE]</value>
-		<!--<value condition="SubString(Container.SecondTitle,All,Left)">[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</value>-->
+		<value condition="container.content(secondary)">[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</value>
 		<value>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE] [COLOR accented]$INFO[Container.SecondTitle][/COLOR]</value>
     </variable>
     <variable name="listSubTitle">
