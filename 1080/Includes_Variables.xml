@@ -108,6 +108,10 @@
 		<value condition="Skin.String(SectionType,sharedcontent) + !isempty(Container.SecondTitle) + [container.content(secondary) | SubString(Container.SecondTitle,All,Left)]">[UPPERCASE]$INFO[Skin.String(serverName)][/UPPERCASE] [COLOR accented]$INFO[Container.SecondTitle][/COLOR]</value>
 		<value condition="Skin.String(SectionType,sharedcontent) + !isempty(Container.SecondTitle) + !container.content(secondary)">[UPPERCASE]$INFO[Skin.String(serverName)][/UPPERCASE] [COLOR accented]$INFO[Container.FirstTitle] $INFO[Container.SecondTitle][/COLOR]</value>
 		<value condition="Skin.String(SectionType,sharedcontent)">[UPPERCASE]$LOCALIZE[41016][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playlists)">[UPPERCASE]$LOCALIZE[41009][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playqueue) + [Container.PlexContent(Movie) | Container.PlexContent(Episodes) | Container.PlexContent(Movies) | Container.PlexContent(Clips)]">[UPPERCASE]Video $LOCALIZE[31097][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playqueue) + [Container.PlexContent(Albums) | Container.Content(artist) | Container.PlexContent(Songs) | Container.Content(song) | Container.PlexContent(Artists)]">[UPPERCASE]Song $LOCALIZE[31097][/UPPERCASE]</value>
+		<value condition="Skin.String(SectionType,playqueue)">[UPPERCASE]playqueue[/UPPERCASE]</value>
 		<value condition="Container.Content(channels)">[UPPERCASE]$VAR[ContainerContent][/UPPERCASE]</value>
 		<value condition="container.content(secondary)">[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE]</value>
 		<value>[UPPERCASE]$INFO[Container.FolderName][/UPPERCASE] [COLOR accented]$INFO[Container.SecondTitle][/COLOR]</value>

@@ -215,7 +215,7 @@
 				<onup>998</onup>
 				<ondown>998</ondown>
 				<orientation>vertical</orientation>
-				<itemgap>30</itemgap>
+				<itemgap>0</itemgap>
 				<!-- Home -->
 				<control type="button" id="101">
 					<textoffsetx>-2</textoffsetx>

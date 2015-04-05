@@ -136,9 +136,6 @@
 		<include>musicOverlay</include>
 		<include>loadingIndicator</include>
 		<include>DebugGrid</include>
-		<control type="label">
-			<include>WindowID</include>
-			<label>PlexPlayQueue.xml ---> $INFO[Skin.String(SectionType)] ---> $VAR[ContainerContent] - $INFO[ListItem.Label]</label>
-		</control>
+		<include>debugInfos</include>
 	</controls>
 </window>
