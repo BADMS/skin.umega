@@ -101,7 +101,7 @@
 					<label>$INFO[ListItem.Genre]</label>
 					<textcolor>selected</textcolor>
 				</control>
-				<control type="label">
+				<!--<control type="label">
 					<posx>0</posx>
 					<posy>45</posy>
 					<width>8-col</width>
@@ -110,7 +110,7 @@
 					<label>$LOCALIZE[32102]</label>
 					<textcolor>selected</textcolor>
 					<visible>!IsEmpty(Container.Property(mixedParents)) + IsEmpty(Container.Property(primaryFilterActivated))</visible>
-				</control>
+				</control>-->
 				<control type="label">
 					<posx>0</posx>
 					<posy>0</posy>

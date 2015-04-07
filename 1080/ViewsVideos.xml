@@ -509,7 +509,7 @@
 				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
 			</animation>
 			<control type="image">
-				<visible>!IsEmpty(Container.Property(primaryFilterActivated))</visible>
+				<visible>!IsEmpty(ListItem.Thumb) + IsEmpty(ListItem.Art(parentThumb)) + IsEmpty(Container.Thumb)</visible>
 				<posx>0</posx>
 				<posy>8</posy>
 				<width>6-col</width>
@@ -521,7 +521,7 @@
 				<fadetime>200</fadetime>
 			</control>
 			<control type="image">
-				<visible>!IsEmpty(Container.Property(mixedParents))</visible>
+				<visible>!IsEmpty(ListItem.Art(parentThumb)) + IsEmpty(Container.FolderThumb)</visible>
 				<posx>0</posx>
 				<posy>8</posy>
 				<width>6-col</width>
@@ -533,19 +533,19 @@
 				<fadetime>200</fadetime>
 			</control>
 			<control type="image">
-				<visible>!IsEmpty(Container.Thumb) + IsEmpty(Container.Property(mixedParents))</visible>
+				<visible>!IsEmpty(Container.FolderThumb)</visible>
 				<posx>0</posx>
 				<posy>8</posy>
 				<width>6-col</width>
 				<height>576</height>
 				<aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
-				<texture background="true">$INFO[Container.Thumb]</texture>
+				<texture background="true">$INFO[Container.FolderThumb]</texture>
 				<bordertexture border="3" colordiffuse="33FFFFFF">colors/selected.png</bordertexture>
 				<bordersize>3</bordersize>
 				<fadetime>200</fadetime>
 			</control>
 			<control type="image">
-				<visible>IsEmpty(Container.Thumb) + IsEmpty(Container.Property(mixedParents)) + Skin.String(SectionType,tvshows)</visible>
+				<visible>[Listitem.Type(episode) + IsEmpty(Container.FolderThumb)] | IsEmpty(ListItem.Thumb) + IsEmpty(ListItem.Art(parentThumb)) + IsEmpty(Container.Thumb) + Skin.String(SectionType,tvshows)</visible>
 				<posx>0</posx>
 				<posy>8</posy>
 				<width>6-col</width>
