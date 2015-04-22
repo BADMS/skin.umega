@@ -346,7 +346,6 @@
       <p>ActivateWindow(VisualisationPresetList)</p>
       <v>ActivateWindow(VisualisationSettings)</v>
       <n>ActivateWindow(MusicPlaylist)</n>
-      <h>ActivateWindow(Home)</h>
     </keyboard>
   </MusicOSD>
   <VisualisationSettings>
@@ -473,10 +472,10 @@
       <delete>Delete</delete>
       <space>Playlist</space>
       <w>ToggleWatched</w>
-      <f>CyclePrimaryFilter</f>
+      <!--<f>CyclePrimaryFilter</f>
       <f mod="ctrl">ClearFilters</f>
-      <u>ToggleUnwatchedFilter</u>
-    </keyboard>
+      <u>ToggleUnwatchedFilter</u>-->
+	  </keyboard>
   </MyVideoLibrary>
   <MyVideoFiles>
     <keyboard>
