@@ -157,7 +157,7 @@
 			</control>
 			<!--tvshow page scrollbar-->
 			<control type="group" id="8000">
-				<visible>Control.IsVisible(60) + [container.content(secondary) | stringcompare(container.secondtitle,By Starring Actor) | container.content(tvshows) | container.content(movies) | Skin.String(SectionType,channels)] + !container.content(episodes)</visible>
+				<visible>Control.IsVisible(60) + [Container.PlexContent(Folders) | container.content(secondary) | stringcompare(container.secondtitle,By Starring Actor) | container.content(tvshows) | container.content(movies) | Skin.String(SectionType,channels)] + !container.content(episodes)</visible>
 				<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
 				<animation type="windowclose">
 					<effect type="fade" start="100" end="0" time="300" delay="0"/>
