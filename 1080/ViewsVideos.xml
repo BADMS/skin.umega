@@ -1008,7 +1008,7 @@
 	</control>
 </include>
 <include name="viewFilteredEmpty">
-	<control type="group">
+	<control type="group" id="777">
 		<visible>Container.Content(empty)</visible>
 		<control type="image">
 			<posy>-95</posy>
@@ -1025,6 +1025,13 @@
 			<label>$LOCALIZE[32206]</label>
 			<font>pageTitle</font>
 			<textcolor>selected</textcolor>
+		</control>
+		<control type="button" id="1111">
+			<posx>-200</posx>
+			 <posy>-20</posy>
+			 <width>1</width>
+			 <height>1</height>
+			 <onfocus>AlarmClock(controlViewmode,SetFocus(777),00:01,silent)</onfocus>
 		</control>
 	</control>
 </include>

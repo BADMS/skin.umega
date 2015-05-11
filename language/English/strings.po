@@ -1123,7 +1123,7 @@ msgid "Actors"
 msgstr ""
 
 msgctxt "#32113"
-msgid "Show Big Posters View in Sections"
+msgid "Studio"
 msgstr ""
 
 msgctxt "#32114"
@@ -1247,5 +1247,5 @@ msgid "Play File"
 msgstr "Play File"
 
 msgctxt "#32206"
-msgid "The list is empty go back or press f!"
-msgstr "The list is empty go back or press f!"
+msgid "The list is empty go back!"
+msgstr "The list is empty go back!"
